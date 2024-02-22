@@ -18,9 +18,9 @@ insert into member(no,id,pw,email,name,birth,gender,phone,address,nickname) valu
 update member set no = 0 where no = 1;
 alter table member auto_increment = 1;
 insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test1','test1','test1@java.org','test1','2024-02-21','남','222-2222-2222','test1','test1');
-
 select * from member;
 select id,regist from member where regist = current_date();
+
 # 고객_추가정보 테이블
 create table member_info(
 id varchar(100) not null primary key, -- 고객아이디
@@ -31,6 +31,7 @@ attendcount int default 1, -- 출석 횟수
 Ldate Date default (Current_date()), -- 마지막 출석일 (회원가입 날짜 기본 값)
 foreign key(id) references member(id) on delete cascade
 );
+
 select * from member_info;
 insert into member_info(id,level) values('admin',1000);
 insert into member_info(id) values('test1');
@@ -55,6 +56,7 @@ create table member_coupon(
     foreign key (id) references member(id) on delete cascade,
     foreign key(name) references coupon(name) on delete cascade
 );
+
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
 select * from member_coupon;
 
@@ -77,7 +79,6 @@ create table hotel(
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) values('test1','TestHotel',5,'123-1234-1234
 ','','Test1',11,'16:00','11:00','11-1111-111111');
 select * from hotel;
-
 #객실
 create table room(
 	no int auto_increment primary key, -- 객실 번호
@@ -108,9 +109,44 @@ create table reserve(
     add_req varchar(100), -- 추가 요청 사항
     visit varchar(50) not null, -- 방문방법
     hotel_option varchar(300), -- 옵션
-    foreign key(hotel_no) references  hotel(no),
-    foreign key(room_no) references room(no)
+    foreign key(hotel_no) references  hotel(no) on delete cascade,
+    foreign key(room_no) references room(no) on delete cascade
 );
 insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit) 
 values(1,1,'test1','111-1111-1111',Current_date(),Date_add(current_date(), interval 3 day),1000,4,'도보');
 select * from reserve;
+
+# 리뷰 비회원 리뷰 작성 불가
+create table review(
+	no int auto_increment primary key, -- 리뷰 번호
+    nickname varchar(100) not null, -- 리뷰 작성자 닉네임
+    hotel_no int not null, -- 호텔 번호
+    room_no int not null, -- 객실 번호
+    star_point int not null, -- 별점
+    content varchar(1000), -- 리뷰 내용
+    res_no int not null, -- 예약 번호
+    wday Date default (Current_date()), -- 작성일
+    count int default 0, -- 추천수
+    foreign key(nickname) references member(nickname) on delete cascade on update cascade,
+    foreign key(hotel_no) references hotel(no) on delete cascade on update cascade,
+    foreign key(room_no) references room(no) on delete cascade on update cascade
+);
+insert into review (nickname,hotel_no,room_no,star_point,res_no) values('test1',1,1,5,1);
+select * from review;
+#리뷰 추천 
+create table review_rec(
+	no int not null, -- 리뷰 번호
+	id varchar(100) not null, -- 고객 아이디
+    foreign key(no) references review(no) on delete cascade,
+    foreign key(id) references member(id) on delete cascade
+);
+insert into review_rec(no,id) values(4,'test1');
+select * from review_rec;
+#이미지
+create table img(
+	uploader varchar(50) not null, -- 업로더( 호텔 : 'ho' , 객실 : 'ro', 리뷰 : 'rv' )
+    no int not null, -- 호텔 , 객실, 리뷰 번호
+    url varchar(100) not null -- 이미지 경로
+);
+
+

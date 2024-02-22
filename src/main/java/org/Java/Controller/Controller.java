@@ -26,8 +26,7 @@ public class Controller extends HttpServlet {
 		String url = request.getContextPath();
 		req_url = req_url.substring(url.length());
 		if(req_url.equals("/")) {
-			RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/Main.jsp");
-			dis.forward(request, response);
+			response.sendRedirect("Main.do");
 			return;
 		}
 		Page service = mapper.getService(req_url);

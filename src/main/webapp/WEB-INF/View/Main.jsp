@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Main</h1>
+<a href="${ctx}/TeamProject/Login.do">로그인하기</a>
 </body>
 </html>

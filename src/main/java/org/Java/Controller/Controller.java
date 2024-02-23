@@ -37,14 +37,15 @@ public class Controller extends HttpServlet {
 				response.sendRedirect(req.substring(req.indexOf(":")+1)+".do");
 				return;
 			}
-			String page = v.getPageName(req);
-			RequestDispatcher dis = request.getRequestDispatcher(page);
+			request.setAttribute("page", req+".jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/Layout.jsp");
 			dis.forward(request, response);
 			return;
 		}
-		RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/404.html");
+		request.setAttribute("page", "404.html");
+		request.setAttribute("title","Not Found" );
+		RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/Layout.jsp");
 		dis.forward(request, response);
-		return;
 	}
 
 }

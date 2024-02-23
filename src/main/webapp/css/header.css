@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  padding-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.gnb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnb li{
+  margin: 0 20px;
+}
+
+.gnb li a {
+  /* margin: 40px; */
+  color: black;
+}
+
+.gnb li a:last-child {
+  margin-right: 0;
+}
+
+.logo a,
+.gnb li a {
+  /* transition: transform 0.3s ease; */
+}
+
+.logo a:hover,
+.gnb li:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+main {
+  /* border: 2px solid red; */
+}
+
+.popup {
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #fffefe;
+  /* padding: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  /* margin: 10px 0; */
+}
+.popup div{
+  padding: 10px 10px;
+}
+.popup div:hover{
+  background-color: rgb(241, 239, 239);
+  cursor: pointer;
+}
+
+#userImg{
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  background-color: lightgray;
+  padding: 6px 10px;
+}
+
+.gnb li:last-child{
+  padding: 5px 8px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+}
+

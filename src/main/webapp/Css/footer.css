@@ -3,6 +3,9 @@
 	margin:0;
 	padding:0;
 }
+
+	
+
 footer{
 	margin:0;
 	padding:0;
@@ -10,6 +13,7 @@ footer{
 	height: 150px;
 	background-color: #e7e7e7;
 	display: flex;
+	transition : 0.4s;
 }
 .footer_div{
 	width: 100%;
@@ -41,4 +45,84 @@ footer{
 .footer_link:hover{
 	color : blue;
 	transform : scale(1.2);
+}
+.footer_div2{
+	flex:2;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+}
+.footer_div2 > span{
+	flex:1;
+	font-size : 12px;
+	text-align: center;
+}
+.footer_div2 > span:first-child {
+	margin:15px;
+	font-size: 24px;
+	font-weight: 500;
+}
+.footer_div2_div{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.footer_div2_div > button{
+	flex:1;
+	margin: 10px;
+	border-radius: 5px;
+	border: 1px solid #808080;
+	font-size: 24px;
+	transition : 1.3s;
+}
+.footer_div2_div > button:hover{
+	transform : scale(1.1);
+}
+.footer_modal{
+	position : fixed;
+	top:10%;
+	left : 100%;
+	height: 0;
+	width: 80%;
+	transform : 1.3s;
+	transition : 1.3s;
+	border-radius: 7px;
+	padding: 50px;
+	z-index: 100;
+	box-sizing: border-box;
+}
+.modal_on{
+	position: fixed;
+	left: 10%;
+	height: 70%;
+	border:1px solid black;
+	background-color: gray;
+}
+.moal_cancle{
+	position: absolute;
+	top: 3%;
+	right: 2%;
+	background-color: transparent;
+	padding: 10px;
+	border:1px solid #e7e7e7;
+	border-radius: 7px;
+	text-align: center;
+	transition : 1.3s;
+}
+.moal_cancle:hover{
+	transform : scale(1.2);
+	background-color: red;
+}
+.modal_main{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	border:1px solid red;
+}
+.modal_main > *{
+	flex:1;
 }

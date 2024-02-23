@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<!--  Js import -->
+	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
 	<!--  css import -->
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32">
 </head>

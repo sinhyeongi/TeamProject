@@ -1,0 +1,86 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  /* margin: 20px; */
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+
+}
+
+.container {
+  margin: 20px;
+}
+
+.accommodation {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 800px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  display: flex;
+}
+
+.accommodation img {
+  display: 2;
+}
+
+.info {
+  margin-left: 30px;
+  display: 6;
+}
+
+h2 {
+  color: #333;
+  /* flex: 3; */
+}
+
+p {
+  color: #666;
+  /* flex: 7; */
+  /* text-align: end; */
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.star {
+  font-size: 12px;
+  margin-bottom: -20px;
+}
+.where{
+  font-size: 14px;
+  font-weight: 400px;
+  margin-top: -10px;
+
+}
+
+.star_point span{
+  border-radius: 10px;
+  background-color: hwb(47 0% 0%);
+  padding: 3px;
+}
+.total_qty {
+  font-size: 12px;
+  color: red;
+  text-align: end;
+}

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin : 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.login_logo{
+	margin: 96px 0 48px;
+}
+.container{
+	border : solid 1px blue;	
+}
+.content{
+	border : solid 1px red;
+}
+.login_title{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* .strikethrough{
+	width:384px;
+} */
+.strikethrough{
+	position:relative;
+	top:14px;
+	width:384px;
+	height:1px;
+	text-decoration:line-through;
+	background-color: #868686;
+	z-index : -1;
+}
+.caption{
+	z-index:1;
+	background-color: white;
+	color:#868686;
+	padding: 2px;
+}
+.login{
+	display: flex;
+	flex-direction : column;
+	justify-content: center;
+	align-items: center;
+}
+.loginBtn{
+ margin : 10px 0 ;
+}
+
+.btn{
+	width : 384px;
+	height: 52px;
+	border-radius: 20px;
+	margin : 3px 0;
+	border: inherit;
+	font-weight: bold;
+	cursor: pointer;
+}
+.btn_content svg {
+  vertical-align: middle;
+}
+.btn_content{
+	height:21px;
+}
+.kakao_login{
+	background-color: #ffde00;
+}
+.naver_login{
+	background-color: #00c73c;
+	color : white;
+}
+.google_login{
+	background-color: #ffffff;
+	border : solid 0.2px black;
+}
+a.b2b_text_button:link{
+	background-color: blue;
+}
+a.btn:link {
+	display:inline-block;
+	background-color: #dfd7fd;
+	text-align: center;
+	line-height: 52px;
+}

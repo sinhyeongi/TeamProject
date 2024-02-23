@@ -29,9 +29,10 @@
 <script>
   Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
-<script type="text/javascript" defer src="${ctx}/Script/Login.js"></script>
+<script type="text/javascript" defer src="${ctx}/Js/Login.js"></script>
 </c:if>
 	<!--  Js import -->
+	<script defer="defer" src="${ctx }/Js/header.js?dsa"></script>
 	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
@@ -39,6 +40,7 @@
 		<script defer="defer" src="${ctx }/Js/reserve.js?dsad3232sadsa"></script>
 	</c:if>
 	<!--  css import -->
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dsdsd32" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3a" type="text/css">

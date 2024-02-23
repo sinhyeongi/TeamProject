@@ -59,12 +59,12 @@ nav {
   margin-right: 0;
 }
 
-.logo a,
+.header_logo a,
 .gnb li a {
   /* transition: transform 0.3s ease; */
 }
 
-.logo a:hover,
+.header_logo a:hover,
 .gnb li:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -74,7 +74,7 @@ main {
   /* border: 2px solid red; */
 }
 
-.popup {
+.header_popup {
   display: none;
   border-radius: 10px;
   position: absolute;
@@ -87,10 +87,10 @@ main {
   z-index: 1000;
   /* margin: 10px 0; */
 }
-.popup div{
+.header_popup div{
   padding: 10px 10px;
 }
-.popup div:hover{
+.header_popup div:hover{
   background-color: rgb(241, 239, 239);
   cursor: pointer;
 }

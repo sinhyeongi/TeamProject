@@ -22,8 +22,8 @@
 <body>
   <header>
     <nav>
-      <div class="logo">
-        <a href="#"><img src="${ctx }/img/logo.png" alt="logo"></a>
+      <div class="header_logo">
+        <a href="#"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
         <li><a href="#">이벤트</a></li>
@@ -36,7 +36,7 @@
         </li>
       </ul>
     </nav>
-    <div class="popup">
+    <div class="header_popup">
       <!-- 클릭시 로그인/ 회원가입 페이지로 이동 추가해야함 -->
       <div><a>로그인 / 회원가입 </a> </div>
       <!-- 클릭시 비회원 예약조회 페이지로 이동 추가해야함 -->

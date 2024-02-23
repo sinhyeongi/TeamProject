@@ -12,9 +12,8 @@ public class ReserveService implements Page {
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if(request.getParameter("name") == null) {
+			request.setAttribute("price", request.getAttribute("price"));
+			request.setAttribute("title", "예약 페이지");
 		return "reserve";
-		}
-		return null;
 	}
 }

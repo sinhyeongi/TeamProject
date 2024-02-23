@@ -7,17 +7,27 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ttt</title>
-  <!-- jquert  -->
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <!-- flatpickr js import	 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
-  <script defer src="script/header.js"></script>
-  <link rel="stylesheet" href="${ctx }/css/header.css">
+
+<meta charset="UTF-8">
+<title>${title }</title>
+	<!-- jquert  --> 
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!-- flatpickr js import	 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<!--  Js import -->
+	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
+	<c:if test="${page eq 'reserve.jsp'}">
+		<!-- iamport.payment.js -->
+		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+		<script defer="defer" src="${ctx }/Js/reserve.js?dsad3232sadsa"></script>
+	</c:if>
+	<!--  css import -->
+	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
+	<c:if test="${page eq 'reserve.jsp'}">
+		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3a" type="text/css">
+	</c:if>
 </head>
 <body>
   <header>
@@ -43,61 +53,6 @@
       <div><a>비회원 예약조회</a></div>
     </div>
   </header>
-  <main>
-    <li>시작</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-    <li>20</li>
-  </main>
+
 
 

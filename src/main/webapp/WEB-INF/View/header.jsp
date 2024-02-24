@@ -39,9 +39,8 @@
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds32dsa"></script>
 	</c:if>
-	<!--  css import -->
-
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dsdsd32" type="text/css">
+<!--  css import -->
+	<link rel="stylesheet" href="${ctx}/Css/header.css?d3" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd333a" type="text/css">

@@ -7,7 +7,9 @@
 <title>${title }</title>
 </head>
 <body>
+<main>
 <h1>Main</h1>
 <a href="${ctx}/TeamProject/Login.do">로그인하기</a>
+</main>
 </body>
 </html>

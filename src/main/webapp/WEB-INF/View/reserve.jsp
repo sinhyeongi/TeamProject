@@ -6,7 +6,7 @@
 	<input type="hidden" value="300" name="price">
 	<div>
 		<div class="reserve_title">
-			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#333333" viewBox="0 0 20 20" data-v-d882d821=""><path fill="#333" d="M17.586 9v2h-12.2c.003.004.157.17.36.366.203.196 5.24 5.234 5.24 5.234l-1.4 1.4-6.572-6.567a2.027 2.027 0 0 1 0-2.866L9.586 2l1.4 1.4-5.24 5.246a8.33 8.33 0 0 0-.36.354h12.2Z"></path></svg>
+			<a href="Main.do"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#333333" viewBox="0 0 20 20" data-v-d882d821=""><path fill="#333" d="M17.586 9v2h-12.2c.003.004.157.17.36.366.203.196 5.24 5.234 5.24 5.234l-1.4 1.4-6.572-6.567a2.027 2.027 0 0 1 0-2.866L9.586 2l1.4 1.4-5.24 5.246a8.33 8.33 0 0 0-.36.354h12.2Z"></path></svg></a>
 			<span class="reserve_title">예약 확인 및 결제</span>
 		</div>
 		<form method="post" id="reserve_form">

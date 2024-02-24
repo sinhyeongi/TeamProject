@@ -4,8 +4,12 @@
 
 body {
   padding-top: 50px;
+  height: 100vh;
+  box-sizing: border-box;
 }
-
+main{
+	height: 100%;
+}
 a {
   text-decoration: none;
 }

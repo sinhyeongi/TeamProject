@@ -7,7 +7,6 @@ body{
 	padding: 60px 80px;
 	height: 100%;
 	width: 100%;
-	border:1px solid red;
 	box-sizing: border-box;
 	display: flex;
 }
@@ -21,7 +20,6 @@ body{
 }
 .reserve_main > div:nth-child(2){
 	flex:7;
-	border:1px solid red;
 	box-sizing: border-box;
 }
 .reserve_main > div:nth-child(3){
@@ -68,6 +66,11 @@ hr:nth-child(2) {
 	margin-top: 15px;
 }
 .payment_title{
+	margin-top:15px;
 	margin-bottom: 15px;
 	text-align: center;
+}
+input[name=payment]{
+	margin-left:15px;
+	width: 95%;
 }

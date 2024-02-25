@@ -61,11 +61,38 @@ function requestPay(){
  			$('#check_tel').attr('disabled',true);
  			$('#check_tel').val('본인 인증 완료');
  			$('input[name=name]').attr('readonly',true);
+ 			$('input[name=name]').css('color','white');
+ 			$('input[name=name]').css('background-color','black');
  			$('input[name=tel]').attr('readonly',true);
+ 			$('input[name=tel]').css('color','white');
+ 			$('input[name=tel]').css('background-color','black');
+ 			console.log(rsp);
  			isCheck = true;
  		}
  	});
  }
+ // 이름 입력 마다 이름이 정상적으로 입력하는지 체크
+ $('input[name=name]').keyup(function(){
+ 	if($('input[name=name]').val() == null || $('input[name=name]').val() == ''){
+ 		$('.reserve_name_check').css('display','block');
+		return;
+	}else if(!regex2.test($('input[name=name]').val())){
+		$('.reserve_name_check').css('display','block');
+		return;
+	}
+	$('.reserve_name_check').css('display','none');
+ })
+ //전화번호 입력시 정상적으로 입력하는지 체크
+ $('input[name=tel]').keyup(function(){
+ 	if($('input[name=tel]').val() == null || $('input[name=tel]').val() == ''){
+		$('.reserve_tel_check').css('display','block');
+		return;
+	}else if(!regex.test($('input[name=tel]').val())){
+ 		$('.reserve_tel_check').css('display','block');
+ 		return;
+ 	}
+ 	$('.reserve_tel_check').css('display','none');
+ });
  $('input[name=payment]').click(function(){
  	if(isCheck == false){
  		alert('본인 인증을 먼저 진행해 주세요');
@@ -75,4 +102,7 @@ function requestPay(){
  });
 $('#check_tel').click(function(){
 	certifi();
+});
+$('#reserve_login').click(function(){
+	location.href= "Login.do";
 });

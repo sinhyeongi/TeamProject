@@ -16,6 +16,10 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+<!-- LoginInput css -->
+<c:if test="${page eq 'LoginInput.jsp'}">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
+</c:if>
 <!-- Login css -->
 <c:if test="${page eq 'Login.jsp' }">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">

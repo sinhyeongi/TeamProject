@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.Java.DAO.MemberDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
 import org.json.simple.JSONArray;
@@ -33,14 +34,22 @@ public class KakaoLoginService implements Page {
 		System.out.println("토큰 = " + access_token);//토큰값 출력
 		HttpSession session = request.getSession();
 		MemberVO vo = getMember(access_token);
-		
-		session.setAttribute("id", vo.getId());
-		
 		System.out.println("로그인시도 I  D =  " + vo.getId());
 		System.out.println("로그인시도 name =  " + vo.getNickname());
-		response.getWriter().write(vo.getNickname() + "");
+		int check = MemberDAO.getinstance().checkId(vo.getId());
 		
-		return null;
+		
+		if(check == 0) {
+			System.out.println("존재하지 않는 아이디");
+			//아이디 닉네임 저장
+			return "Login";
+		}else {
+			//로그인 성공 시
+			System.out.println("존재하는 아이디");
+			session.setAttribute("id", vo.getId());
+			
+			return "Main";
+		}
 	}
 	
 	public MemberVO getMember(String access_token) {
@@ -84,8 +93,6 @@ public class KakaoLoginService implements Page {
 			writer = new OutputStreamWriter(conn.getOutputStream(), "UTF-8");
 			writer.flush();
 			writer.close();
-			
-			
 			// log.info("header전송")
 			
 			int responseCode = conn.getResponseCode();

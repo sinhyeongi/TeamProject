@@ -39,6 +39,7 @@ input{
 }
 input[type=text]{
 	width: 50%;	
+	transition : 1.3s;
 }
 input[type=tel]{
 	width: 25%;
@@ -53,12 +54,11 @@ input[type=tel]{
 	overflow: hidden;
 	box-sizing: border-box;
 	padding: 15px;
-	
 }
 #reserve_img_div > img{
 	width: 100%;
 	height : 100%;
-	object-fit : cover;
+	object-fit : fill;
 	box-sizing: border-box;
 }
 
@@ -73,4 +73,10 @@ hr:nth-child(2) {
 input[name=payment]{
 	margin-left:15px;
 	width: 95%;
+}
+.reserve_name_check,.reserve_tel_check{
+	margin-top : -12px;
+	color : red;
+	font-size: 12px;
+	display: none;
 }

@@ -12,12 +12,14 @@
 		<form method="post" id="reserve_form">
 			<h3>예약자 정보</h3>
 			<span>예약자 이름</span>
-			<div><input type="text" name="name" placeholder="홍길동"></div>
+			<div><input type="text" name="name" placeholder="홍길동"><br/><div class="reserve_name_check">이름을 확인하세요</div></div>
 			<span>휴대전화 번호</span>
-			<div><input type="tel" name="tel" placeholder="010-1234-5678"><input type="button" id="check_tel" value="전화번호 본인 인증"></div>
+			<div><input type="tel" name="tel" placeholder="010-1234-5678"><input type="button" id="check_tel" value="전화번호 본인 인증"><br/><div class="reserve_tel_check">전화번호를 확인하세요</div></div>
 			<hr />
 				<div id="reserve_img_div">
-					<img src="http://placehold.it/150x150" alt="img">
+					<c:if test="${log eq null }">
+						<img src="${ctx }/img/reserve_login.png" alt="img" id="reserve_login">
+					</c:if>
 				</div>
 			<hr />
 			<div>

@@ -37,15 +37,15 @@
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-		<script defer="defer" src="${ctx }/Js/reserve.js?ds32dsa"></script>
+		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
 <!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?d3" type="text/css">
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dd3" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
-		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd333a" type="text/css">
+		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
 	</c:if>
-
+	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd32" type="text/css">
 </head>
 <body>
   <header>

@@ -22,6 +22,8 @@ public class Controller extends HttpServlet {
 	private ViewMapper mapper = new ViewMapper();
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		String req_url = request.getRequestURI();
 		String url = request.getContextPath();
 		req_url = req_url.substring(url.length());

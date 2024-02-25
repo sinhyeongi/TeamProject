@@ -37,7 +37,7 @@ function requestPay(){
  	IMP.request_pay({
  		pg : 'html5_inicis.INIpayTest',
  		pay_method : 'card',
- 		merchant_uid : 'test-0003', //
+ 		merchant_uid : 'test-0004', //
  		name : _name,
  		amount : price,
  		buyer_tel : _tel

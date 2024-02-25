@@ -23,16 +23,10 @@
 						</div>	
 					</button>
 				<!-- </form> -->
-				<form>
-					<button type="submit" class="btn naver_login">
-						<div class="btn_content">
-							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21">
-							<path fill="#fff" d="M4 16.717h4.377V9.98l4.203 6.737H17v-13h-4.377v6.737l-4.16-6.737H4v13Z"></path>
-							</svg>
-							네이버로 시작하기
-						</div>	
-					</button>
-				</form>
+				<!-- <form> -->
+				<div id ="naver_id_login">네이버 로그인 하기</div>
+					
+				<!-- </form> -->
 				<form>
 					<button type="submit" class="btn google_login">
 						<div class="btn_content">

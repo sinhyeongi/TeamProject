@@ -11,3 +11,24 @@
 	box-sizing: border-box;
 	object-fit : fill;
 }
+.slick-track{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.slick-arrow{position: absolute;top: 50%;transform: translateY(-50%);z-index: 5}
+.fa-solid.fa-arrow-left{left: 3%;}
+.fa-solid.fa-arrow-right{right: 3%;}
+.slick-slide.slick-active{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+#slick_title{
+	margin-left: 15px;
+}
+.slick-prev.slick-arrow.slick-disabled,
+.slick-next.slick-arrow.slick-disabled{
+	background-color: gray;
+}

@@ -18,7 +18,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 <!-- Login css -->
 <c:if test="${page eq 'Login.jsp' }">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css?32dsd">
 </c:if>
 
 <!-- Login js -->
@@ -26,32 +26,42 @@
 <!-- kakao Login sdk  -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
   integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+  <!--  Naver Login -->
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script>
   Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
-<script type="text/javascript" defer src="${ctx}/Js/Login.js"></script>
+<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
 </c:if>
 	<!--  Js import -->
-	<script defer="defer" src="${ctx }/Js/header.js?dsa"></script>
+	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>
 	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
+	<c:if test="${page eq 'Main.jsp' }">
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script defer="defer" src="${ctx }/Js/Main.js?sa"></script>
+	</c:if>
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
 <!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dd3" type="text/css">
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dd34433" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
 	</c:if>
-	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd32" type="text/css">
+	<c:if test="${page eq 'Main.jsp' }">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	</c:if>
+	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd3332" type="text/css">
 </head>
 <body>
   <header>
     <nav>
       <div class="header_logo">
-        <a href="Main.do"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
+        <a href="Main.do"><img src="${ctx }/img/Header_logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
         <li><a href="#">이벤트</a></li>

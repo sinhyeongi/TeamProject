@@ -6,6 +6,7 @@ import org.Java.Service.KakaoLoginService;
 import org.Java.Service.LoginInputService;
 import org.Java.Service.LoginMainService;
 import org.Java.Service.MainService;
+import org.Java.Service.NaverLogin_Service;
 import org.Java.Service.ReserveService;
 
 import org.Java.VO.Page;
@@ -21,6 +22,10 @@ public class ViewMapper {
 		mapper.put("/KakaoLogin.do", new KakaoLoginService());
 		//아이디로그인
 		mapper.put("/LoginInput.do", new LoginInputService());
+//		mapper.put("/KakaoLogin.do", new KakaoLoginService());
+		
+		//네이버 로그인
+		mapper.put("/Naver_Login.do",new NaverLogin_Service());
 		mapper.put("/reserve.do", new ReserveService());
 
 	}

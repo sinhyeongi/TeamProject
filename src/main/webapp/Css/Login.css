@@ -85,3 +85,15 @@ a.btn:link {
 	text-align: center;
 	line-height: 52px;
 }
+#naver_id_login{
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+#naver_id_login > a > img{
+	box-sizing: border-box;
+	width: 100%;
+	object-fit : cover;
+	border-radius: 7px;
+	overflow: hidden;
+}

@@ -26,8 +26,8 @@ function showPopup(event) {
   var popup = document.querySelector('.header_popup');
   // popup.innerText = '클릭한 아이템: ' + listItemText;
   popup.style.display = 'block';
-  popup.style.top = 100;
-  popup.style.left = 1400 + 'px';
+  popup.style.top = 100+'%';
+  popup.style.right = 0+ '%';
 }
 
 

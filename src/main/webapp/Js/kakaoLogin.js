@@ -37,13 +37,16 @@ function getKakaoToken(){
 			client_id : client_id,
 			redirect_uri : redirect_uri,
 			code : code },
-		headers : { "Content-type" : "application/x-www-form-urlencoded;charset=utf-8"},
-		})
-		.success(function(data){
+		headers : { "Content-type" : "application/x-www-form-urlencoded;charset=utf-8"}
+		,success : function(data){
 			const access_token = data['access_token']
-			tokenRequest.open("Post","KakaoLogin.do?access_token="+access_token);
-			tokenRequest.send();
-		});
+			/*tokenRequest.open("Post","KakaoLogin.do?access_token="+access_token);
+			tokenRequest.send();*/
+			location.href = "KakaoLogin.do?access_token="+access_token;
+		},error : function(err){
+			console.log(err);
+		}
+	});
 }
 
 

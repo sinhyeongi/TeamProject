@@ -5,14 +5,10 @@ html {
   scroll-behavior: smooth;
 }
 body{
-  padding-top: 53px;
+  padding-top: 58px;
   height: 100vh;
   box-sizing: border-box;
-}
-
-body {
-  padding-top: 50px;
-  transition: transform 0.5s;
+   transition: transform 0.5s;
 }
 
 a {
@@ -36,7 +32,7 @@ header {
   padding-top: 10px;
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 55px;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -63,6 +59,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 150px;
 }
 
 .gnb li{
@@ -135,7 +132,7 @@ main {
   padding: 6px 10px;
 }
 
-.gnb li:last-child{
+#member_menu{
   padding: 5px 8px;
   border: 1px solid lightgray;
   border-radius: 20px;
@@ -156,4 +153,23 @@ main {
   padding: 10px 13px;
   background-image: linear-gradient(#0f0f0f, #5e5e5e), 
   linear-gradient(to right, red 0,  orange 0);
+}
+
+.weather {
+  width: 55px;
+  height: 55px;
+  border: none;
+  display: flex;
+}
+
+
+.weather img {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.weather div {
+  flex: 1;
+  font-size: 13px;
 }

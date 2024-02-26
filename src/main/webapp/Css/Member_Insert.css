@@ -1,0 +1,49 @@
+@charset "UTF-8";
+#Member_Insert_Main{
+	height: 100%;
+	display: flex;
+	max-width:1400px;
+	margin: auto;
+	justify-content: center;
+	align-items: center; 
+}
+
+#Member_Insert_Form{
+	border: 1px solid black;
+	border-radius: 7px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#Member_Insert_Form > div{
+	flex:1;
+	display: flex;
+}
+#Member_Insert_Form > div > div{
+	flex:3;
+	width: 100%;
+	height: 100%;
+	display:flex;
+	justify-content: center;
+	align-items: center; 
+}
+#Member_Insert_Form > div > div:last-child{
+	flex:7;
+	padding: 10px;
+	box-sizing: border-box;
+}
+#Member_Insert_Form > div > div > input{
+	width:100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 7px;
+}
+#Member_Insert_Form > div > input[type=button]{
+	width: 100%;
+}
+.NoInput{
+	background-color: black;
+	color: #b4b4b4;
+}

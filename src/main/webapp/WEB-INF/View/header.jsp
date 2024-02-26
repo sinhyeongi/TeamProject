@@ -5,9 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-
 <head>
-
 <meta charset="UTF-8">
 <title>${title }</title>
 	<!-- jquert  --> 
@@ -57,7 +55,7 @@
 	<script defer="defer" src="${ctx }/Js/Naver_Login.js?ds"></script>
 	</c:if>
 <!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dd34433" type="text/css">
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dbgf33" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
@@ -65,9 +63,12 @@
 	<c:if test="${page eq 'Main.jsp' }">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		 <link rel="stylesheet" href="${ctx}/Css/main.css?ds3332" type="text/css">
+	</c:if>
+	<c:if test="${page eq 'Member_Insert.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/Member_Insert.css?ds3332" type="text/css">
 	</c:if>
 	
-	<link rel="stylesheet" href="${ctx}/Css/main.css?ds33dd3332" type="text/css">
 </head>
 <body>
   <header>
@@ -84,6 +85,7 @@
             <span><i id="userImg" class="fa fa-user"></i></span>
           </div>
         </li>
+        <li class="weather"></li>
       </ul>
     </nav>
     <div class="header_popup">

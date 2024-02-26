@@ -42,12 +42,12 @@ public class KakaoLoginService implements Page {
 		if(check == 0) {
 			System.out.println("존재하지 않는 아이디");
 			//아이디 닉네임 저장
-			return "Login";
+			return "Main";
 		}else {
 			//로그인 성공 시
 			System.out.println("존재하는 아이디");
 			session.setAttribute("id", vo.getId());
-			return "Main";
+			return "Login";
 		}
 	}
 	

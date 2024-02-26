@@ -22,7 +22,7 @@
 </c:if>
 <!-- Login css -->
 <c:if test="${page eq 'Login.jsp' }">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css?32dsd">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
 </c:if>
 
 <!-- Login js -->

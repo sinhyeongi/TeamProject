@@ -40,6 +40,7 @@ public class Controller extends HttpServlet {
 				return;
 			}
 			request.setAttribute("page", req+".jsp");
+			System.out.println("req =" + req);
 			RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/Layout.jsp");
 			dis.forward(request, response);
 			return;

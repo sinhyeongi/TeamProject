@@ -13,7 +13,7 @@
 						<div class="dot_badge"></div>
 					</div>
 					<div class="labeled_input_input">
-						<div class="input-wrapper">
+						<div class="input-wrapper input_id_wrapper">
 							<input class="input_id" placeholder="아이디를 입력하세요." name="id" id="input_id" type="text">
 						<!-- 	<input placeholder="이메일을 입력하세요." name="email" id="input_email" type="email"> -->
 						</div>
@@ -28,7 +28,7 @@
 						<div class="dot_badge"></div>
 					</div>
 					<div class="labeled_input_input">
-						<div class="input-wrapper">
+						<div class="input-wrapper input_pw_wrapper">
 							<input placeholder="비밀번호를 입력하세요." name="pw" id="input_pw" type="password">
 						</div>
 					</div>

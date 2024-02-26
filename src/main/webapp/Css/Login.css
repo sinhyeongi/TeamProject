@@ -11,10 +11,10 @@ a {
 	margin: 96px 0 48px;
 }
 .container{
-	border : solid 1px blue;	
+	/* border : solid 1px blue;	 */
 }
 .content{
-	border : solid 1px red;
+	/* border : solid 1px red; */
 }
 .login_title{
 	display:flex;

@@ -2,10 +2,14 @@
 /* Fontawesome 4.7 */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-body {
-  padding-top: 50px;
+body{
+  padding-top: 70px;
+  height: 100vh;
+  box-sizing: border-box;
 }
-
+main{
+	height: 100%;
+}
 a {
   text-decoration: none;
 }

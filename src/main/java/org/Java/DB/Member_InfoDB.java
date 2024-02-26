@@ -5,13 +5,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.Java.VO.MemberVO;
+import org.Java.VO.Member_InfoVO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class MemberDB {
+public class Member_InfoDB {
 	private static SqlSessionFactory sf;
 	static {
 		try {
@@ -22,12 +22,10 @@ public class MemberDB {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<MemberVO> getAll(){
+	public ArrayList<Member_InfoVO> getAll(){
 		SqlSession se = sf.openSession();
-		List<MemberVO> list = se.selectList("member_getAll");
+		List<Member_InfoVO> list = se.selectList("member_info_getAll");
 		se.close();
-		return (ArrayList<MemberVO>) list;
+		return (ArrayList<Member_InfoVO>) list;
 	}
-
 }
-

@@ -41,21 +41,21 @@
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-		<script defer="defer" src="${ctx }/Js/reserve.js?dsad3232sadsa"></script>
+		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
-	<!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dsdsd32" type="text/css">
+<!--  css import -->
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dd3" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
-		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3a" type="text/css">
+		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
 	</c:if>
-
+	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd32" type="text/css">
 </head>
 <body>
   <header>
     <nav>
       <div class="header_logo">
-        <a href="#"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
+        <a href="Main.do"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
         <li><a href="#">이벤트</a></li>

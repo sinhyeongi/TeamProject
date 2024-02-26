@@ -23,5 +23,5 @@ public class MemberDAO {
 		public int checkId(String id) {
 			return 0;
 		}
-	
+
 }

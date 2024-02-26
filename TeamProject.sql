@@ -4,7 +4,7 @@ use java;
 create table member(
 id varchar(100) not null unique, -- 고객 아이디
 no int auto_increment primary key, -- 고객 번호
-pw varchar(100) not null, -- 고객 비밀번호
+pw varchar(100), -- 고객 비밀번호
 email varchar(200) not null unique, -- 고객 이메일
 name varchar(50) not null, -- 고객 이름
 birth varchar(200) not null, -- 고객 생년월일 (String)

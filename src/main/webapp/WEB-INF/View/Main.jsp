@@ -19,7 +19,10 @@
 	</c:forEach>
 	<h2 id="slick_title">국내 인기 여행지</h2>
 	<div class="multiple-items">
-	  <div>제주도</div>
+	  <div>
+	  		<img src="${ctx }/img/Main_category_jeju.png" alt="jeju"><br/>
+		  제주도
+	  </div>
 	  <div>서울</div>
 	  <div>부산</div>
 	  <div>강릉</div>

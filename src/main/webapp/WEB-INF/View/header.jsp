@@ -45,6 +45,10 @@
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
+	<c:if test="${page eq 'Naver_Login.jsp' }">
+	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+	<script defer="defer" src="${ctx }/Js/Naver_Login.js?ds"></script>
+	</c:if>
 <!--  css import -->
 	<link rel="stylesheet" href="${ctx}/Css/header.css?dd34433" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
@@ -55,7 +59,8 @@
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	</c:if>
-	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd3332" type="text/css">
+	
+	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsddd3332" type="text/css">
 </head>
 <body>
   <header>

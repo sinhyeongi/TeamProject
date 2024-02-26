@@ -17,6 +17,7 @@
 							<input class="input_id" placeholder="아이디를 입력하세요." name="id" id="input_id" type="text">
 						<!-- 	<input placeholder="이메일을 입력하세요." name="email" id="input_email" type="email"> -->
 						</div>
+						<div class="errorMsg errorMsg_id"><span>아이디를 입력해주세요.</span></div>
 					</div>
 				</div>
 				<!-- //ID Input -->
@@ -31,6 +32,7 @@
 						<div class="input-wrapper input_pw_wrapper">
 							<input placeholder="비밀번호를 입력하세요." name="pw" id="input_pw" type="password">
 						</div>
+						<div class="errorMsg errorMsg_pw"><span>비밀번호를 입력해주세요.</span></div>
 					</div>
 				</div>
 				<!-- //PW Input -->
@@ -46,7 +48,7 @@
 			<!-- input from -->
 			
 			<div class=go_register>
-			
+				<button class="btn register_btn">회원가입 버튼</button>
 			</div>
 			<!-- 회원가입 버튼 -->
 			

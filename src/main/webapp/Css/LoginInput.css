@@ -60,6 +60,15 @@ input{
 	outline: none;
 	line-height: normal;
 }
+.errorMsg{
+	visibility: hidden;
+}
+.errorMsg.active{
+	color : red;
+	visibility: visible;
+}
+
+
 .login_btn{
 	margin-top: 20px;
 	background: #1273e4;

@@ -67,7 +67,7 @@
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	</c:if>
 	
-	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsddd3332" type="text/css">
+	<link rel="stylesheet" href="${ctx}/Css/main.css?ds33dd3332" type="text/css">
 </head>
 <body>
   <header>

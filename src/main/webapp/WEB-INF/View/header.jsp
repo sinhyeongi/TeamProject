@@ -75,6 +75,6 @@
       <div><a>비회원 예약조회</a></div>
     </div>
   </header>
-
+	<button id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i>&nbsp;TOP</button>
 
 

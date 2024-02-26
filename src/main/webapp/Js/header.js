@@ -27,11 +27,94 @@ function showPopup(event) {
   // popup.innerText = '클릭한 아이템: ' + listItemText;
   popup.style.display = 'block';
   popup.style.top = 100+'%';
-  popup.style.right = 0+ '%';
+  popup.style.right = 6.5+ '%';
 }
 
+// Top 버튼 요소 찾기
+var topButton = document.getElementById("topBtn");
+
+// 스크롤 이벤트 추가
+window.onscroll = function () {
+  // 현재 스크롤 위치 확인
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    // 일정 스크롤 위치 이상이면 Top 버튼을 보이게 함
+    topButton.style.display = "block";
+  } else {
+    // 일정 스크롤 위치 미만이면 Top 버튼을 숨김
+    topButton.style.display = "none";
+  }
+};
+
+// Top 버튼 클릭 시 페이지 상단으로 스크롤
+topButton.addEventListener("click", function () {
+  // document.body.scrollTop = 0; // Safari
+  // document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
+
+  // 스크롤 천천히 올라감
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 
+
+// 날씨 출력하기
+
+let lat = 0;
+let lon = 0;
+
+let city = "";
+let temp = 0;
+let desc = "";
+let imgUrl = ""
+
+const wt = document.querySelector(".weather");
+
+// navigator.geolocation
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.body.innerHTML = "이 브라우저에서는 위치 경로 지원 안함 ";
+  }
+  console.log("Test");
+}
+
+function showPosition(position) {
+  console.log("Latitude(위도): " + position.coords.latitude);
+  console.log("Longitude(경도): " + position.coords.longitude);
+
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
+
+  // get api  
+  let appkey = "dc64e28a4c0fbbffb13c7e7e7abf87b6";
+  // 발급 : https://api.openweathermap.org 여기서 발급 받음 
+  // fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=인증발급키`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appkey}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+
+      const city = data.name;
+      const temp = Math.round((data.main.temp - 273.15) * 100) / 100; // K to C
+      const desc = data.weather[0].description;
+      const icon = data.weather[0].icon;
+      const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+      console.log(`${city} : ${temp}'C (${desc})`);
+      console.log('imgUrl:', iconURL);
+
+      const result = `<img src=${iconURL}>&nbsp;&nbsp;&nbsp;&nbsp;<div>${city}<br>${temp}'C</div>`;
+      wt.insertAdjacentHTML('beforeend', result);
+    })
+    .catch(error => console.error('Error:', error));
+
+}
+
+window.onload = function () {
+  getLocation();
+}
 /*$("").click(function () {
   // AJAX 요청 설정
   $.ajax({

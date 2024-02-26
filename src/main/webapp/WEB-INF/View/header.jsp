@@ -84,6 +84,7 @@
             <span><i id="userImg" class="fa fa-user"></i></span>
           </div>
         </li>
+        <li class="weather"></li>
       </ul>
     </nav>
     <div class="header_popup">

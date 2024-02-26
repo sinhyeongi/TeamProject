@@ -45,11 +45,11 @@ block{
     height: 48px!important;
     justify-content: center;
 }
+.input-wrapper.error{
+	border: 1.5px solid #f45858!important;
+}
 .input-wrapper:hover{
 	background-color: #dbdbdb;
-}
-.input-wrapper error{
-	border: 1.5px solid #f45858!important;
 }
 
 input{

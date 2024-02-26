@@ -30,14 +30,14 @@ public class KakaoLoginService implements Page {
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("자바서버");
 		String access_token = request.getParameter("access_token"); //토큰
 		System.out.println("토큰 = " + access_token);//토큰값 출력
 		HttpSession session = request.getSession();
 		MemberVO vo = getMember(access_token);
 		System.out.println("로그인시도 I  D =  " + vo.getId());
-		System.out.println("로그인시도 name =  " + vo.getNickname());
+		System.out.println("로그인시도 name =  " + vo.getNinkname());
 		int check = MemberDAO.getinstance().checkId(vo.getId());
-		
 		
 		if(check == 0) {
 			System.out.println("존재하지 않는 아이디");
@@ -47,7 +47,6 @@ public class KakaoLoginService implements Page {
 			//로그인 성공 시
 			System.out.println("존재하는 아이디");
 			session.setAttribute("id", vo.getId());
-			
 			return "Main";
 		}
 	}
@@ -55,14 +54,16 @@ public class KakaoLoginService implements Page {
 	public MemberVO getMember(String access_token) {
 		String name = "";
 		
-		final String AUTH_HOST = "https://kauth.kakao.com";
-		final String tokenRequestUrl = AUTH_HOST + "/oauth/token";
+//		final String AUTH_HOST = "https://kauth.kakao.com";
+//		final String tokenRequestUrl = AUTH_HOST + "/oauth/token";
+//		
+//		String CLIENT_ID ="";			//해당 앱의 REST API KEY정보.
+//		String REDIRECT_URI = "";		//해당 앱의 설정된 uri.
+//		String code = "";				//로그인 과정 중 얻은 authorization값
+//		String token_type = "token_type";
 		
-		String CLIENT_ID ="";			//해당 앱의 REST API KEY정보.
-		String REDIRECT_URI = "";		//해당 앱의 설정된 uri.
-		String code = "";				//로그인 과정 중 얻은 authorization값
+		
 		String getPersnalInfoUrl ="https://kapi.kakao.com/v2/user/me"; //로그인 후 사용자 정보 받아오기 위한 url
-		String token_type = "token_type";
 		
 		HttpsURLConnection conn = null;
 		OutputStreamWriter writer = null;
@@ -129,7 +130,7 @@ public class KakaoLoginService implements Page {
 			System.out.println("nickname = " + properties.get("nickname"));
 			
 			vo = new MemberVO();
-			vo.setNickname(nickname);
+			vo.setNinkname(nickname);
 			vo.setId(id);
 		} catch (ParseException e) {
 			System.out.println("parseExceiption err");

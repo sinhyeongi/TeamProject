@@ -19,6 +19,8 @@
 <!-- LoginInput css -->
 <c:if test="${page eq 'LoginInput.jsp'}">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
+<!-- LoginInput js -->
+<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
 </c:if>
 <!-- Login css -->
 <c:if test="${page eq 'Login.jsp' }">
@@ -30,9 +32,6 @@
 <!-- kakao Login sdk  -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
   integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-
- 
-
 <script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
 </c:if>
 	<!--  Js import -->

@@ -20,3 +20,4 @@ public class MemberVO {
 	private Member_InfoVO info; //추가 정보
 	private ArrayList<Member_couponVO> coupon; //쿠폰
 }
+

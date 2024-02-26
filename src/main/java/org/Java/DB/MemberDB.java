@@ -28,4 +28,6 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
+
 }
+

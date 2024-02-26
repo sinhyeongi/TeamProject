@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.Java.VO.Page;
 
-public  class LoginMainService implements Page{
+public class LoginInputService implements Page{
 
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("title", "로그인-자바 예약 플랫폼");
-		return "Login";
+		request.setAttribute("title", "아이디로 시작하기");
+		return "LoginInput";
 	}
 	
 

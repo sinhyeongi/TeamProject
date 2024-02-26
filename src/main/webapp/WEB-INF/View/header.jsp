@@ -16,6 +16,10 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+<!-- LoginInput css -->
+<c:if test="${page eq 'LoginInput.jsp'}">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
+</c:if>
 <!-- Login css -->
 <c:if test="${page eq 'Login.jsp' }">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
@@ -26,10 +30,10 @@
 <!-- kakao Login sdk  -->
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
   integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-<script>
-  Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
-</script>
-<script type="text/javascript" defer src="${ctx}/Js/Login.js"></script>
+
+ 
+
+<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
 </c:if>
 	<!--  Js import -->
 	<script defer="defer" src="${ctx }/Js/header.js?dsa"></script>
@@ -37,21 +41,21 @@
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-		<script defer="defer" src="${ctx }/Js/reserve.js?dsad3232sadsa"></script>
+		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
-	<!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dsdsd32" type="text/css">
+<!--  css import -->
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dd3" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
-		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3a" type="text/css">
+		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
 	</c:if>
-
+	<link rel="stylesheet" href="${ctx}/Css/main.css?dsdsd32" type="text/css">
 </head>
 <body>
   <header>
     <nav>
       <div class="header_logo">
-        <a href="#"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
+        <a href="Main.do"><img src="${ctx }/img/logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
         <li><a href="#">이벤트</a></li>

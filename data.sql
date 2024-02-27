@@ -920,3 +920,6 @@ values('ro',140,'gyeongju/swiss_hotel/family_twin.png');
 select * from img;
 
 # --------------- 경주 끝 ---------------
+select count(*) from hotel;
+select hotel_no,count(*) from room group by hotel_no;
+select uploader,count(*) from img group by uploader;

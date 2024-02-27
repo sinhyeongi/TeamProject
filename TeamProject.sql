@@ -1,3 +1,4 @@
+#drop database java;
 create database java;
 use java;
 #고객 테이블
@@ -63,7 +64,7 @@ select * from member_coupon;
 # 호텔
 create table hotel(
 	no int auto_increment primary key, -- 호텔 번호
-    host varchar(100) not null unique, -- 호스트 (유저 아이디)
+    host varchar(100) not null, -- 호스트 (유저 아이디)
     name varchar(300) not null, -- 호텔 이름
     star int not null, -- 호텔 성급
     tel varchar(100) not null unique, -- 호텔 전화번호
@@ -74,12 +75,11 @@ create table hotel(
     checkin varchar(50) not null, -- 체크인 시간
     checkout varchar(50) not null, -- 체크아웃 시간
     account varchar(50) not null, -- 계좌번호
+    x varchar(100),
+    y varchar(100),
     foreign key(host) references member(id) on delete cascade
 );
-insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) values('test1','TestHotel',5,'123-1234-1234
-','','Test1',11,'16:00','11:00','11-1111-111111');
 select * from hotel;
-update hotel set name = 'test' where no = 1;
 #객실
 create table room(
 	no int auto_increment primary key, -- 객실 번호
@@ -92,7 +92,6 @@ create table room(
     amenities varchar(300), -- 편의 시설
     foreign key(hotel_no) references hotel(no) on delete cascade
 );
-insert into room (hotel_no,price,name,bedinfo,total_qty,occ) values(1,1000,'골져스','트윈',10,4);
 select * from room;
 
 # 예약
@@ -113,8 +112,7 @@ create table reserve(
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
-insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit) 
-values(1,1,'test1','111-1111-1111',Current_date(),Date_add(current_date(), interval 3 day),1000,4,'도보');
+
 select * from reserve;
 
 # 리뷰 비회원 리뷰 작성 불가
@@ -132,7 +130,6 @@ create table review(
     foreign key(hotel_no) references hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
-insert into review (nickname,hotel_no,room_no,star_point,res_no) values('test1',1,1,5,1);
 select * from review;
 #리뷰 추천 
 create table review_rec(
@@ -141,7 +138,6 @@ create table review_rec(
     foreign key(no) references review(no) on delete cascade,
     foreign key(id) references member(id) on delete cascade
 );
-insert into review_rec(no,id) values(1,'test1');
 select * from review_rec;
 #이미지
 create table img(

@@ -238,3 +238,258 @@ insert into img values('ro',49,'seoul/lottehotel_word/reg_double.png');
 insert into room(hotel_no,price,name,total_qty,occ,bedinfo,amenities) 
 values(10,447700,'디럭스 with 소파베드',7,3,'더블베드 1+소파베드 1','침대, TV, 에어컨, 다리미, 손전등, 욕실용품, 슬리퍼, 목욕가운');
 insert into img values('ro',50,'seoul/lottehotel_word/deluxe_sopabed.png');
+
+
+/* 부산광역시 시작 */
+-- 마리안느호텔
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '마리안느 호텔', 3, '051-606-0600', '미니바,와이파이,욕실용품,레스토랑,금연,TV,라운지,객실샤워실,카페,장애인편의', 0, '부산 해운대구 중동 1400-24', 21, '15:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (11, 55000, '스탠다드 더블', 7, 2, '더블베드 1개', 'TV, 티테이블, 에어컨, 냉장고, 슬리퍼, 욕조, 전기포트, 욕실용품, 헤어드라이기');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (11, 55000, '스탠다드 트윈', 7, 2, '싱글베드 2개', 'TV, 티테이블, 에어컨, 냉장고, 슬리퍼, 전기포트, 욕실용품, 헤어드라이기');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (11, 62000, '슈페리어 트윈', 4, 3, '싱글베드 2개', 'TV, 티테이블, 에어컨, 냉장고, 슬리퍼, 욕조, 전기포트, 욕실용품, 헤어드라이기');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (11, 62000, '슈페리어 더블', 5, 2, '더블베드 1개', 'TV, 티테이블, 에어컨, 냉장고, 슬리퍼, 욕조, 전기포트, 욕실용품, 헤어드라이기');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (11, 200000, '유러피안 스위트', 4, 8, '더블베드 1개', 'TV, 티테이블, 에어컨, 냉장고, 슬리퍼, 욕조, 전기포트, 욕실용품, 헤어드라이기');
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',11,"busan/mari_hotel/6288a6cdf998943e11a89749db7d5776.png");
+-- 객실 이미지
+INSERT INTO img values('ro',51,"busan/mari_hotel/st_double.png");
+INSERT INTO img values('ro',52,"busan/mari_hotel/st_twin.png");
+INSERT INTO img values('ro',53,"busan/mari_hotel/sp_twin.png");
+INSERT INTO img values('ro',54,"busan/mari_hotel/sp_double.png");
+INSERT INTO img values('ro',55,"busan/mari_hotel/euro_sweet.png");
+
+-- 윈덤 그랜드 부산
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '윈덤 그랜드 부산', 5, '051-993-3000', '피트니스,수영장,미니바,사우나,와이파이,욕실용품,발렛파킹,레스토랑,금연,TV,엘레베이터,에어컨,라운지,냉장고,짐보관가능,객실샤워실,객실샤워실', 0, '부산 서구 암남동 123-15', 21, '15:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (12, 231000, '프리미엄 패밀리', 5, 3, '싱글베드 1개,더블베드 1', 'TV, 커피머신, 에어컨, 책상, 냉장고, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (12, 231000, '프리미엄 킹', 5, 2, '더블베드 1개', 'TV, 커피머신, 에어컨, 책상, 냉장고, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (12, 231000, '프리미엄 코너 킹', 6, 2, '더블베드 1개', 'TV, 커피머신, 에어컨, 책상, 냉장고, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (12, 616000, '코너 스위트 킹', 6, 2, '더블베드 1개', 'TV, 커피머신, 에어컨, 책상, 냉장고, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (12, 946000, '코너 스위트 투베드룸', 6, 4, '더블베드 2개', 'TV, 커피머신, 에어컨, 책상, 냉장고, 욕실용품');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',12,"busan/windom_grand_busan_hotel/windom_grand.png");
+-- 객실 이미지
+INSERT INTO img values('ro',56,"busan/windom_grand_busan_hotel/premium_family.png");
+INSERT INTO img values('ro',57,"busan/windom_grand_busan_hotel/premium_king.png");
+INSERT INTO img values('ro',58,"busan/windom_grand_busan_hotel/premium_conner_king.png");
+INSERT INTO img values('ro',59,"busan/windom_grand_busan_hotel/conner_sweet_king.png");
+INSERT INTO img values('ro',60,"busan/windom_grand_busan_hotel/conner_sweet_twobed.png");
+
+-- 해운대 센트럴 호텔
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '해운대 센트럴 호텔', 3, '051-760-9000', '수영장,미니바,와이파이,욕실용품,금연,TV,엘레베이터,에어컨,냉장고,객실샤워실,욕조,무료주차,드라이기,카드결제,주차장', 0, '부산 해운대구 중동 1137-4', 21, '15:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (13, 140000, '스탠다드 더블룸', 6, 2, '더블베드 1개', 'TV, 티테이블, 의자 2개, 에어컨, 냉장고, 미니바, 드라이기, 욕조, 욕실용품, 샤워가운, 슬리퍼');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (13, 140000, '스탠다드 트윈룸', 6, 2, '싱글베드 2개', 'TV, 티테이블, 의자 3개, 에어컨, 냉장고, 미니바, 드라이기, 욕조, 욕실용품, 샤워가운, 슬리퍼');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (13, 160000, '슈페리어 트윈룸', 6, 2, '싱글베드 2개', 'TV, 티테이블, 의자 3개, 에어컨, 냉장고, 미니바, 드라이기, 욕조, 욕실용품, 샤워가운, 슬리퍼');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (13, 160000, '슈페리어 더블룸', 6, 2, '더블베드 1개', 'TV, 티테이블, 의자 3개, 에어컨, 냉장고, 미니바, 드라이기, 욕조, 욕실용품, 샤워가운, 슬리퍼');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (13, 480000, '로얄 스위트 오션', 6, 5, '싱글베드 1개, 더블베드 2개', 'TV, 소파, 티테이블, 의자 4개, 에어컨, 냉장고, 미니바, 드라이기, 욕조, 욕실용품, 샤워가운, 슬리퍼');
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',13,"busan/haeundae_central_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',61,"busan/haeundae_central_hotel/st_double.png");
+INSERT INTO img values('ro',62,"busan/haeundae_central_hotel/st_twin.png");
+INSERT INTO img values('ro',63,"busan/haeundae_central_hotel/sp_twin.png");
+INSERT INTO img values('ro',64,"busan/haeundae_central_hotel/sp_double.png");
+INSERT INTO img values('ro',65,"busan/haeundae_central_hotel/royal_sweet.png");
+
+-- 레이어스 호텔 부산
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '레이어스 호텔 부산', 4, '051-999-1700', '사우나,와이파이,욕실용품,레스토랑,금연,TV,에어컨,라운지,냉장고,객실샤워실,무료주차,카페,드라이기,세탁기,주차장', 0, '부산 사하구 하단동 525-4', 21, '15:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (14, 200000, '이코노미 더블', 6, 2, '더블베드 1개', '43Inch QLED TV, 생수, 헤어드라이기, 커피포트, 에어컨, 전화기, 냉장고, 비데, 슬리퍼, 가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (14, 200000, '이코노미 트윈', 6, 2, '싱글베드 2개', '43Inch QLED TV, 생수, 헤어드라이기, 커피포트, 에어컨, 전화기, 냉장고, 비데, 슬리퍼, 가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (14, 320000, '디럭스 패밀리', 6, 2, '싱글베드 1개,더블베드 1개', '43Inch QLED TV, 생수, 헤어드라이기, 커피포트, 에어컨, 전화기, 냉장고, 비데, 슬리퍼, 가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (14, 320000, '슈페리어 트리플', 6, 2, '싱글베드 3개', '43Inch QLED TV, 생수, 헤어드라이기, 커피포트, 에어컨, 전화기, 냉장고, 비데, 슬리퍼, 가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (14, 430000, '프레지덴셜 스위트', 6, 4, '싱글베드 1개,더블베드 3개', '43Inch QLED TV, 스타일러, 생수, 헤어드라이기, 커피포트, 에어컨, 전화기, 냉장고, 비데, 슬리퍼, 가운');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',14,"busan/layers_busan_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',66,"busan/layers_busan_hotel/economy_double.png");
+INSERT INTO img values('ro',67,"busan/layers_busan_hotel/economy_twin.png");
+INSERT INTO img values('ro',68,"busan/layers_busan_hotel/deluxe_family.png");
+INSERT INTO img values('ro',69,"busan/layers_busan_hotel/sp_triple.png");
+INSERT INTO img values('ro',70,"busan/layers_busan_hotel/presidential_sweet.png");
+
+-- 시애틀비 호텔
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '시애틀비 호텔', 2, '051-852-7685', '와이파이,욕실용품,금연,TV,냉장고,짐보관가능,객실샤워실,욕조,무료주차,드라이기,장애인편의시설', 0, '부산 연제구 연산동 1255-4', 21, '15:00', '12:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (15, 60000, '스탠다드 더블', 6, 2, '더블베드 1개', 'TV, PC, 구두주걱, 냉장고, 생수2병, 커피, 컵, 전기포트, 면도기, 욕실용품, 비데, 목욕가운, 슬리퍼, 헤어드라이기, 욕조');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (15, 65000, '디럭스 더블', 6, 2, '더블베드 1개', 'TV, PC, 구두주걱, 냉장고, 생수2병, 커피, 컵, 전기포트, 면도기, 욕실용품, 비데, 목욕가운, 슬리퍼, 헤어드라이기, 욕조');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (15, 70000, '슈페리어 더블', 6, 2, '더블베드 1개', 'TV, PC, 구두주걱, 냉장고, 생수2병, 커피, 컵, 전기포트, 면도기, 욕실용품, 비데, 목욕가운, 슬리퍼, 헤어드라이기, 욕조');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (15, 75000, '프리미엄 더블', 6, 2, '더블베드 1개', 'TV, PC, 구두주걱, 냉장고, 생수2병, 커피, 컵, 전기포트, 면도기, 욕실용품, 비데, 목욕가운, 슬리퍼, 헤어드라이기, 스파욕조');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (15, 160000, '패밀리 스위트', 6, 4, '더블베드 2개', 'TV, PC, 구두주걱, 냉장고, 생수2병, 커피, 컵, 전기포트, 면도기, 욕실용품, 비데, 목욕가운, 슬리퍼, 헤어드라이기, 스파욕조');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',15,"busan/seattleb_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',71,"busan/seattleb_hotel/st_double.png");
+INSERT INTO img values('ro',72,"busan/seattleb_hotel/deluxe_double.png");
+INSERT INTO img values('ro',73,"busan/seattleb_hotel/sp_double.png");
+INSERT INTO img values('ro',74,"busan/seattleb_hotel/premium_double.png");
+INSERT INTO img values('ro',75,"busan/seattleb_hotel/family_sweet.png");
+ /* 부산광역시 끝 */
+ 
+/* 강원도 강릉 시작 */
+
+-- 정동진 썬크루즈호텔
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '정동진 썬크루즈호텔', 4, '033-610-7000', '수영장,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,라운지,냉장고,짐보관가능,객실샤워실,무료주차,드라이기,주방/식당,주차장', 0, '강원 강릉시 강동면 정동진리 50-10', 32, '15:00', '11:00', '0000');
+
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (16, 110000, '스탠다드 더블 일출 발코니 하프오션뷰', 6, 2, '더블베드 1개', 'TV, 쇼파, 옷장, 에어컨, 쇼케이스, 식탁, 전자레인지, 인덕션, 식기도구, 드라이기, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (16, 110000, '콘도 스탠다드 더블 파크뷰', 6, 2, '더블베드 1개', 'TV, 쇼파, 옷장, 에어컨, 식탁, 전자레인지, 인덕션, 식기도구, 드라이기, 욕실용품');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (16, 132000, '(썬크루즈) 럭셔리 더블 일출 하프오션뷰', 6, 2, '더블베드 1개', 'TV, 쇼파, 옷장, 티테이블, 쇼케이스, 에어컨, 커피머신기, 드라이기, 욕실용품, 샤워가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (16, 145000, '(썬크루즈) 럭셔리 더블 오션뷰', 6, 2, '더블베드 1개', 'TV, 쇼파, 옷장, 티테이블, 쇼케이스, 에어컨, 커피머신기, 드라이기, 욕실용품, 샤워가운');
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (16, 220000, '(비치 크루즈) 테라스 트윈A', 6, 4, '더블베드 2개', 'TV, 쇼파, 옷장, 티테이블, 에어컨, 미니바, 커피머신기, 전자레인지, 드라이기, 욕실용품, 샤워가운');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',16,"gangleung/suncruise_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',76,"gangleung/suncruise_hotel/standard_double.png");
+INSERT INTO img values('ro',77,"gangleung/suncruise_hotel/condo_standard_double.png");
+INSERT INTO img values('ro',78,"gangleung/suncruise_hotel/cruise_double.png");
+INSERT INTO img values('ro',79,"gangleung/suncruise_hotel/luxury_double.png");
+INSERT INTO img values('ro',80,"gangleung/suncruise_hotel/cruise_terrace_twin.png");
+
+
+-- 강릉 포시즌 호텔
+INSERT INTO hotel (host, name, star, tel, Fac, star_point, address, area, checkin, checkout, account)
+VALUES ('admin', '강릉 포시즌 호텔', 2, '010-9905-9456', '와이파이,욕실용품,금연,TV,객실내취사,에어컨,냉장고,객실샤워실,무료주차,드라이기,주차장', 0, '강원 강릉시 안현동 10-5', 32, '15:00', '11:00', '0000');
+-- 객실
+-- 마운틴
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (17, 69000, '마운틴', 6, 2, '더블베드 1개', 'TV, 에어컨, 냉장고, 헤어드라이기, 전화기, 커피포트, 머리빗, 슬리퍼(실내용), 비누, 샴푸, 린스, 헤어젤, 치약, 스킨, 로션, 생수 2병');
+-- 오션 원베드
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (17, 69000, '오션 원베드', 6, 2, '더블베드 1개', 'TV, 에어컨, 냉장고, 헤어드라이기, 전화기, 커피포트, 머리빗, 슬리퍼(실내용), 비누, 샴푸, 린스, 헤어젤, 치약, 스킨, 로션, 생수 2병');
+-- 오션 투베드
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (17, 79000, '오션 투베드', 6, 2, '싱글베드 1개,더블베드 1개', 'TV, 에어컨, 냉장고, 헤어드라이기, 전화기, 커피포트, 머리빗, 슬리퍼(실내용), 비누, 샴푸, 린스, 헤어젤, 치약, 스킨, 로션, 생수 2병');
+-- 펜션형 원룸 (오션뷰)
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (17, 79000, '펜션형 원룸 (오션뷰)', 6, 2, '더블베드 1개', 'TV, 에어컨, 냉장고, 헤어드라이기, 전화기, 커피포트, 머리빗, 슬리퍼(실내용), 비누, 샴푸, 린스, 헤어젤, 치약, 스킨, 로션, 세안용2, 생수 2병');
+-- 펜션형 스위트룸 (오션뷰)
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (17, 159000, '펜션형 스위트룸 (오션뷰)', 6, 4, '싱글베드 1개,더블베드 1개', 'TV, 에어컨, 냉장고, 헤어드라이기, 전화기, 커피포트, 머리빗, 슬리퍼(실내용), 비누, 샴푸, 린스, 헤어젤, 치약, 스킨, 로션, 세안용2, 생수 2병');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',17,"gangleung/4season_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',81,"gangleung/4season_hotel/mountain.png");
+INSERT INTO img values('ro',82,"gangleung/4season_hotel/ocean_onebed.png");
+INSERT INTO img values('ro',83,"gangleung/4season_hotel/ocean_twobed.png");
+INSERT INTO img values('ro',84,"gangleung/4season_hotel/oneroom.png");
+INSERT INTO img values('ro',85,"gangleung/4season_hotel/sweetroom.png");
+
+
+-- 강릉 그레이호텔
+INSERT INTO hotel (host, name, star, tel, Fac, address, area, checkin, checkout, account)
+VALUES ('admin', '강릉 그레이호텔', 3, '1600-3886', '와이파이,욕실용품,금연,TV,에어컨,냉장고,객실샤워실,무료주차,드라이기,다리미,주차장', '강원 강릉시 교동 1871-3', 32, '15:00', '11:00', '0000');
+-- 객실
+-- 슈페리어 더블
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (18, 79000, '슈페리어 더블', 6, 2, '더블베드 1개', 'TV, 구스이불, 냉장고, 생수2병, 티셋트, 헤어드라이기, 목욕가운2개, 슬리퍼, 타월, 커피포트, 비데, 샤워용품, 헤어빗');
+-- 디럭스 더블
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (18, 89000, '디럭스 더블', 6, 2, '더블베드 1개', 'TV, 구스이불, 냉장고, 생수2병, 티셋트, 헤어드라이기, 목욕가운2개, 슬리퍼, 타월, 커피포트, 비데, 샤워용품, 헤어빗');
+-- 디럭스 트윈
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (18, 89000, '디럭스 트윈', 6, 2, '싱글베드 2개', 'TV, 구스이불, 냉장고, 생수2병, 티셋트, 헤어드라이기, 목욕가운2개, 슬리퍼, 타월, 커피포트, 비데, 샤워용품, 헤어빗');
+-- 슈페리어 트윈
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (18, 89000, '슈페리어 트윈', 6, 2, '싱글베드 2개', 'TV, 구스이불, 냉장고, 생수2병, 티셋트, 헤어드라이기, 목욕가운2개, 슬리퍼, 타월, 커피포트, 비데, 샤워용품, 헤어빗');
+-- 스위트
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES (18, 159000, '스위트', 6, 3, '싱글베드 1개,더블베드 1개', '침대, TV, 쇼파');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',18,"gangleung/grey_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',86,"gangleung/grey_hotel/superior_double.png");
+INSERT INTO img values('ro',87,"gangleung/grey_hotel/deluxe_double.png");
+INSERT INTO img values('ro',88,"gangleung/grey_hotel/deluxe_twin.png");
+INSERT INTO img values('ro',89,"gangleung/grey_hotel/superior_twin.png");
+INSERT INTO img values('ro',90,"gangleung/grey_hotel/sweet.png");
+
+-- 세인트존스 호텔
+INSERT INTO hotel (host, name, star, tel, Fac, address, area, checkin, checkout, account)
+VALUES ('admin', '세인트존스 호텔', 5, '033-660-9000', '피트니스,반려견동반,사우나,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,에어컨,짐보관가능,객실샤워실,무료주차,드라이기,카드결제,주차장', '강원 강릉시 강문동 1-1', 32, '16:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES 
+(19, 280000, '펫 더블 (노오션뷰/Room Only)', 3, 2, '더블베드 1개', 'TV, 에어컨, 테이블, 헤어드라이기, 반려견 용품 (간식1팩, 배변패드 2매, 봉투 2매, 애견전용수건 2장, 밥그릇)'),
+(19, 210000, '골져스 오션 더블', 6, 2, '더블베드 1개', '침대, TV, 에어컨, 티테이블, 미니바, 전기포트, 샤워가운, 욕실용품, 비데, 헤어드라이기'),
+(19, 528000, '코너 스위트 (Room Only)', 6, 3, '더블베드 2개', '침대, TV, 에어컨, 티테이블, 미니바, 전기포트, 샤워가운, 욕실용품, 비데, 헤어드라이기'),
+(19, 693000, '로얄스위트 트윈 오션 (Room Only)', 6, 3, '더블베드 2개', ''),
+(19, 825000, '그랑블루 스위트 키즈 (파셜오션&마운틴뷰/룸온리)', 6, 4, '더블베드 1개 ,벙커침대 1 개', '침대, TV, 에어컨, 티테이블, 미니바, 전기포트, 샤워가운, 욕실용품, 비데, 헤어드라이기');
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',19,"gangleung/stjohns_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',91,"gangleung/stjohns_hotel/executive_twin.png");
+INSERT INTO img values('ro',92,"gangleung/stjohns_hotel/executive_double.png");
+INSERT INTO img values('ro',93,"gangleung/stjohns_hotel/deluxe_double.png");
+INSERT INTO img values('ro',94,"gangleung/stjohns_hotel/ambassador_sweet_twin.png");
+INSERT INTO img values('ro',95,"gangleung/stjohns_hotel/royal_sweet.png");
+
+-- 스카이베이호텔
+INSERT INTO hotel (host, name, star, tel, Fac, address, area, checkin, checkout, account)
+VALUES 
+('admin', '스카이베이호텔 경포', 5, '033-923-2000', '피트니스,수영장,사우나,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,에어컨,냉장고,짐보관가능,객실샤워실,무료주차,드라이기,주차장', '강원 강릉시 강문동 258-4', 32, '15:00', '11:00', '0000');
+-- 객실
+INSERT INTO room (hotel_no, price, name, total_qty, occ, bedinfo, amenities)
+VALUES 
+(20, 187550, '이그제큐티브 트윈 (오션뷰)', 10, 2, '싱글베드 1개,더블베드 1개', '침구류, TV, 에어컨, 테이블, 옷장, 냉장고, 헤어드라이기, 욕실용품, 샤워가운'),
+(20, 187550, '이그제큐티브 더블 (오션뷰)', 10, 2, '더블베드 1개', '침구류, TV, 에어컨, 테이블, 옷장, 냉장고, 헤어드라이기, 욕실용품, 샤워가운'),
+(20, 287550, '디럭스 더블 (레이크뷰)', 10, 2, '더블베드 1개', '침구류, TV, 에어컨, 쇼파, 테이블, 옷장, 냉장고, 헤어드라이기, 욕실용품, 샤워가운'),
+(20, 544500, '앰버서더 스위트 트윈 (레이크뷰)', 10, 3, '싱글베드 1개,더블베드 1개', '침구류, TV, 에어컨, 테이블, 옷장, 냉장고, 헤어드라이기, 욕실용품, 샤워가운'),
+(20, 665500, '로얄 스위트 (오션뷰)', 10, 4, '싱글베드 1개,더블베드 1개', '침구류, TV, 에어컨, 테이블, 옷장, 냉장고, 헤어드라이기, 욕실용품, 샤워가운');
+
+-- 호텔 메인 이미지
+INSERT INTO img values('ho',20,"gangleung/skybay_hotel/main.png");
+-- 객실 이미지
+INSERT INTO img values('ro',96,"gangleung/skybay_hotel/pet_double.png");
+INSERT INTO img values('ro',97,"gangleung/skybay_hotel/gorgeous_ocean_double.png");
+INSERT INTO img values('ro',98,"gangleung/skybay_hotel/conner_sweet.png");
+INSERT INTO img values('ro',99,"gangleung/skybay_hotel/royal_sweet_twin.png");
+INSERT INTO img values('ro',100,"gangleung/skybay_hotel/sweet_kids.png");
+/* 강원도 강릉 끝 */
+
+select * from hotel;
+select * from room;
+select * from img;

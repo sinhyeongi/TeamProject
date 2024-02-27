@@ -63,7 +63,7 @@
 	<c:if test="${page eq 'Main.jsp' }">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-		 <link rel="stylesheet" href="${ctx}/Css/main.css?ds3332" type="text/css">
+		 <link rel="stylesheet" href="${ctx}/Css/main.css?ds33322342134" type="text/css">
 	</c:if>
 	<c:if test="${page eq 'Member_Insert.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Insert.css?ds3332" type="text/css">
@@ -90,7 +90,7 @@
     </nav>
     <div class="header_popup">
       <!-- 클릭시 로그인/ 회원가입 페이지로 이동 추가해야함 -->
-      <div><a>로그인 / 회원가입 </a> </div>
+      <div><a href="Login.do">로그인 / 회원가입 </a> </div>
       <!-- 클릭시 비회원 예약조회 페이지로 이동 추가해야함 -->
       <div><a>비회원 예약조회</a></div>
     </div>

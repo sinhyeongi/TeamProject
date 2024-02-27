@@ -493,3 +493,430 @@ INSERT INTO img values('ro',100,"gangleung/skybay_hotel/sweet_kids.png");
 select * from hotel;
 select * from room;
 select * from img;
+
+
+# -- 인천 --
+-- 호텔 추가
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','오라카이 송도파크 호텔',4,'032-210-7000','피트니스,수영장,미니바,사우나,레스토랑,주차장,카페,장애인편의시설','인천 연수구 테크노파크로 151 (송도동)',23,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','파라다이스 호텔',5,'032-729-2000','피트니스,수영장,미니바,사우나,레스토랑,주차장,카페,장애인편의시설','인천 중구 영종해안남로321번길 186 (운서동)',23,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','오크우드 호텔',5,'032-726-2001','피트니스,미니바,사우나,레스토랑,주차장,장애인편의시설','인천 연수구 컨벤시아대로 165 (송도동)',23,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','골든튤립 호텔',5,'032-232-2000','레스토랑,주차장,카페','인천 중구 흰바위로59번길 8 (운서동)',23,'15:00','12:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','하버파크 호텔',4,'032-770-9500','피트니스,레스토랑,주차장,카페,편의점,장애인 편의시설','인천 중구 제물량로 217 (항동3가)',23,'15:00','11:00','11-1111-111111');
+
+-- 룸 추가
+
+select * from room;
+-- 송도 호텔 
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(21,121000,'디럭스 더블룸','더블베드 1개',7,2,'침대, 55인치 스마트TV, 냉장고, 에어컨, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(21,121000,'디럭스 트윈룸','싱글베드 2개',5,2,'침대, 55인치 스마트TV, 냉장고, 에어컨, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(21,176000,'디럭스 킹룸','킹베드 1개',5,2,'침대, 55인치 스마트TV, 냉장고, 에어컨, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(21,187000,'프리미어 트윈룸','싱글베드 1개,더블베드 1개',4,3,'침대, 55인치 스마트TV, 냉장고, 에어컨, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(21,220000,'주니어 스위트룸','더블베드 1개',6,2,'침대, 55인치 스마트TV, 냉장고, 에어컨, 헤어드라이기');
+
+-- 파라다이스 호텔 
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,317900,'디럭스 트윈','더블베드 2개',6,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,364650,'프리미엄 디럭스 트윈','더블베드 2개',8,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,484000,'프리미엄 디럭스 트윈','킹베드 1개',5,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,484000,'그랜드 프리미엄 디럭스 더블','킹베드 1개',5,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,484000,'그랜드 프리미엄 디럭스 트윈','더블베드 2개',10,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(22,704000,'디럭스 스위트 더블','킹베드 1개',4,2,'침대, TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+select * from room;
+
+
+-- 오크우드 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(23,221655,'스튜디오 슈페리어 더블룸','더블베드 1개',7,2,'침대, TV, 테이블, 에어컨, 인덕션, 전자레인지, 전기밥솥, 커피포트, 식기세척기, 세탁기, 다리미 및 다림판, 금고, 식기류');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(23,233755,'스튜디오 디럭스 더블룸','더블베드 1개',7,2,'침대, TV, 테이블, 에어컨, 인덕션, 전자레인지, 전기밥솥, 커피포트, 식기세척기, 세탁기, 다리미 및 다림판, 금고, 식기류');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(23,314600,'1베드룸 프리미어','더블베드 1개',4,2,'침대, TV, 테이블, 에어컨, 인덕션, 스팀사우나, 전자레인지, 전기밥솥, 커피포트, 식기세척기, 세탁기, 다리미 및 다림판, 금고, 식기류, 스마트 TV, OTT 서비스');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(23,540000,'2베드룸 슈페리어','더블베드 2개',9,4,'침대, TV, 테이블, 에어컨, 인덕션, 스팀사우나, 전자레인지, 전기밥솥, 커피포트, 식기세척기, 세탁기, 다리미 및 다림판, 금고, 식기류, 스마트 TV, OTT 서비스');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(23,1634881,'펜트하우스','더블베드 2개',4,4,'침대, 안마의자, 소파, 식탁, 의자, 인덕션 레인지, 냉장고, 와인 냉장고, 식기세척기, 전자레인지, 전기 주전자, 홈시어터, 세탁기, 건조기, 다리미, 비데, 스팀 사우나');
+
+-- 골든튤립 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(24,93000,'스탠다드 퀸','더블베드 1개',4,2,'TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(24,93888,'레지던스 스튜디오 트윈','싱글베드 2개',10,2,'TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(24,94777,'스탠다드 트윈','싱글베드 2개',10,2,'TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(24,101111,'스탠다드 킹','더블베드 1개',7,2,'TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(24,101666,'헐리우드 킹','더블베드 1개',6,2,'TV, 에어컨, 개인금고, 전화기, 냉장고, 커피포트, 생수, 헤어드라이기, 비데, 욕실용품, 슬리퍼');
+
+
+-- 하버파크 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(25,121111,'디럭스 더블 (시티뷰)','더블베드 1개',8,2,'침대, TV, 티테이블 세트, 커피포트,헤어드라이기, 금고, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(25,121111,'디럭스 트윈 (시티뷰)','싱글베드 2개',6,2,'침대, TV, 티테이블 세트, 커피포트,헤어드라이기, 금고, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(25,151111,'디럭스 트리플','싱글베드 3개',5,3,'TV, 냉장고, 전기포트, 옷장, 스탠드, 금고, 샤워부스, 타올, 욕실용품, 비데, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(25,151111,'디럭스 패밀리 트윈','싱글베드 1개,더블베드 1개',6,3,'TV, 냉장고, 전기포트, 옷장, 스탠드, 금고, 샤워부스, 타올, 욕실용품, 비데, 헤어드라이기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(25,131111,'디럭스 트윈 (하버뷰)','싱글베드 2개',5,2,'침대, TV, 티테이블 세트, 커피포트,헤어드라이기, 금고, 화장대, 욕실용품');
+
+select * from room;
+
+select * from img;
+			-- 송도 호텔 -- 
+-- 호텔 이미지 
+insert into img (uploader,no,url)
+values('ho',21,'incheon/songdopark_hotel/songdo_hotel.png');
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',91,'incheon/songdopark_hotel/delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',92,'incheon/songdopark_hotel/delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',93,'incheon/songdopark_hotel/delux_king.png');
+
+insert into img (uploader,no,url)
+values('ro',94,'incheon/songdopark_hotel/premier_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',95,'incheon/songdopark_hotel/junior_sweet.png');
+
+			-- 파라다이스 호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',22,'incheon/paradise_hotel/paradise_hotel.png');
+-- 룸 이미지 
+insert into img (uploader,no,url)
+values('ro',96,'incheon/paradise_hotel/delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',97,'incheon/paradise_hotel/premier_delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',98,'incheon/paradise_hotel/grand_premier_delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',99,'incheon/paradise_hotel/grand_premier_delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',100,'incheon/paradise_hotel/delux_sweet_double.png');
+
+		-- 오크우드 호텔 --
+-- 호텔 이미지 --
+insert into img (uploader,no,url)
+values('ho',23,'incheon/oakwood_hotel/oakwood_hotel.png');
+
+-- 룸 이미지 -- 
+insert into img (uploader,no,url)
+values('ro',101,'incheon/oakwood_hotel/studio_superior_double.png');
+
+insert into img (uploader,no,url)
+values('ro',102,'incheon/oakwood_hotel/studio_delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',103,'incheon/oakwood_hotel/one_bedroom_premier.png');
+
+insert into img (uploader,no,url)
+values('ro',104,'incheon/oakwood_hotel/two_bedroom_superior.png');
+
+insert into img (uploader,no,url)
+values('ro',105,'incheon/oakwood_hotel/penthouse.png');
+
+	-- 골든튤립 호텔 --
+-- 호텔 이미지 --
+insert into img (uploader,no,url)
+values('ho',24,'incheon/goldentulip_hotel/goldentulip_hotel.png');
+
+-- 룸 이미지 --
+insert into img (uploader,no,url)
+values('ro',106,'incheon/goldentulip_hotel/standard_queen.png');
+
+insert into img (uploader,no,url)
+values('ro',107,'incheon/goldentulip_hotel/residence_studio_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',108,'incheon/goldentulip_hotel/standard_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',109,'incheon/goldentulip_hotel/standard_king.png');
+
+insert into img (uploader,no,url)
+values('ro',110,'incheon/goldentulip_hotel/hollywood_king.png');
+
+		-- 하버파크 호텔 --
+-- 호텔이미지--
+insert into img (uploader,no,url)
+values('ho',25,'incheon/harborpark_hotel/harborpark_hotel.png');
+
+-- 룸 이미지 --
+insert into img (uploader,no,url)
+values('ro',111,'incheon/harborpark_hotel/delux_double_citiview.png');
+
+insert into img (uploader,no,url)
+values('ro',112,'incheon/harborpark_hotel/delux_twin_citiview.png');
+
+insert into img (uploader,no,url)
+values('ro',113,'incheon/harborpark_hotel/delux_triple.png');
+
+insert into img (uploader,no,url)
+values('ro',114,'incheon/harborpark_hotel/delux_family_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',115,'incheon/harborpark_hotel/delux_twin_harborview.png');
+
+# 인천 끝 ---------------
+
+select * from hotel;
+select * from room;
+select * from img;
+
+# --------------- 경주 시작 ---------------
+-- 호텔추가 (경주) -- 
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','힐튼 호텔',5,'054-745-7788','피트니스,수영장,미니바,사우나,레스토랑,주차장,장애인편의시설','경북 경주시 보문로 484-7 (신평동)',37,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','코모도 호텔',4,'054-745-7701','수영장,미니바,사우나,레스토랑,라운지,주차장,편의점,장애인편의시설','경북 경주시 보문로 422 (신평동)',37,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','지지 호텔',3,'054-701-0090','피트니스,사우나,주차장','경북 경주시 태종로699번길 3 (노서동)',37,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','코오롱 호텔',4,'054-746-9001','사우나,레스토랑,편의점,장애인 편의시설,주차장','경북 경주시 불국로 289-17 (마동)',37,'15:00','11:00','11-1111-111111');
+
+insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
+values('admin','스위스로젠 호텔',3,'054-748-4848','피트니스,수영장,레스토랑,라운지,장애인 편의시설,주차장','경북 경주시 보문로 465-37 (신평동)',37,'15:00','11:00','11-1111-111111');
+
+-- 룸 추가 (경주) -- 
+		-- 힐튼 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(26,150000,'디럭스 더블','더블베드 1개',7,2,'침대, TV, 테이블, 에어컨, 미니바, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(26,150000,'디럭스 트윈','싱글베드 2개',10,2,'침대, TV, 테이블, 에어컨, 미니바, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(26,180000,'디럭스 패밀리','싱글베드 1개,더블베드 1개',6,3,'침대, TV, 테이블, 에어컨, 미니바, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(26,170000,'디럭스 트리플','싱글베드 3개',8,3,'침대, TV, 테이블, 에어컨, 미니바, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(26,293250,'프리미엄 레이크뷰','킹베드 2개',4,4,'침대, TV, 테이블, 에어컨, 미니바, 욕실용품');
+
+		-- 코모도 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(27,159000,'슈페리어 쿼드룸 마운틴뷰','싱글베드 4개',7,2,'침대, TV, 테이블, 헤어드라이기, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(27,159000,'디럭스 트리플 마운틴뷰','싱글베드 2개,더블베드 1개',7,4,'침대, TV, 테이블, 헤어드라이기, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(27,179000,'슈페리어 쿼드룸 레이크뷰','싱글베드 4개',5,4,'침대, TV, 테이블, 헤어드라이기, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(27,139000,'슈페리어 트윈 레이크뷰','싱글베드 1개,더블베드 1개',10,3,'침대, TV, 테이블, 헤어드라이기, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(27,159000,'디럭스 트윈 레이크뷰','싱글베드 2개',9,3,'침대, TV, 테이블, 헤어드라이기, 욕실용품');
+
+
+	-- 지지 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(28,150000,'스탠다드 더블','더블베드 1개',7,2,'침대, TV, 테이블, 에어컨, 냉장고, 서랍장, 옷장, 헤어드라이기, 욕실용품, 목욕가운, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(28,150000,'스탠다드 트윈','싱글베드 2개',9,2,'침대, TV, 테이블, 에어컨, 냉장고, 서랍장, 옷장, 헤어드라이기, 욕실용품, 목욕가운, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(28,180000,'디럭스 더블','더블베드 1개',6,2,'침대, TV, 테이블, 에어컨, 냉장고, 서랍장, 옷장, 헤어드라이기, 욕실용품, 목욕가운, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(28,180000,'디럭스 트윈','싱글베드 1개,더블베드 1개',10,3,'침대, TV, 테이블, 에어컨, 냉장고, 서랍장, 옷장, 헤어드라이기, 욕실용품, 목욕가운, 슬리퍼');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(28,220000,'스위트','싱글베드 1개,더블베드 1개',5,3,'침대, TV, 테이블, 에어컨, 냉장고, 서랍장, 옷장, 헤어드라이기, 욕실용품, 목욕가운, 슬리퍼');
+
+-- 코오롱 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(29,120000,'패밀리 슈퍼트윈','더블베드 2개',6,2,'TV, 전기포트, 드라이기, 냉장고, 의자, 전화기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(29,127000,'패밀리 트리플','싱글베드 3개',5,3,'TV, 전기포트, 드라이기, 냉장고, 의자, 전화기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(29,137740,'프리미어 트윈','싱글베드 1개,더블베드 1개',5,2,'TV, 전기포트, 드라이기, 냉장고, 의자, 전화기');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(29,159080,'시그니처 슈퍼 트윈','더블베드 2개',5,2,'TV, 전기포트, 드라이기, 어메니티(샴푸, 바디워시, 면봉, 핸드솝, 슬리퍼), 생수');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(29,164000,'프리미어 슈퍼트윈','더블베드 2개',8,4,'TV, 전기포트, 드라이기, 어메니티(샴푸, 바디워시, 면봉, 핸드솝, 슬리퍼), 생수');
+select * from room;
+
+		-- 스위스로젠 호텔 --
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(30,95000,'스탠다드 더블','더블베드 1개',15,2,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(30,100000,'디럭스 더블','더블베드 1개',10,2,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(30,100000,'스탠다드 트윈','싱글베드 1개,더블베드 1개',7,2,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(30,120000,'패밀리 트윈','더블베드 2개',6,3,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
+
+-- 이미지 추가 (경주) -- 
+select * from img;
+
+		-- 힐튼 호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',26,'gyeongju/hilton_hotel/hilton_hotel.png');
+
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',116,'gyeongju/hilton_hotel/delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',117,'gyeongju/hilton_hotel/delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',118,'gyeongju/hilton_hotel/delux_family.png');
+
+insert into img (uploader,no,url)
+values('ro',119,'gyeongju/hilton_hotel/delux_triple.png');
+
+insert into img (uploader,no,url)
+values('ro',120,'gyeongju/hilton_hotel/premium_lakeview.png');
+
+		-- 코모도 호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',27,'gyeongju/commodore_hotel/commodore_hotel.png');
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',121,'gyeongju/commodore_hotel/superior_quadroom_mountainview.png');
+
+insert into img (uploader,no,url)
+values('ro',122,'gyeongju/commodore_hotel/delux_triple_mountainview.png');
+
+insert into img (uploader,no,url)
+values('ro',123,'gyeongju/commodore_hotel/superior_quadroom_lakeview.png');
+
+insert into img (uploader,no,url)
+values('ro',124,'gyeongju/commodore_hotel/superior_twin_lakeview.png');
+
+insert into img (uploader,no,url)
+values('ro',125,'gyeongju/commodore_hotel/delux_twin_lakeview.png');
+
+		-- 지지호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',28,'gyeongju/gg_hotel/gg_hotel.png');
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',126,'gyeongju/gg_hotel/standard_double.png');
+
+insert into img (uploader,no,url)
+values('ro',127,'gyeongju/gg_hotel/standard_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',128,'gyeongju/gg_hotel/delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',129,'gyeongju/gg_hotel/delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',130,'gyeongju/gg_hotel/sweet.png');
+
+select * from img;
+
+		-- 코오롱 호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',29,'gyeongju/kolon_hotel/kolon_hotel.png');
+
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',131,'gyeongju/kolon_hotel/family_super_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',132,'gyeongju/kolon_hotel/family_triple.png.png');
+
+insert into img (uploader,no,url)
+values('ro',133,'gyeongju/kolon_hotel/premier_twin.png.png');
+
+insert into img (uploader,no,url)
+values('ro',134,'gyeongju/kolon_hotel/signature_super_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',135,'gyeongju/kolon_hotel/premier_super_twin.png');
+
+		-- 스위스로젠 호텔 --
+-- 호텔 이미지
+insert into img (uploader,no,url)
+values('ho',30,'gyeongju/swiss_hotel/swiss_hotel.png');
+
+-- 룸 이미지
+insert into img (uploader,no,url)
+values('ro',136,'gyeongju/swiss_hotel/standard_double.png');
+
+insert into img (uploader,no,url)
+values('ro',137,'gyeongju/swiss_hotel/delux_double.png');
+
+insert into img (uploader,no,url)
+values('ro',138,'gyeongju/swiss_hotel/standard_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',139,'gyeongju/swiss_hotel/delux_twin.png');
+
+insert into img (uploader,no,url)
+values('ro',140,'gyeongju/swiss_hotel/family_twin.png');
+
+select * from img;
+
+# --------------- 경주 끝 ---------------

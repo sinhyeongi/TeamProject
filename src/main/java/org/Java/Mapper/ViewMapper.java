@@ -2,6 +2,7 @@ package org.Java.Mapper;
 
 import java.util.HashMap;
 
+import org.Java.Service.HotelListService;
 import org.Java.Service.KakaoLoginService;
 import org.Java.Service.LoginInputService;
 import org.Java.Service.LoginMainService;
@@ -29,7 +30,9 @@ public class ViewMapper {
 		mapper.put("/Naver_Login.do",new NaverLoginService());
 		mapper.put("/Member_Insert.do", new Member_Insert());
 		mapper.put("/reserve.do", new ReserveService());
-
+		
+		// 호텔 리스트
+		mapper.put("/HotelList.do", new HotelListService());
 	}
 	
 	

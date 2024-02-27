@@ -27,7 +27,7 @@ function showPopup(event) {
   // popup.innerText = '클릭한 아이템: ' + listItemText;
   popup.style.display = 'block';
   popup.style.top = 100+'%';
-  popup.style.right = 6.5+ '%';
+  popup.style.right = 11+ '%';
 }
 
 // Top 버튼 요소 찾기

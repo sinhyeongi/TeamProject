@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="org/Java/MyBatis/db.properties">
+	</properties>
+	<typeAliases>
+	<!--  VO  -->
+	<!-- member VO -->
+		<typeAlias type="org.Java.VO.MemberVO" alias="member"/>
+		<typeAlias type="org.Java.VO.Member_InfoVO" alias="member_info"/>
+		<typeAlias type="org.Java.VO.Member_couponVO" alias="member_coupon"/>
+	<!-- member end -->
+	<!-- hotel VO -->
+		<typeAlias type="org.Java.VO.HotelVO" alias="hotel"/>
+		<typeAlias type="org.Java.VO.RoomVO" alias="room"/>
+	<!-- hotel end -->
+	<!--  Reserve VO -->
+		<typeAlias type="org.Java.VO.ReserveVO" alias="reserve"/>
+	<!--  Reserve end -->
+	<!--  Review VO -->
+		<typeAlias type="org.Java.VO.ReviewVO" alias="review"/>
+		<typeAlias type="org.Java.VO.Review_RecVO" alias="review_rec"/>
+	<!--  Review end -->
+		<typeAlias type="org.Java.VO.BoarderVO" alias="boarder"/>
+		<typeAlias type="org.Java.VO.CouponVO" alias="coupon"/>
+		<typeAlias type="org.Java.VO.ImgVO" alias="img"/>
+	<!-- VO end -->
+	</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <!--  Mapper -->
+    <mapper resource="org/Java/Mapper/MemberMapper.xml"/> 
+    <mapper resource="org/Java/Mapper/Member_InfoMapper.xml"/> 
+    <mapper resource="org/Java/Mapper/Member_CouponMapper.xml"/> 
+  </mappers>
+</configuration>

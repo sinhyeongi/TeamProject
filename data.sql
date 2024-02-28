@@ -10,7 +10,7 @@ select * from img where uploader = 'ro';
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
 values('admin','제주신라호텔',5,'064-735-5114',
 '피트니스,수영장,미니바,사우나,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,에어컨,프린터사용,라운지,짐보관가능,객실샤워실,욕조',
-'제주틀별자치도 서귀포시 색달동 3039-3',39,'16:00','11:00','no data');
+'제주특별자치도 서귀포시 색달동 3039-3',39,'16:00','11:00','no data');
 insert into img (uploader,no,url) values('ho',1,'jeju/silla/main.png');
 # 	lotte
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
@@ -807,6 +807,9 @@ insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities)
 values(30,100000,'스탠다드 트윈','싱글베드 1개,더블베드 1개',7,2,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
 
 insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
+values(30,104900,'디럭스 트윈','싱글베드 1개,더블베드 1개',5,2,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
+
+insert into room (hotel_no,price,name,bedinfo,total_qty,occ,amenities) 
 values(30,120000,'패밀리 트윈','더블베드 2개',6,3,'침대, TV, 냉장고, 에어컨, 커피포트, 헤어드라이기, 화장대, 욕실용품');
 
 -- 이미지 추가 (경주) -- 
@@ -920,3 +923,6 @@ values('ro',140,'gyeongju/swiss_hotel/family_twin.png');
 select * from img;
 
 # --------------- 경주 끝 ---------------
+select count(*) from hotel;
+select hotel_no,count(*) from room group by hotel_no;
+select uploader,count(*) from img group by uploader;

@@ -55,7 +55,7 @@
 	<script defer="defer" src="${ctx }/Js/Naver_Login.js?ds"></script>
 	</c:if>
 <!--  css import -->
-	<link rel="stylesheet" href="${ctx}/Css/header.css?dbgf33" type="text/css">
+	<link rel="stylesheet" href="${ctx}/Css/header.css?dbgf3333" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
@@ -68,6 +68,13 @@
 	<c:if test="${page eq 'Member_Insert.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Insert.css?ds3332" type="text/css">
 	</c:if>
+	
+	
+	<c:if test="${page eq 'Test.jsp' }">
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f36369ca9235d4cb36c1fbff255a8726&libraries=services"></script>
+		<script defer="defer" src="${ctx }/Js/Test.js?sa"></script>
+	</c:if>
+	
 	
 </head>
 <body>

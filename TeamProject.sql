@@ -19,6 +19,8 @@ insert into member(no,id,pw,email,name,birth,gender,phone,address,nickname) valu
 update member set no = 0 where no = 1;
 alter table member auto_increment = 1;
 insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test1','test1','test1@java.org','test1','2024-02-21','남','222-2222-2222','test1','test1');
+insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test2',null,'test2@java.org','test2','2024-02-21','남','333-3333-3333','test2','test2');
+
 select * from member;
 select id,regist from member where regist = current_date();
 

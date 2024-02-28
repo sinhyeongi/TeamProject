@@ -82,10 +82,10 @@ footer{
 }
 .footer_modal{
 	position : fixed;
-	top:10%;
+	top:0%;
 	left : 100%;
 	height: 0;
-	width: 80%;
+	width: 100%;
 	transform : 1.3s;
 	transition : 1.3s;
 	border-radius: 7px;
@@ -95,10 +95,11 @@ footer{
 }
 .modal_on{
 	position: fixed;
-	left: 10%;
-	height: 70%;
+	left: 0%;
+	height: 100%;
 	border:1px solid black;
 	background-color: gray;
+	z-index: 9999;
 }
 .moal_cancle{
 	position: absolute;
@@ -122,6 +123,7 @@ footer{
 	display: flex;
 	flex-direction: column;
 	border:1px solid red;
+	box-sizing: border-box;
 }
 .modal_main > *{
 	flex:1;

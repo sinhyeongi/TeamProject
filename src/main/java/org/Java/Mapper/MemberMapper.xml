@@ -5,5 +5,17 @@
 <mapper namespace="org.Java.Mapper.MemberMapper">
 	<select id="member_getAll" resultType="member">
 		select * from member;
-	</select>  
+	</select>
+	<select id="Check_Login" resultType="member" parameterType="member">
+		select * from member where id = #{id} and pw = #{pw}
+	</select>
+	<select id="CheckLogin_API" resultType="member">
+		select * from member where id = #{id}
+	</select>
+	<delete id="DeleteUser_API">
+		delete from member where id = #{id}
+	</delete>
+	<delete id="DeleteUser" parameterType="member">
+		delete from member where id = #{id} and pw = #{pw}
+	</delete>
 </mapper>

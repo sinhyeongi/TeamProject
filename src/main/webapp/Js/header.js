@@ -130,3 +130,23 @@ window.onload = function () {
     }
   });
 });*/
+
+
+function modal_on(name){
+	$('.footer_modal').addClass('modal_on');
+	const _data = {
+		Modal_page : name
+	}
+	
+	$.ajax({
+		type : "post",
+		url : "Modal.do",
+		data : _data, 
+		success : function(data){
+			$('.modal_main').html(data);
+		},
+		error : function(err){
+			alert("err = "+err);
+		}
+	});
+}

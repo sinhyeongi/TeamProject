@@ -37,9 +37,9 @@ public class KakaoLoginService implements Page {
 		MemberVO vo = getMember(access_token);
 		System.out.println("로그인시도 I  D =  " + vo.getId());
 		System.out.println("로그인시도 name =  " + vo.getNinkname());
-		int check = MemberDAO.getinstance().checkId(vo.getId());
+		MemberVO m = MemberDAO.getinstance().CheckLogin(vo);
 		
-		if(check == 0) {
+		if(m== null) {
 			System.out.println("존재하지 않는 아이디");
 			//아이디 닉네임 저장
 			return "Main";

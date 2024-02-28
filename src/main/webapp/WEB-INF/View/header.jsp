@@ -8,76 +8,87 @@
 <head>
 <meta charset="UTF-8">
 <title>${title }</title>
-	<!-- jquert  --> 
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<!-- flatpickr js import	 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
-<!-- LoginInput css -->
-<c:if test="${page eq 'LoginInput.jsp'}">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
-<!-- LoginInput js -->
-<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
-</c:if>
-<!-- Login css -->
-<c:if test="${page eq 'Login.jsp' }">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
-</c:if>
-
-<!-- Login js -->
-<c:if test="${page eq 'Login.jsp' }">
-<!-- kakao Login sdk  -->
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
-  integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
-  <!--  Naver Login -->
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script>
-  Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
-</script>
-<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
-</c:if>
 	<!--  Js import -->
+	
 	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>
 	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script><!-- jquert  -->
+	<!--  임시 임포트 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"><!-- flatpickr js import	 -->
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<!--  임시 임포트 끝 -->
+	
+	<!-- Login js -->
+	<c:if test="${page eq 'Login.jsp' }">
+	<!-- kakao Login sdk  -->
+		<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+		<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
+	  	<!--  Naver Login -->
+	  	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+		<script>
+	  		Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
+		</script>
+		<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
+	</c:if>
+	<!--  Main js -->
 	<c:if test="${page eq 'Main.jsp' }">
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script defer="defer" src="${ctx }/Js/Main.js?sa"></script>
 	</c:if>
+	<!--  Reserve js -->
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
+	<!-- LoginInput js -->
+	<c:if test="${page eq 'Login.jsp' }">
+		<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
+	</c:if>
+	<!--  Naver_Login js -->
 	<c:if test="${page eq 'Naver_Login.jsp' }">
 	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 	<script defer="defer" src="${ctx }/Js/Naver_Login.js?ds"></script>
 	</c:if>
-<!--  css import -->
+	<c:if test="${page eq 'Member_Info.jsp' }">
+		<script defer="defer" src="${ctx }/Js/Member_Info.js?ds"></script>
+	</c:if>
+<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
+<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
+	<!--  css import -->
 	<link rel="stylesheet" href="${ctx}/Css/header.css?dbgf3333" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">
+	<!-- LoginInput css -->
+	<c:if test="${page eq 'LoginInput.jsp'}">
+	<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
+	</c:if>
+	<!-- Login css -->
+	<c:if test="${page eq 'Login.jsp' }">
+		<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
+	</c:if>
 	<c:if test="${page eq 'reserve.jsp'}">
 		<link rel="stylesheet" href="${ctx}/Css/reserve.css?dsd3343a" type="text/css">
 	</c:if>
 	<c:if test="${page eq 'Main.jsp' }">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-		 <link rel="stylesheet" href="${ctx}/Css/main.css?ds33322342134" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<link rel="stylesheet" href="${ctx}/Css/main.css?ds33322342134" type="text/css">
 	</c:if>
 	<c:if test="${page eq 'Member_Insert.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Insert.css?ds3332" type="text/css">
 	</c:if>
-	
-	
+	<!--  Test -->
 	<c:if test="${page eq 'Test.jsp' }">
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f36369ca9235d4cb36c1fbff255a8726&libraries=services"></script>
 		<script defer="defer" src="${ctx }/Js/Test.js?sa"></script>
 	</c:if>
-	
-	
+	<c:if test="${page eq 'Member_Info.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/Member_Info.css?ds3332" type="text/css">
+	</c:if>
 </head>
 <body>
+
   <header>
     <nav>
       <div class="header_logo">
@@ -103,5 +114,3 @@
     </div>
   </header>
 	<button id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i>&nbsp;TOP</button>
-
-

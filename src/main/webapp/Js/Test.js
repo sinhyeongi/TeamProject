@@ -27,7 +27,7 @@ $('.test_btn').click(function(){
 			alert('error');
 		},
 		error : function(err){
-			alert(rsp);
+			alert(err);
 		}
 	});
 	

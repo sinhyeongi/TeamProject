@@ -24,7 +24,11 @@
 <c:if test="${page eq 'Login.jsp' }">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
 </c:if>
-
+<!-- MemberInsert css and js -->
+<c:if test="${page eq 'Member_Insert.jsp' }">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/Member_Insert.css">
+<script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
+</c:if>
 <!-- Login js -->
 <c:if test="${page eq 'Login.jsp' }">
 <!-- kakao Login sdk  -->

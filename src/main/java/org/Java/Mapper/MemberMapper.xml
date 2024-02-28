@@ -5,5 +5,8 @@
 <mapper namespace="org.Java.Mapper.MemberMapper">
 	<select id="member_getAll" resultType="member">
 		select * from member;
-	</select>  
+	</select>
+	<select id="member_checkId" parameterType="String" resultType="String">
+		SELECT * FROM member WHERE id = #{id};
+	</select>
 </mapper>

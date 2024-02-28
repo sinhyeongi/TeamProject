@@ -28,6 +28,12 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
+	public String getdbId(String id) {
+		SqlSession se = sf.openSession();
+		String dbId = se.selectOne("member_checkId",id);
+		se.close();
+		return dbId;
+	}
 
 }
 

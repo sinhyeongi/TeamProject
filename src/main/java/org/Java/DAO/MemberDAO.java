@@ -20,8 +20,9 @@ public class MemberDAO {
 		public ArrayList<MemberVO> getAll(){
 			return db.getAll();
 		}
-		public int checkId(String id) {
-			return 0;
+		public String checkId(String id) {
+			String check = db.getdbId(id);
+			return check;
 		}
 
 }

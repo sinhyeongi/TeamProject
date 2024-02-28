@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.Java.DAO.MemberDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
 import org.json.simple.JSONObject;
@@ -24,6 +25,7 @@ public class NaverLoginService implements Page {
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("네이버로그인");
 		if(request.getParameter("token") == null) {
 			request.setAttribute("title", "Loading......");
 			return "Naver_Login";
@@ -57,8 +59,15 @@ public class NaverLoginService implements Page {
         vo.setPhone(p.get("mobile"));
         vo.setEmail(p.get("email"));
         vo.setBirth(p.get("birthyear")+"-"+p.get("birthday"));
-        request.setAttribute("vo", vo);
-		return "Member_Insert";
+        String check = MemberDAO.getinstance().checkId(vo.getId());
+        if(check == null) {
+        	request.setAttribute("vo", vo);
+        	System.out.println("미가입 회원");
+        	return "Member_Insert";
+        }else {
+        	System.out.println("기존 회원");
+        	return "Main";
+        }
 	}
 	 private static String get(String apiUrl, Map<String, String> requestHeaders){
 	        HttpURLConnection con = connect(apiUrl);

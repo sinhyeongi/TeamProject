@@ -1,4 +1,4 @@
-#drop database java;
+# drop database java;
 create database java;
 use java;
 #고객 테이블

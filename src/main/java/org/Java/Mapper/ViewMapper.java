@@ -10,7 +10,8 @@ import org.Java.Service.MainService;
 import org.Java.Service.Member_Insert;
 import org.Java.Service.NaverLoginService;
 import org.Java.Service.ReserveService;
-
+import org.Java.Service.TestService;
+import org.Java.Test.Test_update;
 import org.Java.VO.Page;
 
 public class ViewMapper {
@@ -33,6 +34,9 @@ public class ViewMapper {
 		
 		// 호텔 리스트
 		mapper.put("/HotelList.do", new HotelListService());
+		// Test
+		mapper.put("/Test.do", new TestService());
+		mapper.put("/Test_update.do",new Test_update());
 	}
 	
 	

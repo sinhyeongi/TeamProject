@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.Java.Mapper.HotelMapper">
+	<select id="hotel_getAll" resultType="hotel">
+		select * from hotel
+	</select>
+	<update id="hotel_update_XY" parameterType="hotel">
+		update hotel set x = ${x}, y = ${y},area = ${area} where no = ${no}
+	</update>
+</mapper>

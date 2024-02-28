@@ -16,4 +16,6 @@ public class HotelVO {
 	private String checkin; //체크인 시간
 	private String checkout; //체크 아웃 시간
 	private String account; //계좌 번호 
+	private String x;
+	private String y;
 }

@@ -43,6 +43,6 @@
     <!--  Mapper -->
     <mapper resource="org/Java/Mapper/MemberMapper.xml"/> 
     <mapper resource="org/Java/Mapper/Member_InfoMapper.xml"/> 
-    <mapper resource="org/Java/Mapper/Member_CouponMapper.xml"/> 
+    <mapper resource="org/Java/Mapper/Member_CouponMapper.xml"/>
   </mappers>
 </configuration>

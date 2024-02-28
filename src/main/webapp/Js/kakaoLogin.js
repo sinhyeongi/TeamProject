@@ -1,4 +1,5 @@
 const client_id="285fb962941b4c31de5b78e29659ba4f";
+//카카오로그인 접근 값
 const redirect_uri="http://localhost:8080/TeamProject/Login.do?type=kakao";
 const response_type="code";
 
@@ -10,7 +11,6 @@ let tokenRequest = null;
 
 //인가받은 코드값을 가져왔을 때
 if(type !== null){
-	alert("인가받은 코드가 있습니다.");
 	getKakaoToken(); //인가받은 코드로 토큰값 받아오기.
 	tokenRequest = new XMLHttpRequest;
 }
@@ -23,12 +23,9 @@ function kakaoLogin(){
 	})
 	location.href=`https://kauth.kakao.com/oauth/authorize?${authParam}`;
 };
-
-
 function getKakaoToken(){
 	console.log(code);
 	console.log(type);
-	
 	$.ajax({
 		method: "POST",
 		url: "https://kauth.kakao.com/oauth/token",
@@ -42,7 +39,7 @@ function getKakaoToken(){
 			const access_token = data['access_token']
 			/*tokenRequest.open("Post","KakaoLogin.do?access_token="+access_token);
 			tokenRequest.send();*/
-			location.href = "KakaoLogin.do?access_token="+access_token;
+			location.href = "KakaoLogin.do?token="+access_token;
 		},error : function(err){
 			console.log(err);
 		}

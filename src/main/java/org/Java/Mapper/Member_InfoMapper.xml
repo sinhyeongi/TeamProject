@@ -6,4 +6,7 @@
 	<select id="member_info_getAll" resultType="member_info">
 		select * from member_info
 	</select>
+	<insert id="member_info_insert" parameterType="String">
+		insert into member_info(id,level)values(#{id},1)
+	</insert>
 </mapper>

@@ -6,7 +6,13 @@
 	<select id="member_getAll" resultType="member">
 		select * from member;
 	</select>
-	<select id="member_checkId" parameterType="String" resultType="String">
+	<select id="member_checkId" parameterType="String" resultType="member">
 		SELECT * FROM member WHERE id = #{id};
 	</select>
+	<select id="member_checkNickname" parameterType="String" resultType="int">
+		SELECT count(*) FROM member WHERE nickname = #{nickname};
+	</select>
+	<insert id="member_insertMember" parameterType="member">
+		insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values(#{id},#{pw},#{email},#{name},#{birth},#{gender},#{phone},#{address},#{nickname});
+	</insert>
 </mapper>

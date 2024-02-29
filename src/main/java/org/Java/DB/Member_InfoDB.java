@@ -28,4 +28,12 @@ public class Member_InfoDB {
 		se.close();
 		return (ArrayList<Member_InfoVO>) list;
 	}
+	
+	public int insertMemberInfo(String id) {
+		SqlSession se = sf.openSession();
+		int check = se.insert("member_info_insert",id);
+		se.commit();
+		se.close();
+		return check;
+	}
 }

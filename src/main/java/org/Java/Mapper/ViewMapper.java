@@ -2,15 +2,7 @@ package org.Java.Mapper;
 
 import java.util.HashMap;
 
-import org.Java.Service.HotelListService;
-import org.Java.Service.KakaoLoginService;
-import org.Java.Service.LoginInputService;
-import org.Java.Service.LoginMainService;
-import org.Java.Service.MainService;
-import org.Java.Service.Member_Insert;
-import org.Java.Service.NaverLoginService;
-import org.Java.Service.ReserveService;
-import org.Java.Service.TestService;
+import org.Java.Service.*;
 import org.Java.Test.Test_update;
 import org.Java.VO.Page;
 
@@ -25,12 +17,15 @@ public class ViewMapper {
 		mapper.put("/KakaoLogin.do", new KakaoLoginService());
 		//아이디로그인
 		mapper.put("/LoginInput.do", new LoginInputService());
-//		mapper.put("/KakaoLogin.do", new KakaoLoginService());
-		
 		//네이버 로그인
 		mapper.put("/Naver_Login.do",new NaverLoginService());
 		mapper.put("/Member_Insert.do", new Member_Insert());
 		mapper.put("/reserve.do", new ReserveService());
+		//중복체크
+		mapper.put("/DuplicatedCheck.do", new DuplicatedCheckService());
+		//회원가입
+		mapper.put("/MemberInserData.do", new MemberInsertDataService());
+		
 		
 		// 호텔 리스트
 		mapper.put("/HotelList.do", new HotelListService());

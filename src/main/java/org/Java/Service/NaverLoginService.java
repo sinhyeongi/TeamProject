@@ -57,14 +57,15 @@ public class NaverLoginService implements Page {
         vo.setId("nv_"+id);
         vo.setEmail(p.get("email"));
         vo.setPhone(p.get("mobile"));
-        vo.setEmail(p.get("email"));
+        vo.setName(p.get("name"));
         vo.setBirth(p.get("birthyear")+"-"+p.get("birthday"));
-        String check = MemberDAO.getinstance().checkId(vo.getId());
-        if(check == null) {
+        MemberVO logMember = MemberDAO.getinstance().checkId(vo.getId());
+        if(logMember == null) {
         	request.setAttribute("vo", vo);
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
+        	request.setAttribute("log", logMember);
         	System.out.println("기존 회원");
         	return "Main";
         }

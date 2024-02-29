@@ -22,6 +22,7 @@ public class MainService implements Page{
 		ArrayList<MemberVO> list = MemberDAO.getinstance().getAll();
 		ArrayList<Member_InfoVO> list2 = Member_InfoDAO.getInstance().getAll();
 		for(int i = 0 ; i < list.size(); i++) {
+			System.out.println(i);
 			list.get(i).setInfo(list2.get(i));
 			list.get(i).setCoupon(Member_CouponDAO.getInstance().getData(list.get(i).getId()));
 		}

@@ -28,11 +28,24 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
-	public String getdbId(String id) {
+	public MemberVO getMemberVOById(String id) {
 		SqlSession se = sf.openSession();
-		String dbId = se.selectOne("member_checkId",id);
+		MemberVO checkCount = se.selectOne("member_checkId",id);
 		se.close();
-		return dbId;
+		return checkCount;
+	}
+	public int getdbNickname(String nickname) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkNickname", nickname);
+		se.close();
+		return checkCount;
+	}
+	public int insertMember(MemberVO vo) {
+		SqlSession se = sf.openSession();
+		int check = se.insert("member_insertMember",vo);
+		se.commit();
+		se.close();
+		return check;
 	}
 
 }

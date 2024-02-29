@@ -70,12 +70,13 @@ public class KakaoLoginService implements Page {
 		MemberVO vo = new MemberVO();
 		vo.setId("ka_"+id);
 		vo.setNickname(properties.get("nickname"));
-		String check = MemberDAO.getinstance().checkId(vo.getId());
-        if(check == null) {
+		MemberVO logMember = MemberDAO.getinstance().checkId(vo.getId());
+        if(logMember == null) {
         	request.setAttribute("vo", vo);
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
+        	request.setAttribute("log", logMember);
         	System.out.println("기존 회원");
         	return "Main";
         }

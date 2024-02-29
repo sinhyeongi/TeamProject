@@ -26,6 +26,7 @@
 </c:if>
 <!-- MemberInsert css and js -->
 <c:if test="${page eq 'Member_Insert.jsp' }">
+<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/Member_Insert.css">
 <script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
 </c:if>
@@ -41,6 +42,7 @@
   Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 <script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
+
 </c:if>
 	<!--  Js import -->
 	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>

@@ -15,7 +15,7 @@ public class MemberVO {
 	private String gender; //성별
 	private String phone; //휴대폰 번호
 	private String address; //주소
-	private String ninkname;//닉네임
+	private String nickname;//닉네임
 	private String regist; //고객 가입일
 	private Member_InfoVO info; //추가 정보
 	private ArrayList<Member_couponVO> coupon; //쿠폰

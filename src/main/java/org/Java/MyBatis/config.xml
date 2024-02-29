@@ -45,5 +45,6 @@
     <mapper resource="org/Java/Mapper/Member_InfoMapper.xml"/> 
     <mapper resource="org/Java/Mapper/Member_CouponMapper.xml"/> 
     <mapper resource="org/Java/Mapper/HotelMapper.xml"/>
+    <mapper resource="org/Java/Mapper/ReserveMapper.xml"/>
   </mappers>
 </configuration>

@@ -86,6 +86,9 @@
 	<c:if test="${page eq 'Member_Info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Info.css?ds3332" type="text/css">
 	</c:if>
+	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/Member_Reserve_Info.css" type="text/css">
+	</c:if>
 </head>
 <body>
 

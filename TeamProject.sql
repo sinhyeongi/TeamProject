@@ -19,8 +19,10 @@ insert into member(no,id,pw,email,name,birth,gender,phone,address,nickname) valu
 update member set no = 0 where no = 1;
 alter table member auto_increment = 1;
 insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test1','test1','test1@java.org','test1','2024-02-21','남','222-2222-2222','test1','test1');
-insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test2',null,'test2@java.org','test2','2024-02-21','남','333-3333-3333','test2','test2');
-
+insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('nv_test2',null,'test2@java.org','test2','2024-02-21','m','333-3333-3333','test2','test2');
+update member set pw = 'test2' where no = 4;
+update member set id = 'test2' where no = 4;
+update member set gender = 'm' where no = 6;
 select * from member;
 select id,regist from member where regist = current_date();
 
@@ -114,6 +116,9 @@ create table reserve(
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
+
+insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,id,people,visit) 
+values(1,1,'test2','010-3333-3333',date_add(current_date(),interval 1 day),date_add(current_date(),interval 8 day),10000,'nv_test2',4,'도보');
 
 select * from reserve;
 

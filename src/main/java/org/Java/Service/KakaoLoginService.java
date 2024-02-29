@@ -36,7 +36,7 @@ public class KakaoLoginService implements Page {
 		HttpSession session = request.getSession();
 		MemberVO vo = getMember(access_token);
 		System.out.println("로그인시도 I  D =  " + vo.getId());
-		System.out.println("로그인시도 name =  " + vo.getNinkname());
+		System.out.println("로그인시도 name =  " + vo.getNickname());
 		MemberVO m = MemberDAO.getinstance().CheckLogin(vo);
 		
 		if(m== null) {
@@ -130,7 +130,7 @@ public class KakaoLoginService implements Page {
 			System.out.println("nickname = " + properties.get("nickname"));
 			
 			vo = new MemberVO();
-			vo.setNinkname(nickname);
+			vo.setNickname(nickname);
 			vo.setId(id);
 		} catch (ParseException e) {
 			System.out.println("parseExceiption err");

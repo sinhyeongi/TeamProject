@@ -23,4 +23,5 @@ public class HotelDAO {
 	public int UpdateXY(HotelVO vo) {
 		return db.update_XY(vo);
 	}
+	
 }

@@ -10,6 +10,7 @@ import org.Java.Service.LoginCheckService;
 import org.Java.Service.LoginInputService;
 import org.Java.Service.LoginMainService;
 import org.Java.Service.MainService;
+import org.Java.Service.MemberReserveInfo;
 import org.Java.Service.Member_InfoService;
 import org.Java.Service.Member_Insert;
 import org.Java.Service.ModalService;
@@ -46,9 +47,12 @@ public class ViewMapper {
 		mapper.put("/Modal.do", new ModalService());
 		//로그인 체크(비동기 용)
 		mapper.put("/LoginCheck.do", new LoginCheckService());
-		
+		//유저 삭제
 		mapper.put("/DeleteUser_API.do", new Delete_User_API());
 		mapper.put("/DeleteUser.do", new DeleteUser());
+		//고객 예약 정보
+		mapper.put("/Reserve_Info.do", new MemberReserveInfo());
+		
 	}
 	
 	

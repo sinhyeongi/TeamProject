@@ -1,9 +1,12 @@
 package org.Java.VO;
 
+
+import java.util.Objects;
+
 import lombok.Data;
 
 @Data
-public class ReserveVO {
+public class ReserveVO{
 	private int no; //예약 번호
 	private int hotel_no; //호텔번호
 	private int room_no; // 방 번호
@@ -17,4 +20,17 @@ public class ReserveVO {
 	private String add_req; //추가 요청 사항
 	private String visit; //방문 방법
 	private String hotel_option; //옵션 (조식,헬스장,수영장,주차장)
+	private String hotel_name;
+	private String room_name;
+	@Override
+	public boolean equals(Object obj) {
+		 if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        ReserveVO other = (ReserveVO) obj;
+	        return Objects.equals(hotel_no, other.getHotel_no());
+	}
 }

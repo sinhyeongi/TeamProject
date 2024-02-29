@@ -24,8 +24,13 @@ body{
 }
 .reserve_main > div:nth-child(3){
 	flex:3;
+	width:100%;
+	height:100%;
 	border:1px solid black;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
 #reserve_form > h3{
 	margin-bottom: 20px;
@@ -79,4 +84,34 @@ input[name=payment]{
 	color : red;
 	font-size: 12px;
 	display: none;
+}
+
+.reser_img_secssion{
+	flex:3;
+	width: 100%;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+.reser_img_secssion > img{
+	width:100%;
+	height: 100%;
+	object-fit : fill;
+	
+}
+.reser_right_content{
+	flex:7;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border:1px solid red;
+	display: flex;
+	flex-direction: column;
+}
+
+.reser_right_content > * {
+	flex:1;
+}
+#reser_map{
+	flex:3;
+	border:1px solid blue;
 }

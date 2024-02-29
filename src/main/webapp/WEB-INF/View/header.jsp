@@ -89,6 +89,9 @@
 	<c:if test="${page eq 'Member_Info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/Member_Info.js?ds"></script>
 	</c:if>
+	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
+		<script defer="defer" src="${ctx }/Js/Member_Reserve_Info.js?ds"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -124,6 +127,7 @@
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Reserve_Info.css" type="text/css">
 	</c:if>
+	
 </head>
 <body>
 

@@ -59,13 +59,13 @@ public class NaverLoginService implements Page {
         vo.setPhone(p.get("mobile"));
         vo.setName(p.get("name"));
         vo.setBirth(p.get("birthyear")+"-"+p.get("birthday"));
-        MemberVO logMember = MemberDAO.getinstance().checkId(vo.getId());
+        MemberVO logMember = MemberDAO.getinstance().CheckLogin_API(vo.getId());
         if(logMember == null) {
         	request.setAttribute("vo", vo);
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
-        	request.setAttribute("log", logMember);
+        	request.setAttribute("log", logMember.getId());
         	System.out.println("기존 회원");
         	return "Main";
         }

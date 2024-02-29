@@ -18,8 +18,9 @@
 			<hr />
 				<div id="reserve_img_div">
 					<c:if test="${log eq null }">
-						<img src="${ctx }/img/reserve_login.png" alt="img" id="reserve_login">
 					</c:if>
+						<img src="${ctx }/img/reserve_login.png" alt="img" id="reserve_login">
+					
 				</div>
 			<hr />
 			<div>
@@ -29,6 +30,13 @@
 		</form>
 	</div>
 	<div>
-	<h2>dsadsadsa</h2>
+		<div class="reser_img_secssion"><img src="${img }"></div>
+		<div class="reser_right_content">
+			<div id="reser_map">
+			</div>
+			<span>호텔 이름 : ${hotel.name }</span>
+			<span>객실 : ${room.name }</span>
+			<span>가격 : ${price }</span>
+		</div>
 	</div>
 </main>

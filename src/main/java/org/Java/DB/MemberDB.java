@@ -60,7 +60,7 @@ public class MemberDB {
 		se.commit();
 		se.close();
 		return cnt;
-
+	}
 	public int getdbNickname(String nickname) {
 		SqlSession se = sf.openSession();
 		int checkCount = se.selectOne("member_checkNickname", nickname);

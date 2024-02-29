@@ -68,32 +68,28 @@ a {
 .kakao_login{
 	background-color: #ffde00;
 }
-.naver_login{
+/* .naver_login{
 	background-color: #00c73c;
 	color : white;
-}
-.google_login{
-	background-color: #ffffff;
-	border : solid 0.2px black;
-}
+} */
 a.b2b_text_button:link{
 	background-color: blue;
 }
 a.btn:link {
 	display:inline-block;
-	background-color: #dfd7fd;
+	border : solid 0.2px black;
+	background-color: white;
 	text-align: center;
 	line-height: 52px;
 }
-#naver_id_login{
+/*#naver_id_login{
 	width: 100%;
 	padding: 5px;
 	box-sizing: border-box;
-}
+}*/
 #naver_id_login > a > img{
 	box-sizing: border-box;
 	width: 100%;
-	object-fit : cover;
-	border-radius: 7px;
+	border-radius: 20px;
 	overflow: hidden;
 }

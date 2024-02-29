@@ -24,22 +24,10 @@
 					</button>
 				<!-- </form> -->
 				<!-- <form> -->
-				<div id ="naver_id_login">네이버 로그인 하기</div>
-					
-				<!-- </form> -->
-				<form>
-					<button type="submit" class="btn google_login">
-						<div class="btn_content">
-							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21">
-							<path fill="#4285F4" d="M18.18 10.398c0-.567-.05-1.113-.145-1.636H10.5v3.094h4.306a3.68 3.68 0 0 1-1.597 2.415v2.007h2.586c1.512-1.393 2.385-3.443 2.385-5.88Z"></path>
-							<path fill="#34A853" d="M10.5 18.216c2.16 0 3.97-.716 5.294-1.938l-2.585-2.007c-.717.48-1.633.763-2.71.763-2.083 0-3.847-1.407-4.476-3.298H3.351v2.073a7.997 7.997 0 0 0 7.149 4.407Z"></path>
-							<path fill="#FBBC05" d="M6.024 11.738c-.16-.48-.251-.993-.251-1.52 0-.528.09-1.04.25-1.52V6.625H3.352a7.997 7.997 0 0 0-.851 3.593c0 1.29.31 2.512.85 3.592l2.674-2.072Z"></path>
-							<path fill="#EA4335" d="M10.5 5.399c1.174 0 2.229.403 3.058 1.196L15.852 4.3c-1.385-1.29-3.196-2.083-5.352-2.083a7.997 7.997 0 0 0-7.15 4.407l2.673 2.073c.63-1.891 2.393-3.298 4.477-3.298Z"></path>
-							</svg>
-							구글로 시작하기
-						</div>	
-					</button>
-				</form>
+				<div id ="naver_id_login">
+					네이버 로그인 하기
+				</div>
+				
 				<a href="LoginInput.do" class="btn java_login">
 					<div class="btn_content">
 						<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="#3C1E1E" viewBox="0 0 21 21">

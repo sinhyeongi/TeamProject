@@ -2,12 +2,18 @@ package org.Java.Mapper;
 
 import java.util.HashMap;
 
+import org.Java.Service.DeleteUser;
+import org.Java.Service.Delete_User_API;
 import org.Java.Service.HotelListService;
 import org.Java.Service.KakaoLoginService;
+import org.Java.Service.LoginCheckService;
 import org.Java.Service.LoginInputService;
 import org.Java.Service.LoginMainService;
 import org.Java.Service.MainService;
+import org.Java.Service.MemberReserveInfo;
+import org.Java.Service.Member_InfoService;
 import org.Java.Service.Member_Insert;
+import org.Java.Service.ModalService;
 import org.Java.Service.NaverLoginService;
 import org.Java.Service.ReserveService;
 import org.Java.Service.TestService;
@@ -31,12 +37,22 @@ public class ViewMapper {
 		mapper.put("/Naver_Login.do",new NaverLoginService());
 		mapper.put("/Member_Insert.do", new Member_Insert());
 		mapper.put("/reserve.do", new ReserveService());
-		
+		// 유저 정보 보기
+		mapper.put("/Member_Info.do", new Member_InfoService());
 		// 호텔 리스트
 		mapper.put("/HotelList.do", new HotelListService());
 		// Test
 		mapper.put("/Test.do", new TestService());
 		mapper.put("/Test_update.do",new Test_update());
+		mapper.put("/Modal.do", new ModalService());
+		//로그인 체크(비동기 용)
+		mapper.put("/LoginCheck.do", new LoginCheckService());
+		//유저 삭제
+		mapper.put("/DeleteUser_API.do", new Delete_User_API());
+		mapper.put("/DeleteUser.do", new DeleteUser());
+		//고객 예약 정보
+		mapper.put("/Reserve_Info.do", new MemberReserveInfo());
+		
 	}
 	
 	

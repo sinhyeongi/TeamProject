@@ -38,6 +38,11 @@ public class Controller extends HttpServlet {
 			else if(req.indexOf("re:") != -1) {
 				response.sendRedirect(req.substring(req.indexOf(":")+1)+".do");
 				return;
+			}else if(req.indexOf("Modal:") != -1) {
+				request.setAttribute("page", req.substring(req.indexOf(":")+1)+".jsp");
+				RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/Modal/Modal_Layout.jsp");
+				dis.forward(request, response);
+				return;
 			}
 			request.setAttribute("page", req+".jsp");
 			System.out.println("req =" + req);
@@ -50,5 +55,5 @@ public class Controller extends HttpServlet {
 		RequestDispatcher dis = request.getRequestDispatcher("WEB-INF/View/Layout.jsp");
 		dis.forward(request, response);
 	}
-
+	
 }

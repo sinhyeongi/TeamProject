@@ -17,3 +17,9 @@ $('.moal_cancle').click(function(){
 	$('header').css('opacity', '1');
 	$('footer').css('opacity', '1');
 });
+$(document).mouseup(function(e){
+	const modal = $('.footer_modal');
+	if(modal.hasClass('modal_on')&&modal.has(e.target).length == 0){
+		modal.removeClass('modal_on');
+	}
+})

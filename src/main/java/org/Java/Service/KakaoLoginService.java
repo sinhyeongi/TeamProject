@@ -4,31 +4,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.sql.Array;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ssl.HttpsURLConnection;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.Java.DAO.MemberDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
-import org.apache.ibatis.javassist.expr.NewExpr;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 public class KakaoLoginService implements Page {
 
@@ -70,12 +60,15 @@ public class KakaoLoginService implements Page {
 		MemberVO vo = new MemberVO();
 		vo.setId("ka_"+id);
 		vo.setNickname(properties.get("nickname"));
-		String check = MemberDAO.getinstance().checkId(vo.getId());
-        if(check == null) {
+		MemberVO logMember = MemberDAO.getinstance().CheckLogin_API(vo.getId());
+		
+		
+        if(logMember == null) {
         	request.setAttribute("vo", vo);
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
+        	request.setAttribute("log", logMember);
         	System.out.println("기존 회원");
         	return "Main";
         }

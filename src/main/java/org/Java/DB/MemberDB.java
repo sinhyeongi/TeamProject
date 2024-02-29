@@ -28,11 +28,37 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
-	public String getdbId(String id) {
+
+	//로그인 아이디,비밀번호가 맞는지 체크
+	public MemberVO CheckLogin(MemberVO vo) {
 		SqlSession se = sf.openSession();
-		String dbId = se.selectOne("member_checkId",id);
+		MemberVO rq = se.selectOne("Check_Login", vo);
 		se.close();
-		return dbId;
+		return rq;
+	}
+	//외부 (네이버,카카오 등)에서 가입한 회원 id 값만 가지고 있는지 체크
+	public MemberVO CheckLogin_API(String id) {
+		MemberVO vo = new MemberVO();
+		SqlSession se = sf.openSession();
+		vo = se.selectOne("CheckLogin_API", id);
+		se.close();
+		return vo;
+	}
+	public int DeleteUser_API(String id) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.delete("DeleteUser_API",id);
+		se.commit();
+		se.close();
+		return cnt;
+	}
+	public int DeleteUser(MemberVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.delete("DeleteUser",vo);
+		se.commit();
+		se.close();
+		return cnt;
 	}
 
 }

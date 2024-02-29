@@ -31,6 +31,14 @@ function requestPay(){
 	if(check()){
 		return;
 	}
+	// uid설정
+	const hotel_name = $('input[name=hotel_name]').val();
+	const id = $('input[name=id]').val();
+	const dday = $('input[name=dday]').val();
+	const rday = $('input[name=rday]').val();
+	const uid = id+'/'+hotel_name+','+rday+':'+dday;
+	
+	
  	const _name = $('input[name=name]').val();
  	const _tel = $('input[name=tel]').val();
  	const price = $('input[name=price]').val();

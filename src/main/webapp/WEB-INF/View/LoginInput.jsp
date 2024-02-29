@@ -48,7 +48,7 @@
 			<!-- input from -->
 			
 			<div class=go_register>
-				<a href="Member_Insert.do"><button class="btn register_btn">회원가입 버튼</button></a>
+				<a href="Member_Insert.do"><button class="btn register_btn">회원가입</button></a>
 			</div>
 			<!-- 회원가입 버튼 -->
 			

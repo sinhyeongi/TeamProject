@@ -41,10 +41,7 @@ table > tbody > tr:last-child {
 		<td><a href="Reserve_Info.do" <c:if test="${page eq 'Member_Reserve_Info.jsp' }">style="color:blue;"</c:if>>예약 내역</a></td>
 	</tr>
 	<tr>
-		<td>포인트</td>
-	</tr>
-	<tr>
-		<td >쿠폰</td>
+		<td >포인트 및 쿠폰</td>
 	</tr>
 	<tr>
 		<td><a href="Member_Info.do" <c:if test="${page eq 'Member_Info.jsp' }">style="color:blue;"</c:if>>내 정보 관리</a></td>

@@ -23,5 +23,8 @@ public class HotelDAO {
 	public int UpdateXY(HotelVO vo) {
 		return db.update_XY(vo);
 	}
+	public String getHotelName(int no) {
+		return db.getHotelName(no);
+	}
 	
 }

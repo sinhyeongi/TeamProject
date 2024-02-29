@@ -29,6 +29,7 @@ public class MemberDB {
 		return (ArrayList<MemberVO>) list;
 	}
 
+
 	//로그인 아이디,비밀번호가 맞는지 체크
 	public MemberVO CheckLogin(MemberVO vo) {
 		SqlSession se = sf.openSession();
@@ -59,6 +60,19 @@ public class MemberDB {
 		se.commit();
 		se.close();
 		return cnt;
+
+	public int getdbNickname(String nickname) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkNickname", nickname);
+		se.close();
+		return checkCount;
+	}
+	public int insertMember(MemberVO vo) {
+		SqlSession se = sf.openSession();
+		int check = se.insert("member_insertMember",vo);
+		se.commit();
+		se.close();
+		return check;
 	}
 
 }

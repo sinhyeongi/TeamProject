@@ -3,7 +3,9 @@ package org.Java.DB;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.Java.VO.Member_couponVO;
 import org.apache.ibatis.io.Resources;
@@ -27,5 +29,12 @@ public class Member_CouponDB {
 		List<Member_couponVO> list = se.selectList("member_coupon_get",id);
 		se.close();
 		return (ArrayList<Member_couponVO>) list;
+	}
+	public int insertMemberCoupon(Map<String, String> map) {
+		SqlSession se = sf.openSession();
+		int check = se.insert("member_coupon_insert", map);
+		se.commit();
+		se.close();
+		return check;
 	}
 }

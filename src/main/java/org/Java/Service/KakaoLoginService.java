@@ -60,6 +60,7 @@ public class KakaoLoginService implements Page {
 		MemberVO vo = new MemberVO();
 		vo.setId("ka_"+id);
 		vo.setNickname(properties.get("nickname"));
+
 		MemberVO logMember = MemberDAO.getinstance().CheckLogin_API(vo.getId());
 		
 		

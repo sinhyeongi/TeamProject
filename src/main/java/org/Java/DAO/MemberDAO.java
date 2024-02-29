@@ -20,9 +20,23 @@ public class MemberDAO {
 		public ArrayList<MemberVO> getAll(){
 			return db.getAll();
 		}
-		public String checkId(String id) {
-			String check = db.getdbId(id);
-			return check;
+		public MemberVO checkId(String id) {
+			return db.getMemberVOById(id);
+		}
+		public int checkNickname(String nickname) {
+			return db.getdbNickname(nickname);
+		}
+		public boolean insertMember(MemberVO vo) {
+			int checkInsertMember = db.insertMember(vo);
+			int checkMemberInfo = Member_InfoDAO.getInstance().insertMemberInfo(vo.getId());
+			int checkCoupon = Member_CouponDAO.getInstance().insertMemberCoupon(vo.getId(),"Wellcome");
+			
+			if(checkCoupon > 0 && checkMemberInfo > 0 && checkInsertMember > 0 ) {
+				System.out.println("회원가입 성공");
+				return true;
+			}
+			System.out.println("회원가입 실패");
+			return false;
 		}
 		//자체 유저 체크
 		public MemberVO CheckLogin(MemberVO vo) {

@@ -926,3 +926,5 @@ select * from img;
 select count(*) from hotel;
 select hotel_no,count(*) from room group by hotel_no;
 select uploader,count(*) from img group by uploader;
+
+select * from hotel;

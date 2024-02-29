@@ -6,4 +6,7 @@
 	<select id="member_coupon_get" resultType="member_coupon" parameterType="String">
 		select * from member_coupon where id = #{id}
 	</select>
+	<insert id="member_coupon_insert" parameterType="map">
+		insert into member_coupon(id,name,period) values(#{id},#{name},Date_add(current_date(), interval (select period from coupon where name = #{name}) day))
+	</insert>
 </mapper>

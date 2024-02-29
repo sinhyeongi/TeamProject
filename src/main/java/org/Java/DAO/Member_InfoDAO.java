@@ -20,4 +20,11 @@ public class Member_InfoDAO {
 	public ArrayList<Member_InfoVO> getAll(){
 		return db.getAll();
 	}
+	
+	public int insertMemberInfo(String id) {
+		int check = db.insertMemberInfo(id);
+		System.out.println("멤버정보"+(check>0?"성공":"실패"));
+		return check;
+	}
+
 }

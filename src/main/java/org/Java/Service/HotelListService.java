@@ -13,7 +13,7 @@ public class HotelListService implements Page{
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return null;
+		return "map";
 	}
 
 }

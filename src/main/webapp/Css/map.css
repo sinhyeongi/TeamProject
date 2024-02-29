@@ -1,0 +1,85 @@
+@charset "UTF-8";
+    #map {
+        left: 500px; 
+    }
+	.mapBox{
+		border-radius: 10px;
+		background-color : white; 
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		width:100px;
+		height:20px;
+		text-align:center;
+		padding:6px 2px;
+		font-weight: bold;
+		color : rgb(84, 84, 84);
+	}
+	
+	.mapBox:hover{
+		cursor:pointer;
+		background-color: rgba(241, 247, 254, 0.995);
+		color: rgba(49, 96, 252, 0.89);
+	}
+	.mapBox.add{
+		color:white;
+		background-color : rgba(33, 84, 252, 0.89);
+	}
+ 	.iw_inner{
+ 		cursor:pointer;
+ 		border-radius: 10px;
+ 		background-color : white; 
+ 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ 		width : 400px;
+ 		height : 200px;
+ 		display:flex;
+ 		display: none; 
+	}
+ 	.iw_inner img{
+ 		border-radius: 13px;
+ 		margin:10px 0;
+ 		margin-left : 10px;
+ 		width : 50%;
+ 		height : 180px;
+		flex:2;
+	}
+	.iw_info{
+		margin-top:10px;
+		margin-left:10px;
+		flex:6;
+		display:flex;
+		flex-direction:column;
+	} 
+	.iw_info h3{
+	margin-top: 20px;
+	margin-bottom:10px;
+	} 
+	.iw_info p {
+  		text-align: right;
+  		margin-right:10px;
+  		color : rgb(84, 84, 84);
+  		font-weight: bold;
+	}
+	.iw_star {
+ 		 font-size: 12px;
+  		margin-bottom: -20px;
+				}	
+	.iw_where{
+ 		font-size: 14px;
+  		font-weight: 600;
+  		margin-top: -10px;
+  		margin-bottom: 5px;
+  		color: #3e3e3e;
+		}
+
+	.iw_star_point {
+  		text-align: left;
+  		flex: 1;
+  		font-size: 13px;
+		}
+	.iw_star_point span{
+ 		 border-radius: 5px;
+  		background-color: rgb(255, 162, 0);
+  		padding: 3px;
+  		font-weight: bold;
+  		font-size: 12px;
+  		font-weight: bold;
+		}

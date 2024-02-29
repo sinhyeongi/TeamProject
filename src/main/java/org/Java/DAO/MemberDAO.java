@@ -20,9 +20,6 @@ public class MemberDAO {
 		public ArrayList<MemberVO> getAll(){
 			return db.getAll();
 		}
-		public MemberVO checkId(String id) {
-			return db.getMemberVOById(id);
-		}
 		public int checkNickname(String nickname) {
 			return db.getdbNickname(nickname);
 		}

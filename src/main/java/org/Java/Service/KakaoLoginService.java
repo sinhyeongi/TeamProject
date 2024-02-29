@@ -71,6 +71,8 @@ public class KakaoLoginService implements Page {
 		vo.setId("ka_"+id);
 		vo.setNickname(properties.get("nickname"));
 		MemberVO logMember = MemberDAO.getinstance().checkId(vo.getId());
+		
+		
         if(logMember == null) {
         	request.setAttribute("vo", vo);
         	System.out.println("미가입 회원");

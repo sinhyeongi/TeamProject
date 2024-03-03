@@ -84,6 +84,7 @@ create table hotel(
     foreign key(host) references member(id) on delete cascade
 );
 select * from hotel;
+
 #객실
 create table room(
 	no int auto_increment primary key, -- 객실 번호
@@ -116,9 +117,6 @@ create table reserve(
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
-
-insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,id,people,visit) 
-values(1,1,'test2','010-3333-3333',date_add(current_date(),interval 1 day),date_add(current_date(),interval 8 day),10000,'nv_test2',4,'도보');
 
 select * from reserve;
 

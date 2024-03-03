@@ -1,11 +1,12 @@
-let check = 0; //중복조회 및 회원가입 버튼
+let nickCheck = 0; //중복조회 및 회원가입 버튼
+let idCheck = 0;	//아이디중복조회
 let isInsertButtonPress = false;
 //닉네임 중복체크
-function DuplicatedCheck(nickname){
-	if(check === 1){
-		document.querySelector(".errorMsg_duplicated").classList.add("active");
-		document.querySelector(".errorMsg_duplicated").style.color = "blue";
-		document.querySelector(".errorMsg_duplicated").textContent = "완료되었습니다.";
+function NicknameDuplicatedCheck(nickname){
+	if(nickCheck === 1){
+		document.querySelector(".errorMsg_nickname").classList.add("active");
+		document.querySelector(".errorMsg_nickname").style.color = "blue";
+		document.querySelector(".errorMsg_nickname").textContent = "완료되었습니다.";
 		return;
 	}
 	if(nickname.value.trim() === ""){
@@ -27,24 +28,75 @@ function DuplicatedCheck(nickname){
 			document.querySelector(".errorMsg_nickname").classList.add("active");
 			document.querySelector(".errorMsg_nickname").style.color = "red";
 			document.querySelector(".errorMsg_nickname").textContent = "중복된 닉네임 입니다.";
-			check = 0;
+			nickCheck = 0;
 		}else{
 			document.getElementById("nickname").classList.add("check");
-			document.querySelector(".errorMsg_duplicated").classList.remove("active");
 			document.querySelector(".errorMsg_nickname").classList.add("active");
 			document.querySelector(".errorMsg_nickname").style.color = "blue";
 			document.querySelector(".errorMsg_nickname").textContent = "사용 가능한 닉네임 입니다.";
-			check = 1;
+			nickCheck = 1;
 		}
 	//}).catch(error => alert("error"));
 	}).catch(error => console.log(error));
 }
 
+function IdDuplicatedCheck(id){
+	if(idCheck === 1){
+		document.querySelector(".errorMsg_id").classList.add("active");
+		document.querySelector(".errorMsg_id").style.color = "blue";
+		document.querySelector(".errorMsg_id").textContent = "완료되었습니다.";
+		return;
+	}
+	console.log(id);
+	/*if(id.value.length < 4){
+		document.getElementById("id").focus();
+		document.querySelector(".errorMsg_id").classList.add("active");
+		document.querySelector(".errorMsg_id").style.color = "red";
+		document.querySelector(".errorMsg_id").textContent = "4글자 이상입력해주세요.";
+	}*/
+	if(id.value.trim() === ""){
+		document.getElementById("id").focus();
+		document.querySelector(".errorMsg_id").classList.add("active");
+		return;
+	}
+	fetch("DuplicatedCheck.do",{
+		method : "POST",
+		headers:{
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    	},
+    	body: "id="+id.value,
+	})
+	.then(response => response.text())
+	.then(data =>{
+		if(data === "Duplicated"){
+			document.getElementById("id").focus();
+			document.querySelector(".errorMsg_id").classList.add("active");
+			document.querySelector(".errorMsg_id").style.color = "red";
+			document.querySelector(".errorMsg_id").textContent = "중복된 아이디 입니다.";
+			idCheck = 0;
+		}else{
+			document.getElementById("id").classList.add("check");
+			document.querySelector(".errorMsg_id").classList.add("active");
+			document.querySelector(".errorMsg_id").style.color = "blue";
+			document.querySelector(".errorMsg_id").textContent = "사용 가능한 닉네임 입니다.";
+			idCheck = 1;
+		}
+	//}).catch(error => alert("error"));
+	}).catch(error => console.log(error));
+}
+//아이디 내용 변경시 중복체크 다시.
+const idInputBox = document.getElementById("id");
+nicknameInputBox.addEventListener("keydown",()=>{
+	document.getElementById("id").classList.remove("check");
+	idCheck = 0;
+})
+
+
 //닉네임 내용 변경시 중복체크 다시.
 const nicknameInputBox = document.getElementById("nickname");
 nicknameInputBox.addEventListener("keydown",()=>{
 	document.getElementById("nickname").classList.remove("check");
-	check = 0;
+	nickCheck = 0;
 })
 
 //회원가입 버튼
@@ -139,9 +191,12 @@ function insert(form){
 		document.querySelector("#address_box").classList.remove("error");
 		addAddress(form);
 	}
-	
-	if(check ===0){
-		activeErr(document.querySelector(".errorMsg_duplicated"),"red","닉네임 중복체크를 해주세요.");
+	if(idCheck ===0){
+		activeErr(document.querySelector(".errorMsg_id"),"red","아이디 중복체크를 해주세요.");
+		return;
+	}
+	if(nickCheck ===0){
+		activeErr(document.querySelector(".errorMsg_nickname"),"red","닉네임 중복체크를 해주세요.");
 		return;
 	}
 	

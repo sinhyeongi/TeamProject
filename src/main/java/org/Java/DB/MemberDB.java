@@ -67,6 +67,12 @@ public class MemberDB {
 		se.close();
 		return checkCount;
 	}
+	public int getdbId(String id) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkId",id);
+		se.close();
+		return checkCount;
+	}
 	public int insertMember(MemberVO vo) {
 		SqlSession se = sf.openSession();
 		int check = se.insert("member_insertMember",vo);

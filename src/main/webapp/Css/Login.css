@@ -51,7 +51,7 @@ a {
 }
 
 .btn{
-	width : 384px;
+	width : 250px;
 	height: 52px;
 	border-radius: 20px;
 	margin : 3px 0;
@@ -76,7 +76,7 @@ a.b2b_text_button:link{
 	background-color: blue;
 }
 a.btn:link {
-	display:inline-block;
+	display:block;
 	border : solid 0.2px black;
 	background-color: white;
 	text-align: center;

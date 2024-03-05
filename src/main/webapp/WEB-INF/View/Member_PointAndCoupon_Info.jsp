@@ -45,29 +45,34 @@
 						<fmt:formatDate value="${nowDate}" pattern="yyyy-MM-dd(E)" />
 						<!-- 리스트 출력 -->
 						<c:forEach var="list" items="${list }">
-						<!-- 쿠폰 발급일 -->
-						<fmt:parseDate value="${list.regist }" var="regist" pattern="yyyy-MM-dd" />
-						<fmt:formatDate value="${regist}" pattern="yyyy-MM-dd(E)" />
-						<!-- 쿠폰 소모일 -->
-						<fmt:parseDate value="${list.period }" var="period" pattern="yyyy-MM-dd" />
-						<fmt:formatDate value="${period}" pattern="yyyy-MM-dd(E)" />
-						<!-- 쿠폰 남은 기간 -->
-						<c:set var="difference" value="${period.date - now.date}" />
-						
-						
-							<div class="Coupon_Info_item">
-								<c:if test="${list.dislate > 0 }">
-									<div><span class="discount">${list.dislate }</span><span>% 할인</span></div>
-									<div><span class="max">최대${list.disprice }원 할인</span></div>
-								</c:if>
-								<c:if test="${list.dislate == 0 }">
-									<div><span class="discount">${list.disprice }</span><span>원 할인</span></div>
-								</c:if>
-								<div><span>${difference }일 남음</span><span>${regist} - ${period}</span></div>
-								
-								<div><span class="coupon_name">${list.name}</span></div>
-								<input type="radio" name="Coupon_info_radio" id="reserve_info_radio" value="${list.no }">
-							</div>
+							<!-- 쿠폰 발급일 -->
+							<fmt:parseDate value="${list.regist }" var="regist" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${regist}" pattern="yyyy.M.d (E)" var="Formmat_regist" />
+							<!-- 쿠폰 소모일 -->
+							<fmt:parseDate value="${list.period }" var="period" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${period}" pattern="yyyy.M.d (E)" var="Formmat_period" />
+							<!-- 쿠폰 남은 기간 -->
+							<fmt:parseNumber value="${regist.time / (1000*60*60*24) }" integerOnly="true" var="startDate"/>
+							<fmt:parseNumber value="${period.time / (1000*60*60*24) }" integerOnly="true" var="endDate"/>
+							<p>${endDate }</p>
+							<p>${startDate }</p>
+							<c:set var="remain" value="${endDate - startDate}" />
+							
+								<div class="Coupon_Info_item">
+									<div class="section price_section">
+										<c:if test="${list.dislate > 0 }">
+											<div class="discount-amount"><span class="amount">${list.dislate }</span><span>% 할인</span></div>
+											<div><span class="max">최대${list.disprice }원 할인</span></div>
+										</c:if>
+										<c:if test="${list.dislate == 0 }">
+											<div class="discount-amount"><span class="amount">${list.disprice }</span><span>원 할인</span></div>
+										</c:if>
+										<div ><span class="remain-date">${remain }일 남음</span><span class="remain-detail">${Formmat_regist} - ${Formmat_period}</span></div>
+									 </div>
+									<div class="section info_section">
+										<div><span class="coupon_name">${list.name}</span></div>
+									</div>
+								</div>
 						</c:forEach>
 						</div>
 					</c:if>

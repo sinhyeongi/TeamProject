@@ -71,15 +71,43 @@ var marker = new naver.maps.Marker({
 
 
 /* // 새로운 지도 생성
-var clonedMap = new naver.maps.Map('newMapContainer', {
+var clonedMap = new naver.maps.Map('map2', {
 	   center: new naver.maps.LatLng(33.2484468, 126.4106058),
 	   zoom: 17
 }); */
 
+function newMap(){
+	var map2 = new naver.maps.Map('map2', {
+	    zoomControl: true,
+	    zoomControlOptions: {
+	        style: naver.maps.ZoomControlStyle.SMALL,
+	        position: naver.maps.Position.TOP_RIGHT
+	    },
+		   center: new naver.maps.LatLng(33.2484468, 126.4106058),
+		   zoom: 14
+		   });
+	var marker = new naver.maps.Marker({
+	    position: new naver.maps.LatLng(33.2484468, 126.4106058),
+	    map: map2,
+	    icon: {
+	        url: HOME_PATH +'/img/ping.png', //50, 68 크기의 원본 이미지
+	        size: new naver.maps.Size(30, 30),
+	        scaledSize: new naver.maps.Size(30, 30),
+	        origin: new naver.maps.Point(0, 0),
+	        anchor: new naver.maps.Point(20, 40)
+	    }
+	});
+}
+
 $('#map').click(function(){
+	setTimeout( function() {
+		window.dispatchEvent(new Event('resize'));
+	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
 	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
-	$('.modal_main').html(mapModal);
+	$('.modal_main').html('<div id="map2"></div>');
+	newMap();
+	//$('.modal_main').html(mapModal);
 });
 
 </script>

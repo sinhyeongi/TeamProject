@@ -21,7 +21,7 @@
 	<div class="footer_modal">
 	<button class="moal_cancle">X</button>
 		<div class="modal_main">
-			
+		
 		</div>		
 	</div>
 

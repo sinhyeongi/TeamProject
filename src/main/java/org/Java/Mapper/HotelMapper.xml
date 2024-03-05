@@ -9,6 +9,9 @@
 	<select id="hotel_getName" resultType="String">
 		select name from hotel where no = #{no}
 	</select>
+	<select id="hotel_host_getAll" resultType="hotel">
+		select * from hotel where host = #{id}
+	</select>
 	<update id="hotel_update_XY" parameterType="hotel">
 		update hotel set x = ${x}, y = ${y},area = ${area} where no = ${no}
 	</update>

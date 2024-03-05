@@ -27,7 +27,7 @@ public class MainService implements Page{
 			list.get(i).setCoupon(Member_CouponDAO.getInstance().getData(list.get(i).getId()));
 		}
 		request.setAttribute("list", list);
-		request.getSession().setAttribute("log", "nv_test2");
+		request.getSession().setAttribute("log", "admin");
 		return "Main";
 	}
 }

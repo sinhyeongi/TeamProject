@@ -47,6 +47,9 @@ public class ViewMapper {
 		//고객 예약 정보
 		mapper.put("/Reserve_Info.do", new MemberReserveInfo());
 		
+		//host 호텔 정보보기
+		mapper.put("/host_hotel_info.do", new Host_Hotel_Info());
+		
 	}
 	
 	

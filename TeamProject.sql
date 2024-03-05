@@ -97,6 +97,7 @@ create table room(
     foreign key(hotel_no) references hotel(no) on delete cascade
 );
 select * from room;
+select name from room where no = 1;
 
 # 예약
 create table reserve(
@@ -112,7 +113,7 @@ create table reserve(
     people int not null, -- 인원수
     add_req varchar(100), -- 추가 요청 사항
     visit varchar(50) not null, -- 방문방법
-    hotel_option varchar(300), -- 옵션 ( 조식,헬스장 , 수영장,주차장 이용)
+    uid varchar(100), -- 결재시 결재uid *test이후 NotNull
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );

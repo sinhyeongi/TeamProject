@@ -4,6 +4,7 @@ package org.Java.VO;
 import java.util.Objects;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 public class ReserveVO{
@@ -19,9 +20,10 @@ public class ReserveVO{
 	private int people; // 인원수
 	private String add_req; //추가 요청 사항
 	private String visit; //방문 방법
-	private String hotel_option; //옵션 (조식,헬스장,수영장,주차장)
-	private String hotel_name;
-	private String room_name;
+	private String uid; //결재시에 등록 하는 uid
+	private String hotel_name; //호텔 이름
+	private String room_name; // 방 이름
+	
 	@Override
 	public boolean equals(Object obj) {
 		 if (this == obj)
@@ -32,5 +34,11 @@ public class ReserveVO{
 	            return false;
 	        ReserveVO other = (ReserveVO) obj;
 	        return Objects.equals(hotel_no, other.getHotel_no());
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
 	}
 }

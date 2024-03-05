@@ -1,5 +1,7 @@
 package org.Java.VO;
 
+import java.util.ArrayList;
+
 import lombok.Data;
 
 @Data
@@ -18,4 +20,5 @@ public class HotelVO {
 	private String account; //계좌 번호 
 	private String x;
 	private String y;
+	private ArrayList<String> url; //이미지경로
 }

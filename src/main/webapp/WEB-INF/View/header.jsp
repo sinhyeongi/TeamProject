@@ -92,6 +92,9 @@
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/Member_Reserve_Info.js?ds"></script>
 	</c:if>
+	<c:if test="${page eq 'host_hotel_info.jsp' }">
+		<script defer="defer" src="${ctx }/Js/host_hotel_info.js?ds"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -127,7 +130,9 @@
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Reserve_Info.css" type="text/css">
 	</c:if>
-	
+	<c:if test="${page eq 'host_hotel_info.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/host_hotel_info.css" type="text/css">
+	</c:if>
 </head>
 <body>
 

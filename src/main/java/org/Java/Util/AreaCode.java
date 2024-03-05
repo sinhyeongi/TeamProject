@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class AreaCode {
 	private static AreaCode instance;
 	private HashMap<String, String> list;
-	public AreaCode() {
+	private AreaCode() {
 		list = new HashMap<String, String>();
 		list.put("11","서울시");
 		list.put("26", "부산시");

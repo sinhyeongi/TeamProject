@@ -17,6 +17,9 @@ public class RoomDAO {
 		}
 		return instance;
 	}
+	public RoomVO getOneRoomData(int no) {
+		return db.getOneRoomData(no);
+	}
 	public String getRoomName(int no) {
 		return db.getRoomName(no);
 	}

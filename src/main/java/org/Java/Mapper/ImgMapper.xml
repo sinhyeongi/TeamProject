@@ -18,4 +18,7 @@
 	<delete id="Img_delete" parameterType="img">
 		delete from img where uploader = #{uploader} and no = #{no} and url = #{url}
 	</delete>
+	<insert id="Img_InsertImg" parameterType="img">
+		insert into img(uploader,no,url) values(#{uploader},#{no},#{url})
+	</insert>
 </mapper>

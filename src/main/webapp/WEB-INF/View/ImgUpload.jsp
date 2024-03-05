@@ -13,7 +13,9 @@
     		</div>
     	</c:if>
     </c:forEach>
-    <form method="post" enctype="multipart/form-data">
-    	<input type="file" name="file" id="file">
+    <form method="post" enctype="multipart/form-data" id="ImgUpload_form">
+    		<input type="hidden" name="no" value="${vo.no }">
+    		<input type="hidden" name="uploader" value="${ uploader}">
+    	<input type="file" name="file" id="file" accept="image/*">
     </form>
 </main>

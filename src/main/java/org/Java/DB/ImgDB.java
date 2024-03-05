@@ -54,4 +54,13 @@ public class ImgDB {
 		se.close();
 		return cnt;
 	}
+	//이미지 추가
+	public int InsertImg(ImgVO vo) {
+		SqlSession se = sf.openSession();
+		int cnt = 0;
+		cnt = se.insert("Img_InsertImg",vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

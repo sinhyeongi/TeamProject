@@ -9,4 +9,7 @@
 	<select id="room_getData" resultType="room">
 		select * from room where hotel_no = #{hotel_no}
 	</select>
+	<select id="room_getOneRoomData" resultType="room">
+	select * from room where no = #{no}
+	</select>
 </mapper>

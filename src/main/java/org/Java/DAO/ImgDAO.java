@@ -32,4 +32,7 @@ public class ImgDAO {
 	public int DeleteImg(ImgVO vo) {
 		return db.DeleteImg(vo);
 	}
+	public int InsertImg(ImgVO vo) {
+		return db.InsertImg(vo);
+	}
 }

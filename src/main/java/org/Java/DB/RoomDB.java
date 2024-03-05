@@ -34,4 +34,10 @@ public class RoomDB {
 		se.close();
 		return (ArrayList<RoomVO>) list;
 	}
+	public RoomVO getOneRoomData(int no) {
+		SqlSession se = sf.openSession();
+		RoomVO list = se.selectOne("room_getOneRoomData",no);
+		se.close();
+		return list;
+	}
 }

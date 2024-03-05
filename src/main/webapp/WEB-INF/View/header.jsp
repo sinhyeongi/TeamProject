@@ -92,6 +92,9 @@
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/Member_Reserve_Info.js?ds"></script>
 	</c:if>
+	<c:if test="${page eq 'host_hotel_info.jsp' }">
+		<script defer="defer" src="${ctx }/Js/host_hotel_info.js?ds"></script>
+	</c:if>
 	<!-- hotelList js  -->
 	<c:if test="${page eq 'hotelList.jsp' }">
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
@@ -138,6 +141,10 @@
 		<link rel="stylesheet" href="${ctx}/Css/Member_Reserve_Info.css" type="text/css">
 	</c:if>
 
+	<c:if test="${page eq 'host_hotel_info.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/host_hotel_info.css" type="text/css">
+	</c:if>
+
 	<!-- hotelList css -->
 	<c:if test="${page eq 'hotelList.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/hotelList.css" type="text/css">
@@ -146,6 +153,7 @@
 	<!-- hotelInfo css  -->
 		<c:if test="${page eq 'hotelInfo.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/hotelInfo.css" type="text/css">
+
 	</c:if>
 
 	<!-- admin_MemberList -->

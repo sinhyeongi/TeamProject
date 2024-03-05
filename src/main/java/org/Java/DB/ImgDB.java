@@ -5,13 +5,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.Java.VO.Member_InfoVO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class Member_InfoDB {
+public class ImgDB {
 	private static SqlSessionFactory sf;
 	static {
 		try {
@@ -22,29 +21,16 @@ public class Member_InfoDB {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<Member_InfoVO> getAll(){
+	public ArrayList<String> getHotelUrl(int no) {
 		SqlSession se = sf.openSession();
-		List<Member_InfoVO> list = se.selectList("member_info_getAll");
+		List<String> url = se.selectList("img_getHotelUrl",no);
 		se.close();
-		return (ArrayList<Member_InfoVO>) list;
+		return (ArrayList<String>)url;
 	}
-	public Member_InfoVO getDataById(String id) {
-		SqlSession se =sf.openSession();
-		Member_InfoVO info = se.selectOne("member_info_getData", id);
-		se.close();
-		return info;
-	}
-	public int insertMemberInfo(String id) {
+	public ArrayList<String> getRoomUrl(int no){
 		SqlSession se = sf.openSession();
-		int check = se.insert("member_info_insert",id);
-		se.commit();
+		List<String> list = se.selectList("img_getRoomUrl",no);
 		se.close();
-		return check;
-	}
-	public Member_InfoVO getData(String id) {
-		SqlSession se = sf.openSession();
-		Member_InfoVO vo = se.selectOne("Member_Info_getData",id);
-		se.close();
-		return vo;
+		return (ArrayList<String>) list;
 	}
 }

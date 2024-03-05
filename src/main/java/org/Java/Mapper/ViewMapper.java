@@ -50,6 +50,10 @@ public class ViewMapper {
 		mapper.put("/Reserve_Info.do", new MemberReserveInfo());
 		
 
+
+		//host 호텔 정보보기
+		mapper.put("/host_hotel_info.do", new Host_Hotel_Info());
+
 		// 지역별 맵
 		mapper.put("/AreaMap.do", new AreaMapService());
 		

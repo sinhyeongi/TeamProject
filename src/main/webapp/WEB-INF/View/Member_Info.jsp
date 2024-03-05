@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
-<main id="Member_info_Main">
+<main id="Member_Profile_Main">
 <input type="hidden" id="id" name="id" value="${log }">
 	<div class="left_item">
 		<jsp:include page="Left_Item.jsp"></jsp:include>

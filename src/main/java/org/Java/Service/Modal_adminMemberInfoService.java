@@ -28,7 +28,7 @@ public class Modal_adminMemberInfoService implements Page {
 		int no = Integer.parseInt(request.getParameter("no"));
 		MemberVO vo = MemberDAO.getinstance().getMemberByNo(no);
 		ArrayList<Member_couponVO> couponList = Member_CouponDAO.getInstance().getData(vo.getId());
-		Member_InfoVO info = Member_InfoDAO.getInstance().getDataById(vo.getId());
+		Member_InfoVO info = Member_InfoDAO.getInstance().getData(vo.getId());
 		ArrayList<ReserveVO> reserveList = ReserveDAO.getInstance().getData(vo.getId());
 		
 		request.setAttribute("member_vo", vo);

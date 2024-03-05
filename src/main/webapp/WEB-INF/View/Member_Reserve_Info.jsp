@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 
-<main id="Member_Reserve_Info_Main">
+<main id="Member_Profile_Main">
 	<div class="left_item">
 		<jsp:include page="Left_Item.jsp"></jsp:include>
 	</div>

@@ -30,4 +30,10 @@ public class Member_CouponDAO {
 		System.out.println("멤버쿠폰"+(check>0?"성공":"실패"));
 		return check;
 	}
+	public int getDisLate(String name) {
+		return db.getDisLate(name);
+	}
+	public int getDisPrice(String name) {
+		return db.getDisPrice(name);
+	}
 }

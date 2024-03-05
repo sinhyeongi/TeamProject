@@ -79,22 +79,26 @@ function IdDuplicatedCheck(ids){
 
 //아이디 내용 변경시 중복체크 다시.
 const idInputBox = document.getElementById("ids");
-idInputBox.addEventListener("keydown",()=>{
-	idInputBox.parentElement.classList.remove("check");
-	idInputBox.parentElement.classList.remove("error");
-	document.querySelector(".errorMsg_id").classList.remove("active");
-	idCheck = 0;
-})
+if(idInputBox){
+	idInputBox.addEventListener("keydown",()=>{
+		idInputBox.parentElement.classList.remove("check");
+		idInputBox.parentElement.classList.remove("error");
+		document.querySelector(".errorMsg_id").classList.remove("active");
+		idCheck = 0;
+	});
+}
 
 
 //닉네임 내용 변경시 중복체크 다시.
 const nicknameInputBox = document.getElementById("nickname");
-nicknameInputBox.addEventListener("keydown",()=>{
-	nicknameInputBox.parentElement.classList.remove("check");
-	nicknameInputBox.parentElement.classList.remove("error");
-	document.querySelector(".errorMsg_nickname").classList.remove("active");
-	nickCheck = 0;
-})
+if(nicknameInputBox){
+	nicknameInputBox.addEventListener("keydown",()=>{
+		nicknameInputBox.parentElement.classList.remove("check");
+		nicknameInputBox.parentElement.classList.remove("error");
+		document.querySelector(".errorMsg_nickname").classList.remove("active");
+		nickCheck = 0;
+	});
+}
 
 //회원가입 버튼
 function insert(form){
@@ -117,8 +121,7 @@ function insert(form){
 		id.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_id").classList.add("active");
 		return;
-	}
-	if(id){
+	}else if(id){
 		document.querySelector(".errorMsg_id").classList.remove("active");
 		id.parentElement.classList.remove("error");
 	}
@@ -127,14 +130,12 @@ function insert(form){
 		pw.parentElement.classList.add("error");
 		activeErr(".errorMsg_pw","red","비밀번호를 입력해주세요.");
 		return;
-	}
-	if(pw.value.length < 8){
+	}else if(pw && pw.value.length < 8){
 		pw.focus();
 		activeErr(".errorMsg_pw","red","8글자 이상 입력해주세요.");
 		pw.parentElement.classList.add("error");
 		return;
-	}
-	if(pw){
+	}else if(pw){
 		pw.parentElement.classList.remove("error");
 		document.querySelector(".errorMsg_pw").classList.remove("active");
 	}
@@ -143,8 +144,7 @@ function insert(form){
 		email.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_email").classList.add("active");
 		return;
-	}
-	if(email){
+	}else if(email){
 		email.parentElement.classList.remove("error");
 		document.querySelector(".errorMsg_email").classList.remove("active");
 		fetch("DuplicatedCheck.do",
@@ -173,8 +173,7 @@ function insert(form){
 		name.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_name").classList.add("active");
 		return;
-	}
-	if(name){
+	}else if(name){
 		document.querySelector(".errorMsg_name").classList.remove("active");
 		name.parentElement.classList.remove("error");
 	}
@@ -182,8 +181,7 @@ function insert(form){
 		birth.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_birth").classList.add("active");
 		return;
-	}
-	if(birth){
+	}else if(birth){
 		document.querySelector(".errorMsg_birth").classList.remove("active");
 		birth.parentElement.classList.remove("error");
 		addBirth(form);
@@ -193,8 +191,7 @@ function insert(form){
 		activeErr(".errorMsg_phone","red","연락처 형식에 맞게 입력해주세요.")
 		phone.parentElement.classList.add("error");
 		return;
-	}
-	if(phone){
+	}else if(phone){
 		document.querySelector(".errorMsg_phone").classList.remove("active");
 		phone.parentElement.classList.remove("error");
 		fetch("DuplicatedCheck.do",
@@ -220,8 +217,7 @@ function insert(form){
 		activeErr(".errorMsg_address","red","주소를 입력해주세요.")
 		document.querySelector(".errorMsg_address").classList.add("active");
 		return;
-	}
-	if(address){
+	}else if(address){
 		document.querySelector(".errorMsg_address").classList.remove("active");
 		document.querySelector("#address_box").classList.remove("error");
 	}
@@ -229,13 +225,11 @@ function insert(form){
 		activeErr(".errorMsg_address","red","상세주소를 입력해주세요.")
 		document.querySelector("#address_box").classList.add("error");
 		return;
-	}
-	if(address){
+	}else if(address){
 		document.querySelector(".errorMsg_address").classList.remove("active");
 		document.querySelector("#address_box").classList.remove("error");
-		addAddress(form);
 	}
-	if(idCheck ===0){
+	if(id && idCheck ===0){
 		activeErr(".errorMsg_id","red","아이디 중복체크를 해주세요.");
 		return;
 	}
@@ -245,6 +239,8 @@ function insert(form){
 	}
 	//회원가입 중복입력 방지
 	isInsertButtonPress = true;
+	//주소 합치기
+	addAddress(form);
 	//폼 내용 서밋
 	form.submit();
 }
@@ -290,7 +286,7 @@ let isYearOptionExisted = false;
 let isMonthOptionExisted = false;
 let isDayOptionExisted = false;
 
-//생년월일
+//생년월일 존재시
 if(birthYearEl){
 	// 년도 생성
 	birthYearEl.addEventListener("click",function (){

@@ -47,5 +47,6 @@
     <mapper resource="org/Java/Mapper/HotelMapper.xml"/>
     <mapper resource="org/Java/Mapper/ReserveMapper.xml"/>
     <mapper resource="org/Java/Mapper/RoomMapper.xml"/>
+    <mapper resource="org/Java/Mapper/ImgMapper.xml"/>
   </mappers>
 </configuration>

@@ -26,5 +26,7 @@ public class Member_InfoDAO {
 		System.out.println("멤버정보"+(check>0?"성공":"실패"));
 		return check;
 	}
-
+	public Member_InfoVO getData(String id) {
+		return db.getData(id);
+	}
 }

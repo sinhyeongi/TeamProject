@@ -28,9 +28,9 @@
 	</div>
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>
-	<a href="reserve.do">예약페이지 (임시)</a>
-	<a href="HotelList.do">맵테스트 (임시)</a>
-	
+	<a href="reserve.do">예약페이지 (임시)</a><br/>
+	<a href="HotelList.do">맵테스트 (임시)</a><br/>
+	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
 </main>
 </body>
 </html>

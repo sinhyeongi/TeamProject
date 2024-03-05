@@ -22,12 +22,21 @@ public class HotelDB {
 			e.printStackTrace();
 		}
 	}
+	//전체 데이터 가져오기
 	public ArrayList<HotelVO> getAll(){
 		SqlSession se = sf.openSession();
 		List<HotelVO> list = se.selectList("hotel_getAll");
 		se.close();
 		return (ArrayList<HotelVO>)list;
 	}
+	//아이디에 해당하는 호텔 전체 가져오기
+	public ArrayList<HotelVO> Host_getAll(String id){
+		SqlSession se = sf.openSession();
+		List<HotelVO> list = se.selectList("hotel_host_getAll",id);
+		se.close();
+		return (ArrayList<HotelVO>) list;
+	}
+	//경도,위도 업데이트
 	public int update_XY(HotelVO vo) {
 		SqlSession se = sf.openSession();
 		int cnt = se.update("hotel_update_XY", vo);
@@ -35,6 +44,7 @@ public class HotelDB {
 		se.close();
 		return cnt;
 	}
+	//호텔 이름 가져오기
 	public String getHotelName(int no) {
 		SqlSession se = sf.openSession();
 		String name = se.selectOne("hotel_getName",no);

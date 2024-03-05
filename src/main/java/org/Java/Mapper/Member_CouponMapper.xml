@@ -9,4 +9,10 @@
 	<insert id="member_coupon_insert" parameterType="map">
 		insert into member_coupon(id,name,period) values(#{id},#{name},Date_add(current_date(), interval (select period from coupon where name = #{name}) day))
 	</insert>
+	<select id="coupon_getdislate" resultType="int" parameterType="String">
+		SELECT dislate from coupon where name = #{name};
+	</select>
+	<select id="coupon_getdisprice" resultType="int" parameterType="String">
+		SELECT disprice from coupon where name = #{name};
+	</select>
 </mapper>

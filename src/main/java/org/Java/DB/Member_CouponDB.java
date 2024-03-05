@@ -37,4 +37,16 @@ public class Member_CouponDB {
 		se.close();
 		return check;
 	}
+	public int getDisLate(String name) {
+		SqlSession se = sf.openSession();
+		int disLate = se.selectOne("coupon_getdislate", name);
+		se.close();
+		return disLate;
+	}
+	public int getDisPrice(String name) {
+		SqlSession se = sf.openSession();
+		int disPrice = se.selectOne("coupon_getdisprice", name);
+		se.close();
+		return disPrice;
+	}
 }

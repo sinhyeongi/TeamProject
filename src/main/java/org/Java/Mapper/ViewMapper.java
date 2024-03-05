@@ -24,6 +24,9 @@ public class ViewMapper {
 		mapper.put("/reserve.do", new ReserveService());
 		// 유저 정보 보기
 		mapper.put("/Member_Info.do", new Member_InfoService());
+		// 유저 포인트 및 쿠폰
+		mapper.put("/Member_PointAndCoupon_Info.do" , new Member_PonintAndCoupon_Info());
+
 		//중복체크 (nickname)
 		mapper.put("/DuplicatedCheck.do", new DuplicatedCheckService());
 		//회원가입

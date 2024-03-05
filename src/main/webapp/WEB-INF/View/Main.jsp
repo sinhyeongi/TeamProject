@@ -28,6 +28,7 @@
 	</div>
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>
+	<a href="Member_Info.do">정보보기</a><br/>
 
 	<a href="reserve.do">예약페이지 (임시)</a><br/>
 	<a href="HotelList.do">호텔 리스트 (임시)</a><br/>

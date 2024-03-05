@@ -1,0 +1,87 @@
+@charset "UTF-8";
+.section{
+	margin-bottom: 30px;
+}
+.title{
+	margin-bottom: 20px;
+}
+.point_box{
+	background-color: #f2f8ff;
+	border-radius: 12px;
+	padding: 20px;
+}
+label{
+	font-size:14px;
+	font-weight: 600;
+	color: #1273e4;
+}
+p{
+	font-size: 32px;
+	font-weight: 700;
+	color: #1273e4;
+}
+.point_msg{
+	border-top: 1px solid #ebebeb;
+}
+.text_btn{
+	color: #999;
+	cursor: unset!important;
+	font-weight: 700;
+}
+.count{
+	color : #707070;
+	padding:20px 0;
+	font-size: 15px;
+	font-weight: 900;
+}
+.items{
+	grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.Coupon_Info_item{
+	border : 1px solid #ebebeb;
+	font-size: 15px;
+    font-weight: 400;
+    border-radius: 12px;
+    padding: 24px;
+    overflow: hidden;
+	
+}
+.price_section{
+	margin-bottom: 8px;
+}
+.discount-amount{
+	color : #f45858;
+	font-size: 24px;
+    font-weight: 400;
+}
+.amount{
+	font-size: 32px;
+    font-weight: 700;
+}
+.max{
+	color : #f45858;
+}
+.remain-date{
+	font-size: 15px;
+    font-weight: 800;
+	color : #f45858;
+}
+.remain-detail{
+	margin-left: 10px;
+	color : #707070;
+}
+.coupon_name{
+	color : #333;
+	font-size: 18px;
+    font-weight: 700;
+}
+/* 예시: 화면 폭에 따라 스타일 변경 */
+@media screen and (max-width: 1200px) {
+ /* 모바일 화면 크기에 대한 스타일 */
+.items{
+	grid-template-columns: repeat(1, 1fr);
+}
+}
+

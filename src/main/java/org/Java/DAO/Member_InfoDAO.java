@@ -24,9 +24,6 @@ public class Member_InfoDAO {
 	public int insertMemberInfo(String id) {
 		return db.insertMemberInfo(id);
 	}
-	public Member_InfoVO getDataById(String id) {
-		return db.getDataById(id);
-	}
 	public Member_InfoVO getData(String id) {
 		return db.getData(id);
 	}

@@ -47,10 +47,10 @@ update member_info set level = 900 where id = 'test1';
 create table coupon(
 	name varchar(300) not null primary key, -- 쿠폰이름
     dislate int, -- 쿠폰 할인율
-    disprice int, -- 쿠폰 할인 금액
+    disprice int, -- 쿠폰 할인 금액 (할인율 쿠폰일 때 최대 할인금액)
     period int -- 사용 가능 기간
 );
-insert into coupon values('WellCome',7,0,7);
+insert into coupon values('WellCome',7,10000,7);
 select * from coupon;
 #유저 쿠폰
 create table member_coupon(

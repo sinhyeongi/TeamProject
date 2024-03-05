@@ -19,10 +19,10 @@
 				<label class="label_id">아이디</label>
 				<div class="id container">
 					<div id="input_id_box" class="input_wrapper input_box">
-						<input class="input" type="text" id="id" name="id" placeholder="아이디를 입력하세요" required>
+						<input class="input" type="text" id="ids" name="id" placeholder="아이디를 입력하세요" required>
 					</div>
 					<div class="duplicated_box">
-						<div class="btn" onclick="IdDuplicatedCheck(id)">중복체크</div>
+						<div class="btn" onclick="IdDuplicatedCheck(ids)">중복체크</div>
 					</div>
 				</div>
 			</div>

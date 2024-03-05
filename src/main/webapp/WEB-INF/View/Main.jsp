@@ -30,6 +30,9 @@
 	<a href="Login.do">로그인하기</a><br/>
 	<a href="reserve.do">예약페이지 (임시)</a>
 	<a href="HotelList.do">맵테스트 (임시)</a>
+	<c:if test="${log ne 'admin'}">
+		<a href="adminPage.do">관리자페이지(임시)</a>
+	</c:if>
 	
 </main>
 </body>

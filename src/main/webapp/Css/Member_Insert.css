@@ -5,9 +5,10 @@
 	flex-direction:column;
 	max-width:1400px;
 	align-items: center;
+	margin :auto;
 }
 .member_insert{
-	width: 400px;
+	width: 500px;
 	margin: 0 auto;
 	/*border: solid 1px blue;*/
 }
@@ -83,6 +84,14 @@ label{
 }
 #errorMsg.active{
 	display : block;
+}
+.duplicated_box{
+	border-radius : 20px;
+	border : solid black 0.1px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	cursor: pointer;
 }
 select{
 	cursor: pointer;

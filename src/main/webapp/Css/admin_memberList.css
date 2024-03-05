@@ -1,0 +1,43 @@
+@charset "UTF-8";
+div{
+	text-align: center;
+}
+.member_List{
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width:100%;
+	max-width: 800px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+.column{
+	display: flex;
+}
+.row{
+	overflow:auto;
+	width: 200px;
+	display:flex;
+	justify-content: center;
+	border-radius: 5px;
+}
+.label{
+	font-size: larger;
+	font-weight: bolder;
+}
+.label_section .row{
+	border : solid 1px;
+	padding: 10px;
+}
+.data_section .row{
+	margin : 10px 0;
+	border-bottom: solid 1px;
+}
+.Modal_btn{
+	padding : 1px;
+	border-radius : 5px;
+	border : solid 1px;
+	cursor: pointer;
+}

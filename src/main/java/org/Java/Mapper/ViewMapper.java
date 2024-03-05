@@ -47,6 +47,11 @@ public class ViewMapper {
 		//고객 예약 정보
 		mapper.put("/Reserve_Info.do", new MemberReserveInfo());
 		
+		//admin
+		mapper.put("/adminPage.do", new AdminPage());
+		mapper.put("/admin_memberList.do",new AdminMemberList());
+		mapper.put("/admin_Modal_memberInfo.do",new Modal_adminMemberInfoService());
+		
 	}
 	
 	

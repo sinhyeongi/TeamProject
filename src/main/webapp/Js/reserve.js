@@ -1,11 +1,29 @@
 /**
  * 
  */
+
 var IMP = window.IMP;
 IMP.init('imp62080161');
 let isCheck = false;
 const regex = /^(01[0-9]{1}-?[0-9]{4}-?[0-9]{4}|01[0-9]{8})$/; //전화번호 정규표현식
 const regex2 = /^[가-힣a-zA-Z]+$/; //한글+영문 정규표현식
+function TimeStamp(date){
+	let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+
+        month = month >= 10 ? month : '0' + month;
+        day = day >= 10 ? day : '0' + day;
+        hour = hour >= 10 ? hour : '0' + hour;
+        minute = minute >= 10 ? minute : '0' + minute;
+        second = second >= 10 ? second : '0' + second;
+
+        return date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+}
+
+alert(stamp);
 function check(){
 	if($('input[name=name]').val() == null || $('input[name=name]').val() == ''){
 		alert('이름 입력 후 결제 해주세요');
@@ -42,10 +60,17 @@ function requestPay(){
  	const _name = $('input[name=name]').val();
  	const _tel = $('input[name=tel]').val();
  	const price = $('input[name=price]').val();
+ 	const stamp = TimeStamp(new Date(Date.now()));
+ 	const _data = {
+ 		uid : stam +'/'+_tel+'/'+_name,
+ 		name : _name,
+ 		_tel : _tel,
+ 		price : price
+ 	}
  	IMP.request_pay({
  		pg : 'html5_inicis.INIpayTest',
  		pay_method : 'card',
- 		merchant_uid : 'test-0004', //
+ 		merchant_uid : stamp+'/'+_tel+'/'+_name, // 타임스템프 + 전화번호 + 이름
  		name : _name,
  		amount : price,
  		buyer_tel : _tel

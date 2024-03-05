@@ -36,4 +36,7 @@ public class HotelDAO {
 	public HotelVO getHotelData(int no) {
 		return db.getHotelData(no);
 	}
+	public int UpdateHotelData(HotelVO vo) {
+		return db.UpdateHotelData(vo);
+	}
 }

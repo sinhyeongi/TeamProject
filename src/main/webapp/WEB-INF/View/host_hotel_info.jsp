@@ -8,9 +8,9 @@
 	<div class="host_hotel_info_content">
 		<div class="host_hotel_info_img">
 		<c:forEach var="url" items="${h.url }" varStatus="status">
-			<c:if test="${status.first or status.index %2 eq 1}"><div></c:if>
+			<c:if test="${status.first or (status.index % 2) eq 1 or status.last}"><div></c:if>
 				 <div><img src="${ctx }/img/${url}"></div>
-			<c:if test="${status.index%2 eq 0 }"></div></c:if>
+			<c:if test="${(status.index % 2) eq 0 or status.last}"></div></c:if>
 		</c:forEach>
 		</div>
 		<div class="host_hotel_info_content_div">

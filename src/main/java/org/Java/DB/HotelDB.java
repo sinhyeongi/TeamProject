@@ -51,10 +51,19 @@ public class HotelDB {
 		se.close();
 		return name;
 	}
+	//호텔하나 데이터가져오기
 	public HotelVO getHotelData(int no) {
 		SqlSession se = sf.openSession();
 		HotelVO vo = se.selectOne("hotel_getData",no);
 		se.close();
 		return vo;
+	}
+	public int UpdateHotelData(HotelVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.update("UpdateHotelData",vo);
+		se.commit();
+		se.close();
+		return cnt;
 	}
 }

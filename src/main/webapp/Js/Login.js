@@ -5,4 +5,3 @@ naver_id_login.setButton("green", 3,54);
 naver_id_login.setDomain("http://localhost:8082/TeamProject/Naver_Login.do");
 naver_id_login.setState(state);
 naver_id_login.init_naver_id_login();
-

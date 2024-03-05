@@ -4,32 +4,33 @@
 	display: flex;
 	flex-direction:column;
 	max-width:1400px;
-	margin: auto;
-	justify-content: center;
-	align-items: center; 
+	align-items: center;
+	margin :auto;
 }
-#Member_Insert_Form{
-	border: 1px solid black;
-	width: 600px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-#title h1 {
-    margin: 10px;
-}
-
-
-
-
-.box{
-	display: flex;
+.member_insert{
+	width: 500px;
+	margin: 0 auto;
+	/*border: solid 1px blue;*/
 }
 .title{
-	margin-bottom: 4px;
+	margin: 16px 0 20px;
     font-size: 13px;
     font-weight: 600;
     cursor: default;
+}
+.title h1 {
+    margin: 10px;
+}
+label{
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.box{
+	display: flex;
+	flex-direction: column;
+	/*border: solid 1px red;*/
 }
 .input_wrapper{
 	background-color: #f5f5f5;
@@ -39,12 +40,33 @@
     box-sizing: border-box;
     display: flex;
     height: 48px!important;
-    justify-content: center;
+    justify-content: space-around;
+}
+.select_birth{
+	margin:2px;
+	width: 80px;
 }
 #address_box{
 	background-color: #f5f5f5;
     padding: 10px;
-     border-radius: 7px;
+    border-radius: 7px;
+}
+.container{
+	display: flex;
+}
+.input_wrapper.select{
+	display: inline-block;
+	flex:1;
+	margin: 0 3px;
+	align-self: center;
+}
+.input{
+    background-color: transparent;
+    border: none !important;
+    margin-left: 10px;
+    width: 100%;
+    outline: none;
+    line-height: normal;
 }
 .NoInput{
 	background-color: black;
@@ -58,8 +80,42 @@
 }
 #errorMsg{
 	display : none;
-	color : red;
+	color : red
 }
 #errorMsg.active{
 	display : block;
+}
+.duplicated_box{
+	border-radius : 20px;
+	border : solid black 0.1px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	cursor: pointer;
+}
+select{
+	cursor: pointer;
+	appearance: none;
+	border: transparent;
+	background: transparent;
+	font-size: 15px;
+	font-weight: 500;
+}
+.submit_btn{
+	align-self: center;
+	width: 200px;
+	background-color: #1273e4;
+	border-radius: 10px;
+	color : #fff;
+	padding: 5px 1px;
+	font-size: larger;
+	font-weight: 600;
+	border: transparent;
+	cursor : pointer;
+}
+.input_box{
+	flex:3;
+}
+.duplicated_box{
+	flex:1;
 }

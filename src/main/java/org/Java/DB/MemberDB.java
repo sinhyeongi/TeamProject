@@ -28,8 +28,12 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
-
-
+	public MemberVO getMemberByNo(int no) {
+		SqlSession se = sf.openSession();
+		MemberVO vo = se.selectOne("member_getMemberByNo", no);
+		se.close();
+		return vo;
+	}
 	//로그인 아이디,비밀번호가 맞는지 체크
 	public MemberVO CheckLogin(MemberVO vo) {
 		SqlSession se = sf.openSession();
@@ -67,12 +71,30 @@ public class MemberDB {
 		se.close();
 		return checkCount;
 	}
+	public int getdbId(String id) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkId",id);
+		se.close();
+		return checkCount;
+	}
 	public int insertMember(MemberVO vo) {
 		SqlSession se = sf.openSession();
 		int check = se.insert("member_insertMember",vo);
 		se.commit();
 		se.close();
 		return check;
+	}
+	public int getdbEmail(String email) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkemail",email);
+		se.close();
+		return checkCount;
+	}
+	public int getdbPhone(String phone) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.selectOne("member_checkphone",phone);
+		se.close();
+		return checkCount;
 	}
 
 }

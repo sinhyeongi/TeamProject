@@ -32,5 +32,7 @@ public class ReserveVO{
 	            return false;
 	        ReserveVO other = (ReserveVO) obj;
 	        return Objects.equals(hotel_no, other.getHotel_no());
+	        
 	}
+	
 }

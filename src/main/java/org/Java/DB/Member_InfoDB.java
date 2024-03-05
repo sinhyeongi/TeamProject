@@ -28,7 +28,12 @@ public class Member_InfoDB {
 		se.close();
 		return (ArrayList<Member_InfoVO>) list;
 	}
-	
+	public Member_InfoVO getDataById(String id) {
+		SqlSession se =sf.openSession();
+		Member_InfoVO info = se.selectOne("member_info_getData", id);
+		se.close();
+		return info;
+	}
 	public int insertMemberInfo(String id) {
 		SqlSession se = sf.openSession();
 		int check = se.insert("member_info_insert",id);

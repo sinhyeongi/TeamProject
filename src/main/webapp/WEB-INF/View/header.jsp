@@ -137,6 +137,7 @@
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Reserve_Info.css" type="text/css">
 	</c:if>
+
 	<!-- hotelList css -->
 	<c:if test="${page eq 'hotelList.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/hotelList.css" type="text/css">
@@ -146,6 +147,14 @@
 		<c:if test="${page eq 'hotelInfo.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/hotelInfo.css" type="text/css">
 	</c:if>
+
+	<!-- admin_MemberList -->
+	<c:if test="${page eq 'admin_memberList.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/admin_memberList.css" type="text/css">
+		<script defer="defer" src="${ctx}/Js/admin_memberList.js?sa"></script>
+	</c:if>
+	
+
 </head>
 <body>
 

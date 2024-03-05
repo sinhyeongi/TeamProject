@@ -4,7 +4,10 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.Java.Mapper.Member_InfoMapper">
 	<select id="member_info_getAll" resultType="member_info">
-		select * from member_info
+		select * from member_info;
+	</select>
+	<select id="member_info_getData" parameterType="String" resultType="member_info">
+		select * from member_info where id = #{id};
 	</select>
 	<insert id="member_info_insert" parameterType="String">
 		insert into member_info(id,level)values(#{id},1)

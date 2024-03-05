@@ -1,16 +1,18 @@
-let check = 0; //중복조회 및 회원가입 버튼
+let nickCheck = 0; //중복조회 및 회원가입 버튼
+let idCheck = 0;	//아이디중복조회
+let emailCheck = false;
+let phoneCheck = false;
 let isInsertButtonPress = false;
 //닉네임 중복체크
-function DuplicatedCheck(nickname){
-	if(check === 1){
-		document.querySelector(".errorMsg_duplicated").classList.add("active");
-		document.querySelector(".errorMsg_duplicated").style.color = "blue";
-		document.querySelector(".errorMsg_duplicated").textContent = "완료되었습니다.";
+function NicknameDuplicatedCheck(nickname){
+	console.log(nickname);
+	if(nickCheck === 1){
+		activeErr(".errorMsg_nickname","blue","완료되었습니다.");
 		return;
 	}
 	if(nickname.value.trim() === ""){
-		document.getElementById("nickname").focus();
-		document.querySelector(".errorMsg_nickname").classList.add("active");
+		nickname.focus();
+		activeErr(".errorMsg_nickname","red","닉네임을 입력해주세요.");
 		return;
 	}
 	fetch("DuplicatedCheck.do",{
@@ -23,35 +25,82 @@ function DuplicatedCheck(nickname){
 	.then(response => response.text())
 	.then(data =>{
 		if(data === "Duplicated"){
-			document.getElementById("nickname").focus();
-			document.querySelector(".errorMsg_nickname").classList.add("active");
-			document.querySelector(".errorMsg_nickname").style.color = "red";
-			document.querySelector(".errorMsg_nickname").textContent = "중복된 닉네임 입니다.";
-			check = 0;
+			nickname.focus();
+			activeErr(".errorMsg_nickname","red","중복된 닉네임 입니다.");
+			nickCheck = 0;
 		}else{
 			document.getElementById("nickname").classList.add("check");
-			document.querySelector(".errorMsg_duplicated").classList.remove("active");
-			document.querySelector(".errorMsg_nickname").classList.add("active");
-			document.querySelector(".errorMsg_nickname").style.color = "blue";
-			document.querySelector(".errorMsg_nickname").textContent = "사용 가능한 닉네임 입니다.";
-			check = 1;
+			activeErr(".errorMsg_nickname","blue","사용 가능한 닉네임 입니다.");
+			nickCheck = 1;
 		}
-	//}).catch(error => alert("error"));
 	}).catch(error => console.log(error));
 }
+
+function IdDuplicatedCheck(ids){
+	if(idCheck === 1){
+		activeErr(".errorMsg_id","blue","완료되었습니다.");
+		return;
+	}
+	console.log(ids);
+	if(ids.value.trim() === ""){
+		document.getElementById("ids").focus();
+		activeErr(".errorMsg_id","red","아이디를 입력해주세요");
+		ids.parentElement.classList.add("error");
+		return;
+	}
+	if(ids.value.length < 4){
+		ids.focus();
+		activeErr(".errorMsg_id","red","4글자 이상 입력해주세요.");
+		ids.parentElement.classList.add("error");
+		return;
+	}
+	fetch("DuplicatedCheck.do",{
+		method : "POST",
+		headers:{
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    	},
+    	body: "id="+ids.value,
+	})
+	.then(response => response.text())
+	.then(data =>{
+		if(data === "Duplicated"){
+			ids.focus();
+			activeErr(".errorMsg_id","red","중복된 아이디 입니다.");
+			ids.parentElement.classList.add("error");
+			idCheck = 0;
+		}else{
+			activeErr(".errorMsg_id","blue","사용 가능한 아이디 입니다.");
+			ids.parentElement.classList.add("check");
+			idCheck = 1;
+		}
+	}).catch(error => console.log(error));
+}
+
+
+//아이디 내용 변경시 중복체크 다시.
+const idInputBox = document.getElementById("ids");
+idInputBox.addEventListener("keydown",()=>{
+	idInputBox.parentElement.classList.remove("check");
+	idInputBox.parentElement.classList.remove("error");
+	document.querySelector(".errorMsg_id").classList.remove("active");
+	idCheck = 0;
+})
+
 
 //닉네임 내용 변경시 중복체크 다시.
 const nicknameInputBox = document.getElementById("nickname");
 nicknameInputBox.addEventListener("keydown",()=>{
-	document.getElementById("nickname").classList.remove("check");
-	check = 0;
+	nicknameInputBox.parentElement.classList.remove("check");
+	nicknameInputBox.parentElement.classList.remove("error");
+	document.querySelector(".errorMsg_nickname").classList.remove("active");
+	nickCheck = 0;
 })
 
 //회원가입 버튼
 function insert(form){
 
 	if(isInsertButtonPress)return;
-	let id = document.getElementById("id");
+	let id = document.getElementById("ids");
 	let pw = document.getElementById("pw");
 	let email = document.getElementById("email");
 	let name = document.getElementById("name");
@@ -65,86 +114,135 @@ function insert(form){
 	
 	if(id && id.value.trim() === ""){
 		id.focus();
-		id.classList.add("error");
+		id.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_id").classList.add("active");
 		return;
-	}else if(id){
+	}
+	if(id){
 		document.querySelector(".errorMsg_id").classList.remove("active");
-		id.classList.remove("error");
+		id.parentElement.classList.remove("error");
 	}
 	if(pw && pw.value.trim() === ""){
 		pw.focus();
-		pw.classList.add("error");
-		document.querySelector(".errorMsg_pw").classList.add("active");
+		pw.parentElement.classList.add("error");
+		activeErr(".errorMsg_pw","red","비밀번호를 입력해주세요.");
 		return;
-	}else if(pw){
-		pw.classList.remove("error");
+	}
+	if(pw.value.length < 8){
+		pw.focus();
+		activeErr(".errorMsg_pw","red","8글자 이상 입력해주세요.");
+		pw.parentElement.classList.add("error");
+		return;
+	}
+	if(pw){
+		pw.parentElement.classList.remove("error");
 		document.querySelector(".errorMsg_pw").classList.remove("active");
 	}
-	
 	if(email && !email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)){
 		email.focus();
-		email.classList.add("error");
+		email.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_email").classList.add("active");
 		return;
-	}else if(email){
-		email.classList.remove("error");
+	}
+	if(email){
+		email.parentElement.classList.remove("error");
 		document.querySelector(".errorMsg_email").classList.remove("active");
+		fetch("DuplicatedCheck.do",
+		{
+			method : "POST",
+			headers:{
+				"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+	    	},
+			body : "email="+email.value,
+		})
+		.then(response => response.text())
+		.then(data =>{
+			if(data==="Duplicated"){
+				activeErr(".errorMsg_email","red","이미 가입된 이메일입니다.");
+				emailCheck = false;
+			}else{
+				emailCheck = true;
+			}
+		});
+		
+		if(!emailCheck)return;
 	}
 	
 	if(name && name.value.trim() === ""){
 		name.focus();
-		name.classList.add("error");
+		name.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_name").classList.add("active");
 		return;
-	}else if(name){
-		document.querySelector(".errorMsg_name").classList.remove("active");
-		name.classList.remove("error");
 	}
-	
+	if(name){
+		document.querySelector(".errorMsg_name").classList.remove("active");
+		name.parentElement.classList.remove("error");
+	}
 	if(birth && (birthYear.value === "출생 연도" || birthMonth.value === "월" || birthDay.value ==="일")){
-		birth.classList.add("error");
+		birth.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_birth").classList.add("active");
 		return;
-	}else if(birth){
+	}
+	if(birth){
 		document.querySelector(".errorMsg_birth").classList.remove("active");
-		birth.classList.remove("error");
+		birth.parentElement.classList.remove("error");
 		addBirth(form);
 	}
-	if(phone && !phone.value.match(/010-\d{3,4}-\d{4}/)){
+	if(phone && !phone.value.match(/010-\d{4}-\d{4}$/)){
 		phone.focus();
-		phone.classList.add("error");
-		document.querySelector(".errorMsg_phone").classList.add("active");
+		activeErr(".errorMsg_phone","red","연락처 형식에 맞게 입력해주세요.")
+		phone.parentElement.classList.add("error");
 		return;
-	}else if(phone){
-		document.querySelector(".errorMsg_phone").classList.remove("active");
-		phone.classList.remove("error");
 	}
-	
+	if(phone){
+		document.querySelector(".errorMsg_phone").classList.remove("active");
+		phone.parentElement.classList.remove("error");
+		fetch("DuplicatedCheck.do",
+		{
+			method : "POST",
+			headers:{
+				"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+	    	},
+			body : "phone="+phone.value,
+		})
+		.then(response => response.text())
+		.then(data =>{
+			if(data==="Duplicated"){
+				activeErr(".errorMsg_phone","red","이미 가입된 연락처입니다.");
+				phoneCheck = false;
+			}else{
+				phoneCheck = true;
+			}
+		});
+		if(!phoneCheck)return;
+	}
 	if(address && address.value.trim() === ""){
-		document.querySelector("#address_box").classList.add("error");
+		activeErr(".errorMsg_address","red","주소를 입력해주세요.")
 		document.querySelector(".errorMsg_address").classList.add("active");
 		return;
-	}else if(address){
+	}
+	if(address){
 		document.querySelector(".errorMsg_address").classList.remove("active");
 		document.querySelector("#address_box").classList.remove("error");
 	}
-	
 	if(address && detailAddress.value.trim() === ""){
-		activeErr(document.querySelector(".errorMsg_address"),"red","상세주소를 입력해주세요.")
+		activeErr(".errorMsg_address","red","상세주소를 입력해주세요.")
 		document.querySelector("#address_box").classList.add("error");
 		return;
-	}else if(address){
+	}
+	if(address){
 		document.querySelector(".errorMsg_address").classList.remove("active");
 		document.querySelector("#address_box").classList.remove("error");
 		addAddress(form);
 	}
-	
-	if(check ===0){
-		activeErr(document.querySelector(".errorMsg_duplicated"),"red","닉네임 중복체크를 해주세요.");
+	if(idCheck ===0){
+		activeErr(".errorMsg_id","red","아이디 중복체크를 해주세요.");
 		return;
 	}
-	
+	if(nickCheck ===0){
+		activeErr(".errorMsg_nickname","red","닉네임 중복체크를 해주세요.");
+		return;
+	}
 	//회원가입 중복입력 방지
 	isInsertButtonPress = true;
 	//폼 내용 서밋
@@ -171,9 +269,9 @@ function addClassError(){
 	
 }
 function activeErr(element,color,msg){
-	element.classList.add("active"); //msg 활성화
-	element.style.color = color;     //msg 색
-	element.textContent = msg;		 //msg 문구
+	document.querySelector(element).classList.add("active"); //msg 활성화
+	document.querySelector(element).style.color = color;     //msg 색
+	document.querySelector(element).textContent = msg;		 //msg 문구
 }
 
 

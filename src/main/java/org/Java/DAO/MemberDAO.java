@@ -20,8 +20,24 @@ public class MemberDAO {
 		public ArrayList<MemberVO> getAll(){
 			return db.getAll();
 		}
+		public MemberVO getMemberByNo(int no) {
+			return db.getMemberByNo(no);
+		}
+		//아이디 중복체크
+		public int checkId(String id) {
+			return db.getdbId(id);
+		}
+		//닉네임 중복체크
 		public int checkNickname(String nickname) {
 			return db.getdbNickname(nickname);
+		}
+		//이메일 중복체크
+		public int checkEmail(String email) {
+			return db.getdbEmail(email);
+		}
+		//연락처 중복체크
+		public int checkPhone(String Phone) {
+			return db.getdbPhone(Phone);
 		}
 		public boolean insertMember(MemberVO vo) {
 			int checkInsertMember = db.insertMember(vo);
@@ -31,9 +47,10 @@ public class MemberDAO {
 			if(checkCoupon > 0 && checkMemberInfo > 0 && checkInsertMember > 0 ) {
 				System.out.println("회원가입 성공");
 				return true;
+			}else {
+				System.out.println("회원가입 실패");
+				return false;
 			}
-			System.out.println("회원가입 실패");
-			return false;
 		}
 		//자체 유저 체크
 		public MemberVO CheckLogin(MemberVO vo) {

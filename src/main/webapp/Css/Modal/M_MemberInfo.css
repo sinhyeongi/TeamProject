@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.Modal_main{
+	background-color: #efefef;
+	border-radius: 10px;
+}
+.Modal_column{
+	display: flex;
+	flex-wrap: wrap;
+}
+.Modal_row{
+	width:100%;
+	display: flex;
+}
+.Modal_items{
+	flex:1;
+	margin: 10px;
+	display: flex;
+	flex-direction : column;
+	justify-content: center;
+	align-items: center;
+}
+.Modal_label{
+	font-size:12px;
+}
+.Modal_data{
+	width: 100%;
+	height: 100%;
+	max-height : 30px;
+	max-width:400px;
+    border-radius: 12px;
+    border: 0;
+    background-color: #c4c5c9;
+}
+.Modal_coupons{
+	width: 100%;
+}
+.coupon_items{
+	display: flex;
+}
+.labels label{
+	width: 150px;
+}
+.Modal_reserve{
+	width: 100%;
+}
+.data_coupon{
+	width: 150px;
+	margin:0 10px;
+}

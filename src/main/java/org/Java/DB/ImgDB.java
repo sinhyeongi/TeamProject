@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.Java.VO.ImgVO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -32,5 +33,25 @@ public class ImgDB {
 		List<String> list = se.selectList("img_getRoomUrl",no);
 		se.close();
 		return (ArrayList<String>) list;
+	}
+	public ArrayList<ImgVO> getHotelImgData(int no){
+		SqlSession se = sf.openSession();
+		List<ImgVO> list = se.selectList("img_getHotelImgData",no);
+		se.close();
+		return (ArrayList<ImgVO>)list;
+	}
+	public ArrayList<ImgVO> getRoomImgData(int no){
+		SqlSession se = sf.openSession();
+		List<ImgVO> list = se.selectList("img_getRoomImgData",no);
+		se.close();
+		return (ArrayList<ImgVO>) list;
+	}
+	public int DeleteImg(ImgVO vo) {
+		SqlSession se = sf.openSession();
+		int cnt = 0;
+		cnt = se.delete("Img_delete", vo);
+		se.commit();
+		se.close();
+		return cnt;
 	}
 }

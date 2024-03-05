@@ -51,4 +51,10 @@ public class HotelDB {
 		se.close();
 		return name;
 	}
+	public HotelVO getHotelData(int no) {
+		SqlSession se = sf.openSession();
+		HotelVO vo = se.selectOne("hotel_getData",no);
+		se.close();
+		return vo;
+	}
 }

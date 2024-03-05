@@ -33,5 +33,7 @@ public class HotelDAO {
 	public String getHotelName(int no) {
 		return db.getHotelName(no);
 	}
-	
+	public HotelVO getHotelData(int no) {
+		return db.getHotelData(no);
+	}
 }

@@ -2,7 +2,10 @@ package org.Java.DB;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.Java.VO.RoomVO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,5 +27,11 @@ public class RoomDB {
 		String name = se.selectOne("room_getName",no);
 		se.close();
 		return name;
+	}
+	public ArrayList<RoomVO> getRoomData(int hotel_no){
+		SqlSession se = sf.openSession();
+		List<RoomVO> list = se.selectList("room_getData",hotel_no);
+		se.close();
+		return (ArrayList<RoomVO>) list;
 	}
 }

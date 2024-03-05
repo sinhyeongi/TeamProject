@@ -347,11 +347,11 @@
 				 </div> <!-- r_rv_header -->
 				 <div class="r_rv_center">
 				 	<div class="rv_img">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png">
- 				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png">
+				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
+				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
+				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
+ 				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
+				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
 				 	</div> <!-- rv_img -->
 				 	<div class="img_more_btn" onclick="showMoreImg(this)">
 				 	 사진 더보기
@@ -393,11 +393,11 @@
 				 </div> <!-- r_rv_header -->
 				 <div class="r_rv_center">
 				 	<div class="rv_img">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png">
-				     <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png">
- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png">
+				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
+				     <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
+				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
+ 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
+				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
 				 	</div> <!-- rv_img -->
 				 	<div class="img_more_btn" onclick="showMoreImg(this)">
 				 	 사진 더보기

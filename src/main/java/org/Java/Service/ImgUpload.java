@@ -49,7 +49,7 @@ public class ImgUpload implements Page{
 			regx = "/upload";
 		}else if(os.contains("win")) {
 			root_path += "img\\upload";
-			work_path = System.getProperty("user.dir") +"\\src\\main\\webapp\\img\\upload\\";
+			work_path = "C:\\TeamProject\\src\\main\\webapp\\img\\upload\\";
 			regx = "\\upload";
 		}
 		File f = new File(root_path);

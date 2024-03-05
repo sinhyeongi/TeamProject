@@ -100,6 +100,11 @@
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 	 <script defer="defer" src="${ctx }/Js/hotelList.js?ds"></script>
 	</c:if>
+	<!-- hotelInfo js  -->
+	 <c:if test="${page eq 'hotelInfo.jsp' }">
+	 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
+	 <script defer="defer" src="${ctx }/Js/hotelInfo.js?ds"></script>
+	</c:if>
 	<!-- host_hotel_modify js  -->
 	<c:if test="${page eq 'host_hotel_modify.jsp' }">
 		<script defer="defer" src="${ctx}/Js/host_hotel_modify.js"></script>

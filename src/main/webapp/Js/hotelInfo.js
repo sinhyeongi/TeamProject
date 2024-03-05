@@ -162,16 +162,35 @@ $('.wide_full_btn').click(function(){
 });
 
 // -------------------------------
-// 리뷰 이미지 클릭했을때
-	$('.rv_imgs').click(function(){
+// 리뷰 이미지 클릭했을때 ( 쓰지 않는 코드 (임시))
+/*	$('.rv_imgs').click(function(){
 		var imageTag = this.outerHTML;
 		console.log(imageTag);
 		$('.footer_modal').css('background-color','black');
 		$('.footer_modal').addClass('modal_on');
 		$('.moal_cancle').css('background-color','white');
-		$('.rv_imgs').css('height','800px');
-		$('.rv_imgs').css('width','800px');
+		$(imageTag).css('height','500px');
+		$(imageTag).css('width','500px');
 		$('.modal_main').html(imageTag);
 		$('.modal_main').css('overflow','hidden');
-	})
+	})*/
+	
+//-- 리뷰 이미지 클릭했을때 --
+	function clickImg(img){
+		var imageTag = $(img).clone();
+		    imageTag.css({
+      'width': '100%',  // 원하는 너비의 백분율로 변경
+      'height': '100%'  // 원하는 높이의 백분율로 변경
+    });
+		console.log(imageTag);
+		$('.footer_modal').css('background-color','black');
+		$('.footer_modal').addClass('modal_on');
+		$('.moal_cancle').css('background-color','white');
+		$(imageTag).css('height','100%');
+		$(imageTag).css('width','100%');
+		$('.modal_main').html(imageTag);
+		$('.modal_main').css('overflow','hidden');
+	};
 
+
+//--

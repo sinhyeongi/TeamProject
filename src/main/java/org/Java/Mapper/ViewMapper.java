@@ -42,6 +42,8 @@ public class ViewMapper {
 		mapper.put("/Modal.do", new ModalService());
 		//로그인 체크(비동기 용)
 		mapper.put("/LoginCheck.do", new LoginCheckService());
+		//로그인 체크(동기)
+		mapper.put("/LoginInputCheck.do", new LoginInputCheckService());
 		//유저 삭제
 		mapper.put("/DeleteUser_API.do", new Delete_User_API());
 		mapper.put("/DeleteUser.do", new DeleteUser());

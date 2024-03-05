@@ -32,7 +32,7 @@ public class DeleteImg implements Page{
 				work_path = "/Users/ssd/Desktop/TeamProject/TeamProject/src/main/webapp/img/";
 				img_path += "img/"+vo.getUrl();
 			}else if(os.contains("win")) {
-				work_path = System.getProperty("user.dir") +"\\src\\main\\webapp\\img\\";
+				work_path = "C:\\TeamProject\\src\\main\\webapp\\img\\";
 				img_path += "img\\"+vo.getUrl();
 			}
 			work_path += vo.getUrl();

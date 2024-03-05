@@ -14,7 +14,7 @@
 		<img alt="Main_logo" src="${ctx }/img/Main_logo.jpeg">
 	</div>
 	<c:forEach var="vo" items="${list }">
-		${vo }<br/>
+		${vo}<br/>
 		<hr/>
 	</c:forEach>
 	<h2 id="slick_title">국내 인기 여행지</h2>

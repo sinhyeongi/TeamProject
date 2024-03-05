@@ -28,8 +28,8 @@
  		border-radius: 10px;
  		background-color : white; 
  		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
- 		width : 400px;
- 		height : 200px;
+ 		width : 300px;
+ 		height : 150px;
  		display:flex;
  		display: none; 
 	}
@@ -37,8 +37,8 @@
  		border-radius: 13px;
  		margin:10px 0;
  		margin-left : 10px;
- 		width : 50%;
- 		height : 180px;
+ 		width : 40%;
+ 		height : 130px;
 		flex:2;
 	}
 	.iw_info{
@@ -48,7 +48,7 @@
 		display:flex;
 		flex-direction:column;
 	} 
-	.iw_info h3{
+	.iw_info h4{
 	margin-top: 20px;
 	margin-bottom:10px;
 	} 
@@ -57,29 +57,30 @@
   		margin-right:10px;
   		color : rgb(84, 84, 84);
   		font-weight: bold;
+  		margin-bottom: 10px;
 	}
 	.iw_star {
- 		 font-size: 12px;
+ 		font-size: 11px;
   		margin-bottom: -20px;
-				}	
+	}	
 	.iw_where{
- 		font-size: 14px;
+ 		font-size: 12px;
   		font-weight: 600;
   		margin-top: -10px;
   		margin-bottom: 5px;
   		color: #3e3e3e;
-		}
+	}
 
 	.iw_star_point {
   		text-align: left;
   		flex: 1;
-  		font-size: 13px;
+  		font-size: 12px;
 		}
 	.iw_star_point span{
  		 border-radius: 5px;
   		background-color: rgb(255, 162, 0);
   		padding: 3px;
   		font-weight: bold;
-  		font-size: 12px;
+  		font-size: 11px;
   		font-weight: bold;
 		}

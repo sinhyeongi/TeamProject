@@ -1,6 +1,5 @@
-/* Fontawesome 4.7 */
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
   font-family: Arial, sans-serif;
@@ -10,6 +9,48 @@ body {
   /* background-color: #f4f4f4; */
 }
 
+#hotelList_main{
+	width: 80%;
+	margin:auto;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.left_map{
+	position: relative;
+	left:20px;
+	flex:1.9;
+	width:100%;
+	height:200px;
+	background-image: url('../img/지도.png');
+	background-size: cover;
+	border-radius: 12px;
+	color: white;
+}
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.1); /* 배경 이미지 위에 어두운 오버레이 추가 */
+    }
+
+    .click_map {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 12px 30px;
+      background-color: rgb(7, 106, 246); /* 버튼 배경색 */
+      color: white; /* 버튼 텍스트 색상 */
+      font-weight: bold;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 /* header {
   background-color: #333;
   color: #fff;
@@ -17,7 +58,9 @@ body {
   text-align: center;
 } */
 
-main {
+.hotelList_center {
+  flex:7;
+  margin-left:-50px;
   margin-top: 50px;
   /* margin: 0; */
   /* height: 100vh; */
@@ -25,11 +68,13 @@ main {
   align-items: center;
   justify-content: center;
   /* overflow: hidden; */
+  box-sizing: border-box;
 }
 
 .back{
+  position: relative;
   margin-top : 100px;
-  margin-left: 450px;
+  margin-left: 530px;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -60,6 +105,9 @@ main {
 
 .accommodation img {
   flex: 2;
+   width: 350px;
+  height: 100%;
+  border-radius: 10px;
   /* transition: filter 0.3s ease; */
 }
 
@@ -75,6 +123,7 @@ main {
 }
 
 h2 {
+  margin-top : 20px;
   color: #333;
 }
 
@@ -82,7 +131,7 @@ h2:hover{
   color : rgb(49, 137, 238);
 }
 
-p {
+.h_price {
   color: black;
   font-size: 22px;
   text-align: right;
@@ -90,20 +139,23 @@ p {
 .peopleCnt{
   /* flex: 1; */
 }
-img {
+
+/*img {
   width: 350px;
   height: 100%;
   border-radius: 10px;
 }
+*/
 
 .star {
+	margin-left:3px;
   font-size: 12px;
   margin-bottom: -20px;
 }
 .where{
   font-size: 14px;
   font-weight: 600;
-  margin-top: -10px;
+  /*margin-top: -10px;*/
   margin-bottom: 5px;
   color: #3e3e3e;
 }
@@ -121,9 +173,32 @@ img {
   font-size: 12px;
 }
 .total_qty {
-  margin-top: -15px;
+  /*margin-top: -15px;*/
   font-size: 12px;
   font-weight: bold;
   color: rgb(235, 62, 62);
   text-align: right;
+}
+
+.modal {
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+     /* background-color: rgba(0, 0, 0, 0.7);*/
+      background-color: rgba(0, 0, 0, 0.4);
+      overflow:hidden;
+}
+
+.modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 800px;
+      height: 400px;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      overflow:hidden;
 }

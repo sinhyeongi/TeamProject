@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.Java.VO.Page;
 
-public class HotelListService implements Page{
+public class HotelInfoService implements Page{
 
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "hotelList";
+		
+		return "hotelInfo";
 	}
 
 }

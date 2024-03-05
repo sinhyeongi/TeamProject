@@ -35,6 +35,8 @@ public class ViewMapper {
 
 		// 호텔 리스트
 		mapper.put("/HotelList.do", new HotelListService());
+		// 호텔 인포
+		mapper.put("/HotelInfo.do", new HotelInfoService());
 		// Test
 		mapper.put("/Test.do", new TestService());
 		mapper.put("/Test_update.do",new Test_update());
@@ -49,6 +51,9 @@ public class ViewMapper {
 		
 		//host 호텔 정보보기
 		mapper.put("/host_hotel_info.do", new Host_Hotel_Info());
+		// 지역별 맵
+		mapper.put("/AreaMap.do", new AreaMapService());
+		
 		
 	}
 	

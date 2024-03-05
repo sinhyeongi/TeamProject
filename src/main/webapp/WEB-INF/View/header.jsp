@@ -95,6 +95,16 @@
 	<c:if test="${page eq 'host_hotel_info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/host_hotel_info.js?ds"></script>
 	</c:if>
+	<!-- hotelList js  -->
+	<c:if test="${page eq 'hotelList.jsp' }">
+	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
+	 <script defer="defer" src="${ctx }/Js/hotelList.js?ds"></script>
+	</c:if>
+	<!-- hotelInfo js -->
+	<c:if test="${page eq 'hotelInfo.jsp' }">
+	 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
+	 <script defer="defer" src="${ctx }/Js/hotelInfo.js?ds"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -132,6 +142,16 @@
 	</c:if>
 	<c:if test="${page eq 'host_hotel_info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/host_hotel_info.css" type="text/css">
+	</c:if>
+	<!-- hotelList css -->
+	<c:if test="${page eq 'hotelList.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/hotelList.css" type="text/css">
+		<link rel="stylesheet" href="${ctx}/Css/map.css" type="text/css">
+	</c:if>
+	<!-- hotelInfo css  -->
+		<c:if test="${page eq 'hotelInfo.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/hotelInfo.css" type="text/css">
+
 	</c:if>
 </head>
 <body>

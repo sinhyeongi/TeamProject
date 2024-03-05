@@ -25,13 +25,15 @@ public class DeleteImg implements Page{
 		int cnt = ImgDAO.getInstance().DeleteImg(vo);
 		response.getWriter().print(cnt);
 		if(cnt > 0) {
-			String img_path = request.getServletContext().getRealPath("")+"img/"+vo.getUrl();
+			String img_path = request.getServletContext().getRealPath("");
 			String work_path = "";
 			String os = System.getProperty("os.name").toLowerCase();
 			if(os.contains("mac")) {
 				work_path = "/Users/ssd/Desktop/TeamProject/TeamProject/src/main/webapp/img/";
+				img_path += "img/"+vo.getUrl();
 			}else if(os.contains("win")) {
 				work_path = System.getProperty("user.dir") +"\\src\\main\\webapp\\img\\";
+				img_path += "img\\"+vo.getUrl();
 			}
 			work_path += vo.getUrl();
 			System.out.println(img_path);

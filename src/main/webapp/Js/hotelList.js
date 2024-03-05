@@ -135,6 +135,9 @@ function initializeNaverMap() {
 
 // 클릭했을때 숨겨뒀던 mymodal을 보여주기.
 $('.click_map').click(function(){
+	setTimeout( function() {
+	 window.dispatchEvent(new Event('resize'));
+	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').append(
 		`<div id='myModal' class='modal'>

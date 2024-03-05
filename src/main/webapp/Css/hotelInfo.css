@@ -101,10 +101,10 @@
   }
   .full_btn{
 	  position: absolute;
-	  z-index: 1000;
+	  z-index: 900;
 	  background-color: white;
-      top: 40%;
-      right: 8%;
+      top: 60%;
+      right: 5%;
       padding: 12px 15px;
       border-radius: 50px;
       box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
@@ -415,3 +415,255 @@
   hr {
 	  margin : 25px 0;
   }
+
+  .room_use_info {}
+
+  .room_use_info h4 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .info_ul {
+    /*margin-left: -10px;*/
+    margin : 30px 0;
+    margin-left: 17px;
+    list-style-type: disc;
+  }
+
+  .info_ul div {
+    font-weight: bold;
+    /*margin-left: -20px;*/
+    margin-left: -17px;
+    color: darkslategray;
+  }
+
+  .info_ul li {
+    font-size: 13px;
+    margin: 15px 0;
+    color: rgb(72, 71, 71);
+  }
+
+  .amenity {
+    color: red;
+  }
+
+  .young {
+    color: blue;
+  }
+
+  .warn {
+    color: rgb(210, 4, 4);
+    font-weight: 900;
+    font-size: 14px;
+  }
+
+  .heavy {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .host_info {
+	 padding: 10px 0;
+    /* border: 1px solid crimson; */
+    display: flex;
+    justify-content: space-between;
+    margin-top:-15px;
+    margin-bottom: -20px;
+  }
+  .host_info:hover{
+	  cursor: pointer;
+  }
+  .host_info h4 {
+    flex: 1;
+    /*margin-top: 0;*/
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .arrow_right svg {
+    flex: 1;
+    width: 17px;
+    height: 17px;
+    fill:gray;
+  }
+  
+  .info_footer{
+	  display: flex;
+	  flex-direction: column;
+  }
+  .footer_map{
+	  flex:5;
+	  width:100%;
+	  margin-bottom: 60px;
+  }
+  .footer_map h4{
+	margin-left:5px;
+	font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  #wide_map{
+	width: 100%;
+    height: 500px;
+    border-radius: 15px;
+  }
+  .wide_full_btn{
+	  position: absolute;
+	  z-index: 900;
+	  background-color: white;
+      top: 90%;
+      right: 1%;
+      padding: 12px 15px;
+      border-radius: 50px;
+      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  .wide_full_btn:hover{
+	  cursor: pointer;
+	  filter: brightness(95%);
+  }
+  .footer_loc{
+	  font-weight: bold;
+	  font-size: 16px;
+	  color: rgb(72, 71, 71);
+	  margin : 20px 0;
+  }
+  .all_review{
+	  flex:5;
+	  border:2px solid green;
+  }
+  .review_header{
+	  display: flex;
+	  justify-content: space-between;
+  }
+   .star_point2 > span:nth-child(1){
+	  font-weight: bold;
+	  font-size: 19px;
+  }
+  .star_point2 > span:nth-child(2){
+    color: rgb(155, 153, 153);
+      font-weight: bold;
+	  font-size: 19px;
+  }
+  .upDesc{
+	  font-weight: bold;
+	  font-size: 15px;
+  }
+  
+  .review_main{
+	  display: flex;
+  }
+  .left_rv{
+	  flex:3;
+	  margin-left:15px;
+  }
+  .user{
+	  background-color: rgb(242, 246, 247);
+	  color:darkslategray;
+	  font-size: 14px;
+	  font-weight: 500;
+  }
+  .rv_nick{
+	  margin:3px 0;
+	  font-weight: bold;
+  }
+  .up_btn:hover{
+	  cursor: pointer;
+  }
+  .right_rv{
+	  flex:6;
+	  display: flex;
+	  flex-direction: column;
+  }
+  /* 별 칠하기*/
+      .rating {
+      font-size: 18px;
+      /* 별의 크기 설정 */
+      color: lightgray;
+      /* 기본적으로 색이 칠해지지 않은 별의 색상 설정 */
+      display: flex;
+    }
+
+    .rv_star {
+      width: 15px;
+      margin: 0 2px;
+    }
+
+    .rv_star:before {
+      content: '\2605';
+      /* 별 모양의 유니코드 사용 (별 문자) */
+    }
+
+    .filled {
+      color: gold;
+      /* 색이 칠해진 별의 색상 설정 */
+    }
+    /* 별 칠하기 끝*/
+    
+    .rv_wday{
+	}
+	.r_rv_header{
+		flex:1;
+		display: flex;
+		margin-bottom: 15px;
+	}
+	.rating{
+	}
+	.rv_wday{
+		margin-left: 15px;
+		margin-top:3px;
+	}
+	.r_rv_center{
+		flex:5;
+		
+	}
+	.rv_img{
+		max-height: 210px;
+		overflow: hidden;
+		transition: max-height 0.5s ease;
+	}
+	.rv_imgs{
+		width:200px;
+		height:200px;
+		border-radius: 15px;
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
+	.rv_imgs:hover{
+		cursor: pointer;
+		filter: brightness(90%);
+	}
+	.img_more_btn {
+      display: block;
+      cursor: pointer;
+      color:darkslategrey;
+      font-weight: bold;
+    }
+    .img_more_btn svg{
+		width: 14px;
+		height: 14px;
+	}
+	.r_rv_footer{
+		margin-top:20px;
+		flex:1;
+	}
+	.long_rv {
+      max-height: 45px; /* 초기에 표시될 최대 높이 설정 */
+      overflow: hidden; /* 넘치는 부분을 숨김 */
+      transition: max-height 0.5s ease; /* 트랜지션 효과 추가 */
+    }
+    .more_btn {
+      display: block;
+      cursor: pointer;
+      color:darkslategrey;
+      font-weight: bold;
+    }
+    .more_btn svg{
+		width: 14px;
+		height: 14px;
+	}
+    .rv_room_name{
+	  color: rgb(155, 153, 153);
+      font-weight: bold;
+      margin : 10px 0;
+	}

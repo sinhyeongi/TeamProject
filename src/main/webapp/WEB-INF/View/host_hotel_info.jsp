@@ -14,6 +14,7 @@
 		</c:forEach>
 		</div>
 		<div class="host_hotel_info_content_div">
+			<div><span>호텔번호</span><span class="host_hotel_no">${h.no }</span></div>
 			<div><span>호텔이름</span><span> ${h.name }</span></div>
 			<div><span>성급</span><span> ${h.star }</span></div>
 			<div><span>전화번호</span><span> ${h.tel }</span></div>
@@ -24,5 +25,5 @@
 		<input type="radio" name="host_info_radio" id="host_info_radio">
 	</div>
 </c:forEach>
-<div id="host_info_submit"><button>호텔 수정 하기</button></div>
+<div><button id="host_info_submit">호텔 수정 하기</button></div>
 </main>

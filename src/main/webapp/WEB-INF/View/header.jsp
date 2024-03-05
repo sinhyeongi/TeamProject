@@ -41,8 +41,8 @@
   Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
 </script>
 <script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
-
 </c:if>
+
 	<!--  Js import -->
 	
 	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>
@@ -100,10 +100,13 @@
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 	 <script defer="defer" src="${ctx }/Js/hotelList.js?ds"></script>
 	</c:if>
-	<!-- hotelInfo js -->
-	<c:if test="${page eq 'hotelInfo.jsp' }">
-	 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
-	 <script defer="defer" src="${ctx }/Js/hotelInfo.js?ds"></script>
+	<!-- host_hotel_modify js  -->
+	<c:if test="${page eq 'host_hotel_modify.jsp' }">
+		<script defer="defer" src="${ctx}/Js/host_hotel_modify.js"></script>
+	</c:if>
+	<!-- ImgUpload js  -->
+	<c:if test="${page eq 'ImgUpload.jsp' }">
+		<script defer="defer" src="${ctx}/Js/ImgUpload.js"></script>
 	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
@@ -161,8 +164,14 @@
 		<link rel="stylesheet" href="${ctx}/Css/admin_memberList.css" type="text/css">
 		<script defer="defer" src="${ctx}/Js/admin_memberList.js?sa"></script>
 	</c:if>
-	
-
+	<!-- host_hotel_info css -->
+	<c:if test="${page eq 'host_hotel_modify.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/host_hotel_modify.css" type="text/css">
+	</c:if>
+	<!-- ImgUpload css -->
+	<c:if test="${page eq 'ImgUpload.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/ImgUpload.css" type="text/css">
+	</c:if>
 </head>
 <body>
 

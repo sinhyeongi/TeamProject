@@ -38,7 +38,6 @@ public class Host_Hotel_Info implements Page {
 		list = (ArrayList<HotelVO>)list.stream().sorted((n,n2) ->{
 			return n.getArea() - n2.getArea();
 		}).collect(Collectors.toList());
-		System.out.println("size = 	"+list.get(0).getUrl().size());
 		request.getSession().setAttribute("title", id+"의 호텔 리스트");
 		request.setAttribute("hotel", list);
 		return "host_hotel_info";

@@ -6,4 +6,7 @@
 	<select id="room_getName" resultType="String">
 		select name from room where no = #{no}
 	</select>
+	<select id="room_getData" resultType="room">
+		select * from room where hotel_no = #{hotel_no}
+	</select>
 </mapper>

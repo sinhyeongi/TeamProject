@@ -1,6 +1,9 @@
 package org.Java.DAO;
 
+import java.util.ArrayList;
+
 import org.Java.DB.RoomDB;
+import org.Java.VO.RoomVO;
 
 public class RoomDAO {
 	private static RoomDAO instance;
@@ -16,5 +19,8 @@ public class RoomDAO {
 	}
 	public String getRoomName(int no) {
 		return db.getRoomName(no);
+	}
+	public ArrayList<RoomVO> getRoomData(int hotel_no){
+		return db.getRoomData(hotel_no);
 	}
 }

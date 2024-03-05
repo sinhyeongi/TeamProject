@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+#host_hotel_modify_main{
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.hotel_info{
+	width: 100%;
+	height: 90%;
+	border: 1px solid #e7e7e7;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border-radius: 12px;
+}
+.hotel_info > div{
+	flex : 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hotel_info > div > span{
+	flex:7;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.hotel_info > div > span:first-child{
+	flex:3;
+	text-align: center;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.hotel_info > div > span > input{
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 12px;
+	text-align: center;
+}
+.hotel_info > div:last-child > span{
+	flex:1;
+	width: 100%;
+}
+.hotel_info > div:last-child > span > button{
+	position: relative;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+.hotel_info > div:last-child > span > button:hover {
+    transform: scale(1.2);
+}
+
+.hotel_info > div:last-child > span > button:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+
+.room_info{
+	width: 100%;
+	height: 0px;
+	border: 1px solid #e7e7e7;
+	box-sizing: border-box;
+	display: flex;
+	overflow: hidden;
+	flex-direction:column;
+	border-radius: 12px;
+}
+.room_info > div{
+	flex:1;
+}
+.host_hotel_info_room{
+	flex:1;
+	max-height: 50px;
+	border-radius: 12px;
+	 background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+}
+.host_hotel_info_hotel{
+	height: 0;
+	overflow: hidden;
+	max-height: 50px;
+	border-radius: 12px;
+	 background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+}
+textarea {
+	resize: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+input:read-only{
+	background: black;
+	color:white;
+}
+input:read-only:hover{
+	background-color:red;
+	content:"변경이 불가능합니다.";
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+#hotel_title{
+	font-size: 12px;
+	color:red;
+}

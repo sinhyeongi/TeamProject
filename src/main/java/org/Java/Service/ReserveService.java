@@ -33,9 +33,12 @@ public class ReserveService implements Page {
 			HotelVO hovo = HotelDAO.getInstance().getHotelData(rovo.getHotel_no());
 			request.setAttribute("hotel", hovo);
 			request.setAttribute("room", rovo);
-			String img = ImgDAO.getInstance().getRoomUrl(rovo.getNo()).get(0);
+			String img = null;
+			ArrayList<String> url_list =ImgDAO.getInstance().getRoomUrl(rovo.getNo());  
+			if(url_list.size() > 0) {
+				img = url_list.get(0);
+			}
 			request.setAttribute("img", img);
-			request.setAttribute("price", request.getAttribute("price"));
 			request.setAttribute("title", "예약 페이지");
 			
 		return "reserve";

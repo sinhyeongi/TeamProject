@@ -57,7 +57,7 @@ public class ImgUpload implements Page{
 		if(!f.exists()) {
 			try {
 				f.mkdir();
-				System.out.println("폴더 생성");
+				System.out.println("루트폴더 생성");
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -65,7 +65,7 @@ public class ImgUpload implements Page{
 		if(!f2.exists()) {
 			try {
 				f2.mkdir();
-				System.out.println("폴더 생성");
+				System.out.println("워크폴더 생성");
 			}catch(Exception e) {
 				e.printStackTrace();
 			}

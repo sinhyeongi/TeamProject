@@ -49,7 +49,7 @@ create table coupon(
     disprice int, -- 쿠폰 할인 금액 (할인율 쿠폰일 때 최대 할인금액)
     period int -- 사용 가능 기간
 );
-insert into coupon values('WellCome',7,10000,7);
+insert into coupon values('WellCome',7,5000,7);
 select * from coupon;
 select disprice from coupon where name = 'WellCome';
 insert into coupon values('test',7,10000,7);

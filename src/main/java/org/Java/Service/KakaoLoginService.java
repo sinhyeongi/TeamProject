@@ -69,7 +69,7 @@ public class KakaoLoginService implements Page {
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
-        	request.setAttribute("log", logMember.getId());
+        	request.getSession().setAttribute("log", logMember.getId());
         	System.out.println("기존 회원");
         	return "Main";
         }

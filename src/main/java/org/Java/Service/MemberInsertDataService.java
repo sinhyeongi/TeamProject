@@ -42,10 +42,12 @@ public class MemberInsertDataService implements Page {
 		System.out.println(vo);
 		boolean check = MemberDAO.getinstance().insertMember(vo);
 		if(check) {
-			
-			return "Main";
+			request.getSession().setAttribute("log", vo.getId());
+			request.setAttribute("nickname", vo.getNickname());
+			request.setAttribute("msg", "signUp");
+			return "MsgPage";
 		}else {
-			return "Login";
+			return "re:Member_Insert";
 		}
 	}
 

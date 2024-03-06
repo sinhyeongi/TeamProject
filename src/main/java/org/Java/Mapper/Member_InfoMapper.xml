@@ -15,5 +15,8 @@
 	<insert id="member_info_insert" parameterType="String">
 		insert into member_info(id,level)values(#{id},1)
 	</insert>
+	<update id="Member_Info_applyHost" parameterType="String">
+		UPDATE member_info set level = level + 100 WHERE id =#{id};
+	</update>
 	
 </mapper>

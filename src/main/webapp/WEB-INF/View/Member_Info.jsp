@@ -9,6 +9,7 @@
 	</div>
 	<div class="content">
 		<h2>내 정보 관리</h2>
+		${log }
 		<br/>
 		<h3>회원 정보</h3>
 		<div class="member_check"><span>가려진 정보 보기</span><input type="checkbox" id="member_info_toogle-slider"><label for="member_info_toogle-slider" id="member_info_toogle-slider-label">ON/OFF</label></div>
@@ -24,8 +25,8 @@
 			<div>
 				<div id="info_gender_div"><span id="gender_title">성별</span>
 					<div>
-					<input type="radio" name="gender" value="m" <c:if test="${vo.gender eq 'm' }">checked="checked"</c:if> onclick="return false"><span>남성</span>
-					<input type="radio" name="gender" value="f" <c:if test="${vo.gender eq 'f' }">checked="checked"</c:if> onclick="return false"><span>여성</span>
+					<input type="radio" name="gender" value="m" <c:if test="${vo.gender eq 'M' }">checked="checked"</c:if> onclick="return false"><span>남성</span>
+					<input type="radio" name="gender" value="f" <c:if test="${vo.gender eq 'F' }">checked="checked"</c:if> onclick="return false"><span>여성</span>
 					</div>
 				</div>
 			</div>

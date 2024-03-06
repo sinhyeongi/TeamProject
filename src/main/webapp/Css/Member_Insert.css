@@ -7,6 +7,9 @@
 	align-items: center;
 	margin :auto;
 }
+.hidden{
+	display:none;	
+}
 .member_insert{
 	width: 500px;
 	margin: 0 auto;
@@ -102,6 +105,7 @@ select{
 	font-weight: 500;
 }
 .submit_btn{
+	margin-top: 10px;
 	align-self: center;
 	width: 200px;
 	background-color: #1273e4;

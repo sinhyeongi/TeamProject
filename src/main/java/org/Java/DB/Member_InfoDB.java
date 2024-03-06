@@ -41,4 +41,11 @@ public class Member_InfoDB {
 		se.close();
 		return vo;
 	}
+	public int applyHost(String id) {
+		SqlSession se = sf.openSession();
+		int check = se.update("Member_Info_applyHost", id);
+		se.commit();
+		se.close();
+		return check;
+	}
 }

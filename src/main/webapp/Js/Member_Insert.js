@@ -139,14 +139,22 @@ function insert(form){
 		pw.parentElement.classList.remove("error");
 		document.querySelector(".errorMsg_pw").classList.remove("active");
 	}
+	if(name && name.value.trim() === ""){
+		name.focus();
+		name.parentElement.classList.add("error");
+		document.querySelector(".errorMsg_name").classList.add("active");
+		return;
+	}else if(name){
+		document.querySelector(".errorMsg_name").classList.remove("active");
+		name.parentElement.classList.remove("error");
+	}
+	
 	if(email && !email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)){
 		email.focus();
 		email.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_email").classList.add("active");
 		return;
 	}else if(email){
-		email.parentElement.classList.remove("error");
-		document.querySelector(".errorMsg_email").classList.remove("active");
 		fetch("DuplicatedCheck.do",
 		{
 			method : "POST",
@@ -158,25 +166,26 @@ function insert(form){
 		.then(response => response.text())
 		.then(data =>{
 			if(data==="Duplicated"){
+				console.log(data);
 				activeErr(".errorMsg_email","red","이미 가입된 이메일입니다.");
 				emailCheck = false;
 			}else{
+				console.log(data);
+				email.parentElement.classList.remove("error");
+				document.querySelector(".errorMsg_email").classList.remove("active");
 				emailCheck = true;
+				document.querySelector(".step2").classList.remove("hidden");
+				document.querySelector(".step1").classList.add("hidden");
+				document.querySelector(".submit_btn").value="회원가입 하기";
 			}
 		});
-		
-		if(!emailCheck)return;
 	}
-	
-	if(name && name.value.trim() === ""){
-		name.focus();
-		name.parentElement.classList.add("error");
-		document.querySelector(".errorMsg_name").classList.add("active");
+	if(id && idCheck ===0){
+		activeErr(".errorMsg_id","red","아이디 중복체크를 해주세요.");
 		return;
-	}else if(name){
-		document.querySelector(".errorMsg_name").classList.remove("active");
-		name.parentElement.classList.remove("error");
 	}
+	if(!emailCheck)return;
+	
 	if(birth && (birthYear.value === "출생 연도" || birthMonth.value === "월" || birthDay.value ==="일")){
 		birth.parentElement.classList.add("error");
 		document.querySelector(".errorMsg_birth").classList.add("active");
@@ -229,10 +238,7 @@ function insert(form){
 		document.querySelector(".errorMsg_address").classList.remove("active");
 		document.querySelector("#address_box").classList.remove("error");
 	}
-	if(id && idCheck ===0){
-		activeErr(".errorMsg_id","red","아이디 중복체크를 해주세요.");
-		return;
-	}
+	
 	if(nickCheck ===0){
 		activeErr(".errorMsg_nickname","red","닉네임 중복체크를 해주세요.");
 		return;
@@ -243,6 +249,9 @@ function insert(form){
 	addAddress(form);
 	//폼 내용 서밋
 	form.submit();
+}
+function console1(){
+	console.log("111111");	
 }
 function addBirth(form){
 	form.birth.value = 

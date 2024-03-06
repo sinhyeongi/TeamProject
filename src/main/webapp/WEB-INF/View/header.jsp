@@ -13,6 +13,10 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+<!-- MsgPage css -->
+<c:if test="${page eq 'MsgPage.jsp'}">
+<link rel="stylesheet" type="text/css" href="${ctx}/Css/MsgPage.css">
+</c:if>
 <!-- LoginInput css -->
 <c:if test="${page eq 'LoginInput.jsp'}">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">

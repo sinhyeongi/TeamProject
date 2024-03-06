@@ -5,7 +5,7 @@
 			<div class="title">
 				<h1>아이디로 시작하기</h1>
 			</div>
-			<form action="">
+			<form action="LoginInputCheck.do">
 				<div class = "login_input">
 					<div class="labeled_input_label">
 						<label id="userId">아이디</label>

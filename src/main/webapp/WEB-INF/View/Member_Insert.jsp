@@ -8,6 +8,7 @@
 			<h1>회원가입</h1>
 		</div>
 		<form action="${ctx}/MemberInserData.do" method="post" id="Member_Insert_Form">
+		<div class="step1">
 		<!-- 아이디 -->
 			<!-- 아이디가 있는경우 -->
 			<c:if test="${vo.id ne null }">
@@ -60,7 +61,21 @@
 			</div>
 			<div id="errorMsg" class="errorMsg_name">이름을 입력해주세요</div>
 			</c:if>
-			
+		</div>
+		<div class="step2 hidden">
+		<!-- 닉네임 -->
+			<div class="box nickname_box">
+				<label class="label_nickname">닉네임</label>
+				<div class = "nickname container">
+					<div id="input_nickname_box" class="input_wrapper input_box">
+						<input class="input" type="text" id="nickname" name="nickname" value="${vo.nickname }" placeholder="닉네임을 입력하세요"/>
+					</div>
+					<div class="duplicated_box">
+						<div class="btn" onclick="NicknameDuplicatedCheck(nickname)">중복체크</div>
+					</div>
+				</div>
+			</div>
+			<div id="errorMsg" class="errorMsg_nickname">닉네임을 입력해주세요</div> 
 		<!-- 생년월일 -->
 			<c:if test="${vo.birth ne null }">
 			<input type="hidden" name="birth" value ="${vo.birth}"/>
@@ -141,23 +156,12 @@
 			</div>
 			<div id="errorMsg" class="errorMsg_address">주소를 입력해주세요</div> 
 			</c:if>
+		</div>
 			
-		<!-- 닉네임 -->
-			<div class="box nickname_box">
-				<label class="label_nickname">닉네임</label>
-				<div class = "nickname container">
-					<div id="input_nickname_box" class="input_wrapper input_box">
-						<input class="input" type="text" id="nickname" name="nickname" value="${vo.nickname }" placeholder="닉네임을 입력하세요"/>
-					</div>
-					<div class="duplicated_box">
-						<div class="btn" onclick="NicknameDuplicatedCheck(nickname)">중복체크</div>
-					</div>
-				</div>
-			</div>
-			<div id="errorMsg" class="errorMsg_nickname">닉네임을 입력해주세요</div> 
+	
 		<!-- 서밋 --> 
 			<div class="box submit_box">
-				<input type="button" onclick="insert(form)" class="submit_btn" value="회원가입 하기">
+				<input type="button" onclick="insert(form)" class="submit_btn" value="다음">
 			</div>
 		</form>
 	</div>

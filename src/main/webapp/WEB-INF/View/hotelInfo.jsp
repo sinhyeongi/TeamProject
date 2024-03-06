@@ -36,11 +36,11 @@
           <h1 class="hotel_name">제주신라호텔</h2>
             <div class="star_point"><span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 9.8</span> 
             <span>&nbsp; 489명 평가</span>
-              <span><a href="#">리뷰보기</a></span>
+              <span onclick="scrollToReview()"><a href="#">리뷰보기</a></span>
             </div>
             <div class="two_review">
               <!-- 리뷰 두개정도 보여줄 공간 -->
-              <div class="first_rv">
+              <div class="first_rv" onclick="scrollToReview()">
                 <p>
                 <img width="13" height="13" src="https://img.icons8.com/material/24/quote-left--v1.png" alt="quote-left--v1"/>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
@@ -51,7 +51,7 @@
                 <span class="nick"> 행복한 곰돌이 </span>
                 <span class="w_day"> 24.03.04 </span>
               </div>
-              <div class="second_rv">
+              <div class="second_rv" onclick="scrollToReview()">
                 <p>
                 <img width="13" height="13" src="https://img.icons8.com/material/24/quote-left--v1.png" alt="quote-left--v1"/>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
@@ -94,7 +94,7 @@
                 <div class="right">
                   <p>130000원</p>
                   <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room">객실 예약</button>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
@@ -125,7 +125,7 @@
                 <div class="right">
                   <p>185000원</p>
                   <div class="qty">남은 객실 5개</div>
-                  <button class="reserve_room">객실 예약</button>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
@@ -156,7 +156,7 @@
                 <div class="right">
                   <p>130000원</p>
                   <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room">객실 예약</button>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
@@ -187,7 +187,7 @@
                 <div class="right">
                   <p>130000원</p>
                   <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room">객실 예약</button>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
@@ -218,7 +218,7 @@
                 <div class="right">
                   <p>130000원</p>
                   <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room">객실 예약</button>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
@@ -283,7 +283,7 @@
             <li>체크인 기준 2일 전 ~ 당일 및 No-show : 20% 환불</li>
             <li><span class="warn">연박 시, 전체 금액에 대해 취소 수수료 적용됩니다</span></li>
             <li><span class="warn">당일 취소 및 No-show는 앱 내 취소가 불가하므로, 당사 고객센터를 통하여 취소 및 환불 문의 바랍니다</span></li>
-            <li>취소, 환불 시 수수료가 발생할 수 있습니다</span></li>
+            <li>취소, 환불 시 수수료가 발생할 수 있습니다</li>
           </ul>
           <ul class="info_ul">
             <div>확인사항 및 기타</div>
@@ -300,7 +300,7 @@
           </ul>
         </div> <!-- room_use_info -->
         <hr />
-        <div class="host_info">
+        <div class="host_info" onclick="show_host_info()">
           <h4>판매자 정보</h4>
           <div class="arrow_right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
               <path
@@ -323,6 +323,7 @@
       	</div> <!-- wide_map -->
       	 <div class="footer_loc">제주특별자치도 서귀포시 색달동 2812-4</div>
       </div> <!-- footer_map  -->
+      
       <div class="all_review">
       	<div class="review_header">
       	   <div class="star_point2">

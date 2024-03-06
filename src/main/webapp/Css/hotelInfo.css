@@ -25,6 +25,7 @@
     /*height: 100%;*/
     display: flex;
     height: 550px;
+    margin-bottom: 20px;
   }
 
   .img_container img:hover {
@@ -223,7 +224,7 @@
   .fac_header {
     font-weight: bold;
     font-size: 18px;
-    margin: 15px 5px;
+    margin: 15px 4px;
   }
 
   .fac_main {
@@ -242,14 +243,14 @@
 
   .select_room h4 {
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-bottom: 7px;
   }
 
   .one_room {
     flex: 1;
     /* border: 1px solid hotpink; */
-    background-color: rgb(242, 246, 247);
+    background-color: rgb(242, 243, 244);
     border-radius: 17px;
     width: 100%;
     height: 100%;
@@ -414,6 +415,7 @@
   }
   hr {
 	  margin : 25px 0;
+	   border : 1px solid rgba(112, 108, 109, 0.1);
   }
 
   .room_use_info {}
@@ -666,4 +668,102 @@
 	  color: rgb(155, 153, 153);
       font-weight: bold;
       margin : 10px 0;
+	}
+	
+	#modal_info{
+		width:100%;
+		background-color: white;
+		border-radius: 15px;
+		overflow:auto;
+	}
+	#modal_info::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    #modal_info::-webkit-scrollbar-thumb {
+      background: rgba(148, 141, 142, 0.1);
+      /* 스크롤바 색상 */
+      border-radius: 10px;
+      /* 스크롤바 둥근 테두리 */
+      border: 30px solid rgba(148, 141, 142, 0.1);
+    }
+    #modal_info::-webkit-scrollbar-track {
+      /*background: rgba(148, 141, 142, 0.1);*/
+      /*스크롤바 뒷 배경 색상*/
+    }
+    
+	.d_header{
+		margin-left:15px;
+		margin-top:40px;
+		font-weight: bold;
+		font-size:1.5rem;
+	}
+	.r_info{
+		margin-left:15px;
+	}
+	.r_info_del{
+		font-weight: bold;
+   		color: darkslategray;
+   		margin-bottom:-10px;
+	}
+	.r_info ul:last-child{
+		background-color: rgba(226, 98, 124, 0.1);
+		padding: 7px 0;
+		padding-left:25px;
+		margin-left:-6px;
+		border-radius: 8px;
+	}
+	.r_info ul:last-child li {
+		color : red;
+	}
+	
+	table {
+      width: 90%;
+      /* 테이블 전체 폭 설정 (예제에서는 화면의 50%) */
+      border-collapse: collapse;
+      /* 테이블 셀 경계를 합침 */
+      margin: 20px;
+      /* 테이블 주변 여백 설정 */
+      margin-top:30px;
+    }
+
+    th,
+    td {
+      border: 1px solid lightgray;
+      /* 셀 테두리 스타일 및 색상 설정 */
+      padding: 10px;
+      /* 셀 안 여백 설정 */
+      text-align: center;
+      /* 셀 안 텍스트 가운데 정렬 */
+      text-align: left;
+    }
+
+    colgroup {
+      width: 30%;
+      /* 1열의 넓이 설정 */
+    }
+
+    colgroup.col2 {
+      width: 70%;
+      /* 2열의 넓이 설정 */
+    }
+
+    tr td:nth-child(1) {
+      border-left: none;
+      color: rgba(56, 91, 91, 0.824);
+      font-weight: bold;
+    }
+
+    tr td:nth-child(2) {
+      border-right: none;
+    }
+    #h_info{
+		background-color: white;
+		overflow: hidden;
+		border-radius: 15px;
+		margin-top:50px;
+	}
+	.h_header{
+		text-align: center;
+		margin-top:40px;
 	}

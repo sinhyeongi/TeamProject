@@ -16,10 +16,14 @@ $('.moal_cancle').click(function(){
 	$('main').css('opacity', '1');
 	$('header').css('opacity', '1');
 	$('footer').css('opacity', '1');
+	$('body').css("overflow","auto"); /* 모달창 닫으면 스크롤 다시 생성 */
+	$('.footer_modal').css("padding","10%"); /* 모달창 크기 원래대로 */
 });
 $(document).mouseup(function(e){
 	const modal = $('.footer_modal');
 	if(modal.hasClass('modal_on')&&modal.has(e.target).length == 0){
 		modal.removeClass('modal_on');
+		$('body').css("overflow","auto"); /* 모달창 닫으면 스크롤 다시 생성 */
+		$('.footer_modal').css("padding","10%");/* 모달창 크기 원래대로 */
 	}
 })

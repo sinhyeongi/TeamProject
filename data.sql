@@ -1,6 +1,7 @@
 use java;
 select * from img;
 select * from hotel where host = 'admin';
+select * from hotel ;
 select * from room where hotel_no = 3;
 select * from img where uploader = 'ho';
 select * from img where uploader = 'ro';

@@ -44,8 +44,10 @@ public class Host_Hotel_Mif implements Page{
 		if(vo.getInfo() == null || vo.getInfo().getLevel() < 900) {
 			return "re:Main";
 		}
+		
 		HotelVO hotel = HotelDAO.getInstance().getHotelData(no);
 		hotel.setUrl(ImgDAO.getInstance().getHotelUrl(hotel.getNo()));
+		
 		ArrayList<RoomVO> list = RoomDAO.getInstance().getRoomData(hotel.getNo());
 		for(int i = 0 ; i < list.size(); i++) {
 			list.get(i).setUrl(ImgDAO.getInstance().getRoomUrl(list.get(i).getNo()));

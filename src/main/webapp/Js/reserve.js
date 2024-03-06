@@ -10,6 +10,68 @@ const regex2 = /^[가-힣a-zA-Z]+$/; //한글+영문 정규표현식
 const start_date = $('.reserve_start_date');
 const end_date = $('.reserve_end_date');
 
+
+// 지도 만들기
+var HOME_PATH = window.HOME_PATH || '.';
+const _hotel_x = $('#hotel_x').val();
+const _hotel_y = $('#hotel_y').val();
+
+var map = new naver.maps.Map('reserve_map_view', {
+	draggable: false,
+	scrollWheel: false,
+	center: new naver.maps.LatLng(_hotel_y, _hotel_x),
+	zoom: 17
+});
+
+var marker = new naver.maps.Marker({
+	position: new naver.maps.LatLng(_hotel_y, _hotel_x),
+	map: map,
+	icon: {
+		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+		size: new naver.maps.Size(30, 30),
+		scaledSize: new naver.maps.Size(30, 30),
+		origin: new naver.maps.Point(0, 0),
+		anchor: new naver.maps.Point(20, 40)
+	}
+});
+function newMap() {
+	var map2 = new naver.maps.Map('map2', {
+		zoomControl: true,
+		zoomControlOptions: {
+			style: naver.maps.ZoomControlStyle.SMALL,
+			position: naver.maps.Position.TOP_RIGHT
+		},
+		center: new naver.maps.LatLng(33.2484468, 126.4106058),
+		zoom: 14
+	});
+	var marker = new naver.maps.Marker({
+		position: new naver.maps.LatLng(33.2484468, 126.4106058),
+		map: map2,
+		icon: {
+			url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+			size: new naver.maps.Size(30, 30),
+			scaledSize: new naver.maps.Size(30, 30),
+			origin: new naver.maps.Point(0, 0),
+			anchor: new naver.maps.Point(20, 40)
+		}
+	});
+}
+
+$('#reserve_map_view').click(function() {
+	setTimeout(function() {
+		window.dispatchEvent(new Event('resize'));
+	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
+	var mapModal = $('#map').clone();
+	$('.footer_modal').addClass('modal_on');
+	$('.modal_main').html('<div id="map2"></div>');
+	newMap();
+	//$('.modal_main').html(mapModal);
+});
+
+
+
+
+
 flatpickr(start_date,{
 	dateFormat : 'Y-m-d',
 	enableTime : false,

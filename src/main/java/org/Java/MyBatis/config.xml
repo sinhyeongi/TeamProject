@@ -49,5 +49,6 @@
     <mapper resource="org/Java/Mapper/RoomMapper.xml"/>
     <mapper resource="org/Java/Mapper/ImgMapper.xml"/>
     <mapper resource="org/Java/Mapper/CouponMapper.xml"/>
+    <mapper resource="org/Java/Mapper/ReviewMapper.xml"/>
   </mappers>
 </configuration>

@@ -15,46 +15,46 @@
 	</div>
 	<h2 id="slick_title">국내 인기 여행지</h2>
 	<div class="multiple-items">
-	  <div>
+	  <a href="HotelList.do?category=50"><div>
 	  	<img src="${ctx}/img/Main_category_jeju.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>제주도</div>
-	  </div>
-		<div>
+	  </div></a>
+		<a href="HotelList.do?category=11"><div>
 	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="jeju">
 			<div class=category_name>서울</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=26"><div>
 	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>부산</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=42.15"><div>
 	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>강릉</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=28"><div>
 	  	<img src="${ctx}/img/Main_category_inchun.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>인천</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=47.13"><div>
 	  	<img src="${ctx}/img/Main_category_gungju.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>경주</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=26.35"><div>
 	  	<img src="${ctx}/img/Main_category_heunde.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>해운대</div>
-	  </div>
-	  <div>
+	  </div></a>
+	 <a href="HotelList.do?category=41.52"><div>
 	  	<img src="${ctx}/img/Main_category_gapung.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>가평</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=46.13"><div>
 	  	<img src="${ctx}/img/Main_category_ysu.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>여수</div>
-	  </div>
-	  <div>
+	  </div></a>
+	  <a href="HotelList.do?category=42.21"><div>
 	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>속초</div>
-	  </div>
+	  </div></a>
 	</div>
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>

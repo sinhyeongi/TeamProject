@@ -2,105 +2,47 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
+<i id="allow" class="fa fa-arrow-left">&nbsp;&nbsp;&nbsp;뒤로가기</i>
   <div class="back">
-    <i id="allow" class="fa fa-arrow-left"></i>
-    &nbsp;&nbsp;&nbsp;<span>모든 호텔 목록</span>
+    <div><button value="" <c:if test="${category eq null }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">전체보기</button></div>
+    <div><button value="50" <c:if test="${category eq '50' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">제주도</button></div>
+    <div><button value="11" <c:if test="${category eq '11' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">서울</button></div>
+    <div><button value="26" <c:if test="${category eq '26' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">부산</button></div>
+    <div><button value="42.15" <c:if test="${category eq '42.15' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">강릉</button></div>
+    <div><button value="28" <c:if test="${category eq '28' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">인천</button></div>
+    <div><button value="47.13" <c:if test="${category eq '47.13' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">경주</button></div>
+    <div><button value="26.35" <c:if test="${category eq '26.35' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">해운대</button></div>
+    <div><button value="41.52" <c:if test="${category eq '41.52' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">가평</button></div>
+    <div><button value="46.13" <c:if test="${category eq '46.13' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">여수</button></div>
+    <div><button value="42.21" <c:if test="${category eq '42.21' }"> style="background-color:blue; color:white;"</c:if> class="list_category_btn">속초</button></div>
   </div>
   <main id="hotelList_main">
   <div class = left_map>
    <div class="overlay"></div>
    <button class="click_map"> 지도 보기 </button>
   </div>
+  
   <session class="hotelList_center">
-    <div class="container">
+	<c:forEach var="hotel" items="${list }">  
+   <a href="#">
+   <div class="container">
       <div class="accommodation">
-        <img src="${ctx }/img/incheon/goldentulip_hotel/goldentulip_hotel.png">
+      	<c:forEach var="url" items="${hotel.url }">
+      		<div><img src="${ctx }/img/${url}"></div>
+      	</c:forEach>
+      	<c:if test="${hotel.url eq null or hotel.url.size() eq 0 }">
+      		<div><img src="http:///via.placeholder.com/300x300"></div>
+      	</c:if>
         <div class="info">
-          <div class="star">3성급</div>
-          <h2>호텔 이름</h2>
-          <div class="where"> 강남구 </div>
-          <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-          <p class="h_price">185,000원</p>
-          <div class="total_qty"> 남은 객실 2개</div>
+          <div class="star">${hotel.star }성급</div>
+          <h2>${hotel.name }</h2>
+          <div class="where"> ${hotel.address } </div>
+          <div class="star_point"><span>★ ${hote.star_point }</span> &nbsp; ${hotel.reviewCount }명이 평가함</div>
+          <p class="h_price">${hotel.price }원</p>
         </div>
       </div>
-
-      <div class="container">
-        <div class="accommodation">
-          <img src="${ctx }/img/incheon/harborpark_hotel/harborpark_hotel.png">
-          <div class="info">
-            <div class="star">3성급</div>
-            <h2>호텔 이름</h2>
-            <div class="where"> 강남구 </div>
-            <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-            <p class="h_price">185,000원</p>
-            <div class="total_qty"> 남은 객실 2개</div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="accommodation">
-            <img src="${ctx }/img/incheon/oakwood_hotel/oakwood_hotel.png">
-            <div class="info">
-              <div class="star">3성급</div>
-              <h2>호텔 이름</h2>
-              <div class="where"> 강남구 </div>
-              <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-              <p class="h_price">185,000원</p>
-              <div class="total_qty"> 남은 객실 2개</div>
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="accommodation">
-              <img src="${ctx }/img/incheon/paradise_hotel/delux_twin.png">
-              <div class="info">
-                <div class="star">3성급</div>
-                <h2>호텔 이름</h2>
-                <div class="where"> 강남구 </div>
-                <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-                <p class="h_price">185,000원</p>
-                <div class="total_qty"> 남은 객실 2개</div>
-              </div>
-            </div>
-
-            <div class="container">
-              <div class="accommodation">
-                <img src="${ctx }/img/incheon/songdopark_hotel/songdo_hotel.png">
-                <div class="info">
-                  <div class="star">3성급</div>
-                  <h2>호텔 이름</h2>
-                  <div class="where"> 강남구 </div>
-                  <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-                  <p class="h_price">185,000원</p>
-                  <div class="total_qty"> 남은 객실 2개</div>
-                </div>
-              </div>
-
-              <div class="container">
-                <div class="accommodation">
-                  <img src="${ctx }/img/gyeongju/commodore_hotel/commodore_hotel.png">
-                  <div class="info">
-                    <div class="star">3성급</div>
-                    <h2>호텔 이름</h2>
-                    <div class="where"> 강남구 </div>
-                    <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-                    <p class="h_price">185,000원</p>
-                    <div class="total_qty"> 남은 객실 2개</div>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <div class="accommodation">
-                    <img src="${ctx }/img/gyeongju/hilton_hotel/hilton_hotel.png">
-                    <div class="info">
-                      <div class="star">3성급</div>
-                      <h2>호텔 이름</h2>
-                      <div class="where"> 강남구 </div>
-                      <div class="star_point"><span>★ 9.4</span> &nbsp; 525명이 평가함</div>
-                      <p class="h_price">185,000원</p>
-                      <div class="total_qty"> 남은 객실 2개</div>
-                    </div>
-                  </div>
-        </session>
-       </main>
+      </div>
+      </a>
+      </c:forEach>
+    </session>
+</main>

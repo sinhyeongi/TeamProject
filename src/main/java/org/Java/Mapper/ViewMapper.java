@@ -37,6 +37,7 @@ public class ViewMapper {
 		mapper.put("/HotelInfo.do", new HotelInfoService());
 		// Test
 		mapper.put("/Test.do", new TestService());
+		//위도 경도 업데이트
 		mapper.put("/Test_update.do",new Test_update());
 		// modal용 맵퍼
 		mapper.put("/Modal.do", new ModalService());

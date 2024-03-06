@@ -259,3 +259,9 @@ $('.click_map').click(function(){
      	}
 
      }); 
+     
+     
+$('.list_category_btn').click(function(){
+	const data = $(this).val();
+	location.href="HotelList.do?category="+data;
+})

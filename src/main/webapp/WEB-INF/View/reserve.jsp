@@ -73,6 +73,9 @@
 		<img src="${ctx }/img/${img }"></div>
 		<div class="reser_right_content">
 			<div id="reser_map">
+				<input type="hidden" id="hotel_y" value="${hotel.y }">
+				<input type="hidden" id="hotel_x" value="${hotel.x }">
+				<div id="reserve_map_view"></div>
 			</div>
 			<span>호텔 이름 : ${hotel.name }</span>
 			<span>객실 : ${room.name }</span>

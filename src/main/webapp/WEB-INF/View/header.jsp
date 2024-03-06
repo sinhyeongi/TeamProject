@@ -74,6 +74,7 @@
 	<!--  Reserve js -->
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
+		<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>

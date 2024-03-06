@@ -1,4 +1,4 @@
-const client_id="285fb962941b4c31de5b78e29659ba4f";
+client_id="285fb962941b4c31de5b78e29659ba4f";
 //카카오로그인 접근 값
 const redirect_uri="http://localhost:8080/TeamProject/Login.do?type=kakao";
 const response_type="code";

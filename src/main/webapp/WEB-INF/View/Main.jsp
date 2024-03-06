@@ -29,15 +29,18 @@
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>
 	<a href="Member_Info.do">정보보기</a><br/>
-
+	<a href="Member_applyHost.do">호스트신청하기(임시)</a><br/>
 	<a href="reserve.do">예약페이지 (임시)</a><br/>
 	<a href="HotelList.do">호텔 리스트 (임시)</a><br/>
 	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
 	<a href="adminPage.do">관리자페이지(임시)</a><br/>
-	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a>
-
+	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
+<c:if test="${log ne null}">
+<input type="hidden" id="log" value="${log}"/>
+</c:if>
+	<button onclick="Logout(log)" >로그아웃</button><br/>
 </main>
 </body>
 </html>

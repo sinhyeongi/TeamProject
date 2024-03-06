@@ -27,4 +27,7 @@ public class Member_InfoDAO {
 	public Member_InfoVO getData(String id) {
 		return db.getData(id);
 	}
+	public int applyHost(String id) {
+		return db.applyHost(id);
+	}
 }

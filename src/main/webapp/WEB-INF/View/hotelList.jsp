@@ -14,7 +14,7 @@
   <session class="hotelList_center">
     <div class="container">
       <div class="accommodation">
-        <img src="${ctx }/img/incheon/goldentulip_hotel/goldentulip_hotel.png">
+        <img src="${ctx}/img/incheon/goldentulip_hotel/goldentulip_hotel.png">
         <div class="info">
           <div class="star">3성급</div>
           <h2>호텔 이름</h2>

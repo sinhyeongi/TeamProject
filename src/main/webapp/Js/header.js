@@ -150,3 +150,19 @@ function modal_on(name){
 		}
 	});
 }
+
+function Logout(log){
+	const id = log.value;
+	if(id.search("ka_")!=-1){
+		const kaclient_id = "c16bc220b30ade93a139e3d168dc5331";
+		const logout_redirect_uri = "http://localhost:8080/TeamProject/Logout.do";
+		
+		location.href="https://kauth.kakao.com/oauth/logout?client_id="+kaclient_id+"&logout_redirect_uri="+logout_redirect_uri;
+	}else{
+		location.href="Logout.do"
+	}
+	
+}
+
+
+

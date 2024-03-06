@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 <div class="container">
 	<main class="content">
 		<div class="login">
 			<div class="login_logo">
-			<img width="150px" height="150px" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20160402_19%2Fmaddara_1459606960178nrrdB_JPEG%2FUntitled-1.jpg&type=sc960_832">
+				<img width="150px" height="150px" src="${ctx}/img/Main_logo.jpeg">
 			</div>
 			<div class="login_title">
 				<span class="strikethrough"></span>
@@ -40,13 +41,16 @@
 				<!-- 아이디 //a -->
 				
 			</div>
-				<div class=b2b_login>
+		<!-- //로그인 버튼 그룹 -->
+			
+				<!-- <div class=b2b_login>
 					<a href="#none">
 						<div class="b2b_text_button">
 							비지니스 로그인/회원가입
 						</div>
 					</a>
-				</div>
+				</div> -->
 		</div>
+		<!-- //login -->
 	</main>
 </div>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+#Main_msg{
+	height: 50vh;
+}
+.container{
+	width: 100%;
+}
+.msgBox{
+	border : solid 1px #eeeeee;
+	border-radius:20px;
+	text-align:center;
+	width: 500px;
+	margin: 50px auto 0;
+}
+.msg{
+	font-size: 15px;
+	font-weight: 400;
+}
+.nickname{
+	font-size: 25px;
+	font-weight: 700;
+}
+.btn{
+	padding: 10px;
+	border-radius:20px;
+}

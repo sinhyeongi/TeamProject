@@ -20,16 +20,18 @@ public class ViewMapper {
 		mapper.put("/LoginInput.do", new LoginInputService());
 		//네이버 로그인
 		mapper.put("/Naver_Login.do",new NaverLoginService());
-		mapper.put("/Member_Insert.do", new Member_Insert());
 		mapper.put("/reserve.do", new ReserveService());
 		// 유저 정보 보기
 		mapper.put("/Member_Info.do", new Member_InfoService());
 		// 유저 포인트 및 쿠폰
 		mapper.put("/Member_PointAndCoupon_Info.do" , new Member_PonintAndCoupon_Info());
-
+		// 유저 호스트 신청
+		mapper.put("/Member_applyHost.do", new Member_applyHostService());
 		//중복체크 (nickname)
 		mapper.put("/DuplicatedCheck.do", new DuplicatedCheckService());
 		//회원가입
+		mapper.put("/Member_Insert.do", new Member_Insert());
+		//회원가입 체크
 		mapper.put("/MemberInserData.do", new MemberInsertDataService());
 		// 호텔 리스트
 		mapper.put("/HotelList.do", new HotelListService());
@@ -44,6 +46,8 @@ public class ViewMapper {
 		mapper.put("/LoginCheck.do", new LoginCheckService());
 		//로그인 체크(동기)
 		mapper.put("/LoginInputCheck.do", new LoginInputCheckService());
+		//로그아웃
+		mapper.put("/Logout.do", new Member_LogoutService());
 		//유저 삭제
 		mapper.put("/DeleteUser_API.do", new Delete_User_API());
 		mapper.put("/DeleteUser.do", new DeleteUser());

@@ -25,8 +25,8 @@
 			<div>
 				<div id="info_gender_div"><span id="gender_title">성별</span>
 					<div>
-					<input type="radio" name="gender" value="m" <c:if test="${vo.gender eq 'm' }">checked="checked"</c:if> onclick="return false"><span>남성</span>
-					<input type="radio" name="gender" value="f" <c:if test="${vo.gender eq 'f' }">checked="checked"</c:if> onclick="return false"><span>여성</span>
+					<input type="radio" name="gender" value="m" <c:if test="${vo.gender eq 'M' }">checked="checked"</c:if> onclick="return false"><span>남성</span>
+					<input type="radio" name="gender" value="f" <c:if test="${vo.gender eq 'F' }">checked="checked"</c:if> onclick="return false"><span>여성</span>
 					</div>
 				</div>
 			</div>

@@ -32,7 +32,9 @@ public class Host_Hotel_Mif implements Page{
 			vo.setCheckout(request.getParameter("checkout"));
 			vo.setFac(request.getParameter("fac"));
 			vo.setAccount(request.getParameter("account"));
-			System.out.println(vo);
+			int cnt = 0;
+			cnt = HotelDAO.getInstance().UpdateHotelData(vo);
+			response.getWriter().print(cnt);
 			return null;
 		}
 		int no = Integer.parseInt(request.getParameter("no"));

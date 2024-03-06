@@ -44,7 +44,10 @@ $('#hotel_submit').click(function(){
 		url : "host_hotel_mif.do",
 		data : _data,
 		success: function(data){
-			alert(data);
+			if(data > 0){
+				alert('업데이트 완료했습니다.');
+				location.href= location.href;
+			}
 		},
 		error : function(err){
 			alert('err = '+err);

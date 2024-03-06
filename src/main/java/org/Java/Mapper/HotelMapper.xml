@@ -18,4 +18,7 @@
 	<update id="hotel_update_XY" parameterType="hotel">
 		update hotel set x = ${x}, y = ${y},area = ${area} where no = ${no}
 	</update>
+	<update id="UpdateHotelData" parameterType="hotel">
+		update hotel set name = #{name}, star = #{star}, checkin = #{checkin}, checkout = #{checkout}, Fac = #{fac}, account = #{account} where no = #{no}
+	</update>
 </mapper>

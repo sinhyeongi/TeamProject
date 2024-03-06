@@ -13,18 +13,48 @@
 	<div id="main_log">
 		<img alt="Main_logo" src="${ctx }/img/Main_logo.jpeg">
 	</div>
-	<c:forEach var="vo" items="${list }">
-		${vo }<br/>
-		<hr/>
-	</c:forEach>
 	<h2 id="slick_title">국내 인기 여행지</h2>
 	<div class="multiple-items">
-	<c:forEach var="i" begin="1" end="10">
 	  <div>
 	  	<img src="${ctx}/img/Main_category_jeju.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>제주도</div>
 	  </div>
-	 </c:forEach>
+		<div>
+	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="jeju">
+			<div class=category_name>서울</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>부산</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>강릉</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_inchun.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>인천</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_gungju.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>경주</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_heunde.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>해운대</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_gapung.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>가평</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_ysu.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>여수</div>
+	  </div>
+	  <div>
+	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="jeju">
+		<div class=category_name>속초</div>
+	  </div>
 	</div>
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>
@@ -36,8 +66,8 @@
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
 	<a href="adminPage.do">관리자페이지(임시)</a><br/>
-	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a>
-
+	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
+	<a href="reserve.do">예약 페이지</a>
 </main>
 </body>
 </html>

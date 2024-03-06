@@ -37,7 +37,7 @@
           <div class="star">${hotel.star }성급</div>
           <h2>${hotel.name }</h2>
           <div class="where"> ${hotel.address } </div>
-          <div class="star_point"><span>★ ${hote.star_point }</span> &nbsp; ${hotel.reviewCount }명이 평가함</div>
+          <div class="star_point"><span>★ ${hotel.star_point }</span> &nbsp; ${hotel.reviewCount }명이 평가함</div>
           <p class="h_price">${hotel.price }원</p>
         </div>
       </div>

@@ -20,39 +20,39 @@
 		<div class=category_name>제주도</div>
 	  </div></a>
 		<a href="HotelList.do?category=11"><div>
-	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="jeju">
+	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="서울">
 			<div class=category_name>서울</div>
 	  </div></a>
 	  <a href="HotelList.do?category=26"><div>
-	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="부산">
 		<div class=category_name>부산</div>
 	  </div></a>
 	  <a href="HotelList.do?category=42.15"><div>
-	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="강릉">
 		<div class=category_name>강릉</div>
 	  </div></a>
 	  <a href="HotelList.do?category=28"><div>
-	  	<img src="${ctx}/img/Main_category_inchun.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_inchun.png" width="90%" height="100%" alt="인천">
 		<div class=category_name>인천</div>
 	  </div></a>
 	  <a href="HotelList.do?category=47.13"><div>
-	  	<img src="${ctx}/img/Main_category_gungju.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_gungju.png" width="90%" height="100%" alt="경주">
 		<div class=category_name>경주</div>
 	  </div></a>
 	  <a href="HotelList.do?category=26.35"><div>
-	  	<img src="${ctx}/img/Main_category_heunde.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_heunde.png" width="90%" height="100%" alt="해운대">
 		<div class=category_name>해운대</div>
 	  </div></a>
 	 <a href="HotelList.do?category=41.52"><div>
-	  	<img src="${ctx}/img/Main_category_gapung.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_gapung.png" width="90%" height="100%" alt="가평">
 		<div class=category_name>가평</div>
 	  </div></a>
 	  <a href="HotelList.do?category=46.13"><div>
-	  	<img src="${ctx}/img/Main_category_ysu.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_ysu.png" width="90%" height="100%" alt="여수">
 		<div class=category_name>여수</div>
 	  </div></a>
 	  <a href="HotelList.do?category=42.21"><div>
-	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="jeju">
+	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="속초">
 		<div class=category_name>속초</div>
 	  </div></a>
 	</div>

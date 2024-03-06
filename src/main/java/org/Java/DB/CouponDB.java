@@ -2,16 +2,13 @@ package org.Java.DB;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.Java.VO.ReserveVO;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class ReserveDB {
+public class CouponDB {
 	private static SqlSessionFactory sf;
 	static {
 		try {
@@ -22,18 +19,16 @@ public class ReserveDB {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<ReserveVO> getData(String id){
+	public int getDislate(String name) {
 		SqlSession se = sf.openSession();
-		List<ReserveVO> list = se.selectList("Reserve_getData",id);
+		int late = se.selectOne("Coupon_getDislate",name);
 		se.close();
-		return (ArrayList<ReserveVO>)list;
+		return late;
 	}
-	public int InsertData(ReserveVO vo) {
+	public int getDisPrice(String name) {
 		SqlSession se = sf.openSession();
-		int cnt = 0;
-		cnt = se.insert("reserve_insertdata",vo);
-		se.commit();
+		int late = se.selectOne("Coupon_getDisprice",name);
 		se.close();
-		return cnt;
+		return late;
 	}
 }

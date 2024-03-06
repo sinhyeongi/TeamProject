@@ -22,6 +22,7 @@ public class Member_CouponDAO {
 	public ArrayList<Member_couponVO> getData(String id){
 		return db.getData(id);
 	}
+	
 	public int insertMemberCoupon(String id,String CouponName) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);

@@ -24,4 +24,7 @@ public class ReserveDAO {
 	public ArrayList<ReserveVO> getData(String id){
 		return db.getData(id);
 	}
+	public int InsertData(ReserveVO vo) {
+		return db.InsertData(vo);
+	}
 }

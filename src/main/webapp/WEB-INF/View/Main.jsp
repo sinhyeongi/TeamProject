@@ -35,8 +35,8 @@
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
 	<a href="adminPage.do">관리자페이지(임시)</a><br/>
-	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a>
-
+	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
+	<a href="reserve.do">예약 페이지</a>
 </main>
 </body>
 </html>

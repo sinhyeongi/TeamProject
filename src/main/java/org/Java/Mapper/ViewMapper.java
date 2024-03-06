@@ -58,6 +58,8 @@ public class ViewMapper {
 		mapper.put("/ImgUpload.do", new ImgUpload());
 		// 이미지 삭제
 		mapper.put("/DeleteImg.do",new DeleteImg());
+		//예약 데이터 추가
+		mapper.put("/reserve_insert.do", new Reserve_InserService());
 	}
 	
 	

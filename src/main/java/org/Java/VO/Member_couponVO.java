@@ -9,4 +9,6 @@ public class Member_couponVO {
 	private String id; //고객 아이디
 	private String name; //쿠폰 이름
 	private String period; //사용 가능일
+	private int dislate;
+	private int disprice;
 }

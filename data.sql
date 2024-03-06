@@ -4,7 +4,8 @@ select * from hotel where host = 'admin';
 select * from room where hotel_no = 3;
 select * from img where uploader = 'ho';
 select * from img where uploader = 'ro';
-
+update room set price = 300;
+select * from room;
 # ############################# hotel data #############################
 # jeju
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
@@ -12,10 +13,12 @@ values('admin','제주신라호텔',5,'064-735-5114',
 '피트니스,수영장,미니바,사우나,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,에어컨,프린터사용,라운지,짐보관가능,객실샤워실,욕조',
 '제주특별자치도 서귀포시 색달동 3039-3',39,'16:00','11:00','no data');
 insert into img (uploader,no,url) values('ho',1,'jeju/silla/main.png');
-insert into img (uploader,no,url) values('ho',123,'jeju/silla/main.png');
-insert into img (uploader,no,url) values('ho',124,'jeju/silla/main.png');
-insert into img (uploader,no,url) values('ho',125,'jeju/silla/main.png');
-insert into img (uploader,no,url) values('ho',126,'jeju/silla/main.png');
+insert into img (uploader,no,url) values('ho',1,'jeju/silla/main2.png');
+insert into img (uploader,no,url) values('ho',1,'jeju/silla/main3.png');
+insert into img (uploader,no,url) values('ho',1,'jeju/silla/main4.png');
+insert into img (uploader,no,url) values('ho',1,'jeju/silla/main5.png');
+select * from img where uploader = 'ho' and no = 1;
+delete from img where uploader='ho' and no = 1;
 # 	lotte
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
 values('admin','롯데호텔 제주',5,'064-731-1000',

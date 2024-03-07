@@ -34,6 +34,7 @@
   </div>
 
   <session class="hotelList_center">
+
     <c:forEach var="hotel" items="${list }">
 
       <div class="container">
@@ -52,6 +53,7 @@
             <div class="star_point"><span>★ ${hotel.star_point }</span> &nbsp; ${hotel.reviewCount }명이 평가함</div>
             <p class="h_price">${hotel.price }원</p>
           </div>
+
         </div>
       </div>
 

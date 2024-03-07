@@ -23,13 +23,14 @@ public class Reserve_cancelService implements Page {
 		ImportReserveCancel c = new ImportReserveCancel();
 		String uid = request.getParameter("uid");
 		int room_no = Integer.parseInt(request.getParameter("room_no"));
-		 int ch = c.ReserveCanle(uid);
+		int ch = c.ReserveCanle(uid);
 		if(ch == 0) {
 			ch = ReserveDAO.getInstance().ReserveCancel_uid(uid) - 1;
 			RoomDAO.getInstance().ReserveCancelRoom(room_no);
 		}
 		//모두 정상적이라면 0 아니라면 -1 ~ 1
 		response.getWriter().print(ch);
+
 
 		return null;
 	}

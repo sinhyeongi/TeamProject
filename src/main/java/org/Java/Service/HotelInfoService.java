@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.Java.DAO.HotelDAO;
 import org.Java.DAO.ImgDAO;
 import org.Java.DAO.MemberDAO;
+import org.Java.DAO.ReviewDAO;
 import org.Java.DAO.RoomDAO;
 import org.Java.VO.HotelVO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
+import org.Java.VO.ReviewVO;
 import org.Java.VO.RoomVO;
 
 public class HotelInfoService implements Page{
@@ -23,11 +25,11 @@ public class HotelInfoService implements Page{
 			throws ServletException, IOException {
 		
 		
-		/*
-		 * if(request.getParameter("no") == null) { return "re:Main"; } int no =
-		 * Integer.parseInt(request.getParameter("no"));
-		 */
-		int no = 1;
+		
+		  if(request.getParameter("no") == null) { return "re:Main"; } int no =
+		  Integer.parseInt(request.getParameter("no"));
+		 
+			/* int no = 1; */
 		ArrayList<String> imgList = new ArrayList<String>();
 		
 		HotelVO hotel = HotelDAO.getInstance().getHotelData(no);
@@ -43,11 +45,23 @@ public class HotelInfoService implements Page{
 		MemberVO m_vo = new MemberVO();
 		m_vo = MemberDAO.getinstance().getHostInfo(host);
 		
+		// 한 호텔에 대한 리뷰 총 개수
+		int count = ReviewDAO.getInstance().getHotelReviewCount(no);
+		hotel.setReviewCount(count);
+		
+		// 한 호텔에 대한 모든 리뷰(추천수 내림차순)
+		ArrayList<ReviewVO> reviewList = ReviewDAO.getInstance().getAllHotelReview(no);
+		
+		for(int i = 0 ; i < reviewList.size(); i++) {
+			reviewList.get(i).setUrl(ImgDAO.getInstance().getReviewUrl(reviewList.get(i).getNo()));
+		}
+		
 		request.setAttribute("title", hotel.getName()+" 정보");
 		request.setAttribute("hotel" , hotel);
 		request.setAttribute("room" , roomList);
 		request.setAttribute("imgList", imgList);
 		request.setAttribute("m_vo", m_vo);
+		request.setAttribute("reviewList", reviewList);
 		return "hotelInfo";
 	}
 

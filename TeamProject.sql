@@ -49,7 +49,7 @@ create table coupon(
     disprice int, -- 쿠폰 할인 금액 (할인율 쿠폰일 때 최대 할인금액)
     period int -- 사용 가능 기간
 );
-insert into coupon values('WellCome',7,5000,7);
+insert into coupon values('WellCome',7,10000,7);
 select * from coupon;
 #유저 쿠폰
 create table member_coupon(
@@ -64,7 +64,7 @@ create table member_coupon(
 
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
 select * from member_coupon;
-select * from hotel;
+
 # 호텔
 create table hotel(
 	no int auto_increment primary key, -- 호텔 번호
@@ -138,7 +138,6 @@ create table review(
     foreign key(room_no) references room(no) on delete cascade
 );
 select * from review;
-
 #리뷰 추천 
 create table review_rec(
 	no int not null, -- 리뷰 번호
@@ -166,5 +165,4 @@ select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
 
-select * from member_coupon;
 

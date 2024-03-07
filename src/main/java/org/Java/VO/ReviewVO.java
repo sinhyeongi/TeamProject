@@ -1,5 +1,7 @@
 package org.Java.VO;
 
+import java.util.ArrayList;
+
 import lombok.Data;
 
 @Data
@@ -13,4 +15,5 @@ public class ReviewVO {
 	private int res_no; // 예약 번호
 	private String wday; //작성일
 	private int count; //추천수
+	private ArrayList<String> url; //이미지경로
 }

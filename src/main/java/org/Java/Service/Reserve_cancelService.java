@@ -15,6 +15,7 @@ public class Reserve_cancelService implements Page {
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		if(request.getParameter("uid") == null) {
 			return null;
 		}
@@ -28,6 +29,7 @@ public class Reserve_cancelService implements Page {
 			RoomDAO.getInstance().ReserveCancelRoom(room_no);
 		}
 		response.getWriter().print(ch);
+
 		return null;
 	}
 }

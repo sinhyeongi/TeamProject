@@ -34,6 +34,12 @@ public class ImgDB {
 		se.close();
 		return (ArrayList<String>) list;
 	}
+	public ArrayList<String> getReviewUrl(int no){
+		SqlSession se = sf.openSession();
+		List<String> list = se.selectList("img_getReviewUrl",no);
+		se.close();
+		return (ArrayList<String>) list;
+	}
 	public ArrayList<ImgVO> getHotelImgData(int no){
 		SqlSession se = sf.openSession();
 		List<ImgVO> list = se.selectList("img_getHotelImgData",no);
@@ -46,6 +52,12 @@ public class ImgDB {
 		se.close();
 		return (ArrayList<ImgVO>) list;
 	}
+//	public ArrayList<ImgVO> getReviewImgData(int no){
+//		SqlSession se = sf.openSession();
+//		List<ImgVO> list = se.selectList("img_getReviewImgData",no);
+//		se.close();
+//		return (ArrayList<ImgVO>) list;
+//	}
 	public int DeleteImg(ImgVO vo) {
 		SqlSession se = sf.openSession();
 		int cnt = 0;

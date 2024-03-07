@@ -42,36 +42,43 @@
           <h1 class="hotel_name">${hotel.name }</h2>
           <input type = "hidden" id="ho_name" value="${hotel.name }">
           <input type = "hidden" id="address" value="${hotel.address }">
-            <div class="star_point"><span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> ${hotel.getStar_point() }</span> 
-            <span>&nbsp; 489명 평가</span>
+            <div class="star_point"><span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> ${hotel.star_point }</span> 
+            <span>&nbsp; ${hotel.reviewCount }명 평가</span>
               <span onclick="scrollToReview()"><a href="#">리뷰보기</a></span>
             </div>
             <div class="two_review">
               <!-- 리뷰 두개정도 보여줄 공간 -->
+              <c:forEach var="item" items="${reviewList}" varStatus="rv">
+               <c:if test="${rv.index < 2}">
+                <c:if test="${rv.index==0 }">
               <div class="first_rv" onclick="scrollToReview()">
                 <p>
                 <img width="13" height="13" src="https://img.icons8.com/material/24/quote-left--v1.png" alt="quote-left--v1"/>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!
+                	${item.content }
                 </p>
-                <span class="nick"> 행복한 곰돌이 </span>
-                <span class="w_day"> 24.03.04 </span>
+                <span class="nick"> ${item.nickname } </span>
+                <span class="w_day"> ${item.wday } </span>
               </div>
+              </c:if>
+              <c:if test="${rv.index==1 }">
               <div class="second_rv" onclick="scrollToReview()">
                 <p>
                 <img width="13" height="13" src="https://img.icons8.com/material/24/quote-left--v1.png" alt="quote-left--v1"/>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima optio impedit nihil debitis vitae
-                quia!
+                	${item.content }
                 </p>
-                <span class="nick"> 졸린 강아지 </span>
-                <span class="w_day"> 24.02.04 </span>
+                <span class="nick"> ${item.nickname } </span>
+                <span class="w_day"> ${item.wday } </span>
+              </div>
+               </c:if>
+              </c:if>
+              </c:forEach>
+              <div class="gogo_rv"> 
+               <img width="15px"src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAArUlEQVR4nNXWPQrCQBCG4fcEsQkJ6oY0ksaT5ZaxE2wVf9HKFF7CIKwgsulmPnRg6geGb2cWfqQmwArYAZUXkgFr4Bn74oW1H8i7z0CwhvI4shQ2t8aKEezkgZXAfgSbWWMhhuEbO3pgr8RdVVgN3BLYAZhaYwvgrsIaoFdhS+CRwDZ/CTWK0UnCUCviXSkebFCsoFKxVAvFmchVh69VnfJM9Tkhfrc6YOuJmNYA6EaADfD8J8gAAAAASUVORK5CYII=">
               </div>
             </div>
+            
             <hr />
+            
             <div class="facility">
               <div class="fac_header">부대시설</div>
               <div class="fac_main">${hotel.fac }</div>
@@ -218,45 +225,54 @@
       <div class="all_review">
       	<div class="review_header">
       	   <div class="star_point2">
-      	   <span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 리얼 리뷰 9.8</span> 
-            <span>&nbsp; 489명 평가</span>
+      	   <span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 리얼 리뷰 ${hotel.star_point }</span> 
+            <span>&nbsp; ${hotel.reviewCount }명 평가</span>
             </div> <!-- star_point2 -->
             <div class="upDesc">추천순</div>
       	</div> <!-- review_header -->
       	
       	<hr/>
-      	
-      	<div class="review_main">
+      	<c:if test="${hotel.reviewCount eq 0}">
+      		<div class="no_rv">
+      		<h2> 아직 작성된 리뷰가 없습니다 </h2>
+      		<p onclick="href=''">리뷰 작성하러 가기</p>
+      		</div>
+      	</c:if>
+      	<c:forEach var="one_rv" items="${reviewList }">
+      	 <c:forEach var="one_ro" items="${room }">
+      	 <c:if test="${one_rv.room_no eq one_ro.no }">
+      	 <div class="review_main">
       		<div class="left_rv">
       			<div><span class="user">이용자</span></div>
-      			<div class="rv_nick">졸린 고양이</div>
+      			<div class="rv_nick">${one_rv.nickname }</div>
       			<div class="rv_rec"><span class="up_btn">👍</span> 이 리뷰 추천하기 </div>
       		</div> <!-- left_rv -->
       		<div class="right_rv">
       			<div class="r_rv_header">
       			  <div class="rating" id="rating"></div>
-				  <span class="rv_wday">작성일 : 2024.03.05</span>
+				  <span class="rv_wday">작성일 : ${one_rv.wday }</span>
 				 </div> <!-- r_rv_header -->
 				 <div class="r_rv_center">
 				 	<div class="rv_img">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
- 				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
-				 	<img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
+				 	 <c:forEach var="rv_url" items="${one_rv.url }"> 
+				 	 <input type = "hidden" id="rv_url" value="${rv_url }">
+				 	 <img class="rv_imgs" src="${ctx }/img/${rv_url}" onclick="clickImg(this)">
+<%-- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
+				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
+ 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
+				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)"> --%>
+				 	 </c:forEach> 
 				 	</div> <!-- rv_img -->
 				 	<div class="img_more_btn" onclick="showMoreImg(this)">
-				 	 사진 더보기
+				 	  사진 더보기 
 				 	 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
 				 	</div>
 				 	<div class="rv_room_name">
-				 		산 전망 스탠다드 트윈 룸
+				 		${one_ro.name }
 				 	</div>
 				 	<div class="rv_contents">
 				 		<p class="long_rv">
-				 		로맨틱하고 침구 컨디션도 최고입니다✨ 서비스도 탁월했고, 상품 구성이 모두 알찼어요. 만족도 최고였습니다.
-남자친구랑 첫 제주여행에서 신라를 왔었고, 둘 다 무척 좋았던 기억이 있어 좋은 일이 생기면 꼭 다시 제주신라에 방문하자고 약속했었어요. 타이밍 좋게 저희가 알아볼때쯤 여기어때에서 오픈런 패키지를 열어서 여러모로 무척 좋았습니다. 비가 왔는데 입구에서부터 편안하게 응대해주셨어요.  짐을 맡기고 컨시어지에서 우산을 빌려 점심식사하러 다녀왔습니다. 
-산책로 사계절 내내 무척 예쁜 것 같아요. 오픈런 포함된 쁘띠카바나는 자동 예약되는데 저희는 오후 네시반으로 예약되어서 체크인하고 쉬다가 수영하니 좋더라구요. 실컷 수영하고 사우나로 몸 좀 말린 다음에 풀사이드 대기 걸어두고 씻고 나오니 딱 맞춰 입장가능했습니다. 신라호텔 짬뽕 인생짬뽕이라고 해서 저번 방문때 일부러 먹었었는데 이번에 먹은 게 더 맛있었어요. 엄청 맛있어서 둘 다 싹싹 먹었네요. 다 먹고 후식으로 딸기아이스크림도 완벽했습니다. 진짜 완전 풀로 즐긴 느낌이에요. 만족도 최고.. 
+				 		${one_rv.content }
 				 		</p>
 				 		<div class="more_btn" onclick="toggleContent(this)">
 				 		더보기
@@ -265,58 +281,15 @@
 				 	</div>
 				 </div> <!-- r_rv_center -->
 				 <div class ="r_rv_footer">
-				 	👍<span class="rec_cnt">3</span>명이 이 리뷰를 추천했어요
+				 	👍<span class="rec_cnt">${one_rv.count }</span>명이 이 리뷰를 추천했어요
 				 </div> <!-- r_rv_footer -->
       		</div> <!-- right_rv -->
       	</div> <!-- review_main  -->
       		
       	<hr/>
-      	
-      	      	<div class="review_main">
-      		<div class="left_rv">
-      			<div><span class="user">이용자</span></div>
-      			<div class="rv_nick">졸린 고양이</div>
-      			<div class="rv_rec"><span class="up_btn">👍</span> 이 리뷰 추천하기 </div>
-      		</div> <!-- left_rv -->
-      		<div class="right_rv">
-      			<div class="r_rv_header">
-      			  <div class="rating" id="rating"></div>
-				  <span class="rv_wday">작성일 : 2024.03.05</span>
-				 </div> <!-- r_rv_header -->
-				 <div class="r_rv_center">
-				 	<div class="rv_img">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
-				     <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)">
-				 	</div> <!-- rv_img -->
-				 	<div class="img_more_btn" onclick="showMoreImg(this)">
-				 	 사진 더보기
-				 	 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
-				 	</div>
-				 	<div class="rv_room_name">
-				 		산 전망 스탠다드 트윈 룸
-				 	</div>
-				 	<div class="rv_contents">
-				 		<p class="long_rv">
-				 		로맨틱하고 침구 컨디션도 최고입니다✨ 서비스도 탁월했고, 상품 구성이 모두 알찼어요. 만족도 최고였습니다.
-남자친구랑 첫 제주여행에서 신라를 왔었고, 둘 다 무척 좋았던 기억이 있어 좋은 일이 생기면 꼭 다시 제주신라에 방문하자고 약속했었어요. 타이밍 좋게 저희가 알아볼때쯤 여기어때에서 오픈런 패키지를 열어서 여러모로 무척 좋았습니다. 비가 왔는데 입구에서부터 편안하게 응대해주셨어요.  짐을 맡기고 컨시어지에서 우산을 빌려 점심식사하러 다녀왔습니다. 
-산책로 사계절 내내 무척 예쁜 것 같아요. 오픈런 포함된 쁘띠카바나는 자동 예약되는데 저희는 오후 네시반으로 예약되어서 체크인하고 쉬다가 수영하니 좋더라구요. 실컷 수영하고 사우나로 몸 좀 말린 다음에 풀사이드 대기 걸어두고 씻고 나오니 딱 맞춰 입장가능했습니다. 신라호텔 짬뽕 인생짬뽕이라고 해서 저번 방문때 일부러 먹었었는데 이번에 먹은 게 더 맛있었어요. 엄청 맛있어서 둘 다 싹싹 먹었네요. 다 먹고 후식으로 딸기아이스크림도 완벽했습니다. 진짜 완전 풀로 즐긴 느낌이에요. 만족도 최고.. 
-				 		</p>
-				 		<div class="more_btn" onclick="toggleContent(this)">
-				 		더보기
-				 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
-				 		</div>
-				 	</div>
-				 </div> <!-- r_rv_center -->
-				 <div class ="r_rv_footer">
-				 	👍<span class="rec_cnt">3</span>명이 이 리뷰를 추천했어요
-				 </div> <!-- r_rv_footer -->
-      		</div> <!-- right_rv -->
-      	</div> <!-- review_main  -->
-      		
-      	<hr/>
+      	 </c:if>
+      	</c:forEach>
+       </c:forEach>
       	
       </div> <!-- all_review -->
 	</div> <!-- info_footer -->

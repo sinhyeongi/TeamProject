@@ -186,7 +186,29 @@
     cursor: pointer;
     flex-direction: column;
     margin-right: 10px;
+    position: relative;
   }
+    .second_rv::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 75%;
+      width: 25%;
+      height: 100%;
+      /*background-color: rgba(255, 255, 255, 0.5);*/
+         background: linear-gradient(to right,
+          rgba(255, 255, 255, 0) 10%,
+          rgba(252, 251, 251, 0.47) 45%,
+          rgba(255, 255, 255, 0.521) 60%,
+          rgba(248, 246, 246, 0.75) 75%,
+          rgba(255, 255, 255, 0.986) 100%);
+      /* 불투명한 하얀색 배경 */
+      z-index: 1;
+      /* 다른 내용 위에 표시하기 위해 z-index 설정 */
+      pointer-events: none;
+      backdrop-filter: blur(1.2px);
+      /* 가리는 영역을 클릭할 수 없도록 함 */
+    }
   .second_rv p{
 	width: 100%;
     font-size: 0.9375rem;
@@ -620,7 +642,7 @@
 		
 	}
 	.rv_img{
-		max-height: 210px;
+		max-height: 200px;
 		overflow: hidden;
 		transition: max-height 0.5s ease;
 	}
@@ -640,6 +662,7 @@
       cursor: pointer;
       color:darkslategrey;
       font-weight: bold;
+      display: none;
     }
     .img_more_btn svg{
 		width: 14px;
@@ -659,6 +682,7 @@
       cursor: pointer;
       color:darkslategrey;
       font-weight: bold;
+      display: none;
     }
     .more_btn svg{
 		width: 14px;
@@ -767,3 +791,37 @@
 		text-align: center;
 		margin-top:40px;
 	}
+	.no_rv{
+		text-align: center;
+	}
+	.no_rv h2{
+		color : rgb(155, 153, 153);
+		margin-bottom: 20px;
+	}
+	.no_rv p{
+		background-color: rgb(242, 243, 244);
+		padding: 5px;
+		width: 20%;
+		margin-left:40%;
+		margin-bottom: 20px;
+		transition : 2s;
+	}
+	.no_rv p:hover{
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+	 .gogo_rv{
+	  position: absolute;
+	  z-index: 900;
+	  background-color: rgba(255, 255, 255, 0.97);
+      top: 26%;
+      right: 2%;
+      padding: 8px 12px;
+      border-radius: 50px;
+      box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+      display: none;
+  }
+  .gogo_rv:hover{
+	  cursor: pointer;
+	  filter: brightness(95%);
+  }

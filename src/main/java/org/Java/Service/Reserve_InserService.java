@@ -26,6 +26,7 @@ public class Reserve_InserService implements Page{
 		vo.setVisit(request.getParameter("visit"));
 		vo.setUid(request.getParameter("uid"));
 		vo.setId(request.getParameter("id"));
+		vo.setPrice(Integer.parseInt(request.getParameter("price")));
 		System.out.println(vo);
 		int cnt = 0;
 		cnt = ReserveDAO.getInstance().InsertData(vo);

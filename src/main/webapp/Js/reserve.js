@@ -9,8 +9,13 @@ const regex = /^(01[0-9]{1}-?[0-9]{4}-?[0-9]{4}|01[0-9]{8})$/; //전화번호 �
 const regex2 = /^[가-힣a-zA-Z]+$/; //한글+영문 정규표현식
 const start_date = $('.reserve_start_date');
 const end_date = $('.reserve_end_date');
-
-
+const u_level = $('input[name=user_level]').val();
+if(u_level > 0 && u_level < 11){
+	let price = $('#reserve_price').text();
+	 price = price - (price * (0.01*(u_level*2)));
+	 $('#reserve_price').text(price);
+	$('#reserve_view_price').text(price);
+} 
 // 지도 만들기
 var HOME_PATH = window.HOME_PATH || '.';
 const _hotel_x = $('#hotel_x').val();
@@ -147,7 +152,7 @@ function check(){
 }
 //결제 함수
 function requestPay(){
-	//if(check()){return;}
+	if(check()){return;}
 	// uid설정
  	const _name = $('input[name=name]').val();
  	const _tel = $('input[name=tel]').val();
@@ -181,7 +186,7 @@ function requestPay(){
  		pay_method : 'card',
  		merchant_uid : _data.uid, // 타임스템프 + 전화번호 + 이름
  		name : _name,
- 		amount : price,
+ 		amount : _price,
  		buyer_tel : _tel
  	},function(rsp){
  		if(rsp.success){
@@ -300,10 +305,17 @@ const end_date= $('.reserve_end_date');
 	if(diffDate <= 0){
 		return;
 	}
-	let price = $('#reserve_price').text();
+	let price = $('input[name=room_price]').val();
 	price = price * diffDate;
 	$('#reserve_price').text(price);
 	$('#reserve_view_price').text(price);
+	
+	if(u_level > 0 && u_level < 11){
+	let price = $('#reserve_price').text();
+	 	price = price - (price * (0.01*(u_level*2)));
+	 	$('#reserve_price').text(price);
+		$('#reserve_view_price').text(price);
+	} 
 	if($('input[name=coupon]:checked')){
 		$('input[name=coupon]:checked').change();
 	}

@@ -6,4 +6,9 @@
 	<select id="getHotelReviewCount" resultType="Integer" parameterType="Integer">
 		select count(*) from review where hotel_no = #{Hotel_no};
 	</select>
+	
+	<!-- 해당 호텔의 리뷰 , 추천순 내림차순 -->
+	<select id="getAllHotelReview" resultType="review" parameterType="Integer">
+		select * from review where hotel_no = #{Hotel_no} ORDER BY count DESC;
+	</select>
 </mapper>

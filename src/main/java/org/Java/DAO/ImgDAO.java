@@ -23,12 +23,19 @@ public class ImgDAO {
 	public ArrayList<String> getRoomUrl(int no){
 		return db.getRoomUrl(no);
 	}
+	public ArrayList<String> getReviewUrl(int no){
+		return db.getReviewUrl(no);
+	}
 	public ArrayList<ImgVO> getHotelImgData(int no){
 		return db.getHotelImgData(no);
 	}
 	public ArrayList<ImgVO> getRoomImgData(int no){
 		return db.getRoomImgData(no);
 	}
+//	public ArrayList<ImgVO> getReviewImgData(int no){
+//		return db.getReviewImgData(no);
+//	}
+	
 	public int DeleteImg(ImgVO vo) {
 		return db.DeleteImg(vo);
 	}

@@ -1,23 +1,12 @@
 
-// 리뷰 별점에 따라 별 색칠하기 -------------   
-var ratingElement = document.getElementById('rating');
-var score = 4; // 여기에 원하는 점수를 설정
-
-// 점수에 따라 별의 개수 계산
-var starCount = Math.round(score * 5 / 10); // 5점 만점을 기준으로 계산
-
-// 동적으로 HTML에 별의 개수를 추가 및 색상 적용
-for (var i = 1; i <= 5; i++) {
-	var star = document.createElement('div');
-	star.className = 'rv_star';
-	if (i <= score) {
-		star.classList.add('filled'); // 색이 칠해진 별에 해당하는 클래스 추가
-	}
-	ratingElement.appendChild(star);
-}
-
-// ----------- 리뷰 별 만들기 끝
-
+  $(document).ready(function() {
+	        if ($('.rv_img').prop('scrollHeight') >= $('.rv_img').prop('clientHeight')) {
+            $('.img_more_btn').css('display','block');
+        }
+         if ($('.long_rv').prop('scrollHeight') > $('.long_rv').prop('clientHeight')) {
+            $('.more_btn').css('display','block');
+        }
+});
 // ------ 리뷰 더보기 버튼 ----
 
 function toggleContent(button) {
@@ -324,5 +313,19 @@ function show_host_info(){
   	</div> `
 	);
 }
+
+// 리뷰 두번째 버튼에 마우스 올렸을때
+$('.second_rv').mouseover(function(){
+	$('.gogo_rv').css('display','block');
+})
+$('.gogo_rv').click(function(){
+	 $('html, body').animate({
+        scrollTop: $('.review_header').offset().top-95
+      }, 100);
+})
+// 마우스 뗐을 때
+$('.second_rv').mouseout(function(){
+	$('.gogo_rv').css('display','none');
+})
 
 

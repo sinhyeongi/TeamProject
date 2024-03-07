@@ -13,7 +13,6 @@ public class Reserve_cancelService implements Page {
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		response.getWriter().print(to);
 		return null;
 	}
 }

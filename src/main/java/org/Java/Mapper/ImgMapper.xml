@@ -9,12 +9,18 @@
 	<select id="img_getRoomUrl" parameterType="Integer" resultType="String">
 		select url from img where uploader = 'ro' and no = #{no}
 	</select>
+	<select id="img_getReviewUrl" parameterType="Integer" resultType="String">
+		select url from img where uploader = 'rv' and no = #{no}
+	</select>
 	<select id="img_getHotelImgData" resultType="img">
 		select * from img where uploader='ho' and no = #{no}
 	</select>
 	<select id="img_getRoomImgData" resultType="img">
 	select * from img where uploader='ro' and no = #{no}
 	</select>
+<!-- 	<select id="img_getReviewImgData" resultType="img">
+	select * from img where uploader='rv' and no = #{no}
+	</select> -->
 	<delete id="Img_delete" parameterType="img">
 		delete from img where uploader = #{uploader} and no = #{no} and url = #{url}
 	</delete>

@@ -49,7 +49,7 @@ create table coupon(
     disprice int, -- 쿠폰 할인 금액 (할인율 쿠폰일 때 최대 할인금액)
     period int -- 사용 가능 기간
 );
-insert into coupon values('WellCome',7,5000,7);
+insert into coupon values('WellCome',7,10000,7);
 select * from coupon;
 #유저 쿠폰
 create table member_coupon(
@@ -64,7 +64,7 @@ create table member_coupon(
 
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
 select * from member_coupon;
-select * from hotel;
+
 # 호텔
 create table hotel(
 	no int auto_increment primary key, -- 호텔 번호
@@ -138,7 +138,6 @@ create table review(
     foreign key(room_no) references room(no) on delete cascade
 );
 select * from review;
-
 #리뷰 추천 
 create table review_rec(
 	no int not null, -- 리뷰 번호
@@ -165,3 +164,35 @@ foreign key(id) references member(id) on delete cascade
 select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
+
+select * from room;
+select * from hotel;
+
+select * from review;
+
+select * from img where uploader = 'rv';
+
+insert into img values('rv','2',"gangleung/4season_hotel/mountain.png");
+insert into img values('rv','2',"gangleung/4season_hotel/ocean_onebed.png");
+insert into img values('rv','2',"incheon/goldentulip_hotel/hollywood_king.png");
+
+insert into img values('rv','7',"busan/layers_busan_hotel/economy_double.png");
+insert into img values('rv','7',"busan/layers_busan_hotel/sp_triple.png");
+insert into img values('rv','7',"busan/layers_busan_hotel/main.png");
+insert into img values('rv','7',"busan/layers_busan_hotel/presidential_sweet.png");
+select * from review r , img i where r.no = i.no;
+
+SELECT m.name, m.phone, m.email FROM member m , hotel h WHERE h.no = 1 and m.id = h.host;
+SELECT name, phone, email FROM member WHERE id = 'test1';
+insert into review(nickname,hotel_no,room_no,star_point,content,res_no,count) values('관리자',1,1,9,"리뷰 테이블에서 리뷰 이미지들은 rv로 넣기로 초기에 구상했는데, 이 룸에 대한 이미지를 가져오려면 어떻게 해야 할까 
+훔,, 이미지에 넣을때 룸 번호로 이미지들을 넣고? 근데 그럼 객실 번호랑 겹칠텐데 .. 조인 테이블을 만들어야 하나 ? 만들어도 이미지 테이블에서 어떻게 불러와야하지",20240205,7);
+
+insert into review(nickname,hotel_no,room_no,star_point,content,res_no,count) values('관리자',2,4,5,"리뷰 테이블에서 리뷰 이미지들은 rv로 넣기로 초기에 구상했는데, 이 룸에 대한 이미지를 가져오려면 어떻게 해야 할까 
+훔,, 이미지에 넣을때 룸 번호로 이미지들을 넣고? 근데 그럼 객실 번호랑 겹칠텐데 .. 조인 테이블을 만들어야 하나 ? 만들어도 이미지 테이블에서 어떻게 불러와야하지",20240205,7);
+
+insert into review(nickname,hotel_no,room_no,star_point,content,res_no,count) values('관리자',1,2,1,"리뷰 테이블에서 리뷰 이미지들은 rv로 넣기로 초기에 구상했는데, 이 룸에 대한 이미지를 가져오려면 어떻게 해야 할까 
+훔,, 이미지에 넣을때 룸 번호로 이미지들을 넣고? 근데 그럼 객실 번호랑 겹칠텐데 .. 조인 테이블을 만들어야 하나 ? 만들어도 이미지 테이블에서 어떻게 불러와야하지",20240205,5);
+
+
+
+delete from review where no = 6;

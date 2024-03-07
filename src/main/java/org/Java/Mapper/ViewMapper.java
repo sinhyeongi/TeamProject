@@ -43,6 +43,7 @@ public class ViewMapper {
 		mapper.put("/Event.do", new EventPageService());
 		// Test
 		mapper.put("/Test.do", new TestService());
+		//위도 경도 업데이트
 		mapper.put("/Test_update.do",new Test_update());
 		// modal용 맵퍼
 		mapper.put("/Modal.do", new ModalService());
@@ -73,6 +74,8 @@ public class ViewMapper {
 		mapper.put("/DeleteImg.do",new DeleteImg());
 		//예약 데이터 추가
 		mapper.put("/reserve_insert.do", new Reserve_InserService());
+		//예약 취소
+		mapper.put("/reserve_cancel.do", new Reserve_cancelService());
 	}
 	
 	

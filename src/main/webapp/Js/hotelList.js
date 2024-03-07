@@ -259,3 +259,14 @@ $('.click_map').click(function(){
      	}
 
      }); 
+     
+     
+$('.list_category_btn').click(function(){
+	const data = $(this).val();
+	location.href="HotelList.do?category="+data;
+})
+$('.container').click(function(){
+	const t = $(this).prevAll().length;
+	const target = $('.container:eq('+t+')').find('input[name=hotel_no]').val();
+	location.href="HotelInfo.do?no="+target;
+})

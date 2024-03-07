@@ -78,6 +78,7 @@
 	<!--  Reserve js -->
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
+		<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
@@ -95,6 +96,7 @@
 	</c:if>
 	<c:if test="${page eq 'Member_Reserve_Info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/Member_Reserve_Info.js?ds"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</c:if>
 	<c:if test="${page eq 'host_hotel_info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/host_hotel_info.js?ds"></script>

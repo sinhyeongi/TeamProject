@@ -9,6 +9,73 @@ const regex = /^(01[0-9]{1}-?[0-9]{4}-?[0-9]{4}|01[0-9]{8})$/; //전화번호 �
 const regex2 = /^[가-힣a-zA-Z]+$/; //한글+영문 정규표현식
 const start_date = $('.reserve_start_date');
 const end_date = $('.reserve_end_date');
+const u_level = $('input[name=user_level]').val();
+if(u_level > 0 && u_level < 11){
+	let price = $('#reserve_price').text();
+	 price = price - (price * (0.01*(u_level*2)));
+	 $('#reserve_price').text(price);
+	$('#reserve_view_price').text(price);
+} 
+// 지도 만들기
+var HOME_PATH = window.HOME_PATH || '.';
+const _hotel_x = $('#hotel_x').val();
+const _hotel_y = $('#hotel_y').val();
+
+var map = new naver.maps.Map('reserve_map_view', {
+	draggable: false,
+	scrollWheel: false,
+	center: new naver.maps.LatLng(_hotel_y, _hotel_x),
+	zoom: 17
+});
+
+var marker = new naver.maps.Marker({
+	position: new naver.maps.LatLng(_hotel_y, _hotel_x),
+	map: map,
+	icon: {
+		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+		size: new naver.maps.Size(30, 30),
+		scaledSize: new naver.maps.Size(30, 30),
+		origin: new naver.maps.Point(0, 0),
+		anchor: new naver.maps.Point(20, 40)
+	}
+});
+function newMap() {
+	var map2 = new naver.maps.Map('map2', {
+		zoomControl: true,
+		zoomControlOptions: {
+			style: naver.maps.ZoomControlStyle.SMALL,
+			position: naver.maps.Position.TOP_RIGHT
+		},
+		center: new naver.maps.LatLng(33.2484468, 126.4106058),
+		zoom: 14
+	});
+	var marker = new naver.maps.Marker({
+		position: new naver.maps.LatLng(33.2484468, 126.4106058),
+		map: map2,
+		icon: {
+			url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+			size: new naver.maps.Size(30, 30),
+			scaledSize: new naver.maps.Size(30, 30),
+			origin: new naver.maps.Point(0, 0),
+			anchor: new naver.maps.Point(20, 40)
+		}
+	});
+}
+
+$('#reserve_map_view').click(function() {
+	setTimeout(function() {
+		window.dispatchEvent(new Event('resize'));
+	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
+	var mapModal = $('#map').clone();
+	$('.footer_modal').addClass('modal_on');
+	$('.modal_main').html('<div id="map2"></div>');
+	newMap();
+	//$('.modal_main').html(mapModal);
+});
+
+
+
+
 
 flatpickr(start_date,{
 	dateFormat : 'Y-m-d',
@@ -85,7 +152,7 @@ function check(){
 }
 //결제 함수
 function requestPay(){
-	//if(check()){return;}
+	if(check()){return;}
 	// uid설정
  	const _name = $('input[name=name]').val();
  	const _tel = $('input[name=tel]').val();
@@ -119,7 +186,7 @@ function requestPay(){
  		pay_method : 'card',
  		merchant_uid : _data.uid, // 타임스템프 + 전화번호 + 이름
  		name : _name,
- 		amount : price,
+ 		amount : _price,
  		buyer_tel : _tel
  	},function(rsp){
  		if(rsp.success){
@@ -238,10 +305,17 @@ const end_date= $('.reserve_end_date');
 	if(diffDate <= 0){
 		return;
 	}
-	let price = $('#reserve_price').text();
+	let price = $('input[name=room_price]').val();
 	price = price * diffDate;
 	$('#reserve_price').text(price);
 	$('#reserve_view_price').text(price);
+	
+	if(u_level > 0 && u_level < 11){
+	let price = $('#reserve_price').text();
+	 	price = price - (price * (0.01*(u_level*2)));
+	 	$('#reserve_price').text(price);
+		$('#reserve_view_price').text(price);
+	} 
 	if($('input[name=coupon]:checked')){
 		$('input[name=coupon]:checked').change();
 	}

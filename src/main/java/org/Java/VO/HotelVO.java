@@ -21,4 +21,6 @@ public class HotelVO {
 	private String x;
 	private String y;
 	private ArrayList<String> url; //이미지경로
+	private int reviewCount;
+	private int price;
 }

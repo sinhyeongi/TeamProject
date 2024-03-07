@@ -16,46 +16,46 @@
 
 	<h2 id="slick_title">국내 인기 여행지</h2>
 	<div class="multiple-items">
-	  <a href="Login.do">
+	  <a href="HotelList.do?category=50">
 	  	<img src="${ctx}/img/Main_category_jeju.png" width="90%" height="100%" alt="jeju">
 		<label class=category_name>제주도</label>
 	  </a>
-		<a>
+		<a href="HotelList.do?category=11">
 	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="jeju">
 			<label class=category_name>서울</label>
 	  </a>
-	  <a>
+	  <a href="HotelList.do?category=26">
 	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>부산</div>
+		<label class=category_name>부산</label>
 	  </a>
-	  <div>
+	  <a href="HotelList.do?category=42.15">
 	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>강릉</div>
-	  </div>
-	  <div>
+		<label class=category_name>강릉</label>
+	  </a>
+	  <a href="HotelList.do?category=28">
 	  	<img src="${ctx}/img/Main_category_inchun.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>인천</div>
-	  </div>
-	  <div>
+	  	<label class=category_name>인천</label>
+	  </a>
+	  <a href="HotelList.do?category=47.13">
 	  	<img src="${ctx}/img/Main_category_gungju.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>경주</div>
-	  </div>
-	  <div>
+		<label class=category_name>경주</label>
+	  </a>
+	  <a href="HotelList.do?category=26.35">
 	  	<img src="${ctx}/img/Main_category_heunde.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>해운대</div>
-	  </div>
-	  <div>
+		<label class=category_name>해운대</label>
+	  </a>
+	  <a href="HotelList.do?category=41.52">
 	  	<img src="${ctx}/img/Main_category_gapung.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>가평</div>
-	  </div>
-	  <div>
+		<label class=category_name>가평</label>
+	  </a>
+	  <a href="HotelList.do?category=46.13">
 	  	<img src="${ctx}/img/Main_category_ysu.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>여수</div>
-	  </div>
-	  <div>
+		<label class=category_name>여수</label>
+	  </a>
+	  <a href="HotelList.do?category=42.21">
 	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>속초</div>
-	  </div>
+		<label class=category_name>속초</label>
+		</a>
 	  <c:if test="${log eq 'admin'}">
 	  <a href="adminPage.do" target="_blank">
 	  	<img src="${ctx}/img/Header_logo.png" width="90%" height="100%" alt="jeju">
@@ -68,7 +68,6 @@
 	<a href="Member_Info.do">정보보기</a><br/>
 	<a href="Member_applyHost.do">호스트신청하기(임시)</a><br/>
 	<a href="reserve.do">예약페이지 (임시)</a><br/>
-	<a href="HotelList.do">호텔 리스트 (임시)</a><br/>
 	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>

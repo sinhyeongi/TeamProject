@@ -18,9 +18,11 @@
 </div>
 <div class="reser_date_people_div">
 	<h2>총 인원 입력</h2>
-	<input type="number" id="people" min="1" max="${room.occ }" value="${room.occ }">
+	<input type="number" id="people" min="1" max="${room.occ }" value="${room.occ }" name="people">
 </div>
 </div>
+<input type="hidden" value="${room.price }" name="room_price">
+<input type="hidden" value="${user.level }" name="user_level">
 <input type="hidden" value="${room.no }" name="room_no">
 <input type="hidden" value="${hotel.no }" name="hotel_no">
 <main class="reserve_main">
@@ -73,6 +75,9 @@
 		<img src="${ctx }/img/${img }"></div>
 		<div class="reser_right_content">
 			<div id="reser_map">
+				<input type="hidden" id="hotel_y" value="${hotel.y }">
+				<input type="hidden" id="hotel_x" value="${hotel.x }">
+				<div id="reserve_map_view"></div>
 			</div>
 			<span>호텔 이름 : ${hotel.name }</span>
 			<span>객실 : ${room.name }</span>

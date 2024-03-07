@@ -136,6 +136,10 @@ input[name=payment]{
 }
 #reser_map{
 	flex:3;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+	box-sizing: border-box;
 }
 .visit_div{
 	margin-top:20px;
@@ -252,8 +256,19 @@ textarea {
 	display: none;
 	flex:1;
 }
-
-
+#reserve_map_view{
+	width: 100%;
+	height: 100%;
+	padd
+}
+#reserve_map_view > div > div{
+	width: 100%;
+	height: 100%;
+}
+#reserve_map_view > div > div > div{
+	width: 100%;
+	height: 100%;
+}
 @keyframes ring {
     0% {
         width: 30px;

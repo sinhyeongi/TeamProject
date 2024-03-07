@@ -3,7 +3,9 @@ package org.Java.DB;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.Java.VO.ReserveVO;
 import org.apache.ibatis.io.Resources;
@@ -27,6 +29,15 @@ public class ReserveDB {
 		List<ReserveVO> list = se.selectList("Reserve_getData",id);
 		se.close();
 		return (ArrayList<ReserveVO>)list;
+	}
+	public ArrayList<ReserveVO> getData_Phone(String phone,String name){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("name", name);
+		map.put("phone", phone);
+		SqlSession se = sf.openSession();
+		List<ReserveVO> list = se.selectList("Reserve_getData_Phone",map);
+		se.close();
+		return (ArrayList<ReserveVO>) list;
 	}
 	public int InsertData(ReserveVO vo) {
 		SqlSession se = sf.openSession();

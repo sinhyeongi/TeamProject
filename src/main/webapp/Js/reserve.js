@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+history.replaceState({}, null, location.pathname);
 var IMP = window.IMP;
 IMP.init('imp62080161');
 let isCheck = false;
@@ -15,7 +15,7 @@ if(u_level > 0 && u_level < 11){
 	 price = price - (price * (0.01*(u_level*2)));
 	 $('#reserve_price').text(price);
 	$('#reserve_view_price').text(price);
-} 
+}
 // 지도 만들기
 var HOME_PATH = window.HOME_PATH || '.';
 const _hotel_x = $('#hotel_x').val();
@@ -166,6 +166,9 @@ function requestPay(){
  	const _room_no = $('input[name=room_no]').val();
  	const _add_req = $('#add_req').val();
  	const _people = $('#people').val();
+ 	const date1 = new Date(_rday);
+	const date2 = new Date(_dday);
+	const diffDate = Math.abs((date2.getTime() - date1.getTime()) / (1000*60*60*24));
  	const _data = {
  		uid : (stamp +'/'+_tel+'/'+_name),
  		name : _name,
@@ -178,7 +181,8 @@ function requestPay(){
  		add_req : _add_req,
  		room_no : _room_no,
  		hotel_no : _hotel_no,
- 		people : _people
+ 		people : _people,
+ 		dif:diffDate
  	}
  	if(InsertData(_data) == false){
  		return;
@@ -192,12 +196,34 @@ function requestPay(){
  		buyer_tel : _tel
  	},function(rsp){
  		if(rsp.success){
- 			alert('결제 완료');
- 			location.href="Main.do"
+ 			Modal(_data);
  		}
  	});
  }
-
+function Modal(_data){
+	const modal = $('.footer_modal');
+	const data2 = {
+		Modal_page : 'Modal_ReserveOk'
+	} 
+	$.ajax({
+		url : "Modal.do",
+		data : data2,
+		success : function(data){
+			modal.find('.modal_main').html(data);
+			$('#M_reserve_date').text(_data.rday+' ~ ' +_data.dday+' ('+_data.dif+'일)');
+			$('#M_reserve_price').text(_data.price+'원');
+			modal.addClass('modal_on');
+			modal.click(function(){
+				if(confirm('메인으로 이동하시겠습니까?')){
+					location.href="Main.do";
+				}
+			})
+		},
+		error : function(error){
+			alert('err = '+error);
+		}
+	});
+}
  //데이터베이스 데이터 추가
  function InsertData(_data){
  	let ischeck = true;
@@ -303,8 +329,8 @@ $('input[name=coupon]').change(function(){
 })
 //가격 변경
 function Change_price_text(){
-const start_date = $('.reserve_start_date');
-const end_date= $('.reserve_end_date');
+	const start_date = $('.reserve_start_date');
+	const end_date= $('.reserve_end_date');
 	if(!start_date.val() || !end_date.val()){
 		return;
 	}

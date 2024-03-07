@@ -21,6 +21,9 @@ public class ReserveDAO {
 		ArrayList<ReserveVO> list = new ArrayList<ReserveVO>();
 		return list;
 	}
+	public ArrayList<ReserveVO> getData_Phone(String Phone,String name){
+		return db.getData_Phone(Phone,name);
+	}
 	public ArrayList<ReserveVO> getData(String id){
 		return db.getData(id);
 	}

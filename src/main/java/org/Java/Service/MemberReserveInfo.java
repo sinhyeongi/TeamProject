@@ -30,6 +30,7 @@ public class MemberReserveInfo implements Page {
 			list.get(i).setHotel_name(HotelDAO.getInstance().getHotelName(list.get(i).getHotel_no()));
 			list.get(i).setRoom_name(RoomDAO.getInstance().getRoomName(list.get(i).getRoom_no()));
 		}
+		System.out.println(list.size());
 		request.setAttribute("list", list);
 		request.setAttribute("title", id+"회원 예약 정보");
 		return "Member_Reserve_Info";

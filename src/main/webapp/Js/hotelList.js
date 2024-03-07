@@ -2,7 +2,7 @@
 //   // 해당 호텔의 정보 페이지로 이동
 //   location.href = "${ctx}/info.do?no=";
 // })
-
+history.replaceState({}, null, location.pathname);
 $('#allow').click(function () {
   history.go(-1);
 })

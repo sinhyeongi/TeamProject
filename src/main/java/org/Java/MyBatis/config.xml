@@ -41,6 +41,7 @@
   </environments>
   <mappers>
     <!--  Mapper -->
+    <mapper resource="org/Java/Mapper/BoardMapper.xml"/> 
     <mapper resource="org/Java/Mapper/MemberMapper.xml"/> 
     <mapper resource="org/Java/Mapper/Member_InfoMapper.xml"/> 
     <mapper resource="org/Java/Mapper/Member_CouponMapper.xml"/> 

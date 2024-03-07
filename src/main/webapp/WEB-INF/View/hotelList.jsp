@@ -28,7 +28,6 @@
    <div class="container">
    <input type="hidden" name="hotel_no" value="${hotel.no }">
       <div class="accommodation">
-        <img src="${ctx}/img/incheon/goldentulip_hotel/goldentulip_hotel.png">
       	<c:forEach var="url" items="${hotel.url }">
       		<div><img src="${ctx }/img/${url}"></div>
       	</c:forEach>

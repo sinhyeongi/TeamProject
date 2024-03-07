@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.Java.Mapper.BoardMapper">
+	<!-- <select id="boarder_getCateList" resultType="boarder" parameterType="String">
+		SELECT * from boarder where category = q&amp;a_${category};
+	</select> -->
+	<select id="boarder_getCateList" resultType="boarder" parameterType="String">
+		SELECT * from boarder where category LIKE concat("qa_",#{category});
+	</select>
+	<select id="boarder_getTop7List" resultType="boarder" parameterType="String">
+		SELECT * from boarder where category LIKE concat("qa_","%") order by no desc;
+	</select>
+</mapper>

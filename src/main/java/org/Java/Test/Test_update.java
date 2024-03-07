@@ -18,8 +18,10 @@ public class Test_update implements Page {
 			throws ServletException, IOException {
 		ArrayList<HotelVO> list = HotelDAO.getInstance().getAll();
 		int cnt = 0;
+		System.out.println(list.size());
 		for(int i = 0 ; i < list.size(); i++) {
 			String addr = list.get(i).getAddress();
+			System.out.println(addr);
 			String xy[] = AddressUtil_kakao.getXY(addr).split("/");
 			HotelVO vo = new HotelVO();
 			vo.setNo(list.get(i).getNo());

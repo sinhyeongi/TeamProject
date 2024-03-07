@@ -2,23 +2,29 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>    
+   
+   <input type = "hidden" id="m_name" value="${m_vo.name }">
+   <input type = "hidden" id="m_phone" value="${m_vo.phone}">
+   <input type = "hidden" id="m_email" value="${m_vo.email }">
+   
   <main class="hotelInfo_main">
     <div class="img_container">
       <div class="main_img">
-        <img src="${ctx }/img/incheon/harborpark_hotel/harborpark_hotel.png">
+        <img src="${ctx }/img/${imgList.get(0)}">
       </div>
       <div class="side_img">
         <div class="row">
-          <div class="row_img"><img src="${ctx }/img/incheon/harborpark_hotel/delux_double_citiview.png"></div>
-          <div class="row_img"><img src="${ctx }/img/incheon/harborpark_hotel/delux_family_twin.png"></div>
+          <div class="row_img"><img src="${ctx }/img/${imgList.get(1)}"></div>
+          <div class="row_img"><img src="${ctx }/img/${imgList.get(2)}"></div>
         </div>
         <div class="row">
-          <div class="row_img"><img class="top_right_img" src="${ctx }/img/incheon/harborpark_hotel/delux_triple.png"></div>
-          <div class="row_img"><img class="bottom_right_img" src="${ctx }/img/incheon/harborpark_hotel/delux_twin_citiview.png"></div>
+          <div class="row_img"><img class="top_right_img" src="${ctx }/img/${imgList.get(3)}"></div>
+          <div class="row_img"><img class="bottom_right_img" src="${ctx }/img/${imgList.get(4)}"></div>
         </div>
       </div> <!-- side_img -->
-
     </div> <!-- img_container -->
+    <input type="hidden" id="y" value ="${hotel.y}"/>
+    <input type="hidden" id="x" value ="${hotel.x}"/>
     <div class="info_contents">
       <div class="right_map">
         <div id="mapHead">
@@ -27,14 +33,16 @@
        		 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16px" height="16px"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>
       		</div>
           </div>
-          <div class="loc"><br>제주특별자치도 서귀포시 색달동 2812-4</div>
+          <div class="loc"><br>${hotel.address }</div>
         </div>
       </div>
       <div class="info_center">
         <div class="info_header">
-          <div class="star"> 5성급</div>
-          <h1 class="hotel_name">제주신라호텔</h2>
-            <div class="star_point"><span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> 9.8</span> 
+          <div class="star">${hotel.star}성급</div>
+          <h1 class="hotel_name">${hotel.name }</h2>
+          <input type = "hidden" id="ho_name" value="${hotel.name }">
+          <input type = "hidden" id="address" value="${hotel.address }">
+            <div class="star_point"><span><img width="18" height="18" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/> ${hotel.getStar_point() }</span> 
             <span>&nbsp; 489명 평가</span>
               <span onclick="scrollToReview()"><a href="#">리뷰보기</a></span>
             </div>
@@ -66,21 +74,25 @@
             <hr />
             <div class="facility">
               <div class="fac_header">부대시설</div>
-              <div class="fac_main">피트니스 수영장 미니바 사우나 레스토랑 라운지</div>
+              <div class="fac_main">${hotel.fac }</div>
             </div>
             <hr />
         </div> <!-- info_header -->
         
         <div class="select_room">
           <h4>객실 선택</h4>
+         <c:forEach var="one_ro" items="${room }">
           <div class="one_room">
             <div class="room_img">
-              <img src="${ctx }/img/incheon/harborpark_hotel/delux_twin_harborview.png">
+                <img src="${ctx }/img/${one_ro.url.get(0)}"> 
             </div>
             <div class="room_info">
               <div class="room_info_header">
-                <h3>로얄스위트 트윈 오션 (Room Only)</h3>
+                <h3>${one_ro.name }</h3>
                 <div class="detail_info">상세 정보 ></div>
+                <input type="hidden" id="ro_bedinfo" value="${one_ro.bedinfo }">
+                <input type="hidden" id="ro_occ" value="${one_ro.occ }">
+                <input type="hidden" id="ro_ame" value="${one_ro.amenities }">
               </div>
               <div class="room_info_center">
                 <div class="left">
@@ -88,145 +100,22 @@
                     <path
                       d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
                   </svg>
-                  <span class="time">입실 15:00<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 11:00</span>
+                  <span class="time">입실 ${hotel.checkin }<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 ${hotel.checkout }</span>
                 </div>
                 <div class="right">
-                  <p>130000원</p>
-                  <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
+                  <p>${one_ro.price }원</p>
+                  <div class="qty">남은 객실 ${one_ro.total_qty }개</div>
+                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do?no=${one_ro.no }'">객실 예약</button>
                 </div>
               </div>
               <div class="room_info_footer">
                 <div class="left">객실정보<br><br>추가정보</div>
-                <div class="right">기준 2인<br><br>인원 추가 가능 (추가 비용 발생)</div>
+                <div class="right">기준 ${one_ro.occ }인<br><br>인원 추가 가능 (추가 비용 발생)</div>
               </div>
             </div>
           </div>
-
-          <div class="one_room">
-            <div class="room_img">
-              <img src="${ctx }/img/incheon/harborpark_hotel/delux_triple.png">
-            </div>
-            <div class="room_info">
-              <div class="room_info_header">
-                <h3>로얄스위트 트리플 (City View)</h3>
-                <div class="detail_info">상세 정보 ></div>
-              </div>
-              <div class="room_info_center">
-                <div class="left">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="11" height="10">
-                    <path
-                      d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
-                  </svg>
-                  <span class="time">입실 15:00<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 11:00</span>
-                </div>
-                <div class="right">
-                  <p>185000원</p>
-                  <div class="qty">남은 객실 5개</div>
-                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
-                </div>
-              </div>
-              <div class="room_info_footer">
-                <div class="left">객실정보<br><br>추가정보</div>
-                <div class="right">기준 3인<br><br>인원 추가 가능 (추가 비용 발생)</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="one_room">
-            <div class="room_img">
-              <img src="${ctx }/img/incheon/harborpark_hotel/delux_double_citiview.png">
-            </div>
-            <div class="room_info">
-              <div class="room_info_header">
-                <h3>로얄스위트 트윈 오션 (Room Only)</h3>
-                <div class="detail_info">상세 정보 ></div>
-              </div>
-              <div class="room_info_center">
-                <div class="left">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="11" height="10">
-                    <path
-                      d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
-                  </svg>
-                  <span class="time">입실 15:00<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 11:00</span>
-                </div>
-                <div class="right">
-                  <p>130000원</p>
-                  <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
-                </div>
-              </div>
-              <div class="room_info_footer">
-                <div class="left">객실정보<br><br>추가정보</div>
-                <div class="right">기준 2인<br><br>인원 추가 가능 (추가 비용 발생)</div>
-              </div>
-            </div>
-          </div>
-          
-           <div class="one_room">
-            <div class="room_img">
-              <img src="${ctx }/img/incheon/harborpark_hotel/delux_double_citiview.png">
-            </div>
-            <div class="room_info">
-              <div class="room_info_header">
-                <h3>로얄스위트 트윈 오션 (Room Only)</h3>
-                <div class="detail_info">상세 정보 ></div>
-              </div>
-              <div class="room_info_center">
-                <div class="left">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="11" height="10">
-                    <path
-                      d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
-                  </svg>
-                  <span class="time">입실 15:00<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 11:00</span>
-                </div>
-                <div class="right">
-                  <p>130000원</p>
-                  <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
-                </div>
-              </div>
-              <div class="room_info_footer">
-                <div class="left">객실정보<br><br>추가정보</div>
-                <div class="right">기준 2인<br><br>인원 추가 가능 (추가 비용 발생)</div>
-              </div>
-            </div>
-          </div>
-          
-           <div class="one_room">
-            <div class="room_img">
-              <img src="${ctx }/img/incheon/harborpark_hotel/delux_double_citiview.png">
-            </div>
-            <div class="room_info">
-              <div class="room_info_header">
-                <h3>로얄스위트 트윈 오션 (Room Only)</h3>
-                <div class="detail_info">상세 정보 ></div>
-              </div>
-              <div class="room_info_center">
-                <div class="left">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="11" height="10">
-                    <path
-                      d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
-                  </svg>
-                  <span class="time">입실 15:00<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;퇴실 11:00</span>
-                </div>
-                <div class="right">
-                  <p>130000원</p>
-                  <div class="qty">남은 객실 2개</div>
-                  <button class="reserve_room" onclick="location.href='${ctx}/reserve.do'">객실 예약</button>
-                </div>
-              </div>
-              <div class="room_info_footer">
-                <div class="left">객실정보<br><br>추가정보</div>
-                <div class="right">기준 2인<br><br>인원 추가 가능 (추가 비용 발생)</div>
-              </div>
-            </div>
-          </div>
+		</c:forEach>
         </div> <!-- select_room -->
         
 		<hr/>
@@ -235,7 +124,9 @@
           <h4> 숙소 이용 정보</h4>
           <ul class="info_ul">
             <div>기본정보</div>
-            <li> 체크인 : 15:00 | 체크아웃 : 11:00</li>
+            <li> 체크인 : ${hotel.checkin } | 체크아웃 : ${hotel.checkout}</li>
+                <input type ="hidden" id="ho_checkIn" value = "${hotel.checkin }">
+                <input type ="hidden" id="ho_checkOut" value = "${hotel.checkout }">
             <li>무료 Wi-Fi</li>
             <li>전 객실 금연</li>
             <li><span class="amenity">일회용품 사용 규제 정책으로 인해, 2024년 3월 중으로 욕실용품 3종(샴푸, 컨디셔너, 바디워시) 은 다회용으로 제공, 일회용품(칫솔, 치약,
@@ -321,7 +212,7 @@
        	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16px" height="16px"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>
       	 </div>
       	</div> <!-- wide_map -->
-      	 <div class="footer_loc">제주특별자치도 서귀포시 색달동 2812-4</div>
+      	 <div class="footer_loc">${hotel.address }</div>
       </div> <!-- footer_map  -->
       
       <div class="all_review">
@@ -430,3 +321,5 @@
       </div> <!-- all_review -->
 	</div> <!-- info_footer -->
   </main>
+  
+  

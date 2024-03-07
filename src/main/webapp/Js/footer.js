@@ -18,6 +18,8 @@ $('.moal_cancle').click(function(){
 	$('footer').css('opacity', '1');
 	$('body').css("overflow","auto"); /* 모달창 닫으면 스크롤 다시 생성 */
 	$('.footer_modal').css("padding","10%"); /* 모달창 크기 원래대로 */
+	$('.footer_modal').css('background-color', 'rgba(0, 0, 0, 0.4)'); // 배경 원래대로
+	$('.moal_cancle').css('background-color', 'transparent'); // x버튼 원래대로
 });
 $(document).mouseup(function(e){
 	const modal = $('.footer_modal');
@@ -25,5 +27,7 @@ $(document).mouseup(function(e){
 		modal.removeClass('modal_on');
 		$('body').css("overflow","auto"); /* 모달창 닫으면 스크롤 다시 생성 */
 		$('.footer_modal').css("padding","10%");/* 모달창 크기 원래대로 */
+		$('.footer_modal').css('background-color', 'rgba(0, 0, 0, 0.4)'); // 배경 원래대로
+		$('.moal_cancle').css('background-color', 'transparent'); // x버튼 원래대로
 	}
 })

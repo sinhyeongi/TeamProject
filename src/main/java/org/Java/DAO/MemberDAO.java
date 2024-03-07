@@ -68,4 +68,8 @@ public class MemberDAO {
 		public int DeleteUser(MemberVO vo) {
 			return db.DeleteUser(vo);
 		}
+		// 판매자(호스트) 정보 찾기
+		public MemberVO getHostInfo(String host) {
+			return db.getHostInfo(host);
+		}
 }

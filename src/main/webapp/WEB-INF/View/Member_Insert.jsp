@@ -161,7 +161,7 @@
 	
 		<!-- 서밋 --> 
 			<div class="box submit_box">
-				<input type="button" onclick="insert(form)" class="submit_btn" value="다음">
+				<input type="button" onclick="insert(form)" class="submit_btn" value="가입하기">
 			</div>
 		</form>
 	</div>

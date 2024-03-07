@@ -37,6 +37,10 @@ public class ViewMapper {
 		mapper.put("/HotelList.do", new HotelListService());
 		// 호텔 인포
 		mapper.put("/HotelInfo.do", new HotelInfoService());
+		// 고객센터 페이지
+		mapper.put("/Customer_Service_Center.do", new Customer_Service_Center() );
+		// 이벤트 페이지
+		mapper.put("/Event.do", new EventPageService());
 		// Test
 		mapper.put("/Test.do", new TestService());
 		mapper.put("/Test_update.do",new Test_update());

@@ -250,9 +250,6 @@ function insert(form){
 	//폼 내용 서밋
 	form.submit();
 }
-function console1(){
-	console.log("111111");	
-}
 function addBirth(form){
 	form.birth.value = 
 			form.birth_year.value
@@ -302,7 +299,7 @@ if(birthYearEl){
 		//year list 없을 때
 		if(!isYearOptionExisted){
 			isYearOptionExisted = true;
-			for(let i = nowYear-100; i<= nowYear; i++){
+			for(let i = nowYear-1; i >= nowYear-100; i--){
 				// option element 생성
 				const Option = document.createElement("option");
 				Option.setAttribute("value", i);

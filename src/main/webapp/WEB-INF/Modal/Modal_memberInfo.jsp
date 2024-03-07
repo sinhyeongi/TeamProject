@@ -84,20 +84,22 @@
 					<h4>보유중인 쿠폰이 없습니다.</h4>
 					</c:if>
 					<c:if test="${fn:length(couponList) ne 0 }">
-					<div class="labels">
-						<label>쿠폰번호</label>
-						<label>발급일</label>
-						<label>쿠폰이름</label>
-						<label>기간</label>
-					</div>
-					<div class="coupon_items">
-						<c:forEach var="coupon" items="${couponList}">
-							<div class="Modal_data data_coupon">${coupon.no}</div>
-							<div class="Modal_data data_coupon">${coupon.regist}</div>
-							<div class="Modal_data data_coupon">${coupon.name}</div>
-							<div class="Modal_data data_coupon">${coupon.period}</div>
-						</c:forEach>
-					</div>
+					<table>
+						<tr class="labels">
+							<td>쿠폰번호</td>
+							<td>발급일</td>
+							<td>쿠폰이름</td>
+							<td>기간</td>
+						</tr>
+							<c:forEach var="coupon" items="${couponList}">
+								<tr class="item">
+									<td class="Modal_data data_coupon">${coupon.no}</td>
+									<td class="Modal_data data_coupon">${coupon.regist}</td>
+									<td class="Modal_data data_coupon">${coupon.name}</td>
+									<td class="Modal_data data_coupon">${coupon.period} <span>일 까지</span></td>
+								</tr>
+							</c:forEach>
+					</table>
 					</c:if>
 					</div>
 				</div>
@@ -112,40 +114,42 @@
 					<h4>예약내역이 없습니다.</h4>
 					</c:if>
 					<c:if test="${fn:length(reserveList) ne 0 }">
-					<div class="labels">
-						<label>예약번호</label>
-						<label>호텔번호</label>
-						<label>호텔이름</label>
-						<label>객실번호</label>
-						<label>객실이름</label>
-						<label>예약자이름</label>
-						<label>예약자번호</label>
-						<label>숙박 시작일</label>
-						<label>숙박 종료일</label>
-						<label>가격</label>
-						<label>인원수</label>
-						<label>추가요청사항</label>
-						<label>방문방법</label>
-						<label>옵션</label>
-					</div>
-					<div class="coupon_items">
-						<c:forEach var="reserve" items="${reserveList}">
-							<div class="Modal_data data_reserve">${reserve.no}</div>
-							<div class="Modal_data data_reserve">${reserve.hotel_no}</div>
-							<div class="Modal_data data_reserve">${reserve.hotel_name}</div>
-							<div class="Modal_data data_reserve">${reserve.room_no}</div>
-							<div class="Modal_data data_reserve">${reserve.room_name}</div>
-							<div class="Modal_data data_reserve">${reserve.name}</div>
-							<div class="Modal_data data_reserve">${reserve.phone}</div>
-							<div class="Modal_data data_reserve">${reserve.rday}</div>
-							<div class="Modal_data data_reserve">${reserve.dday}</div>
-							<div class="Modal_data data_reserve">${reserve.price}</div>
-							<div class="Modal_data data_reserve">${reserve.people}</div>
-							<div class="Modal_data data_reserve">${reserve.add_req}</div>
-							<div class="Modal_data data_reserve">${reserve.visit}</div>
-							<div class="Modal_data data_reserve">${reserve.hotel_option}</div>
-						</c:forEach>
-					</div>
+					<table>
+						<tr class="labels">
+							<td>예약번호</td>
+							<td>호텔번호</td>
+							<td>호텔이름</td>
+							<td>객실번호</td>
+							<td>객실이름</td>
+							<td>예약자이름</td>
+							<td>예약자번호</td>
+							<td>숙박 시작일</td>
+							<td>숙박 종료일</td>
+							<td>가격</td>
+							<td>인원수</td>
+							<td>추가요청사항</td>
+							<td>방문방법</td>
+							<td>옵션</td>
+						</tr>
+						<tr class="coupon_items">
+							<c:forEach var="reserve" items="${reserveList}">
+								<td class="Modal_data data_reserve">${reserve.no}</td>
+								<td class="Modal_data data_reserve">${reserve.hotel_no}</td>
+								<td class="Modal_data data_reserve">${reserve.hotel_name}</td>
+								<td class="Modal_data data_reserve">${reserve.room_no}</td>
+								<td class="Modal_data data_reserve">${reserve.room_name}</td>
+								<td class="Modal_data data_reserve">${reserve.name}</td>
+								<td class="Modal_data data_reserve">${reserve.phone}</td>
+								<td class="Modal_data data_reserve">${reserve.rday}</td>
+								<td class="Modal_data data_reserve">${reserve.dday}</td>
+								<td class="Modal_data data_reserve">${reserve.price}</td>
+								<td class="Modal_data data_reserve">${reserve.people}</td>
+								<td class="Modal_data data_reserve">${reserve.add_req}</td>
+								<td class="Modal_data data_reserve">${reserve.visit}</td>
+								<td class="Modal_data data_reserve">${reserve.hotel_option}</td>
+							</c:forEach>
+						</tr>
+					</table>
 					</c:if>
 					</div>
 				</div>

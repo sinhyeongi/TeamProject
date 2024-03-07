@@ -9,6 +9,9 @@
 	<select id="member_getMemberByNo" parameterType="int" resultType="member">
 		select * from member where no = #{no};
 	</select>
+	<select id="member_getSearchAll" resultType="member" parameterType="HashMap">
+		select * from member where ${category} LIKE "%${value}%";
+	</select>
 	<select id="Check_Login" resultType="member" parameterType="member">
 		select * from member where id = #{id} and pw = #{pw}
 	</select>

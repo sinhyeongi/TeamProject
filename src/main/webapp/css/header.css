@@ -1,6 +1,14 @@
 /* Fontawesome 4.7 */
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+.main{
+	height: 100vh;
+}
+.container{
+	max-width: 900px;
+	min-width: 550px;
+	margin: 30px auto;
+}
 html {
   scroll-behavior: smooth;
 }

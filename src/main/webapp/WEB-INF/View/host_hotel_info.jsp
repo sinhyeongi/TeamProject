@@ -22,7 +22,7 @@
 			<div><span>체크 인 및 체크 아웃 시간</span><span> ${h.checkin } / ${h.checkout }</span></div>
 			<div><span>계좌번호</span><span> ${h.account }</span></div>
 		</div>
-		<input type="radio" name="host_info_radio" id="host_info_radio">
+		<input type="radio" name="host_info_radio" id="host_info_radio" value="${h.no }">
 	</div>
 </c:forEach>
 <div><button id="host_info_submit">호텔 수정 하기</button></div>

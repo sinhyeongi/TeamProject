@@ -1,6 +1,11 @@
 package org.Java.Mapper;
 
+import java.io.IOException;
 import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.Java.Service.*;
 
@@ -76,6 +81,8 @@ public class ViewMapper {
 		mapper.put("/reserve_insert.do", new Reserve_InserService());
 		//예약 취소
 		mapper.put("/reserve_cancel.do", new Reserve_cancelService());
+		//비회원 예약 조회
+		mapper.put("/NoMember_Reserve_Info.do", new NoMember_Reserve_InfoService());
 	}
 	
 	

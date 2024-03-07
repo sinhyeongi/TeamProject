@@ -23,6 +23,9 @@ public class ReserveService implements Page {
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+			if(request.getParameter("no") == null) {
+				return "re:Main";
+			}
 			if(request.getSession().getAttribute("log") != null) {
 				Member_InfoVO vo = Member_InfoDAO.getInstance().getData((String)request.getSession().getAttribute("log"));
 				ArrayList<Member_couponVO> coupon = Member_CouponDAO.getInstance().getData((String)request.getSession().getAttribute("log"));
@@ -33,7 +36,7 @@ public class ReserveService implements Page {
 				request.setAttribute("coupon", coupon);
 				request.setAttribute("user", vo);
 			}
-			RoomVO rovo = RoomDAO.getInstance().getOneRoomData(1);
+			RoomVO rovo = RoomDAO.getInstance().getOneRoomData(Integer.parseInt(request.getParameter("no")));
 			HotelVO hovo = HotelDAO.getInstance().getHotelData(rovo.getHotel_no());
 			request.setAttribute("hotel", hovo);
 			request.setAttribute("room", rovo);

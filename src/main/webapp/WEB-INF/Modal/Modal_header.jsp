@@ -19,6 +19,8 @@
 	<c:if test="${page eq 'Modal_memberInfo.jsp' }">
 		<link rel="stylesheet" type="text/css" href="${ctx}/Css/Modal/M_MemberInfo.css">
 	</c:if>
-	
+	<c:if test="${page eq 'Modal_ReserveOk.jsp' }">
+		<link rel="stylesheet" type="text/css" href="${ctx}/Css/Modal/M_ReserveOk.css">
+	</c:if>
 </head>
 <body>

@@ -131,6 +131,13 @@
 		<script defer="defer" src="${ctx}/Js/Customer_Service_Center.js"></script>
 		<link rel="stylesheet" href="${ctx}/Css/Customer_Service_Center.css" type="text/css">
 	</c:if>
+	<!--  비회원 예약조회 -->
+	<c:if test="${page eq 'NoMember_Reserve_Info.jsp' }">
+		<script defer="defer" src="${ctx}/Js/NoMember_Reserve_Info.js"></script>
+	</c:if>
+	<c:if test="${page eq 'NoMember_Reserve_Info2.jsp' }">
+		<script defer="defer" src="${ctx}/Js/NoMember_Reserve_Info2.js"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -201,7 +208,13 @@
 	<c:if test="${page eq 'ImgUpload.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/ImgUpload.css" type="text/css">
 	</c:if>
-
+	<!--  비회원 예약 조회 -->
+	<c:if test="${page eq 'NoMember_Reserve_Info.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/NoMember_Rerserve_Info.css" type="text/css">
+	</c:if>
+	<c:if test="${page eq 'NoMember_Reserve_Info2.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/NoMember_Rerserve_Info2.css" type="text/css">
+	</c:if>
 </head>
 <body>
 
@@ -223,10 +236,18 @@
       </ul>
     </nav>
     <div class="header_popup">
-      <!-- 클릭시 로그인/ 회원가입 페이지로 이동 추가해야함 -->
-      <div><a href="Login.do">로그인 / 회원가입 </a> </div>
-      <!-- 클릭시 비회원 예약조회 페이지로 이동 추가해야함 -->
-      <div><a>비회원 예약조회</a></div>
+    	<c:if test="${log eq null }">
+      	<!-- 클릭시 로그인/ 회원가입 페이지로 이동 추가해야함 -->
+      	<div><a href="Login.do">로그인 / 회원가입 </a> </div>
+      	<!-- 클릭시 비회원 예약조회 페이지로 이동 추가해야함 -->
+      	<div><a href="NoMember_Reserve_Info.do">비회원 예약조회</a></div>
+      </c:if>
+      <c:if test="${log ne null }">
+      <div><a href="Member_Info.do"> 내정보 </a></div>
+      <div><a href="Reserve_Info.do"> 예약 조회 </a></div>
+      <div><a href="Member_PointAndCoupon_Info.do"> 쿠 폰 </a></div>
+      <div><a href="Logout.do"> 로그아웃 </a></div>
+      </c:if>
     </div>
   </header>
 	<button id="topBtn" title="Go to top"><i class="fa fa-angle-up"></i>&nbsp;TOP</button>

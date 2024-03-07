@@ -9,4 +9,7 @@
 	<insert id="reserve_insertdata" parameterType="reserve">
 		insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,id,people,add_req,visit,uid) values(#{hotel_no},#{room_no},#{name},#{phone},#{rday},#{dday},#{price},#{id},#{people},#{add_req},#{visit},#{uid})
 	</insert>
+	<delete id="reserve_cancel_uid">
+		delete from reserve where uid = #{uid}
+	</delete>
 </mapper>

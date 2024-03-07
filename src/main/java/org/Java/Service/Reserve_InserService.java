@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.Java.DAO.ReserveDAO;
+import org.Java.DAO.RoomDAO;
 import org.Java.VO.Page;
 import org.Java.VO.ReserveVO;
+import org.Java.VO.RoomVO;
 
 public class Reserve_InserService implements Page{
 	@Override
@@ -27,9 +29,16 @@ public class Reserve_InserService implements Page{
 		vo.setUid(request.getParameter("uid"));
 		vo.setId(request.getParameter("id"));
 		vo.setPrice(Integer.parseInt(request.getParameter("price")));
-		System.out.println(vo);
+		RoomVO room = RoomDAO.getInstance().getOneRoomData(vo.getRoom_no());
+		if(room.getTotal_qty() <= 0) {
+			response.getWriter().print("0");
+			return null;
+		}
 		int cnt = 0;
 		cnt = ReserveDAO.getInstance().InsertData(vo);
+		if(cnt >0) {
+			RoomDAO.getInstance().ReserveRoom(vo.getRoom_no());
+		}
 		response.getWriter().print(cnt);
 		return null;
 	}

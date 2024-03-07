@@ -79,7 +79,7 @@
 				<input type="hidden" id="hotel_x" value="${hotel.x }">
 				<div id="reserve_map_view"></div>
 			</div>
-			<span>호텔 이름 : ${hotel.name }</span>
+			<span>호텔 이름 :<span id="reserve_hotel_name_u"> ${hotel.name }</span> / 남은 방 : ${room.total_qty }</span>
 			<span>객실 : ${room.name }</span>
 			<span>가격 : <span  id="reserve_price">${room.price }</span></span>
 		</div>

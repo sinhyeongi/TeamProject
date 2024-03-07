@@ -12,4 +12,10 @@
 	<select id="room_getOneRoomData" resultType="room">
 	select * from room where no = #{no}
 	</select>
+	<update id="reserveRoom" parameterType="Integer">
+		update room set total_qty = (select total_qty from (select (total_qty-1) as total_qty from room where no = #{room_no})tmp) where no = #{room_no};
+	</update>
+	<update id="reservecancelRoom" parameterType="Integer">
+		update room set total_qty = (select total_qty from (select (total_qty+1) as total_qty from room where no = #{room_no})tmp) where no = #{room_no};
+	</update>
 </mapper>

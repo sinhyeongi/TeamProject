@@ -180,35 +180,44 @@ function requestPay(){
  		hotel_no : _hotel_no,
  		people : _people
  	}
- 	
+ 	if(InsertData(_data) == false){
+ 		return;
+ 	}
  	IMP.request_pay({
  		pg : 'html5_inicis.INIpayTest',
  		pay_method : 'card',
  		merchant_uid : _data.uid, // 타임스템프 + 전화번호 + 이름
- 		name : _name,
+ 		name : $('#reserve_hotel_name_u').text(),
  		amount : _price,
  		buyer_tel : _tel
  	},function(rsp){
  		if(rsp.success){
- 			InsertData(_data);
  			alert('결제 완료');
+ 			location.href="Main.do"
  		}
  	});
  }
 
  //데이터베이스 데이터 추가
  function InsertData(_data){
+ 	let ischeck = true;
  	$.ajax({
  		type : "post",
  		url : "reserve_insert.do",
  		data : _data,
+ 		async : false,
  		success : function(data){
- 			
+ 			if(data == 0){
+ 				alert('남은 방이없습니다.');
+ 				ischeck =  false;
+ 			}
  		},
  		error : function(err){
  			alert('err = '+err);
+ 			ischeck =  false;
  		}
- 	})
+ 	});
+ 	return ischeck;
  }
  //본인 확인 함수
  function certifi(){

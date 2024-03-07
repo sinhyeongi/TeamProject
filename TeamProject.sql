@@ -99,7 +99,7 @@ create table room(
     foreign key(hotel_no) references hotel(no) on delete cascade
 );
 select * from room;
-select name from room where no = 1;
+select * from room where no = 1;
 
 # 예약
 create table reserve(
@@ -165,3 +165,5 @@ foreign key(id) references member(id) on delete cascade
 select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
+
+

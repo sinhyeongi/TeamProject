@@ -40,4 +40,20 @@ public class RoomDB {
 		se.close();
 		return list;
 	}
+	public int ReserveRoom(int room_no) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		se.update("reserveRoom",room_no);
+		se.commit();
+		se.close();
+		return cnt;
+	}
+	public int ReserveCancelRoom(int room_no) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		se.update("reservecancelRoom",room_no);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

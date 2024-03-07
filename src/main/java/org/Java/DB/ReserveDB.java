@@ -36,4 +36,12 @@ public class ReserveDB {
 		se.close();
 		return cnt;
 	}
+	public int ReserveCancel_uid(String uid) {
+		SqlSession se = sf.openSession();
+		int cnt = 0;
+		cnt = se.delete("reserve_cancel_uid",uid);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

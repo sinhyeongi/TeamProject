@@ -27,4 +27,7 @@ public class ReserveDAO {
 	public int InsertData(ReserveVO vo) {
 		return db.InsertData(vo);
 	}
+	public int ReserveCancel_uid(String uid) {
+		return db.ReserveCancel_uid(uid);
+	}
 }

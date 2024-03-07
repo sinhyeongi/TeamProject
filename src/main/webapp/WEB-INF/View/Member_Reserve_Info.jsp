@@ -15,6 +15,7 @@
 				<div><span>객 실</span><span>${list.room_name }</span></div>
 				<div><span>예약 기간</span><span>${list.rday }일 ~ ${list.dday }일</span></div>
 				<div><span>총 금액</span><span class="price">${list.price }원</span></div>
+				<input type="hidden" name="room_no" value="${list.room_no }">
 				<input type="radio" name="reserve_info_radio" id="reserve_info_radio" value="${list.no }">
 			</div>
 		</c:forEach>

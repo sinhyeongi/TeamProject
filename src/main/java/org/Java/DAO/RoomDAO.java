@@ -26,4 +26,10 @@ public class RoomDAO {
 	public ArrayList<RoomVO> getRoomData(int hotel_no){
 		return db.getRoomData(hotel_no);
 	}
+	public int ReserveRoom(int room_no) {
+		return db.ReserveRoom(room_no);
+	}
+	public int ReserveCancelRoom(int room_no) {
+		return db.ReserveCancelRoom(room_no); 
+	}
 }

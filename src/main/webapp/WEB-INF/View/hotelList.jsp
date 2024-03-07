@@ -24,8 +24,9 @@
   
   <session class="hotelList_center">
 	<c:forEach var="hotel" items="${list }">  
-   <a href="#">
+   
    <div class="container">
+   <input type="hidden" name="hotel_no" value="${hotel.no }">
       <div class="accommodation">
       	<c:forEach var="url" items="${hotel.url }">
       		<div><img src="${ctx }/img/${url}"></div>
@@ -42,7 +43,7 @@
         </div>
       </div>
       </div>
-      </a>
+      
       </c:forEach>
     </session>
 </main>

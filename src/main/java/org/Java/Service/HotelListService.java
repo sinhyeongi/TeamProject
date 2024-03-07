@@ -37,6 +37,11 @@ public class HotelListService implements Page{
 		}
 	
 		for(int i = 0 ; i < list.size(); i++) {
+			if(list.get(i).getArea() < 0) {
+				list.remove(i);
+				i--;
+				continue;
+			}
 			list.get(i).setPrice(RoomDAO.getInstance().getRoomData(list.get(i).getNo()).get(0).getPrice());
 			list.get(i).setReviewCount(ReviewDAO.getInstance().getHotelReviewCount(list.get(i).getNo()));
 			list.get(i).setUrl(ImgDAO.getInstance().getHotelUrl(list.get(i).getNo()));

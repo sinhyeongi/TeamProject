@@ -166,4 +166,5 @@ select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
 
+select * from member_coupon;
 

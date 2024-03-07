@@ -27,7 +27,7 @@
 /* 예시: 화면 폭에 따라 스타일 변경 */
 @media screen and (max-width: 1200px) {
  /* 모바일 화면 크기에 대한 스타일 */
-	.left_item{
+	/*.left_item{
 		display:none;
-	}
+	} */
 }

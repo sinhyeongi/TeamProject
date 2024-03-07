@@ -20,6 +20,9 @@ public class MemberDAO {
 		public ArrayList<MemberVO> getAll(){
 			return db.getAll();
 		}
+		public ArrayList<MemberVO> getSearchAll(String category,String value){
+			return db.getSearchAll(category,value);
+		}
 		public MemberVO getMemberByNo(int no) {
 			return db.getMemberByNo(no);
 		}

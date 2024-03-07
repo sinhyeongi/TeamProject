@@ -16,18 +16,18 @@
 
 	<h2 id="slick_title">국내 인기 여행지</h2>
 	<div class="multiple-items">
-	  <div>
+	  <a href="Login.do">
 	  	<img src="${ctx}/img/Main_category_jeju.png" width="90%" height="100%" alt="jeju">
-		<div class=category_name>제주도</div>
-	  </div>
-		<div>
+		<label class=category_name>제주도</label>
+	  </a>
+		<a>
 	  		<img src="${ctx}/img/Main_category_seoul.png" width="90%" height="100%" alt="jeju">
-			<div class=category_name>서울</div>
-	  </div>
-	  <div>
+			<label class=category_name>서울</label>
+	  </a>
+	  <a>
 	  	<img src="${ctx}/img/Main_category_busan.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>부산</div>
-	  </div>
+	  </a>
 	  <div>
 	  	<img src="${ctx}/img/Main_category_ganrung.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>강릉</div>
@@ -56,6 +56,12 @@
 	  	<img src="${ctx}/img/Main_category_sukcho.png" width="90%" height="100%" alt="jeju">
 		<div class=category_name>속초</div>
 	  </div>
+	  <c:if test="${log eq 'admin'}">
+	  <a href="adminPage.do" target="_blank">
+	  	<img src="${ctx}/img/Header_logo.png" width="90%" height="100%" alt="jeju">
+		<label class=category_name>관리자페이지로가기</label>
+	  </a>
+	  </c:if>
 	</div>
 	<h1>Main</h1>
 	<a href="Login.do">로그인하기</a><br/>
@@ -66,7 +72,6 @@
 	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
-	<a href="adminPage.do">관리자페이지(임시)</a><br/>
 	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
 
 	<a href="reserve.do">예약 페이지</a>

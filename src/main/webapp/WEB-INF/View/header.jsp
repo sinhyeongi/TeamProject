@@ -117,6 +117,18 @@
 	<c:if test="${page eq 'ImgUpload.jsp' }">
 		<script defer="defer" src="${ctx}/Js/ImgUpload.js"></script>
 	</c:if>
+	<!-- eventPage js and css -->
+	<c:if test="${page eq 'event.jsp' }">
+		<script defer="defer" src="${ctx}/Js/event.js"></script>
+		<link rel="stylesheet" href="${ctx}/Css/event.css" type="text/css">
+	</c:if>
+	<!-- Cstomer_service_center js and css -->
+	<c:if test="${page eq 'Customer_Service_Center.jsp' }">
+		<!-- fontawesome -->
+		<script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+		<script defer="defer" src="${ctx}/Js/Customer_Service_Center.js"></script>
+		<link rel="stylesheet" href="${ctx}/Css/Customer_Service_Center.css" type="text/css">
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -187,6 +199,7 @@
 	<c:if test="${page eq 'ImgUpload.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/ImgUpload.css" type="text/css">
 	</c:if>
+
 </head>
 <body>
 
@@ -196,8 +209,8 @@
         <a href="Main.do"><img src="${ctx }/img/Header_logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
-        <li><a href="#">이벤트</a></li>
-        <li><a href="#about">고객센터</a></li>
+        <li><a href="Event.do">이벤트</a></li>
+        <li><a href="Customer_Service_Center.do">고객센터</a></li>
         <li id="member_menu" onclick="showPopup(event)">
           <div>
             <span><i class="fa fa-bars"></i></span>&nbsp;

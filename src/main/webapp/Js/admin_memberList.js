@@ -3,6 +3,7 @@
  */
 function modal_info(no,name){
 	$('.footer_modal').addClass('modal_on');
+	$('body').css("overflow","hidden");
 	const _data = {
 		Modal_page : name,
 		no : no

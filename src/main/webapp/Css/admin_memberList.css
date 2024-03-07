@@ -34,9 +34,21 @@ div{
 .data_section .row{
 	margin : 10px 0;
 }
+.searchForm{
+	display: flex;
+    justify-content: flex-end;
+}
+.category{
+	display: inline;
+}
+.searchValue{
+	display: inline;
+}
 .Modal_btn{
 	padding : 1px;
+	height: 40px;
 	border-radius : 5px;
 	border : solid 1px;
 	cursor: pointer;
+	line-height: 40px;
 }

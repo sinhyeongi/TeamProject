@@ -3,7 +3,9 @@ package org.Java.DB;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.Java.VO.MemberVO;
 import org.apache.ibatis.io.Resources;
@@ -48,6 +50,21 @@ public class MemberDB {
 		vo = se.selectOne("CheckLogin_API", id);
 		se.close();
 		return vo;
+	}
+	//admin memberList 검색
+	public ArrayList<MemberVO> getSearchAll(String category,String value){
+		SqlSession se = sf.openSession();
+		Map<String,String> map = new HashMap<>();
+		
+		map.put("category",category);
+		map.put("value", value);
+		System.out.println("map category = "+ map.get("category"));
+		System.out.println("map value = "+ map.get("value"));
+		
+		List<MemberVO> list = se.selectList("member_getSearchAll",map);
+		System.out.println(list);
+		se.close();
+		return (ArrayList<MemberVO>) list;
 	}
 	public int DeleteUser_API(String id) {
 		int cnt = 0;

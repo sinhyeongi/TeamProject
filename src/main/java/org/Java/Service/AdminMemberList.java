@@ -23,8 +23,16 @@ public class AdminMemberList implements Page {
 //			//return "Main";
 //			return "admin_memberList";
 //		}
-		ArrayList<MemberVO> list = MemberDAO.getinstance().getAll();
-		
+		ArrayList<MemberVO> list=null;
+		String category = request.getParameter("category");
+		String searchValue = request.getParameter("searchValue");
+		if(searchValue != null && !searchValue.equals("")) {
+			System.out.println("category = "+category);
+			System.out.println("value = "+searchValue);
+			list = MemberDAO.getinstance().getSearchAll(category,searchValue);
+		}else {
+			list = MemberDAO.getinstance().getAll();
+		}
 		request.setAttribute("list", list);
 		return "admin_memberList";
 	}

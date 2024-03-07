@@ -41,7 +41,6 @@ function showMoreImg(button) {
 
 
 // -------------- 리뷰 추천 버튼 누르면 추천 수 올라가게 ---
-
 var up_btn = $('.up_btn'); // 추천 버튼
 var cnt = $('.rec_cnt'); // 추천수 sql에서 받아오고
 var cur_cnt = parseInt(cnt.text()); // 현재 추천 수 
@@ -55,18 +54,21 @@ up_btn.click(function() {
 // ------------
 
 
+// 받아온 호텔의 위도, 경도
+var y = $('#y').val(); //위도
+var x = $('#x').val(); // 경도
 
 // 지도 만들기
 var HOME_PATH = window.HOME_PATH || '.';
 var map = new naver.maps.Map('map', {
 	draggable: false,
 	scrollWheel: false,
-	center: new naver.maps.LatLng(33.2484468, 126.4106058),
+	center: new naver.maps.LatLng(y, x),
 	zoom: 17
 });
 
 var marker = new naver.maps.Marker({
-	position: new naver.maps.LatLng(33.2484468, 126.4106058),
+	position: new naver.maps.LatLng(y, x),
 	map: map,
 	icon: {
 		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
@@ -85,11 +87,11 @@ function newMap() {
 			style: naver.maps.ZoomControlStyle.SMALL,
 			position: naver.maps.Position.TOP_RIGHT
 		},
-		center: new naver.maps.LatLng(33.2484468, 126.4106058),
+		center: new naver.maps.LatLng(y, x),
 		zoom: 14
 	});
 	var marker = new naver.maps.Marker({
-		position: new naver.maps.LatLng(33.2484468, 126.4106058),
+		position: new naver.maps.LatLng(y, x),
 		map: map2,
 		icon: {
 			url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
@@ -108,11 +110,11 @@ var wide_map = new naver.maps.Map('wide_map', {
 		style: naver.maps.ZoomControlStyle.SMALL,
 		position: naver.maps.Position.TOP_RIGHT
 	},
-	center: new naver.maps.LatLng(33.2484468, 126.4106058),
+	center: new naver.maps.LatLng(y, x),
 	zoom: 14
 });
 var marker2 = new naver.maps.Marker({
-	position: new naver.maps.LatLng(33.2484468, 126.4106058),
+	position: new naver.maps.LatLng(y, x),
 	map: wide_map,
 	icon: {
 		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
@@ -190,11 +192,21 @@ function clickImg(img) {
 	$('.modal_main').css('overflow', 'hidden');
 };
 
+// jstl 호텔
+
+// 받아온 호텔의 체크인, 체크아웃
+var checkIn = $('#ho_checkIn').val();
+var checkOut = $('#ho_checkOut').val();
 
 //-- 객실 상세정보 클릭시 모달창 --
 $('.detail_info').click(function() {
 	var h3Content = $(this).closest('.room_info_header').find('h3').text();
+	var bed = $(this).closest('.room_info_header').find('#ro_bedinfo').val();
+	var occ = $(this).closest('.room_info_header').find('#ro_occ').val();
+	var amenities = $(this).closest('.room_info_header').find('#ro_ame').val();
+	
 	console.log(h3Content); /* 객실 이름 가져오기 */
+	console.log(bed); // 침대 정보 가져오기
 	$('.footer_modal').css({
 	  "padding-top": "5%",
       "padding-bottom": "5%",
@@ -207,21 +219,21 @@ $('.detail_info').click(function() {
 	$('.modal_main').html(
 	 `<div id="modal_info">  
 		<div class="d_header">
-   		 로얄스위트 트윈 오션 (Room Only)
+   		 ${h3Content}
   		</div>
   		<hr />
   		<div class="r_info">
     		<ul class="info_ul">
      		 <div>객실 정보</div>
-     		  <li> 숙박 | 체크인 : 15:00 ~ 체크아웃 11:00</li>
-    		  <li>2인 기준</li>
+     		  <li> 숙박 | 체크인 : ${checkIn} ~ 체크아웃 : ${checkOut}</li>
+    		  <li>${occ}인 기준</li>
     		  <li>인원 추가시 비용이 발생되며, 현장에서 결제 바랍니다.</li>
-     		  <li>더블베드 1개, 싱글베드 1개</li>
+     		  <li>${bed}</li>
     		</ul>
    		 <hr />
    			 <ul class="info_ul">
       		<div>편의시설</div>
-      		<li> TV, 쇼파, 옷장, 데스크, 에어컨, 미니바, 헤어드라이기, 욕실용품, 샤워가운, 슬리퍼</li>
+      		<li> ${amenities}</li>
    			</ul>
    		 <hr />
     		 <div class="r_info_del">취소 및 환불 규정</div>
@@ -253,6 +265,18 @@ function scrollToReview() {
       }, 100);
 }
 
+
+// 호텔 이름
+var hotelName = $('#ho_name').val();
+// 호텔 주소
+var address = $('#address').val();
+// 호텔 호스트 명
+var host_name = $('#m_name').val();
+// 호텔 호스트 연락처
+var host_phone = $('#m_phone').val();
+// 호텔 호스트 이메일
+var host_email = $('#m_email').val();
+
 // --------- 판매자 정보 창 --
 function show_host_info(){
 	$('.footer_modal').css({
@@ -278,23 +302,23 @@ function show_host_info(){
      </colgroup>
      <tr>
       <td>상호</td>
-      <td>신라호텔</td>
+      <td>${hotelName}</td>
      </tr>
      <tr>
       <td>대표자명</td>
-      <td>신기훈</td>
+      <td>${host_name}</td>
      </tr>
      <tr>
       <td>주소</td>
-      <td>제주특별자치도 서귀포시 색달동 2812-4</td>
+      <td>${address}</td>
      </tr>
      <tr>
       <td>전화번호</td>
-      <td>010-1234-5678</td>
+      <td>${host_phone}</td>
      </tr>
      <tr>
       <td>이메일</td>
-      <td>host@naver.com</td>
+      <td>${host_email}</td>
      </tr>
   	</table>
   	</div> `

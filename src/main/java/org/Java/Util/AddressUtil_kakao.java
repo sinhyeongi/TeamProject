@@ -25,6 +25,7 @@ public class AddressUtil_kakao{
         String x = "";
         String y = "";
         String area = "";
+        System.out.println("들어옴");
         HttpURLConnection conn = null;
         BufferedReader br = null;
         try {
@@ -34,7 +35,7 @@ public class AddressUtil_kakao{
             conn.setRequestProperty("Authorization", "KakaoAK " + apiKey);
 
             int responseCode = conn.getResponseCode();
-            
+            System.out.println(responseCode);
          
             if (responseCode == 200) { // 정상 호출
                 br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -58,11 +59,13 @@ public class AddressUtil_kakao{
             if(area.length() >= 5) {
             	area = area.substring(0,5);
             }
+            
             System.out.println("위도: " + y);
             System.out.println("경도: " + x);
             
         } catch (Exception e) {
             e.printStackTrace();
+            
         }finally {
         		try {
         			if(br != null) {
@@ -76,7 +79,6 @@ public class AddressUtil_kakao{
 					e.printStackTrace();
 				}
 		}
-        
 		return y+"/"+x+"/"+area;
 	}
 	 

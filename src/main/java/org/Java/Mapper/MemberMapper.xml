@@ -38,5 +38,9 @@
 		SELECT count(*) FROM member WHERE phone = #{phone};
 	</select>
 	
-	
+	<!-- 판매자 정보  -->
+	<select id="member_hostInfo" parameterType="String" resultType="member">
+		SELECT * FROM member WHERE id = #{host};
+<!-- 		SELECT m.name, m.phone, m.email FROM member m , hotel h WHERE h.no = #{no} and m.id = h.host; -->
+	</select>
 </mapper>

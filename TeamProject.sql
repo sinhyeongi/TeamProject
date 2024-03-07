@@ -1,4 +1,4 @@
-#drop database java;
+# drop database java;
 create database java;
 use java;
 #고객 테이블
@@ -51,9 +51,6 @@ create table coupon(
 );
 insert into coupon values('WellCome',7,10000,7);
 select * from coupon;
-select disprice from coupon where name = 'WellCome';
-insert into coupon values('test',7,10000,7);
-insert into coupon values('test2',0,10000,7);
 #유저 쿠폰
 create table member_coupon(
 	no int auto_increment primary key, -- 발급 번호
@@ -66,8 +63,6 @@ create table member_coupon(
 );
 
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
-insert into member_coupon (id,name,period) values('test1','test',Date_add(current_date(), interval (select period from coupon where name = 'test') day)); -- 쿠폰 추가 방법
-insert into member_coupon (id,name,period) values('test1','test2',Date_add(current_date(), interval (select period from coupon where name = 'test2') day)); -- 쿠폰 추가 방법
 select * from member_coupon;
 
 # 호텔
@@ -89,6 +84,7 @@ create table hotel(
     foreign key(host) references member(id) on delete cascade
 );
 select * from hotel;
+select * from img;
 
 #객실
 create table room(
@@ -104,6 +100,7 @@ create table room(
 );
 select * from room;
 select name from room where no = 1;
+
 # 예약
 create table reserve(
 	no int auto_increment primary key, -- 예약 번호

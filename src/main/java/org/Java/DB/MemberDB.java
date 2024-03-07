@@ -96,6 +96,12 @@ public class MemberDB {
 		se.close();
 		return checkCount;
 	}
-
+	public MemberVO getHostInfo(String host) {
+		MemberVO vo = new MemberVO();
+		SqlSession se = sf.openSession();
+		vo = se.selectOne("member_hostInfo", host);
+		se.close();
+		return vo;
+	}
 }
 

@@ -21,8 +21,8 @@ public class Modal_adminApplyHostInfoService implements Page{
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int no = Integer.parseInt(request.getParameter("no"));
-		HotelVO hVO = HotelDAO.getInstance().getHotelData(no);
 		MemberVO mVO = MemberDAO.getinstance().getMemberByNo(no);
+		HotelVO hVO = HotelDAO.getInstance().Host_getHotel(mVO.getId());
 		Member_InfoVO mInfoVO = Member_InfoDAO.getInstance().getData(mVO.getId());
 		request.setAttribute("hVO", hVO);
 		request.setAttribute("mVO", mVO);

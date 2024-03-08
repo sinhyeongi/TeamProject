@@ -80,4 +80,12 @@ public class MemberDAO {
 		public MemberVO getHostInfo(String host) {
 			return db.getHostInfo(host);
 		}
+		//호스트 승인
+		public int acceptApplyMember_level(String id) {
+			return db.acceptApplyMember_level(id);
+		}
+		//호스트 거절
+		public int declineApplyMember_level(String id) {
+			return db.declineApplyMember_level(id);
+		}
 }

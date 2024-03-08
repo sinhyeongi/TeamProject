@@ -67,3 +67,18 @@ function modal_applyHostInfo(no,name){
 		}
 	});
 }
+
+function applyHost(decide,hostId){
+	fetch("decideApplyHost.do",{
+		method:"POST",
+		headers:{	
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+	    	},
+		body: "decide="+decide+"&id="+hostId,
+	})
+	.then(res=>res.text())
+	.then(function(){
+		location.reload();
+	})
+	.catch(err=>console.log(err));
+}

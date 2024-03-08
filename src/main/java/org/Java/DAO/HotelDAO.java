@@ -42,5 +42,13 @@ public class HotelDAO {
 	public int InsertHotel(HotelVO vo) {
 		return db.InsertHotel(vo);
 	}
-	
+	public HotelVO Host_getHotel(String id) {
+		return db.Host_getHotel(id);
+	}
+	public int acceptApplyHotel_star(String id) {
+		return db.acceptApplyHotel_star(id);
+	}
+	public int deleteHotel_hostId(String id) {
+		return db.deleteHotel_hostId(id);
+	}
 }

@@ -18,5 +18,11 @@
 	<update id="Member_Info_applyHost" parameterType="String">
 		UPDATE member_info set level = level + 100 WHERE id =#{id};
 	</update>
+	<update id="Member_Info_acceptApplyHost" parameterType="String">
+		UPDATE member_info set level = level + 800 WHERE id =#{id};
+	</update>
+	<update id="Member_Info_declineApplyHost" parameterType="String">
+		UPDATE member_info set level = level - 100 WHERE id =#{id};
+	</update>
 	
 </mapper>

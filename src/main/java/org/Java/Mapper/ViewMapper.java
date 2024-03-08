@@ -1,6 +1,11 @@
 package org.Java.Mapper;
 
+import java.io.IOException;
 import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.Java.Service.*;
 
@@ -89,12 +94,7 @@ public class ViewMapper {
 		mapper.put("/BoarderWrite.do", new BoarderWriteService());
 		//리뷰글쓰기
 		mapper.put("/ReviewWrite.do", new ReviewWriteService());
-		//룸 정보 업데이트
-		mapper.put("/UpdateRoom.do", new UpdateRoomService());
-		//호스트 신청 페이지
 		mapper.put("/Member_ApplytoHost.do", new Member_ApplytoHostService());
-		//호텔 추가
-		mapper.put("/InsertHotel.do", new HotelInsertService());
 	}
 	
 	

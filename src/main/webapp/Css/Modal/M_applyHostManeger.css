@@ -1,0 +1,54 @@
+@charset "UTF-8";
+#ModalApplyHostInfoMain .container{
+	background-color: #fff;
+	border-radius: 20px;
+	max-width: 1200px;
+	overflow: hidden;
+	padding: 15px;
+}
+.table{
+	width:100%;
+}
+th{
+	border-radius: 5px;
+	padding : 10px 5px;
+	border : solid 0.5px;
+	width : 75px;
+}
+tr{
+	display:flex;
+	margin-bottom: 10px;
+}
+td{
+	flex:1;
+	max-width: 400px;
+	overflow: auto;
+	line-height: 43px;
+}
+.border_none{
+	border:none;
+}
+td::-webkit-scrollbar {
+    display: none;
+}
+.subject{
+	border-bottom: solid 0.8px;
+	margin-top: 20px;
+}
+.btn_section{
+	display: flex;
+	justify-content: space-evenly;
+}
+.btn_ahm{
+	padding : 20px;
+	border-radius: 17px;
+	color : #fff;
+	font-size : 24px;
+	font-weight: 700;
+}
+.accept{
+	background-color: #007aff;
+}
+.decline{
+	background-color: rgb(255, 71, 82);
+}

@@ -74,4 +74,24 @@ public class HotelDB {
 		se.close();
 		return cnt;
 	}
+	public HotelVO Host_getHotel(String id) {
+		SqlSession se = sf.openSession();
+		HotelVO vo = se.selectOne("hotel_Host_getHotel", id);
+		se.close();
+		return vo;
+	}
+	public int acceptApplyHotel_star(String id) {
+		SqlSession se = sf.openSession();
+		int cnt = se.update("hotel_accept_update_star", id);
+		se.commit();
+		se.close();
+		return cnt;
+	}
+	public int deleteHotel_hostId(String id) {
+		SqlSession se = sf.openSession();
+		int cnt = se.delete("hotel_deleteAll_hostId", id);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

@@ -15,6 +15,9 @@
 	<select id="hotel_getData" resultType="hotel">
 		select * from hotel where no = #{no}
 	</select>
+	<select id="hotel_Host_getHotel" resultType="hotel" parameterType="String">
+		select * from hotel where host = #{id}
+	</select>
 	<update id="hotel_update_XY" parameterType="hotel">
 		update hotel set x = ${x}, y = ${y},area = ${area} where no = ${no}
 	</update>
@@ -24,4 +27,10 @@
 	<insert id="Hotel_Insert" parameterType="hotel">
 		insert into hotel(host,name,star,tel,Fac,address,area,checkin,checkout,account,x,y) values(#{host},#{name},#{star},#{tel},#{fac},#{address},#{area},#{checkin},#{checkout},#{account},#{x},#{y})
 	</insert>
+	<update id="hotel_accept_update_star" parameterType="String">
+		UPDATE hotel SET star = star * -1 WHERE host = #{id};
+	</update>
+	<delete id="hotel_deleteAll_hostId" parameterType="String">
+		DELETE FROM hotel where host = #{id};	
+	</delete>
 </mapper>

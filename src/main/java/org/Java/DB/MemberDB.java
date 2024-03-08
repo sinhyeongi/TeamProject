@@ -126,5 +126,19 @@ public class MemberDB {
 		se.close();
 		return vo;
 	}
+	public int acceptApplyMember_level(String id) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.update("Member_Info_acceptApplyHost", id);
+		se.commit();
+		se.close();
+		return checkCount;
+	}
+	public int declineApplyMember_level(String id) {
+		SqlSession se = sf.openSession();
+		int checkCount = se.update("Member_Info_declineApplyHost", id);
+		se.commit();
+		se.close();
+		return checkCount;
+	}
 }
 

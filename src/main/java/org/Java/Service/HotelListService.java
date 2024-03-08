@@ -14,6 +14,8 @@ import org.Java.DAO.RoomDAO;
 import org.Java.VO.HotelVO;
 import org.Java.VO.Page;
 
+import com.google.gson.Gson;
+
 public class HotelListService implements Page{
 
 	@Override
@@ -47,6 +49,11 @@ public class HotelListService implements Page{
 			list.get(i).setUrl(ImgDAO.getInstance().getHotelUrl(list.get(i).getNo()));
 		}
 		request.setAttribute("list", list);
+		
+		Gson gson = new Gson();
+		String ctg_hotelList = gson.toJson(list);
+		request.setAttribute("htList", ctg_hotelList);
+		
 		return "hotelList";
 	}
 

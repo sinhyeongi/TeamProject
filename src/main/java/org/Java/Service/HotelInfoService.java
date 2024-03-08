@@ -18,6 +18,8 @@ import org.Java.VO.Page;
 import org.Java.VO.ReviewVO;
 import org.Java.VO.RoomVO;
 
+import com.google.gson.Gson;
+
 public class HotelInfoService implements Page{
 
 	@Override

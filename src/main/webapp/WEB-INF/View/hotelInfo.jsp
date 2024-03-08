@@ -249,13 +249,14 @@
       		</div> <!-- left_rv -->
       		<div class="right_rv">
       			<div class="r_rv_header">
-      			  <div class="rating" id="rating"></div>
+      			  <div class="rating" id="rating">
+      			   <input type="hidden" class="star_p" value="${one_rv.star_point }">
+      			  </div>
 				  <span class="rv_wday">작성일 : ${one_rv.wday }</span>
 				 </div> <!-- r_rv_header -->
 				 <div class="r_rv_center">
 				 	<div class="rv_img">
 				 	 <c:forEach var="rv_url" items="${one_rv.url }"> 
-				 	 <input type = "hidden" id="rv_url" value="${rv_url }">
 				 	 <img class="rv_imgs" src="${ctx }/img/${rv_url}" onclick="clickImg(this)">
 <%-- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
@@ -294,5 +295,4 @@
       </div> <!-- all_review -->
 	</div> <!-- info_footer -->
   </main>
-  
   

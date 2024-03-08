@@ -30,10 +30,14 @@ public class AdminMemberList implements Page {
 			System.out.println("category = "+category);
 			System.out.println("value = "+searchValue);
 			list = MemberDAO.getinstance().getSearchAll(category,searchValue);
+			if(category.equals("level") && searchValue.equals("100")) {
+				request.setAttribute("applyHost", "applyHost");
+			}
 		}else {
 			list = MemberDAO.getinstance().getAll();
 		}
 		request.setAttribute("list", list);
+		request.setAttribute("category", category);
 		return "admin_memberList";
 	}
 	

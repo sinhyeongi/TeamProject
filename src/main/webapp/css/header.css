@@ -3,6 +3,10 @@
 
 .main{
 	height: 100vh;
+	overflow: auto;
+}
+.main::-webkit-scrollbar {
+    display: none;
 }
 .container{
 	max-width: 900px;
@@ -13,7 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 body{
-	overflow: auto;
   padding-top: 68px;
   height: 100vh;
   box-sizing: border-box;

@@ -19,8 +19,7 @@ public class QAcategoryService implements Page{
 		String category = request.getParameter("category");
 		if(category ==null)category = "TOP7";
 		ArrayList<BoarderVO> list = BoardDAO.getInstance().getCateList(category);
-		System.out.println("쿠");
-		String data = null;
+		String data = "";
 		if(list!=null) {
 			for(BoarderVO vo : list) {
 				String title = vo.getTitle();
@@ -40,7 +39,7 @@ public class QAcategoryService implements Page{
 					+ "<div><i class=\"fas fa-duotone fa-angle-down\"></i></div>"
 					+ "<!-- 화살표 -->"
 					+ "</div>"
-					+ "<div class=\"qacontent qacontent_container\">"
+					+ "<div class=\"qacontent qacontent_container hidden\">"
 					+ "<div class=\"qacontent qacontent_box\">";
 				for(String content : contents) {
 					data+= "<div>"

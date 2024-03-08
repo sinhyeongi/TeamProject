@@ -9,11 +9,12 @@
 		<div class="section serch_section">
 			<form action="admin_memberList.do" method="get" class="searchForm">
 				<div class="category">
+				<input type="hidden" id="cate" value="${category }">
 					<select id="category" name="category">
-						<option value="id" selected>아이디</option>
-						<option value="name">이름</option>
-						<option value="level">등급</option>
-						<option value="nickname">닉네임</option>
+						<option value="id"<c:if test="${category eq null || category eq 'id' }"> selected</c:if>>아이디</option>
+						<option value="name" <c:if test="${category eq 'name' }"> selected</c:if> >이름</option>
+						<option value="level" <c:if test="${category eq 'level' }"> selected</c:if> >등급</option>
+						<option value="nickname" <c:if test="${category eq 'nickname' }"> selected</c:if>>닉네임</option>
 					</select>
 				</div>
 				<div class="searchValue">
@@ -50,7 +51,12 @@
 				<div class="row"><div class="data data_no">${vo.no}</div></div>
 				<div class="row"><div class="data data_nickname">${vo.nickname}</div></div>
 				<div class="row"><div class="data data_id">${vo.id}</div></div>
+				<c:if test="${applyHost eq null}">
 				<div class="row"><div class="data data_modal Modal_btn" onclick="modal_info(${vo.no},'Modal_memberInfo')">모달창으로 정보보기</div></div>
+				</c:if>
+				<c:if test="${applyHost ne null}">
+				<div class="row"><div class="data data_modal Modal_btn" onclick="modal_applyHostInfo(${vo.no},'Modal_applyHostInfo')">신청 정보보기</div></div>
+				</c:if>
 				</div>
 			</c:forEach>
 			</c:if>

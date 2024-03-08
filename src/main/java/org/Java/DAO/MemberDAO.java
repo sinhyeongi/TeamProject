@@ -21,7 +21,12 @@ public class MemberDAO {
 			return db.getAll();
 		}
 		public ArrayList<MemberVO> getSearchAll(String category,String value){
-			return db.getSearchAll(category,value);
+			if(category.equals("level")) {
+				int level = Integer.parseInt(value);
+				return db.getLevelAll(category, level);
+			}else {
+				return db.getSearchAll(category,value);
+			}
 		}
 		public MemberVO getMemberByNo(int no) {
 			return db.getMemberByNo(no);

@@ -72,7 +72,12 @@ public class ViewMapper {
 		//admin
 		mapper.put("/adminPage.do", new AdminPage());
 		mapper.put("/admin_memberList.do",new AdminMemberList());
+		//멤버 정보보기
 		mapper.put("/admin_Modal_memberInfo.do",new Modal_adminMemberInfoService());
+		//호스트신청정보보기
+		mapper.put("/admin_Modal_applyHost.do",new Modal_adminApplyHostInfoService());
+		//호스트신청 매니저
+		mapper.put("/decideApplyHost.do", new ApplyHostManager());
 		//호텔 수정하기(호스트)
 		mapper.put("/host_hotel_mif.do", new Host_Hotel_Mif());
 		//이미지 추가 및 수정
@@ -85,6 +90,10 @@ public class ViewMapper {
 		mapper.put("/reserve_cancel.do", new Reserve_cancelService());
 		//비회원 예약 조회
 		mapper.put("/NoMember_Reserve_Info.do", new NoMember_Reserve_InfoService());
+		//게시글쓰기
+		mapper.put("/BoarderWrite.do", new BoarderWriteService());
+		//리뷰글쓰기
+		mapper.put("/ReviewWrite.do", new ReviewWriteService());
 	}
 	
 	

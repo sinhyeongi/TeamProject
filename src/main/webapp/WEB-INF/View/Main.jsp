@@ -73,7 +73,11 @@
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
 	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
 
-	<a href="reserve.do">예약 페이지</a>
+	<a href="reserve.do">예약 페이지</a><br/>
+	<a href="ReviewWrite.do">리뷰작성</a><br/>
+	<a href="BoarderWrite.do?type=notice">공지사항 글쓰기</a><br/>
+	<a href="BoarderWrite.do?type=qa">문의사항 글쓰기</a><br/>
+	
 
 <c:if test="${log ne null}">
 	<input type="hidden" id="log" value="${log}"/>

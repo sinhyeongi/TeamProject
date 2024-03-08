@@ -66,6 +66,12 @@ public class MemberDB {
 		se.close();
 		return (ArrayList<MemberVO>) list;
 	}
+	public ArrayList<MemberVO> getLevelAll(String category,int level){
+		SqlSession se = sf.openSession();
+		List<MemberVO> list = se.selectList("member_getLevelAll", level);
+		se.close();
+		return (ArrayList<MemberVO>)list;
+	}
 	public int DeleteUser_API(String id) {
 		int cnt = 0;
 		SqlSession se = sf.openSession();

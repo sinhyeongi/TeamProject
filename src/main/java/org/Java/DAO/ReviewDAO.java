@@ -24,4 +24,10 @@ public class ReviewDAO {
 	public ArrayList<ReviewVO> getAllHotelReview(int Hotel_no){
 		return db.getAllHotelReview(Hotel_no);
 	}
+	public ArrayList<ReviewVO> getAllReview(){
+		return db.getAllReview();
+	}
+	public int updateReviewCnt(int rec_cnt , int no) {
+		return db.updateReviewCnt(rec_cnt, no);
+	}
 }

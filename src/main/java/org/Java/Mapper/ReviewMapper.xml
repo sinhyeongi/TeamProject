@@ -11,4 +11,13 @@
 	<select id="getAllHotelReview" resultType="review" parameterType="Integer">
 		select * from review where hotel_no = #{Hotel_no} ORDER BY count DESC;
 	</select>
+	
+	<!-- 모든 리뷰  -->
+	<select id="getAllReview" resultType="review">
+		select * from review;
+	</select>
+	<!-- 리뷰 추천수 업데이트  -->
+	<update id="updateReviewCnt" parameterType="HashMap">
+		update review set count = #{rec_cnt} where no = #{no};
+	</update>
 </mapper>

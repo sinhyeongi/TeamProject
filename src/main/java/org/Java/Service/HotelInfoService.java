@@ -54,16 +54,22 @@ public class HotelInfoService implements Page{
 		// 한 호텔에 대한 모든 리뷰(추천수 내림차순)
 		ArrayList<ReviewVO> reviewList = ReviewDAO.getInstance().getAllHotelReview(no);
 		
+		int allStar_p = 0; // 모든 평점
 		for(int i = 0 ; i < reviewList.size(); i++) {
 			reviewList.get(i).setUrl(ImgDAO.getInstance().getReviewUrl(reviewList.get(i).getNo()));
+			allStar_p += reviewList.get(i).getStar_point();
 		}
-		
+		int star_point = Math.round(allStar_p / reviewList.size());
+		hotel.setStar_point(star_point);
 		request.setAttribute("title", hotel.getName()+" 정보");
 		request.setAttribute("hotel" , hotel);
 		request.setAttribute("room" , roomList);
 		request.setAttribute("imgList", imgList);
 		request.setAttribute("m_vo", m_vo);
 		request.setAttribute("reviewList", reviewList);
+		
+		
+		
 		return "hotelInfo";
 	}
 

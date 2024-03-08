@@ -89,6 +89,7 @@ public class ViewMapper {
 		mapper.put("/reserve_cancel.do", new Reserve_cancelService());
 		//비회원 예약 조회
 		mapper.put("/NoMember_Reserve_Info.do", new NoMember_Reserve_InfoService());
+
 		//게시글쓰기
 		mapper.put("/BoarderWrite.do", new BoarderWriteService());
 		//리뷰글쓰기
@@ -100,6 +101,8 @@ public class ViewMapper {
 		mapper.put("/Room_add.do", new Room_addService());
 		//룸 삭제
 		mapper.put("/Host_Delete_Room.do", new Host_Delete_RoomService());
+		// 추천 버튼 체크
+		mapper.put("/check_up_btn.do", new UpBtnChecking());
 	}
 	
 	

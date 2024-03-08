@@ -3,7 +3,9 @@ package org.Java.DB;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.Java.VO.MemberVO;
 import org.Java.VO.ReviewVO;
@@ -35,5 +37,22 @@ public class ReviewDB {
 		List<ReviewVO> list = se.selectList("getAllHotelReview",Hotel_no);
 		se.close();
 		return (ArrayList<ReviewVO>) list;
+	}
+	public ArrayList<ReviewVO> getAllReview(){
+		SqlSession se = sf.openSession();
+		List<ReviewVO> list = se.selectList("getAllReview");
+		se.close();
+		return (ArrayList<ReviewVO>) list;
+	}
+	public int updateReviewCnt(Integer rec_cnt , Integer no) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		Map<String,Integer> map = new HashMap<>();
+		map.put("rec_cnt",rec_cnt);
+		map.put("no", no);
+		cnt = se.update("updateReviewCnt", map);
+		se.commit();
+		se.close();
+		return cnt;
 	}
 }

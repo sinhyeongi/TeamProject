@@ -29,7 +29,15 @@
         // 리뷰 파트에서 별 만들기
         $('.rating').each(function(){
 			var score = $(this).find('.star_p').val();
-		})
+			var starCount = Math.round(score * 5 / 10); // 10점 만점을 기준으로 계산
+   			 for (var i = 1; i <= 5; i++) {
+      		var star = $('<div></div>').addClass('rv_star');
+      		if (i <= starCount) {
+        		star.addClass('filled'); // 색이 칠해진 별에 해당하는 클래스 추가
+      		}
+     		$(this).append(star);
+    	  }
+		});
         
 });
 // ------ 리뷰 더보기 버튼 ----
@@ -60,9 +68,31 @@ var cnt = $('.rec_cnt'); // 추천수 sql에서 받아오고
 var cur_cnt = parseInt(cnt.text()); // 현재 추천 수 
 
 up_btn.click(function() {
-	cur_cnt++;
-	cnt.text(cur_cnt);
-})
+	var review_main = $(this).closest(".review_main");
+	var rec_cnt = review_main.find(".rec_cnt");
+		const data = {
+			no : $(this).find('.rv_no').val(),
+			rec_cnt : $(this).find('.review_cnt').val()
+		};
+		$.ajax({
+		type: "post",
+		url : "check_up_btn.do",
+		data : data,
+		success : function(response){
+			if(response == "로그아웃 상태"){
+				alert("로그인 후 이용 가능합니다.");
+				return;
+			}  else if(response >0){
+				rec_cnt.text(response);
+				return;
+			} 
+		},
+		error : function(error){
+			alert('err = '+error);
+		}
+	});
+	
+});
 // 이미 동일한 아이디로 누른 리뷰면 더 추천 못하게,
 //  리뷰 쓴 사람이랑 추천 누른사람이 같을때도 못하게 막기.
 // ------------

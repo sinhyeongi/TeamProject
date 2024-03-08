@@ -19,7 +19,14 @@
 				<input type="radio" name="reserve_info_radio" id="reserve_info_radio" value="${list.no }">
 			</div>
 		</c:forEach>
+		<c:if test="${list eq null or list.size() eq 0 }">
+			<div>
+				<span>아직 예약 전입니다.....</span>
+			</div>
+		</c:if>
+		<c:if test="${list ne null and list.size() ne 0 }">
 		<div class="cancle_reserve"><button id="Reserve_Info_submit">취소하기</button></div>
+		</c:if>
 	</div>
 	
 </main>

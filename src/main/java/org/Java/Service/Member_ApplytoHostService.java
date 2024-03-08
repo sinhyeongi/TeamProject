@@ -20,14 +20,14 @@ public class Member_ApplytoHostService implements Page {
 		}
 		MemberVO vo = MemberDAO.getinstance().CheckLogin_API((String)request.getSession().getAttribute("log"));
 		vo.setInfo(Member_InfoDAO.getInstance().getData(vo.getId()));
-//		int level = vo.getInfo().getLevel();
-//		if(level >= 100 && level < 200) {
-//			response.getWriter().print("<script> alert('이미 호스트 신청이 되었습니다.'); location.href='Main.do'; </script>");
-//			return null;
-//		}else if(level >= 900) {
-//			response.getWriter().print("<script> alert('호스트 상태에서 신청은 불가능합니다.'); location.href='Main.do'; </script>");
-//			return null;
-//		}
+		int level = vo.getInfo().getLevel();
+		if(level >= 100 && level < 200) {
+			response.getWriter().print("<script> alert('이미 호스트 신청이 되었습니다.'); location.href='Main.do'; </script>");
+			return null;
+		}else if(level >= 900 && vo.getId().equals("admin") == false) {
+			response.getWriter().print("<script> alert('호스트 상태에서 신청은 불가능합니다.'); location.href='Main.do'; </script>");
+			return null;
+		}
 		request.setAttribute("title", vo.getId()+" 호스트 신청페이지");
 		request.setAttribute("vo", vo);
 		return "Member_Applytohost";

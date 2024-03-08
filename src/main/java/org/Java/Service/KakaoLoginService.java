@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.Java.DAO.MemberDAO;
+import org.Java.DAO.Member_InfoDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
 import org.json.simple.JSONObject;
@@ -69,7 +70,9 @@ public class KakaoLoginService implements Page {
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
+        	logMember.setInfo(Member_InfoDAO.getInstance().getData(logMember.getId()));
         	request.getSession().setAttribute("log", logMember.getId());
+        	request.getSession().setAttribute("log_level", logMember.getInfo().getLevel());
         	System.out.println("기존 회원");
         	return "Main";
         }

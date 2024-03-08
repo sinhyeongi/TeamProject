@@ -65,22 +65,14 @@
 	</div>
 	<h1>Main</h1>
 	<a href="Member_applyHost.do">호스트신청하기(임시)</a><br/>
-	<a href="reserve.do">예약페이지 (임시)</a><br/>
 	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
-	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
 	<a href="ReviewWrite.do">리뷰작성</a><br/>
 	<a href="BoarderWrite.do?type=notice">공지사항 글쓰기</a><br/>
 	<a href="BoarderWrite.do?type=qa">문의사항 글쓰기</a><br/>
 	
-	<a href ="Member_ApplytoHost.do">호스트 신청</a><br/>
-	<a href="reserve.do">예약 페이지</a><br/>
 	<c:if test="${log eq 'admin' }">
 		<a href="Test_update.do">초기 위도,경도 업데이트</a><br/>
 	</c:if>
-<c:if test="${log ne null}">
-	<input type="hidden" id="log" value="${log}"/>
-	<button onclick="Logout(log)" >로그아웃</button><br/>
-</c:if>
 </main>
 </body>
 </html>

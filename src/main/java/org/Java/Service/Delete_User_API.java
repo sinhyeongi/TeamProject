@@ -17,6 +17,10 @@ public class Delete_User_API implements Page{
 			return null;
 		}
 		int cnt = MemberDAO.getinstance().DeleteUser_API(request.getParameter("id"));
+		if(cnt > 0) {
+			request.getSession().removeAttribute("log");
+			request.getSession().removeAttribute("log_level");
+		}
 		response.getWriter().print(cnt);
 		return null;
 	}

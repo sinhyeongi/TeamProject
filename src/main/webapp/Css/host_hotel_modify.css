@@ -104,6 +104,7 @@
 	overflow: hidden;
 	flex-direction:column;
 	border-radius: 12px;
+	overflow: auto;
 }
 .room_info > div{
 	flex:1;
@@ -134,6 +135,11 @@
 .room_info > div > div > span{
 	flex:1;
 	text-align: center;
+	display: flex;
+	
+}
+.room_info > div > div > span > button{
+	flex:1;
 }
 .host_hotel_info_room{
 	flex:1;

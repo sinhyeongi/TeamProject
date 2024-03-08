@@ -33,4 +33,8 @@ $(document).mouseup(function(e){
 		$('.footer_modal').css('background-color', 'rgba(0, 0, 0, 0.4)'); // 배경 원래대로
 		$('.moal_cancle').css('background-color', 'transparent'); // x버튼 원래대로
 	}
+});
+
+$('#footer_op_link').click(function(){
+	alert('준비중');
 })

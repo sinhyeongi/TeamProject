@@ -17,6 +17,9 @@ public class DeleteUser implements Page{
 		if(request.getParameter("id") == null || request.getParameter("pw") == null) {
 			return null;
 		}
+		if(request.getParameter("id").equals("admin")) {
+			return null;
+		}
 		MemberVO vo = new MemberVO();
 		vo.setId(request.getParameter("id"));
 		vo.setPw(request.getParameter("pw"));
@@ -24,6 +27,7 @@ public class DeleteUser implements Page{
 		response.getWriter().print(cnt);
 		if(cnt > 0) {
 			request.getSession().removeAttribute("log");
+			request.getSession().removeAttribute("log_level");
 		}
 		return null;
 	}

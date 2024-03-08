@@ -20,6 +20,7 @@ public class ViewMapper {
 		mapper.put("/LoginInput.do", new LoginInputService());
 		//네이버 로그인
 		mapper.put("/Naver_Login.do",new NaverLoginService());
+		//예약
 		mapper.put("/reserve.do", new ReserveService());
 		// 유저 정보 보기
 		mapper.put("/Member_Info.do", new Member_InfoService());
@@ -43,8 +44,6 @@ public class ViewMapper {
 		mapper.put("/QAcategoryService.do" , new QAcategoryService());
 		// 이벤트 페이지
 		mapper.put("/Event.do", new EventPageService());
-		// Test
-		mapper.put("/Test.do", new TestService());
 		//위도 경도 업데이트
 		mapper.put("/Test_update.do",new Test_update());
 		// modal용 맵퍼
@@ -95,9 +94,9 @@ public class ViewMapper {
 		mapper.put("/Member_ApplytoHost.do", new Member_ApplytoHostService());
 		//호텔 추가
 		mapper.put("/InsertHotel.do", new HotelInsertService());
-		//room add
+		//룸 추가
 		mapper.put("/Room_add.do", new Room_addService());
-		//host room delete
+		//룸 삭제
 		mapper.put("/Host_Delete_Room.do", new Host_Delete_RoomService());
 	}
 	

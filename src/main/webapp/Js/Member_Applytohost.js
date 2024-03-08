@@ -58,7 +58,7 @@ function Check(){
 	}else if(!name){
 		alert('호텔 이름을 입력해주세요');
 		$('input[name=name]').focus();
-		return false;
+		return true;
 	}else if(!address){
 		alert('주소를 입력해주세요');
 		$('.addres_input').click();

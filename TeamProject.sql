@@ -63,6 +63,7 @@ create table member_coupon(
     foreign key(name) references coupon(name) on delete cascade
 );
 
+
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
 insert into member_coupon (id,name,period) values('test1','test',Date_add(current_date(), interval (select period from coupon where name = 'test') day)); -- 쿠폰 추가 방법
 insert into member_coupon (id,name,period) values('test1','test2',Date_add(current_date(), interval (select period from coupon where name = 'test2') day)); -- 쿠폰 추가 방법

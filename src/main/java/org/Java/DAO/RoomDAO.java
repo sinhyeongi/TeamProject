@@ -32,4 +32,7 @@ public class RoomDAO {
 	public int ReserveCancelRoom(int room_no) {
 		return db.ReserveCancelRoom(room_no); 
 	}
+	public int UpdateRoomData(RoomVO vo) {
+		return db.UpdateRoomData(vo);
+	}
 }

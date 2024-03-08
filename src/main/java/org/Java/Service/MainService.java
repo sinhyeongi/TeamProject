@@ -28,7 +28,7 @@ public class MainService implements Page{
 		}
 		request.setAttribute("list", list);
 
-		request.getSession().setAttribute("log", "test1");
+		request.getSession().setAttribute("log", "admin");
 
 		return "Main";
 	}

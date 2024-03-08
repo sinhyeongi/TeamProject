@@ -1,4 +1,5 @@
-history.replaceState({}, null, location.pathname);
+//history.replaceState({}, null, location.pathname);
+let room_content_div = null;
 $('.host_hotel_info_room').click(function(){
 	$('.hotel_info').animate({height : '0%'},'500');
 	$('.room_info').animate({height : '90%'},'500');
@@ -106,6 +107,120 @@ function check(){
 }
 
 $('#hotel_img_submit').click(function(){
-	
 	location.href="ImgUpload.do?no="+$('#hotel_no').val()+'&rq=ho';
+});
+$('#room_img_submit').click(function(){
+	let no = $('input[name=radio]:checked').val();
+	alert(no);
+	if(!no){
+		alert('선택후 수정 버튼을 클릭해주세요');
+		return;
+	}
+	location.href="ImgUpload.do?no="+no+'&rq=ro';
+});
+$('#room_submit').click(function(){
+	$(this).attr('disabled',true);
+	let no = $('input[name=radio]:checked').val();
+	if(!no){
+		alert('선택후 수정 버튼을 클릭해주세요');
+		return;
+	}
+	else if(CheckData()){
+		return;
+	}
+	const t = $('input[name=radio]:checked').closest('.room_content');
+	const name = t.find('input[name=name]').val();
+	const total_qty = t.find('input[name=total_qty]').val();
+	const occ = t.find('input[name=occ]').val();
+	const price = t.find('input[name=price]').val();
+	const _data = {
+		room_no : no,
+		name : name,
+		total_qty : total_qty,
+		occ : occ,
+		price : price
+	}
+	$.ajax({
+		type : "post",
+		url : "UpdateRoom.do",
+		data : _data,
+		async : false,
+		success : function(data){
+			if(data == 1){
+				alert('업데이트 완료 되었습니다.');
+			}
+		},
+		error : function(error){
+			alert('error = '+error);
+		}
+	});
+	$('#room_submit').removeAttr('disabled');
+	room_content_div.find('input[name=name]').attr('readonly','readonly');
+	room_content_div.find('input[name=total_qty]').attr('readonly','readonly');
+	room_content_div.find('input[name=occ]').attr('readonly','readonly');
+	room_content_div.find('input[name=price]').attr('readonly','readonly');
+	room_content_div = null;
+	$('input[name=radio]:checked').removeAttr('checked');
 })
+function CheckData(){
+	let t = $('input[name=radio]:checked');
+	if(!t.val()){
+		return true;
+	}
+	t = t.closest('.room_content');
+	const name = t.find('input[name=name]').val();
+	const total_qty = t.find('input[name=total_qty]').val();
+	const occ = t.find('input[name=occ]').val();
+	const price = t.find('input[name=price]').val();
+	alert(name+'\n'+total_qty+'\n'+occ+'\n'+price);
+	if(!name){
+		alert('호텔 이름을 입력하세요');
+		t.find('input[name=name]').focus();
+		return true;
+	}else if(!total_qty){
+		alert('예약 가능 방을 입력하세요');
+		t.find('input[name=total_qty]').focus();
+		return true;
+	}else if(total_qty < 0){
+		alert('예약 가능 방 입력을 확인해주세요');
+		t.find('input[name=total_qty]').val('1');
+		t.find('input[name=total_qty]').focus();	
+		return true;
+	}else if(!occ){
+		alert('최대 인원을 입력하세요');
+		t.find('input[name=occ]').focus();
+		return true;
+	}else if(occ < 0){
+		alert('최대 인원을 0이상 입력하세요');
+		t.find('input[name=occ]').focus();
+		return true;
+	}else if(!price){
+		alert('룸의 가격을 입력하세요');
+		t.find('input[name=price]').focus();
+		return true;
+	}else if(price < 100){
+		alert('룸의 가격을 100원 이상 입력하세요');
+		t.find('input[name=price]').focus();
+		return true;
+	}
+	return false;
+}
+
+$('.room_changedata').change(function(){
+	Changefied($(this));
+})
+function Changefied(e){
+	if(room_content_div){
+		room_content_div.find('input[name=name]').attr('readonly','readonly');
+		room_content_div.find('input[name=total_qty]').attr('readonly','readonly');
+		room_content_div.find('input[name=occ]').attr('readonly','readonly');
+		room_content_div.find('input[name=price]').attr('readonly','readonly');
+	}
+	const target = e.closest('.room_content');
+	room_content_div = target;
+	target.find('input[name=name]').removeAttr('readonly');
+	target.find('input[name=total_qty]').removeAttr('readonly');
+	target.find('input[name=occ]').removeAttr('readonly');
+	target.find('input[name=price]').removeAttr('readonly');
+}
+

@@ -56,4 +56,12 @@ public class RoomDB {
 		se.close();
 		return cnt;
 	}
+	public int UpdateRoomData(RoomVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.update("Room_UpdateRoomData",vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

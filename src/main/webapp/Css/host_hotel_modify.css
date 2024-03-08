@@ -47,7 +47,9 @@
 	flex:1;
 	width: 100%;
 }
-.hotel_info > div:last-child > span > button{
+.hotel_info > div:last-child > span > button,
+#room_submit,
+#room_img_submit{
 	position: relative;
     border: none;
     min-width: 200px;
@@ -64,11 +66,15 @@
     font-weight: 700;
     transition: 0.3s;
 }
-.hotel_info > div:last-child > span > button:hover {
+.hotel_info > div:last-child > span > button:hover,
+#room_submit:hover,
+#room_img_submit:hover {
     transform: scale(1.2);
 }
 
-.hotel_info > div:last-child > span > button:hover::after {
+.hotel_info > div:last-child > span > button:hover::after,
+#room_submit:hover::after,
+#room_img_submit:hover::after {
     content: "";
     width: 30px;
     height: 30px;
@@ -101,6 +107,11 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
+	border: 1px solid #e7e7e7;
+	border-radius:12px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	position: relative;
 }
 .room_info > div > div{
 	display: flex;
@@ -108,6 +119,11 @@
 	align-items: center;
 	width: 100%;
 	height: 100%;
+}
+.room_info > div > input[type=radio]{
+	position: absolute;
+	top: 50%;
+	right: 5%;
 }
 .room_info > div > div > span{
 	flex:1;
@@ -164,4 +180,9 @@ input:read-only:hover{
 #hotel_title{
 	font-size: 12px;
 	color:red;
+}
+#room_submit,
+#room_img_submit{
+	width: 50%;
+	margin: auto;
 }

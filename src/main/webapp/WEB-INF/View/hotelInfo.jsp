@@ -91,7 +91,12 @@
          <c:forEach var="one_ro" items="${room }">
           <div class="one_room">
             <div class="room_img">
-                <img src="${ctx }/img/${one_ro.url.get(0)}"> 
+            	<c:if test="${ one_ro.url ne null and one_ro.url.size() ne 0 }">
+                	<img src="${ctx }/img/${one_ro.url.get(0)}">
+                </c:if>
+                <c:if test="${ one_ro.url eq null or one_ro.url.size() eq 0 }"> 
+                <img src="${ctx }/img/Main_logo.jpeg">
+                </c:if> 
             </div>
             <div class="room_info">
               <div class="room_info_header">

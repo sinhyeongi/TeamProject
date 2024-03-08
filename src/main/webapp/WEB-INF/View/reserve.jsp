@@ -75,7 +75,13 @@
 	</div>
 	<div>
 		<div class="reser_img_secssion">
-		<img src="${ctx }/img/${img }"></div>
+		<c:if test="${img ne null and img ne '' }">
+			<img src="${ctx }/img/${img }">
+		</c:if>
+		<c:if test="${img eq null or img eq '' }">
+			<img src="${ctx }/img/Main_logo.jpeg">
+		</c:if>
+		</div>
 		<div class="reser_right_content">
 			<div id="reser_map">
 				<input type="hidden" id="hotel_y" value="${hotel.y }">

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+#AddRoom_Main{
+	width: 80%;
+	height: 100%;
+	display: flex;
+	border: 1px solid red;
+	margin: auto;
+	flex-direction: column;
+	padding: 12px;
+	box-sizing: border-box;
+}
+#AddRoom_Main > h2{
+	flex:1;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#AddRoom_Main > div{
+	flex:9;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border:1px solid black;
+	box-sizing: border-box;
+}
+#AddRoom_Main > div > div{
+	flex:1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+#AddRoom_Main > div > div > span{
+	flex:1;
+	width:100%;
+	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#AddRoom_Main > div > div > span > #AddRoom_submit{
+	width:80%;
+	position: relative;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+#AddRoom_Main > div > div > span > #AddRoom_submit:hover{
+	transform: scale(1.2);	
+}
+#AddRoom_Main > div > div > span > #AddRoom_submit:hover::after{
+	content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+#AddRoom_Main > div > div > span > input{
+	width: 80%;
+	transition : 1.3s;
+}
+#AddRoom_Main > div > div > span > input:focus{
+	width: 100%;
+}
+textarea {
+	resize: none;
+	width: 90%;
+	height: 80%;
+	text-align: center;
+	border-radius: 12px;
+}
+
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}

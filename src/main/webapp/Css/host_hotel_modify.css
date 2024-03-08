@@ -49,7 +49,9 @@
 }
 .hotel_info > div:last-child > span > button,
 #room_submit,
-#room_img_submit{
+#room_img_submit,
+#room_add_submit,
+#room_Delete_submit{
 	position: relative;
     border: none;
     min-width: 200px;
@@ -68,13 +70,17 @@
 }
 .hotel_info > div:last-child > span > button:hover,
 #room_submit:hover,
-#room_img_submit:hover {
+#room_img_submit:hover,
+#room_add_submit:hover,
+#room_Delete_submit:hover{
     transform: scale(1.2);
 }
 
 .hotel_info > div:last-child > span > button:hover::after,
 #room_submit:hover::after,
-#room_img_submit:hover::after {
+#room_img_submit:hover::after,
+#room_add_submit:hover::after,
+#room_Delete_submit:hover::after {
     content: "";
     width: 30px;
     height: 30px;

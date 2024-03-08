@@ -95,6 +95,10 @@ public class ViewMapper {
 		mapper.put("/Member_ApplytoHost.do", new Member_ApplytoHostService());
 		//호텔 추가
 		mapper.put("/InsertHotel.do", new HotelInsertService());
+		//room add
+		mapper.put("/Room_add.do", new Room_addService());
+		//host room delete
+		mapper.put("/Host_Delete_Room.do", new Host_Delete_RoomService());
 	}
 	
 	

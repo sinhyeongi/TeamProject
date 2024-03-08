@@ -142,6 +142,9 @@
 		<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script defer="defer" src="${ctx}/Js/Member_Applytohost.js"></script>
 	</c:if>
+	<c:if test="${page eq 'AddRoom.jsp' }">
+		<script defer="defer" src="${ctx}/Js/AddRoom.js"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -222,7 +225,9 @@
 	<c:if test="${page eq 'Member_Applytohost.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Applytohost.css" type="text/css">
 	</c:if>
-	
+	<c:if test="${page eq 'AddRoom.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/AddRoom.css" type="text/css">
+	</c:if>
 </head>
 <body>
 
@@ -255,6 +260,9 @@
       <div><a href="Reserve_Info.do"> 예약 조회 </a></div>
       <div><a href="Member_PointAndCoupon_Info.do"> 쿠 폰 </a></div>
       <div><a href="Logout.do"> 로그아웃 </a></div>
+      <c:if test="${log_level >= 900 }">
+      	<div><a href="host_hotel_info.do">내 호텔 관리</a></div>
+      </c:if>
       </c:if>
     </div>
   </header>

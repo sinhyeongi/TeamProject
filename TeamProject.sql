@@ -100,6 +100,7 @@ create table room(
     amenities varchar(300), -- 편의 시설
     foreign key(hotel_no) references hotel(no) on delete cascade
 );
+
 select * from room;
 select * from room where no = 1;
 

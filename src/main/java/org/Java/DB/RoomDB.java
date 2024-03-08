@@ -64,4 +64,20 @@ public class RoomDB {
 		se.close();
 		return cnt;
 	}
+	public int InsertRoomData(RoomVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.insert("Room_InsertData",vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
+	public int Host_DeleteRoom(RoomVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.delete("Room_Host_DeleteRoom",vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

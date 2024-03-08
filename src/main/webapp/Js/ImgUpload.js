@@ -1,3 +1,4 @@
+
 $('.ImgUploader_ImgDelete').click(function(){
 	const t = $(this).closest('div').prevAll().length;
 	const _d = $('.ImgUploader_ImgDelete:eq('+t+')').val();
@@ -6,8 +7,6 @@ $('.ImgUploader_ImgDelete').click(function(){
 		no : _d.split(',')[1],
 		url : _d.split(',')[2]
 	}
-	alert(data.uploader +'\n'+data.no+'\n'+data.url);
-	
 	$.ajax({
 		type: "post",
 		url : "DeleteImg.do",

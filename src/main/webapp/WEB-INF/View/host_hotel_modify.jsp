@@ -21,13 +21,23 @@
 	<div class="room_info">
 		<h2 style="text-align: center;">룸 목록</h2>
 		<c:forEach var="room" items="${room }">
-			<div>
-				<div><span>방 이름</span><span>${room.name }</span></div>
+			<div class="room_content">
+				<div><span>방 이름</span><span><span><input type="text" value="${room.name }" name="name" readonly="readonly" required="required"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>  </div>
 				<div>
-					<span>방 이름</span>${room.name }<span></span>
+					<span>예약 가능 방</span><span><span><input type="number" value="${room.total_qty }" name="total_qty" readonly="readonly" required="required"></span> 개</span>
 				</div>
+				<div>
+					<span>최대 인원</span><span><span><input type="number" name="occ" value="${ room.occ}" readonly="readonly" min="1" required="required"></span> 명</span>
+				</div>
+				<div>
+					<span>가격</span><span><span><input type="number" name="price" value="${room.price }" readonly="readonly" min="100" required="required"></span> 원</span>
+				</div>
+				<input type="radio" name="radio" value="${room.no }" class="room_changedata">				
 			</div>
 		</c:forEach>
+		<div>
+			<div><span><button id="room_submit">룸 정보 수정하기</button></span><span><button id="room_img_submit">룸 이미지 수정하기</button></span></div>
+		</div>
 	</div>
 	
 </main>

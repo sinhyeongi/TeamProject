@@ -66,5 +66,12 @@ public class HotelDB {
 		se.close();
 		return cnt;
 	}
-	
+	public int InsertHotel(HotelVO vo) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.insert("Hotel_Insert",vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

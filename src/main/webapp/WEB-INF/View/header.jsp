@@ -138,6 +138,10 @@
 	<c:if test="${page eq 'NoMember_Reserve_Info2.jsp' }">
 		<script defer="defer" src="${ctx}/Js/NoMember_Reserve_Info2.js"></script>
 	</c:if>
+	<c:if test="${page eq 'Member_Applytohost.jsp' }">
+		<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script defer="defer" src="${ctx}/Js/Member_Applytohost.js"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -215,6 +219,10 @@
 	<c:if test="${page eq 'NoMember_Reserve_Info2.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/NoMember_Rerserve_Info2.css" type="text/css">
 	</c:if>
+	<c:if test="${page eq 'Member_Applytohost.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/Member_Applytohost.css" type="text/css">
+	</c:if>
+	
 </head>
 <body>
 

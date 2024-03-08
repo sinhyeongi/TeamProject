@@ -309,19 +309,19 @@ $('#reserve_login').click(function(){
 });
 //쿠폰 선택
 $('input[name=coupon]').change(function(){
-	const price = $('#reserve_price').text();
-	let t = $(this).closest('.member_coupon_div').prevAll().length;
-	const dislate = $('.member_coupon_div:eq('+t+')').find('#coupon_dislate').text();
+	const price = $('input[name=room_price]').val();
+	let t = $(this).closest('.member_coupon_div');
+	const dislate = t.find('#coupon_dislate').text();
 	let change_price =null;
 	if(dislate != 0){
 		change_price = price - parseInt(price / dislate);
-		if($('.member_coupon_div:eq('+t+')').find('#coupon_maxDisprice').text()){
-		let change_maxprice = price - $('#coupon_maxDisprice').text();
-		change_price = change_price < change_maxprice ? change_maxprice : change_price;
+		if(t.find('#coupon_maxDisprice').text()){
+			let change_maxprice = price - t.find('#coupon_maxDisprice').text();
+			change_price = change_price < change_maxprice ? change_maxprice : change_price;
 		}
 	}
-	else if(dislate == 0&&$('.member_coupon_div:eq('+t+')').find('#coupon_maxDisprice').text()){
-		let change_maxprice = price - $('#coupon_maxDisprice').text();
+	else if(dislate == 0&& t.find('#coupon_maxDisprice').text()){
+		let change_maxprice = price - t.find('#coupon_maxDisprice').text();
 		change_price = 0 < change_maxprice ? change_maxprice : 0;
 	}
 	$('#reserve_view_price').text(change_price);

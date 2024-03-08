@@ -21,4 +21,10 @@
 	<update id="Room_UpdateRoomData" parameterType="room">
 		update room set name = #{name}, total_qty = #{total_qty}, occ = #{occ}, price = #{price} where no = #{no}
 	</update>
+	<insert id="Room_InsertData" parameterType="room">
+		insert into room(hotel_no,price,name,total_qty,occ,bedinfo,amenities) values(#{hotel_no},#{price},#{name},#{total_qty},#{occ},#{bedinfo},#{amenities})
+	</insert>
+	<delete id="Room_Host_DeleteRoom" parameterType="room">
+		delete from room where hotel_no = #{hotel_no} and no = #{no}
+	</delete>
 </mapper>

@@ -125,3 +125,12 @@ footer{
 .modal_main > *{
 	flex:1;
 }
+#footer_op_link{
+	color: black;
+	transition : 1.3s;
+}
+#footer_op_link:hover{
+	cursor: pointer;
+	color:blue;
+	transform : scale(1.2);
+}

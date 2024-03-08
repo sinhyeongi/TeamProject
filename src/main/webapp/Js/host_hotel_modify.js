@@ -1,5 +1,7 @@
+//파라미터값 삭제
 history.replaceState({}, null, location.pathname);
 let room_content_div = null;
+
 $('.host_hotel_info_room').click(function(){
 	$('.hotel_info').animate({height : '0%'},'500');
 	$('.room_info').animate({height : '90%'},'500');
@@ -223,3 +225,37 @@ function Changefied(e){
 	target.find('input[name=price]').removeAttr('readonly');
 }
 
+$('#room_add_submit').click(function(){
+	location.href = "Room_add.do?hotel_no="+$('#hotel_no').val();
+})
+$('#room_Delete_submit').click(function(){
+	$(this).attr('disabled',true);
+	let t = $('input[name=radio]:checked');
+	if(!t.val()){
+		alert('방 선택 후 삭제 버튼을 이용해 주세요');
+		return true;
+	}
+	t = t.closest('.room_content');
+	
+	if(confirm(t.find('input[name=name]').val()+'룸을 정말 삭제하시겠습니까?') == false){
+		return;
+	}
+	const data = {
+		hotel_no : $('input[name=hotel_no]').val(),
+		room_no : $('input[name=radio]:checked').val()
+	}
+	$.ajax({
+		type:"post",
+		url : "Host_Delete_Room.do",
+		data : data,
+		success : function(data){
+			if(data == 1){
+				alert(t.find('input[name=name]').val()+'룸을 삭제하였습니다.');
+				t.remove();
+			}
+		},
+		error : function(err){
+			alert('err = '+err);
+		}
+	})
+})

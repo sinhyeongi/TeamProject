@@ -36,7 +36,10 @@
 			</div>
 		</c:forEach>
 		<div>
-			<div><span><button id="room_submit">룸 정보 수정하기</button></span><span><button id="room_img_submit">룸 이미지 수정하기</button></span></div>
+			<div><span><button id="room_add_submit">룸 추가하기</button></span>
+			<span><button id="room_Delete_submit">룸 삭제하기</button></span>
+			<span><button id="room_submit">룸 정보 수정하기</button></span>
+			<span><button id="room_img_submit">룸 이미지 수정하기</button></span></div>
 		</div>
 	</div>
 	

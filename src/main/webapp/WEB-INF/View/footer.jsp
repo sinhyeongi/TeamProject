@@ -10,7 +10,8 @@
 	</div>
 	<div class="footer_div">
 		<span>회사</span>
-		<span><a href="#" class="footer_link">회사 소개</a></span>
+		<span id="footer_op_link">회사 소개</span>
+		<span><a href="Member_ApplytoHost.do" class="footer_link">파트너 신청</a></span>
 	</div>
 	<div class="footer_div">
 		<span>서비스</span>

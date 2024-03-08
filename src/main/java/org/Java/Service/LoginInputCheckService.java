@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.Java.DAO.MemberDAO;
+import org.Java.DAO.Member_InfoDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
 
@@ -17,8 +18,6 @@ public class LoginInputCheckService implements Page{
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		System.out.println("로그인 시도 id="+ id);
-		System.out.println("로그인 시도 pw="+ pw);
 		MemberVO vo = new MemberVO(); 
 		vo.setId(id);
 		vo.setPw(pw);
@@ -27,7 +26,9 @@ public class LoginInputCheckService implements Page{
 			System.out.println("로그인 실패.");
 			return "LoginInput";
 		}else {
+			check.setInfo(Member_InfoDAO.getInstance().getData(check.getId()));
 			request.getSession().setAttribute("log", check.getId());
+			request.getSession().setAttribute("log_level", check.getInfo().getLevel());
 			return "Main";
 		}
 	}

@@ -44,7 +44,7 @@
             <div><img src="${ctx }/img/${url}"></div>
           </c:forEach>
           <c:if test="${hotel.url eq null or hotel.url.size() eq 0 }">
-            <div><img src="http:///via.placeholder.com/300x300"></div>
+            <div><img src="${ctx}/img/Main_logo.jpeg "></div>
           </c:if>
           <div class="info">
             <div class="star">${hotel.star }성급</div>

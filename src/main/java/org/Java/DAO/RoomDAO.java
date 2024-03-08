@@ -35,4 +35,10 @@ public class RoomDAO {
 	public int UpdateRoomData(RoomVO vo) {
 		return db.UpdateRoomData(vo);
 	}
+	public int InsertRoomData(RoomVO vo) {
+		return db.InsertRoomData(vo);
+	}
+	public int Host_DeleteRoom(RoomVO vo) {
+		return db.Host_DeleteRoom(vo);
+	}
 }

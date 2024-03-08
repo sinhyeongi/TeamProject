@@ -60,3 +60,6 @@
     </c:forEach>
   </session>
 </main>
+<script>
+	let htList = JSON.parse('${htList}');
+</script>

@@ -1,11 +1,36 @@
 
+
   $(document).ready(function() {
-	        if ($('.rv_img').prop('scrollHeight') >= $('.rv_img').prop('clientHeight')) {
-            $('.img_more_btn').css('display','block');
-        }
-         if ($('.long_rv').prop('scrollHeight') > $('.long_rv').prop('clientHeight')) {
-            $('.more_btn').css('display','block');
-        }
+	  // 사진 더보기 버튼 보이게
+	    $('.r_rv_center').each(function() {
+         var rvImgsCount = $(this).find('.rv_imgs').length;
+
+         // 개수에 따라 더보기 버튼 표시 여부 결정
+         if (rvImgsCount > 3) {
+            $(this).find('.img_more_btn').show();
+         } else {
+            $(this).find('.img_more_btn').hide();
+         }
+    	});
+    	
+    	// 리뷰 글 더보기 버튼 보이게
+    	$('.rv_contents').each(function(){
+    	var postContent = $(this).find('.long_rv');
+    	var moreBTN = $(this).find('.more_btn');
+    	
+    	var maxLength = 45;
+    	var content = postContent.text();
+    	
+    	if (content.length > maxLength) {
+            moreBTN.show();
+          }
+         });
+         
+        // 리뷰 파트에서 별 만들기
+        $('.rating').each(function(){
+			var score = $(this).find('.star_p').val();
+		})
+        
 });
 // ------ 리뷰 더보기 버튼 ----
 
@@ -121,7 +146,7 @@ var marker2 = new naver.maps.Marker({
 $('#map').click(function() {
 	setTimeout(function() {
 		window.dispatchEvent(new Event('resize'));
-	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
+	}, 800); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
 	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').html('<div id="map2"></div>');
@@ -133,7 +158,7 @@ $('#map').click(function() {
 $('.full_btn').click(function() {
 	setTimeout(function() {
 		window.dispatchEvent(new Event('resize'));
-	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
+	}, 800); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
 	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').html('<div id="map2"></div>');
@@ -144,7 +169,7 @@ $('.full_btn').click(function() {
 $('.wide_full_btn').click(function() {
 	setTimeout(function() {
 		window.dispatchEvent(new Event('resize'));
-	}, 600); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
+	}, 800); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
 	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').html('<div id="map2"></div>');
@@ -181,7 +206,6 @@ function clickImg(img) {
 	$('.modal_main').css('overflow', 'hidden');
 };
 
-// jstl 호텔
 
 // 받아온 호텔의 체크인, 체크아웃
 var checkIn = $('#ho_checkIn').val();

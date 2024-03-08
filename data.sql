@@ -1,11 +1,5 @@
 use java;
-select * from img;
-select * from room where hotel_no = 3;
-select * from img where uploader = 'ho';
-select * from img where uploader = 'ro';
-update room set price = 300;
-select * from member_info;
-select * from room;
+
 # ############################# hotel data #############################
 # jeju
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 

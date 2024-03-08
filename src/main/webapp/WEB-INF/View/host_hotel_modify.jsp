@@ -19,9 +19,13 @@
 	<button class="host_hotel_info_room">룸 정보 보기</button>
 	<button class="host_hotel_info_hotel">호텔 정보 보기</button>
 	<div class="room_info">
+		<h2 style="text-align: center;">룸 목록</h2>
 		<c:forEach var="room" items="${room }">
 			<div>
-				${room.name }
+				<div><span>방 이름</span><span>${room.name }</span></div>
+				<div>
+					<span>방 이름</span>${room.name }<span></span>
+				</div>
 			</div>
 		</c:forEach>
 	</div>

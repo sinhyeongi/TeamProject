@@ -26,9 +26,24 @@ public class Host_Hotel_Info implements Page {
 		String id = (String)request.getSession().getAttribute("log");
 		MemberVO vo = MemberDAO.getinstance().CheckLogin_API(id);
 		vo.setInfo(Member_InfoDAO.getInstance().getData(id));
-		if(vo.getInfo().getLevel() < 900) {
+		if(vo.getId().equals("admin")) {
+			ArrayList<HotelVO> list = new ArrayList<HotelVO>();
+			list = HotelDAO.getInstance().getAll();
+			ImgDAO img = ImgDAO.getInstance();
+			for(int i = 0 ; i < list.size(); i++) {
+				list.get(i).setUrl(img.getHotelUrl(list.get(i).getNo()));
+			}
+			list = (ArrayList<HotelVO>)list.stream().sorted((n,n2) ->{
+				return n.getArea() - n2.getArea();
+			}).collect(Collectors.toList());
+			request.getSession().setAttribute("title", id+"의 호텔 리스트");
+			request.setAttribute("hotel", list);
+			return "host_hotel_info";
+		}
+		else if(vo.getInfo().getLevel() < 900) {
 			return "re:Main";
 		}
+		
 		ArrayList<HotelVO> list = new ArrayList<HotelVO>();
 		list = HotelDAO.getInstance().Host_getAll(id);
 		ImgDAO img = ImgDAO.getInstance();

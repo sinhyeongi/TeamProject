@@ -1,4 +1,4 @@
-
+history.replaceState({}, null, location.pathname);
 $('.host_hotel_info_room').click(function(){
 	$('.hotel_info').animate({height : '0%'},'500');
 	$('.room_info').animate({height : '90%'},'500');

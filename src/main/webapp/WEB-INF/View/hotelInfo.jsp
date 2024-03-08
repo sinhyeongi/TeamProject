@@ -245,7 +245,13 @@
       		<div class="left_rv">
       			<div><span class="user">이용자</span></div>
       			<div class="rv_nick">${one_rv.nickname }</div>
-      			<div class="rv_rec"><span class="up_btn">👍</span> 이 리뷰 추천하기 </div>
+      			 <div class="rv_rec">
+      			  <span class="up_btn">
+      			   👍
+      			   <input type="hidden" class="rv_no" value="${one_rv.no }">
+      			   <input type="hidden" class="review_cnt" value="${one_rv.count }">
+      			  </span> 이 리뷰 추천하기 
+      			 </div>
       		</div> <!-- left_rv -->
       		<div class="right_rv">
       			<div class="r_rv_header">

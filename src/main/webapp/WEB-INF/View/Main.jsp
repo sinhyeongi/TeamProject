@@ -72,9 +72,11 @@
 	<a href="HotelInfo.do">호텔 인포 (임시)</a><br/>
 	<a href="HotelList.do">맵테스트 (임시)</a><br/>
 	<a href="host_hotel_info.do">호스트 호텔관리(임시)</a><br/>
-
-	<a href="reserve.do">예약 페이지</a>
-
+	<a href ="Member_ApplytoHost.do">호스트 신청</a><br/>
+	<a href="reserve.do">예약 페이지</a><br/>
+	<c:if test="${log eq 'admin' }">
+		<a href="Test_update.do">초기 위도,경도 업데이트</a><br/>
+	</c:if>
 <c:if test="${log ne null}">
 	<input type="hidden" id="log" value="${log}"/>
 	<button onclick="Logout(log)" >로그아웃</button><br/>

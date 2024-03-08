@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.Java.Mapper.HotelMapper">
 	<select id="hotel_getAll" resultType="hotel">
-		select * from hotel
+		select * from hotel where star >= 0;
 	</select>
 	<select id="hotel_getName" resultType="String">
 		select name from hotel where no = #{no}
@@ -21,4 +21,7 @@
 	<update id="UpdateHotelData" parameterType="hotel">
 		update hotel set name = #{name}, star = #{star}, checkin = #{checkin}, checkout = #{checkout}, Fac = #{fac}, account = #{account} where no = #{no}
 	</update>
+	<insert id="Hotel_Insert" parameterType="hotel">
+		insert into hotel(host,name,star,tel,Fac,address,area,checkin,checkout,account,x,y) values(#{host},#{name},#{star},#{tel},#{fac},#{address},#{area},#{checkin},#{checkout},#{account},#{x},#{y})
+	</insert>
 </mapper>

@@ -25,7 +25,6 @@ public class AddressUtil_kakao{
         String x = "";
         String y = "";
         String area = "";
-        System.out.println("들어옴");
         HttpURLConnection conn = null;
         BufferedReader br = null;
         try {

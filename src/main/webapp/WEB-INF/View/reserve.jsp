@@ -54,6 +54,9 @@
 							<input type="radio" name="coupon">
 							</div>
 						</c:forEach>
+						<c:if test="${coupon eq null or coupon.size() eq 0 }">
+							<div style="width:100%; height: 100%; display: flex; justify-content: center; align-items: center;"><h2 style="color:#e9eaff; text-align: center;">쿠폰이 없습니다....</h2></div>
+						</c:if>
 					</c:if>
 				</div>
 			<hr/>

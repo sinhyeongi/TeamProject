@@ -39,5 +39,8 @@ public class HotelDAO {
 	public int UpdateHotelData(HotelVO vo) {
 		return db.UpdateHotelData(vo);
 	}
+	public int InsertHotel(HotelVO vo) {
+		return db.InsertHotel(vo);
+	}
 	
 }

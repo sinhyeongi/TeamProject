@@ -1,4 +1,4 @@
-//history.replaceState({}, null, location.pathname);
+history.replaceState({}, null, location.pathname);
 let room_content_div = null;
 $('.host_hotel_info_room').click(function(){
 	$('.hotel_info').animate({height : '0%'},'500');
@@ -111,7 +111,6 @@ $('#hotel_img_submit').click(function(){
 });
 $('#room_img_submit').click(function(){
 	let no = $('input[name=radio]:checked').val();
-	alert(no);
 	if(!no){
 		alert('선택후 수정 버튼을 클릭해주세요');
 		return;

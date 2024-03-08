@@ -12,6 +12,12 @@
 	<select id="member_getSearchAll" resultType="member" parameterType="HashMap">
 		select * from member where ${category} LIKE "%${value}%";
 	</select>
+	<select id="member_getLevelAll" resultType="member" parameterType="integer">
+		SELECT m.*
+	    FROM member m
+	    INNER JOIN member_info mi ON m.id = mi.id
+	    WHERE mi.level >= #{level} AND #{level}+100 > mi.level; 
+	</select>
 	<select id="Check_Login" resultType="member" parameterType="member">
 		select * from member where id = #{id} and pw = #{pw}
 	</select>

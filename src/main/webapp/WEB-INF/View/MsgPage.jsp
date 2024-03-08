@@ -12,6 +12,9 @@
 				다시 시도해 주세요.
 				</div>			
 			</c:if>
+			<c:if test="${msg eq 'successUpload'}">
+				<div class="msg">게시글 업로드가 완료되었습니다.</div>			
+			</c:if>
 			<c:if test="${msg eq 'overLevel'}">
 				<div class="msg">이미 신청중이거나 권한이 이미 있습니다.</div>			
 			</c:if>
@@ -26,7 +29,8 @@
 			</c:if>
 			<c:if test="${msg eq 'signUp'}">
 				<div class="msg">
-					<span class="nickname">${nickname }</span><span>님 회원가입을 진심으로 축하드립니다.</span>
+					<span class="nickname">${nickname }</span><span>님 회원가입을<br/>
+					 진심으로 축하드립니다.</span>
 				</div>			
 			</c:if>
 			<button class="btn" onclick="location.href='${ctx}/Main.do'">홈으로</button>

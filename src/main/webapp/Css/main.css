@@ -3,6 +3,7 @@
 main{
 	max-width: 1400px;
 	margin: 0 auto;
+	height: 100%;
 }
 #main_log{
 	width: 100%;

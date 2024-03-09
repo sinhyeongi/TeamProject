@@ -103,6 +103,8 @@ public class ViewMapper {
 		mapper.put("/Host_Delete_Room.do", new Host_Delete_RoomService());
 		// 추천 버튼 체크
 		mapper.put("/check_up_btn.do", new UpBtnChecking());
+		//관리자 예약 관리
+		mapper.put("/AdminReserve.do", new AdminReserveService());
 	}
 	
 	

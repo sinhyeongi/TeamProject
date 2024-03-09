@@ -55,4 +55,11 @@ public class ReserveDB {
 		se.close();
 		return cnt;
 	}
+	public ArrayList<ReserveVO> Admin_getAll(){
+		SqlSession se = sf.openSession();
+		List<ReserveVO> list = se.selectList("Reserve_Admin_getAll");
+		se.close();
+		return (ArrayList<ReserveVO>)list;
+		
+	}
 }

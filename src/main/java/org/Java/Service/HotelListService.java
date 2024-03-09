@@ -72,7 +72,7 @@ public class HotelListService implements Page{
 				list.get(i).setUrl(ImgDAO.getInstance().getHotelUrl(list.get(i).getNo()));
 			
 		}
-		
+		request.setAttribute("title", "호텔리스트");
 		request.setAttribute("list", list);
 		// 배열을 자바스크립트로 넘겨주기
 		Gson gson = new Gson();

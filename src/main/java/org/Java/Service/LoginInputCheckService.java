@@ -29,7 +29,7 @@ public class LoginInputCheckService implements Page{
 			check.setInfo(Member_InfoDAO.getInstance().getData(check.getId()));
 			request.getSession().setAttribute("log", check.getId());
 			request.getSession().setAttribute("log_level", check.getInfo().getLevel());
-			return "Main";
+			return "re:Main";
 		}
 	}
 

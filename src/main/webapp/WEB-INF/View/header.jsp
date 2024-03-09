@@ -123,6 +123,9 @@
 	<c:if test="${page eq 'AddRoom.jsp' }">
 		<script defer="defer" src="${ctx}/Js/AddRoom.js"></script>
 	</c:if>
+	<c:if test="${page eq 'AdminReserve.jsp' }">
+		<script defer="defer" src="${ctx}/Js/AdminReserve.js"></script>
+	</c:if>
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -200,6 +203,9 @@
 	</c:if>
 	<c:if test="${page eq 'AddRoom.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/AddRoom.css" type="text/css">
+	</c:if>
+	<c:if test="${page eq 'AdminReserve.jsp' }">
+		<link rel="stylesheet" href="${ctx}/Css/AdminReserve.css" type="text/css">
 	</c:if>
 </head>
 <body>

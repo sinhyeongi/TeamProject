@@ -1,0 +1,65 @@
+@charset "UTF-8";
+#Admin_Reserve_Main{
+	width: 90%;
+	height: 100%;
+	padding: 10px;
+	margin: auto;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#Admin_Reserve_Main > h2{
+	flex:1;
+	text-align: center;
+}
+#Admin_Reserve_Content{
+	flex:9;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#Admin_Reserve_Content > div{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #e7e7e7;
+	box-sizing: border-box;
+	border-radius: 12px;
+}
+#Admin_Reserve_Main > div:last-child{
+	flex:1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#Admin_Reserve_Main > div:last-child > button{
+	width: 80%;
+	box-sizing: border-box;
+	border-radius: 12px;
+	
+}
+#Admin_Reserve_Content > div > div{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+#Admin_Reserve_Content > div > div >span{
+	flex:1;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

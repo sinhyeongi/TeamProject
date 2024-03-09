@@ -9,6 +9,9 @@
 	<select id="Reserve_getData" resultType="reserve" parameterType="String">
 		select * from reserve where id = #{id}
 	</select>
+	<select id="Reserve_Admin_getAll" resultType="reserve">
+		select * from reserve
+	</select>
 	<insert id="reserve_insertdata" parameterType="reserve">
 		insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,id,people,add_req,visit,uid) values(#{hotel_no},#{room_no},#{name},#{phone},#{rday},#{dday},#{price},#{id},#{people},#{add_req},#{visit},#{uid})
 	</insert>

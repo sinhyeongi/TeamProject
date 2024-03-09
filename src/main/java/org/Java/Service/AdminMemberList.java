@@ -36,6 +36,7 @@ public class AdminMemberList implements Page {
 		}else {
 			list = MemberDAO.getinstance().getAll();
 		}
+		request.setAttribute("title", "회원관리페이지");
 		request.setAttribute("list", list);
 		request.setAttribute("category", category);
 		return "admin_memberList";

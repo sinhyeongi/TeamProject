@@ -20,18 +20,26 @@ public class AttendanceCheckEventService implements Page{
 			throws ServletException, IOException {
 		if(request.getSession().getAttribute("log")==null) {
 			request.setAttribute("msg", "pleaseLogin");
+			return "MsgPage";
 		}
 		LocalDate now = LocalDate.now();
 		
 		String log = (String)request.getSession().getAttribute("log");
+		System.out.println("log = " + log);
 		MemberVO mVO = MemberDAO.getinstance().CheckLogin_API(log);
 		Member_InfoVO mInfoVO = Member_InfoDAO.getInstance().getData(mVO.getId());
 		if(now.toString().equals(mInfoVO.getLdate())) {
 			request.setAttribute("msg", "earlyCheck");
 		}else{
-			Member_InfoDAO.getInstance().updateAttendanceCheck(mInfoVO.getId());
-			request.setAttribute("point", mInfoVO.getPoint());
-			request.setAttribute("msg", "successCheck");
+			int check = Member_InfoDAO.getInstance().updateAttendanceCheck(mInfoVO.getId());
+			if(check > 0) {
+				mInfoVO = Member_InfoDAO.getInstance().getData(mVO.getId());
+				request.setAttribute("point", mInfoVO.getPoint());
+				request.setAttribute("msg", "successCheck");
+			}else {
+				request.setAttribute("msg", "error");
+			}
+			
 		};
 		return "MsgPage";
 	}

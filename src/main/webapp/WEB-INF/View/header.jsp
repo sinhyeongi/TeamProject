@@ -23,6 +23,11 @@
 	<c:if test="${page eq 'detailNotice.jsp' }">
 	<script type="text/javascript" defer src="${ctx}/Js/detailNotice.js"></script>
 	</c:if>
+	
+	<!-- event js -->
+	<c:if test="${page eq 'eventPage.jsp' }">
+	<script type="text/javascript" defer src="${ctx}/Js/event.js"></script>
+	</c:if>
 		
 	<!-- LoginInput js -->
 	<c:if test="${page eq 'LoginInput.jsp'}">

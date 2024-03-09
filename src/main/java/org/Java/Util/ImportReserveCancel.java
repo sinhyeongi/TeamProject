@@ -12,9 +12,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class ImportReserveCancel {
-	private final String IMPORT_CANCEL_URL = "https://api.iamport.kr/payments/cancel";
-	private final String KEY = "4231548706878224";
-	private final String SECRET = "I9redwbQQCaSk11zhOqBFnFmM0uKv39woMClW9sQMB68xeiIuNRKuoC05FYfEMrwFNViN50FSMstveXG";
+	private final String IMPORT_CANCEL_URL = "https://api.iamport.kr/payments/cancel"; // 아임포트 주문취소 url
+	private final String KEY = "4231548706878224"; // API KEY값
+	private final String SECRET = "I9redwbQQCaSk11zhOqBFnFmM0uKv39woMClW9sQMB68xeiIuNRKuoC05FYfEMrwFNViN50FSMstveXG"; // API SECRET KEY
 	public int ReserveCanle(String uid) {
 		int cnt = -1;
 		String token = getImportToken();
@@ -96,6 +96,10 @@ public class ImportReserveCancel {
 			con.disconnect();
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			if(con != null) {
+				con.disconnect();
+			}
 		}
 		return result;
 	}

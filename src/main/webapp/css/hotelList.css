@@ -115,8 +115,11 @@ body {
 .container {
   /* border:2px solid red; */
   flex:1;
+  margin-top: -50px;
 }
-
+.hotelList_center :nth-child(0){
+	margin-top: -10px;
+}
 .accommodation {
   /* border: 1px solid #ccc; */
   border-bottom: 1px solid #ccc;;

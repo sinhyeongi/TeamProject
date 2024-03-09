@@ -6,13 +6,3 @@
 		<button class="attendanceCheckbtn"> 출석체크 </button>	
 	</div>
 </main>
-<script>
-const acBtn = document.querySelector(".attendanceCheckbtn")
-let isAttendanceCheckBtn = false;
-function attendanceCheck(){
-	if(isAttendanceCheckBtn === true){
-		return;
-	}
-	location.href="attendanceCheckEvent.do";
-}
-</script>

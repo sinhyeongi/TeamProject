@@ -112,7 +112,7 @@ public class ViewMapper {
 			
 		//이벤트
 			//출석체크
-			mapper.put("/attendanceCheckEvent.do", new attendanceCheckEventService());
+			mapper.put("/attendanceCheckEvent.do", new AttendanceCheckEventService());
 		//호스트신청하기
 		mapper.put("/Member_ApplytoHost.do", new Member_ApplytoHostService());
 		//호텔 추가

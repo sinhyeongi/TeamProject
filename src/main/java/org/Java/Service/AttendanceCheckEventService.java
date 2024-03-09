@@ -13,7 +13,7 @@ import org.Java.VO.MemberVO;
 import org.Java.VO.Member_InfoVO;
 import org.Java.VO.Page;
 
-public class attendanceCheckEventService implements Page{
+public class AttendanceCheckEventService implements Page{
 
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)

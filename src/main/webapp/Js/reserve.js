@@ -46,11 +46,11 @@ function newMap() {
 			style: naver.maps.ZoomControlStyle.SMALL,
 			position: naver.maps.Position.TOP_RIGHT
 		},
-		center: new naver.maps.LatLng(33.2484468, 126.4106058),
+		center: new naver.maps.LatLng(_hotel_y, _hotel_x),
 		zoom: 14
 	});
 	var marker = new naver.maps.Marker({
-		position: new naver.maps.LatLng(33.2484468, 126.4106058),
+		position: new naver.maps.LatLng(_hotel_y, _hotel_x),
 		map: map2,
 		icon: {
 			url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지

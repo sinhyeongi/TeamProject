@@ -63,16 +63,6 @@
 	  </a>
 	  </c:if>
 	</div>
-	<h1>Main</h1>
-	<a href="Member_applyHost.do">호스트신청하기(임시)</a><br/>
-	<a href="host_hotel_info.do">호텔 정보보기 (임시)</a><br/>
-	<a href="ReviewWrite.do">리뷰작성</a><br/>
-	<a href="BoarderWrite.do?type=notice">공지사항 글쓰기</a><br/>
-	<a href="BoarderWrite.do?type=qa">문의사항 글쓰기</a><br/>
-	
-	<c:if test="${log eq 'admin' }">
-		<a href="Test_update.do">초기 위도,경도 업데이트</a><br/>
-	</c:if>
 </main>
 </body>
 </html>

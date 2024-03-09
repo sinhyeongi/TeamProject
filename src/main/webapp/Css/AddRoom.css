@@ -45,8 +45,6 @@
 	width:80%;
 	position: relative;
     border: none;
-    min-width: 200px;
-    min-height: 50px;
     background: linear-gradient(
         90deg,
         rgba(129, 230, 217, 1) 0%,

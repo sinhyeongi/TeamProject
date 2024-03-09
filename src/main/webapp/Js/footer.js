@@ -5,10 +5,7 @@ $('.footer_btn_address').click(function(){
 });
 // 문의하기
 $('.footer_btn_seriveCenter').click(function(){
-	$('.footer_modal').addClass('modal_on');
-	$('main').css('opacity', '0.2');
-	$('header').css('opacity', '0.2');
-	$('footer').css('opacity', '0.2');
+	location.href = 'Customer_Service_Center.do';
 });
 
 $('.moal_cancle').click(function(){

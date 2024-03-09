@@ -26,7 +26,7 @@ $('#AddRoom_submit').click(function(){
 			if(data == 1){
 				alert('추가완료');
 				if(confirm('더 추가하시겠습니까?')){
-					loction.href=location.href;
+					location.href=location.href;
 					return;
 				}
 				location.href="host_hotel_mif.do?no="+_data.hotel_no;

@@ -5,6 +5,7 @@ $('#reserve_cancel').click(function(){
 		alert('취소하실 예약을 선택해주세요!');
 		return;
 	}
+	$(this).attr('disabled',true);
 	const target = $('input[name=radio]:checked').closest('div');
 	const uid = target.find('#reserve_uid').text();
 	const room_no = target.find('input[name=room_no]').val();
@@ -20,6 +21,7 @@ $('#reserve_cancel').click(function(){
 			if(data == 0){
 				target.remove();
 				alert('취소되었습니다.');
+				$('#reserve_cancel').removeAttr('disabled');
 			}
 		},
 		error: function(err){

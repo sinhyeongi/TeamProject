@@ -11,8 +11,8 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- flatpickr js import	 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 <!-- MsgPage css -->
 <c:if test="${page eq 'MsgPage.jsp'}">
 <link rel="stylesheet" type="text/css" href="${ctx}/Css/MsgPage.css">
@@ -30,21 +30,16 @@
 <!-- MemberInsert css and js -->
 <c:if test="${page eq 'Member_Insert.jsp' }">
 <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/Member_Insert.css">
 <script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
 </c:if>
 <!-- Login js -->
 <c:if test="${page eq 'Login.jsp' }">
 <!-- kakao Login sdk  -->
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
-  integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
-  <!--  Naver Login -->
-  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script>
-  Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
-</script>
-<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
+		<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+		<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
+	  	<!--  Naver Login -->
+	  	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+		<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
 </c:if>
 
 	<!--  Js import -->
@@ -52,24 +47,7 @@
 	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>
 	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script><!-- jquert  -->
-	<!--  임시 임포트 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"><!-- flatpickr js import	 -->
-	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
-	<!--  임시 임포트 끝 -->
 	
-	<!-- Login js -->
-	<c:if test="${page eq 'Login.jsp' }">
-	<!-- kakao Login sdk  -->
-		<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-		<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
-	  	<!--  Naver Login -->
-	  	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-		<script>
-	  		Kakao.init('c16bc220b30ade93a139e3d168dc5331'); // 사용하려는 앱의 JavaScript 키 입력
-		</script>
-		<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
-	</c:if>
 	<!--  Main js -->
 	<c:if test="${page eq 'Main.jsp' }">
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -169,11 +147,6 @@
 	<c:if test="${page eq 'Member_Insert.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Insert.css?ds3332" type="text/css">
 	</c:if>
-	<!--  Test -->
-	<c:if test="${page eq 'Test.jsp' }">
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f36369ca9235d4cb36c1fbff255a8726&libraries=services"></script>
-		<script defer="defer" src="${ctx }/Js/Test.js?sa"></script>
-	</c:if>
 	<c:if test="${page eq 'Member_Info.jsp' }">
 		<link rel="stylesheet" href="${ctx}/Css/Member_Info.css?ds3332" type="text/css">
 		<link rel="stylesheet" href="${ctx}/Css/profile.css" type="text/css">
@@ -237,7 +210,7 @@
         <a href="Main.do"><img src="${ctx }/img/Header_logo.png" alt="header_logo"></a>
       </div>
       <ul class="gnb">
-        <li><a href="Event.do">이벤트</a></li>
+        <!-- <li><a href="Event.do">이벤트</a></li> -->
         <li><a href="Customer_Service_Center.do">고객센터</a></li>
         <li id="member_menu" onclick="showPopup(event)">
           <div>

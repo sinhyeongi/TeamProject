@@ -14,6 +14,7 @@ import org.Java.DAO.RoomDAO;
 import org.Java.VO.HotelVO;
 import org.Java.VO.Page;
 import org.Java.VO.ReviewVO;
+import org.Java.VO.RoomVO;
 
 import com.google.gson.Gson;
 
@@ -60,10 +61,16 @@ public class HotelListService implements Page{
 				list.remove(i);
 				i--;
 				continue;
-			}
-			list.get(i).setPrice(RoomDAO.getInstance().getRoomData(list.get(i).getNo()).get(0).getPrice());
-			list.get(i).setReviewCount(ReviewDAO.getInstance().getHotelReviewCount(list.get(i).getNo()));
-			list.get(i).setUrl(ImgDAO.getInstance().getHotelUrl(list.get(i).getNo()));
+			}else if(RoomDAO.getInstance().getRoomData(list.get(i).getNo()) == null || 
+					RoomDAO.getInstance().getRoomData(list.get(i).getNo()).size() == 0){
+				list.remove(i);
+				i--;
+				continue;
+				} 
+				list.get(i).setPrice(RoomDAO.getInstance().getRoomData(list.get(i).getNo()).get(0).getPrice());
+				list.get(i).setReviewCount(ReviewDAO.getInstance().getHotelReviewCount(list.get(i).getNo()));
+				list.get(i).setUrl(ImgDAO.getInstance().getHotelUrl(list.get(i).getNo()));
+			
 		}
 		
 		request.setAttribute("list", list);

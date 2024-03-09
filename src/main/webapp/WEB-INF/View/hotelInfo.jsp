@@ -9,20 +9,26 @@
    
   <main class="hotelInfo_main">
     <div class="img_container">
+    	<c:if test="${imgList ne null and imgList.size() ne 0 }">
       <div class="main_img">
         <img src="${ctx }/img/${imgList.get(0)}">
       </div>
+      </c:if>
+      <c:if test="${imgList ne null and imgList.size() > 1 }">
       <div class="side_img">
         <div class="row">
           <div class="row_img"><img src="${ctx }/img/${imgList.get(1)}"></div>
-          <div class="row_img"><img src="${ctx }/img/${imgList.get(2)}"></div>
+          <div class="row_img"><c:if test="${imgList.size() > 2 }"><img src="${ctx }/img/${imgList.get(2)}"></c:if></div>	
         </div>
+        
         <div class="row">
-          <div class="row_img"><img class="top_right_img" src="${ctx }/img/${imgList.get(3)}"></div>
-          <div class="row_img"><img class="bottom_right_img" src="${ctx }/img/${imgList.get(4)}"></div>
+          <div class="row_img"><c:if test="${imgList.size() > 3 }"><img class="top_right_img" src="${ctx }/img/${imgList.get(3)}"></c:if></div>
+          <div class="row_img"><c:if test="${imgList.size() > 4 }"><img class="bottom_right_img" src="${ctx }/img/${imgList.get(4)}"></c:if></div>
         </div>
       </div> <!-- side_img -->
+      </c:if>
     </div> <!-- img_container -->
+    
     <input type="hidden" id="y" value ="${hotel.y}"/>
     <input type="hidden" id="x" value ="${hotel.x}"/>
     <div class="info_contents">

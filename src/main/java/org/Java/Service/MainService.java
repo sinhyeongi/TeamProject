@@ -27,8 +27,6 @@ public class MainService implements Page{
 			list.get(i).setCoupon(Member_CouponDAO.getInstance().getData(list.get(i).getId()));
 		}
 		request.setAttribute("list", list);
-
-		request.getSession().setAttribute("log", "admin");
 		if(request.getSession().getAttribute("log") != null) {
 			request.getSession().setAttribute("log_level", Member_InfoDAO.getInstance().getData((String)request.getSession().getAttribute("log")).getLevel());
 		}

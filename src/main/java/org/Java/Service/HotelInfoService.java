@@ -59,7 +59,12 @@ public class HotelInfoService implements Page{
 			reviewList.get(i).setUrl(ImgDAO.getInstance().getReviewUrl(reviewList.get(i).getNo()));
 			allStar_p += reviewList.get(i).getStar_point();
 		}
-		int star_point = Math.round(allStar_p / reviewList.size());
+		int star_point = 0;
+		if(reviewList.size() == 0 || allStar_p == 0) {
+			star_point = 0;
+		} else {
+			star_point = Math.round(allStar_p / reviewList.size());
+		}
 		hotel.setStar_point(star_point);
 		request.setAttribute("title", hotel.getName()+" 정보");
 		request.setAttribute("hotel" , hotel);

@@ -1,6 +1,8 @@
 #drop database java;
 create database java;
 use java;
+
+
 #고객 테이블
 create table member(
 id varchar(100) not null unique, -- 고객 아이디

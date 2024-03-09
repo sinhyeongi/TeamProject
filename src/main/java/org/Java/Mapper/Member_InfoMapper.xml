@@ -24,5 +24,7 @@
 	<update id="Member_Info_declineApplyHost" parameterType="String">
 		UPDATE member_info set level = level - 100 WHERE id =#{id};
 	</update>
-	
+	<update id="Member_Info_LoginPoint" parameterType="String">
+		update member_info set point = (select point from(select (point+10) as point from member_info where id = #{id})tmp), Ldate = current_date() where id = #{id} and current_date() > Ldate ;
+	</update>
 </mapper>

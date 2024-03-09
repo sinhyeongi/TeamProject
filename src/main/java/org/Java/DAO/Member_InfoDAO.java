@@ -30,4 +30,7 @@ public class Member_InfoDAO {
 	public int applyHost(String id) {
 		return db.applyHost(id);
 	}
+	public int Member_Info_LoginPoint(String id) {
+		return db.Member_Info_LoginPoint(id);
+	}
 }

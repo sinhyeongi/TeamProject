@@ -48,4 +48,12 @@ public class Member_InfoDB {
 		se.close();
 		return check;
 	}
+	public int Member_Info_LoginPoint(String id) {
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.update("Member_Info_LoginPoint",id);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

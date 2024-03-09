@@ -70,6 +70,7 @@ public class KakaoLoginService implements Page {
         	System.out.println("미가입 회원");
         	return "Member_Insert";
         }else {
+        	Member_InfoDAO.getInstance().Member_Info_LoginPoint(logMember.getId());
         	logMember.setInfo(Member_InfoDAO.getInstance().getData(logMember.getId()));
         	request.getSession().setAttribute("log", logMember.getId());
         	request.getSession().setAttribute("log_level", logMember.getInfo().getLevel());

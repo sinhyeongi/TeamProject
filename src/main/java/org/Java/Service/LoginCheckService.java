@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.Java.DAO.MemberDAO;
+import org.Java.DAO.Member_InfoDAO;
 import org.Java.VO.MemberVO;
 import org.Java.VO.Page;
 
@@ -29,6 +30,7 @@ public class LoginCheckService implements Page {
 		vo.setPw(request.getParameter("pw"));
 		MemberVO r = MemberDAO.getinstance().CheckLogin(vo);
 		if(r != null) {
+			Member_InfoDAO.getInstance().Member_Info_LoginPoint(r.getId());
 			cnt++;
 		}
 		response.getWriter().print(cnt);

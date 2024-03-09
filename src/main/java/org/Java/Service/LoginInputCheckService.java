@@ -26,6 +26,7 @@ public class LoginInputCheckService implements Page{
 			System.out.println("로그인 실패.");
 			return "LoginInput";
 		}else {
+			Member_InfoDAO.getInstance().Member_Info_LoginPoint(check.getId());
 			check.setInfo(Member_InfoDAO.getInstance().getData(check.getId()));
 			request.getSession().setAttribute("log", check.getId());
 			request.getSession().setAttribute("log_level", check.getInfo().getLevel());

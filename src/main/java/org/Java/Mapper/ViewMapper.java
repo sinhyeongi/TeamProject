@@ -89,7 +89,6 @@ public class ViewMapper {
 		mapper.put("/reserve_cancel.do", new Reserve_cancelService());
 		//비회원 예약 조회
 		mapper.put("/NoMember_Reserve_Info.do", new NoMember_Reserve_InfoService());
-
 		//게시글쓰기
 		mapper.put("/BoarderWrite.do", new BoarderWriteService());
 		//리뷰글쓰기

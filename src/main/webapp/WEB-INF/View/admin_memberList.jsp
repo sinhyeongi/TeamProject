@@ -10,6 +10,7 @@
 			<form action="admin_memberList.do" method="get" class="searchForm">
 				<div class="category">
 				<input type="hidden" id="cate" value="${category }">
+				<input type="hidden" id="levelValue" value="${levelValue }">
 					<select id="category" name="category">
 						<option value="id"<c:if test="${category eq null || category eq 'id' }"> selected</c:if>>아이디</option>
 						<option value="name" <c:if test="${category eq 'name' }"> selected</c:if> >이름</option>

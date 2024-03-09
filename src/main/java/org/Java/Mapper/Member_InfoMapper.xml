@@ -24,5 +24,6 @@
 	<update id="Member_Info_declineApplyHost" parameterType="String">
 		UPDATE member_info set level = level - 100 WHERE id =#{id};
 	</update>
-	
+	<update id="Member_Info_AttendenceCheck" parameterMap="String">update member_info set point = point + 500 , Ldate = current_date() where id = #{id};</update>
+
 </mapper>

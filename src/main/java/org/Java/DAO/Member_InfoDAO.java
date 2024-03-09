@@ -30,4 +30,7 @@ public class Member_InfoDAO {
 	public int applyHost(String id) {
 		return db.applyHost(id);
 	}
+	public int updateAttendanceCheck(String id) {
+		return db.updateAttendanceCheck(id);
+	}
 }

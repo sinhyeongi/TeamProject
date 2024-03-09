@@ -7,43 +7,45 @@
 <head>
 <meta charset="UTF-8">
 <title>${title }</title>
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<!-- <script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script> -->
+	
 	<!-- jquert  --> 
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
 	<!-- flatpickr js import	 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
-<!-- MsgPage css -->
-<c:if test="${page eq 'MsgPage.jsp'}">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/MsgPage.css">
-</c:if>
-<!-- LoginInput css -->
-<c:if test="${page eq 'LoginInput.jsp'}">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
-<!-- LoginInput js -->
-<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
-</c:if>
-<!-- Login css -->
-<c:if test="${page eq 'Login.jsp' }">
-<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">
-</c:if>
-<!-- MemberInsert css and js -->
-<c:if test="${page eq 'Member_Insert.jsp' }">
-<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
-</c:if>
-<!-- Login js -->
-<c:if test="${page eq 'Login.jsp' }">
-<!-- kakao Login sdk  -->
-		<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-		<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
-	  	<!--  Naver Login -->
-	  	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-		<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
-</c:if>
+	
+	<!-- detailNotice js -->
+	<c:if test="${page eq 'detailNotice.jsp' }">
+	<script type="text/javascript" defer src="${ctx}/Js/detailNotice.js"></script>
+	</c:if>
+		
+	<!-- LoginInput js -->
+	<c:if test="${page eq 'LoginInput.jsp'}">
+	<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
+	</c:if>
+	
+	<!-- MemberInsert css and js -->
+	<c:if test="${page eq 'Member_Insert.jsp' }">
+	<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
+	</c:if>
+	
+	<!-- Login js -->
+	<c:if test="${page eq 'Login.jsp' }">
+	<!-- kakao Login sdk  -->
+	<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
+	<script type="text/javascript" defer src="${ctx}/Js/kakaoLogin.js"></script>
+  	<!--  Naver Login -->
+  	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+	<script type="text/javascript" defer src="${ctx}/Js/Login.js?dsa2"></script>
+	</c:if>
 
 	<!--  Js import -->
-	
 	<script defer="defer" src="${ctx }/Js/header.js?4s"></script>
 	<script defer="defer" src="${ctx }/Js/footer.js?dsa"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script><!-- jquert  -->
@@ -53,6 +55,7 @@
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<script defer="defer" src="${ctx }/Js/Main.js?sa"></script>
 	</c:if>
+	
 	<!--  Reserve js -->
 	<c:if test="${page eq 'reserve.jsp'}">
 		<!-- iamport.payment.js -->
@@ -60,10 +63,12 @@
 		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 		<script defer="defer" src="${ctx }/Js/reserve.js?ds3233dsa"></script>
 	</c:if>
+	
 	<!-- LoginInput js -->
 	<c:if test="${page eq 'Login.jsp' }">
 		<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
 	</c:if>
+	
 	<!--  Naver_Login js -->
 	<c:if test="${page eq 'Naver_Login.jsp' }">
 	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
@@ -79,36 +84,41 @@
 	<c:if test="${page eq 'host_hotel_info.jsp' }">
 		<script defer="defer" src="${ctx }/Js/host_hotel_info.js?ds"></script>
 	</c:if>
+	
 	<!-- hotelList js  -->
 	<c:if test="${page eq 'hotelList.jsp' }">
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 	 <script defer="defer" src="${ctx }/Js/hotelList.js?ds"></script>
 	</c:if>
+	
 	<!-- hotelInfo js  -->
 	 <c:if test="${page eq 'hotelInfo.jsp' }">
 	 <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=mz5px9iutb"></script>
 	 <script defer="defer" src="${ctx }/Js/hotelInfo.js?ds"></script>
 	</c:if>
+	
 	<!-- host_hotel_modify js  -->
 	<c:if test="${page eq 'host_hotel_modify.jsp' }">
 		<script defer="defer" src="${ctx}/Js/host_hotel_modify.js"></script>
 	</c:if>
+	
 	<!-- ImgUpload js  -->
 	<c:if test="${page eq 'ImgUpload.jsp' }">
 		<script defer="defer" src="${ctx}/Js/ImgUpload.js"></script>
 	</c:if>
+	
 	<!-- eventPage js and css -->
 	<c:if test="${page eq 'event.jsp' }">
 		<script defer="defer" src="${ctx}/Js/event.js"></script>
 		<link rel="stylesheet" href="${ctx}/Css/event.css" type="text/css">
 	</c:if>
+	
 	<!-- Cstomer_service_center js and css -->
 	<c:if test="${page eq 'Customer_Service_Center.jsp' }">
-		<!-- fontawesome -->
-		<script defer="defer" src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 		<script defer="defer" src="${ctx}/Js/Customer_Service_Center.js"></script>
 		<link rel="stylesheet" href="${ctx}/Css/Customer_Service_Center.css" type="text/css">
 	</c:if>
+	
 	<!--  비회원 예약조회 -->
 	<c:if test="${page eq 'NoMember_Reserve_Info.jsp' }">
 		<script defer="defer" src="${ctx}/Js/NoMember_Reserve_Info.js"></script>
@@ -123,6 +133,8 @@
 	<c:if test="${page eq 'AddRoom.jsp' }">
 		<script defer="defer" src="${ctx}/Js/AddRoom.js"></script>
 	</c:if>
+	
+	
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 <!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
 	<!--  css import -->
@@ -132,6 +144,27 @@
 	<c:if test="${page eq 'LoginInput.jsp'}">
 	<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
 	</c:if>
+	
+	<!-- MsgPage css -->
+	<c:if test="${page eq 'MsgPage.jsp'}">
+	<link rel="stylesheet" type="text/css" href="${ctx}/Css/MsgPage.css">
+	</c:if>
+	
+	<!-- Notice css -->
+	<c:if test="${page eq 'notice.jsp' || page eq 'detailNotice.jsp'}">
+	<link rel="stylesheet" type="text/css" href="${ctx}/Css/notice.css">
+	</c:if>
+	
+	<!-- BoarderWrite -->
+	<c:if test="${page eq 'boarderWritePage.jsp'}">
+	<link rel="stylesheet" type="text/css" href="${ctx}/Css/boarderWrite.css">
+	</c:if>
+	
+	<!-- LoginInput css -->
+	<c:if test="${page eq 'LoginInput.jsp'}">
+	<link rel="stylesheet" type="text/css" href="${ctx}/Css/LoginInput.css">
+	</c:if>
+	
 	<!-- Login css -->
 	<c:if test="${page eq 'Login.jsp' }">
 		<link rel="stylesheet" type="text/css" href="${ctx}/Css/Login.css">

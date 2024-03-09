@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.BoarderWrite_table{
+	width:100%;	
+}
+.BoarderWrite_table>tbody>tr>th{
+	width:180px;
+}

@@ -14,27 +14,20 @@ public class BoarderWriteService implements Page{
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String type = request.getParameter("type");
+		String log = (String)request.getSession().getAttribute("log");
 		String title = request.getParameter("title");
 		//비정상 접근
-		if(type == null && !type.equals("notice") && !type.equals("qa")) {
+		if(log == null) {
 			request.setAttribute("msg", "error");
 			return "MsgPage";
 		}
-		String log = (String)request.getSession().getAttribute("log");
 		//공지사항은 어드민만 작성가능
-//		if(type.equals("notice") && !log.equals("admin")) {
-//			request.setAttribute("msg", "error");
-//			return "MsgPage";
-//		}
-		
-		if(title == null) {
-			request.setAttribute("type", type);
+		if(log.equals("admin")) {
+			request.setAttribute("title", "게시글 작성");
 			return "boarderWritePage";
+		}else {
+			request.setAttribute("titel", "리뷰 작성");
+			return "reviewWritePage";
 		}
-		
-		request.setAttribute("msg", "successUpload");
-		return "MsgPage";
 	}
-
 }

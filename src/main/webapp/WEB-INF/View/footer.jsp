@@ -15,7 +15,7 @@
 	</div>
 	<div class="footer_div">
 		<span>서비스</span>
-		<span><a href="Customer_Service_Center.do" class="footer_link">공지사항</a></span>
+		<span><a href="Boarder_Notice.do" class="footer_link">공지사항</a></span>
 		<span><a href="Customer_Service_Center.do" class="footer_link">자주 묻는 질문</a></span>
 	</div>
 </footer>

@@ -1,7 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 <main class="main main_event">
-	<div class="container">이벤트</div>
+	<%@ include file="./notice_nav.jsp" %>
+	<div class="container">
+		<button class="attendanceCheckbtn"> 출석체크 </button>	
+	</div>
 </main>
+<script>
+const acBtn = document.querySelector(".attendanceCheckbtn")
+let isAttendanceCheckBtn = false;
+function attendanceCheck(){
+	if(isAttendanceCheckBtn === true){
+		return;
+	}
+	location.href="attendanceCheckEvent.do";
+}
+</script>

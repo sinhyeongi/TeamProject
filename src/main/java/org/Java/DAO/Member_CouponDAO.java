@@ -37,4 +37,7 @@ public class Member_CouponDAO {
 	public int getDisPrice(String name) {
 		return db.getDisPrice(name);
 	}
+	public int DeleteUserCoupon(int no,String id) {
+		return db.DeleteUserCoupon(no,id);
+	}
 }

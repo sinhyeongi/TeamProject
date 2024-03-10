@@ -12,13 +12,8 @@
 	<div class="content">
 		<h2 class="title">예약 내역</h2>
 		<c:forEach var="list" items="${list }">
-			<fmt:parseDate var="dday" value="${list.dday}" pattern="yyyy-MM-dd"/>
 			<!-- 오늘 -->
-			<fmt:parseNumber var="nowTime" value="${ now.time / (1000*60*60*24) }" integerOnly="true"/>
-			<%-- 숙박마지막날 --%>
-			<fmt:parseNumber var="ddayTime" value="${dday.time / (1000*60*60*24) }" integerOnly="true"/>
-			<!-- 1보다 크면 숙박일 지난 예약 -->
-			<c:set var="isOver" value="${nowTime - ddayTime >= 0}"/>
+			<fmt:formatDate value="${now }" type="date" pattern="yyyy-MM-dd" var="nowTime"/>
 				<div class="Reserve_Info_item"> 
 				<div><span>예약 번호</span><span class="uid">${list.uid }</span></div>
 				<div><span>호텔 이름</span><span>${list.hotel_name }</span></div>
@@ -27,10 +22,10 @@
 				<div><span>총 금액</span><span class="price">${list.price }원</span></div>
 				<input type="hidden" name="room_no" value="${list.room_no }">
 				<!-- 숙박일이 지나기 전 -->
-				<c:if test="${isOver eq false }">
+				<c:if test="${nowTime le list.dday}">
 				<input type="radio" name="reserve_info_radio" id="reserve_info_radio" value="${list.no }">
 				</c:if>
-				<c:if test="${isOver eq true }">
+				<c:if test="${nowTime gt list.dday}">
 				<button id="go_WriteReview" onclick="goWriteReview(${list.no})">리뷰작성</button>
 				</c:if>
 				<!-- 숙박일이 지났을 경우 -->

@@ -49,4 +49,16 @@ public class Member_CouponDB {
 		se.close();
 		return disPrice;
 	}
+	public int DeleteUserCoupon(int no, String id) {
+		HashMap<String, String> list = new HashMap<String, String>();
+		list.put("id", id);
+		list.put("no", String.valueOf(no));
+		int cnt = 0;
+		SqlSession se = sf.openSession();
+		cnt = se.delete("DeleteUserCoupon",list);
+		se.commit();
+		se.close();
+		return cnt;
+		
+	}
 }

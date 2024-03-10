@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.Java.DAO.Member_CouponDAO;
 import org.Java.DAO.ReserveDAO;
 import org.Java.DAO.RoomDAO;
 import org.Java.VO.Page;
@@ -16,6 +17,11 @@ public class Reserve_InserService implements Page{
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		if(request.getParameter("coupon_no") != null && request.getParameter("id") != null) {
+			int no = Integer.parseInt(request.getParameter("coupon_no"));
+			String id = request.getParameter("id");
+			Member_CouponDAO.getInstance().DeleteUserCoupon(no, id);
+		}
 		ReserveVO vo = new ReserveVO();
 		vo.setHotel_no(Integer.parseInt(request.getParameter("hotel_no")));
 		vo.setRoom_no(Integer.parseInt(request.getParameter("room_no")));

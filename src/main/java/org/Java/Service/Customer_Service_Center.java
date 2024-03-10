@@ -13,6 +13,7 @@ public class Customer_Service_Center implements Page{
 	@Override
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setAttribute("title", "고객센터");
 		return "Customer_Service_Center";
 	}
 

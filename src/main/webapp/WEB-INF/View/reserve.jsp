@@ -51,7 +51,7 @@
 							<c:if test="${ co.disprice ne 0  and co.disprice ne null}">
 								<div>최대<span id="coupon_maxDisprice">${co.disprice }</span>원</div>
 							</c:if>
-							<input type="radio" name="coupon">
+							<input type="radio" name="coupon" value="${co.no }">
 							</div>
 						</c:forEach>
 						<c:if test="${coupon eq null or coupon.size() eq 0 }">

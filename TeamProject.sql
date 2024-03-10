@@ -171,6 +171,7 @@ insert into boarder(id,title,content,category) values('test1','test','test','tes
 select * from boarder;
 select * from hotel;
 
+
 #insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit,uid) 
 #values(1,1,'test1','010-1234-1234',current_date(),current_date(),300,2,'도보',' 010-1234-1234/test1');
 #insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit,uid,id) 

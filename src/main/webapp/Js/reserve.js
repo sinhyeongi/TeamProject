@@ -182,7 +182,8 @@ function requestPay(){
  		room_no : _room_no,
  		hotel_no : _hotel_no,
  		people : _people,
- 		dif:diffDate
+ 		dif:diffDate,
+ 		coupon_no : $('input[name=coupon]:checked').val()
  	}
  	if(InsertData(_data) == false){
  		return;

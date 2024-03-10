@@ -7,10 +7,6 @@ values('admin','제주신라호텔',5,'064-735-5114',
 '피트니스,수영장,미니바,사우나,와이파이,욕실용품,레스토랑,금연,TV,엘레베이터,에어컨,프린터사용,라운지,짐보관가능,객실샤워실,욕조',
 '제주특별자치도 서귀포시 색달동 3039-3',39,'16:00','11:00','no data');
 insert into img (uploader,no,url) values('ho',1,'jeju/silla/main.png');
-insert into img (uploader,no,url) values('ho',1,'jeju/silla/main2.png');
-insert into img (uploader,no,url) values('ho',1,'jeju/silla/main3.png');
-insert into img (uploader,no,url) values('ho',1,'jeju/silla/main4.png');
-insert into img (uploader,no,url) values('ho',1,'jeju/silla/main5.png');
 select * from img where uploader = 'ho' and no = 1;
 #delete from img where uploader='ho' and no = 1;
 # 	lotte
@@ -929,3 +925,4 @@ select hotel_no,count(*) from room group by hotel_no;
 select uploader,count(*) from img group by uploader;
 
 select * from hotel;
+update room set price = 300 where hotel_no = 1;

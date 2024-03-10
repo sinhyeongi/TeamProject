@@ -32,8 +32,8 @@
 						<td>
 						<select id="star_point" name="star_point" required>
 						<option value="" selected disabled>별점주기</option>
-						<c:forEach var="i" begin="0" end="4" step="1">
-							<option value="${5-i}">${5-i}</option>
+						<c:forEach var="i" begin="0" end="9" step="1">
+							<option value="${10-i}">${10-i}</option>
 						</c:forEach>
 						</select>
 						</td>

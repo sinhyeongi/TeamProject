@@ -32,8 +32,6 @@ public class MainService implements Page{
 			request.getSession().setAttribute("log_level", Member_InfoDAO.getInstance().getData((String)request.getSession().getAttribute("log")).getLevel());
 		}
 
-		request.getSession().setAttribute("log", "test1"); 
-
 		return "Main";
 	}
 }

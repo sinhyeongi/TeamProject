@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.adminPage_container>a{
+	font-size: 30px;
+	margin : 30px;
+	font-weight: 600;
+}

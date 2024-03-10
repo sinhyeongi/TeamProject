@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.Java.VO.BoarderVO;
 import org.apache.ibatis.io.Resources;
@@ -22,16 +23,35 @@ public class BoardDB {
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<BoarderVO> getCateList(String category){
+	public ArrayList<BoarderVO> getSubcateList(Map<String,String> category){
 		SqlSession session = sf.openSession();
 		List<BoarderVO> list=null;
-		if(category.equals("TOP7")){
+		if(category.get("subcategory").equals("TOP7")){
 			list = session.selectList("boarder_getTop7List",category);
 		}else {
-			list = session.selectList("boarder_getCateList",category);
+			list = session.selectList("boarder_getSubcateList",category);
 		}
 		session.close();
 		return (ArrayList<BoarderVO>)list;
+	}
+	public ArrayList<BoarderVO> getCategoryList(String category){
+		SqlSession session = sf.openSession();
+		List<BoarderVO> list = session.selectList("boarder_getCategoryList",category);
+		session.close();
+		return (ArrayList<BoarderVO>)list;
+	}
+	public BoarderVO getDataByNo (int no) {
+		SqlSession session = sf.openSession();
+		BoarderVO vo = session.selectOne("boarder_getDataByNo", no);
+		session.close();
+		return vo;
+	}
+	public int uploadBoard(BoarderVO vo) {
+		SqlSession session = sf.openSession();
+		int checkCount = session.update("boarderUpload", vo);
+		session.commit();
+		session.close();
+		return checkCount;
 	}
 	
 	

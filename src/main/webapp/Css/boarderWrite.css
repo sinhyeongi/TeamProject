@@ -1,0 +1,16 @@
+@charset "UTF-8";
+*{
+	font-size: 20px;
+}
+.BoarderWrite_table{
+	width:100%;	
+}
+.BoarderWrite_table>tbody>tr>th{
+	width:180px;
+}
+.submit_btn{
+	padding: 20px;
+	background-color: rgb(219, 226, 216);
+	border: solid 1px;
+	border-radius: 20px;
+}

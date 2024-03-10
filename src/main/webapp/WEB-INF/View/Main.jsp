@@ -9,7 +9,7 @@
 <title>${title }</title>
 </head>
 <body>
-<main>
+<main class="main mainPage_main">
 	<div id="main_log">
 		<img alt="Main_logo" src="${ctx }/img/Main_logo.jpeg">
 	</div>

@@ -2,6 +2,8 @@ package org.Java.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,16 +19,23 @@ public class QAcategoryService implements Page{
 	public String Service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String category = request.getParameter("category");
-		if(category ==null)category = "TOP7";
-		ArrayList<BoarderVO> list = BoardDAO.getInstance().getCateList(category);
+		Map<String,String> categoryMap = new HashMap<>();
+		categoryMap.put("category", "qa");
+		if(category ==null) {
+			categoryMap.put("subcategory", "TOP7");
+		}else {
+			categoryMap.put("subcategory", category);
+		}
+		ArrayList<BoarderVO> list = BoardDAO.getInstance().getSubcateList(categoryMap);
 		String data = "";
 		if(list!=null) {
 			for(BoarderVO vo : list) {
 				String title = vo.getTitle();
 				String[] contents = vo.getContent().split("\n");
 				String cate = vo.getCategory();
-				cate = cate.split("qa_")[1];
-				System.out.println("cut qa_ category ="+cate);
+				cate = cate.split("_")[1];
+				System.out.println("cut qa_category ="+vo.getCategory().split("_")[0]);
+				System.out.println("cut qa_category ="+vo.getCategory().split("_")[1]);
 				data+= "<li>"						
 					+ "<div class=\"qabtn\" role=\"button\" label=\" [%s] %s\">".formatted(cate,title)
 					+ "<div class=\"qaflex\">"

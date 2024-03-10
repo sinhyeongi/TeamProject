@@ -12,7 +12,7 @@ insert into img (uploader,no,url) values('ho',1,'jeju/silla/main3.png');
 insert into img (uploader,no,url) values('ho',1,'jeju/silla/main4.png');
 insert into img (uploader,no,url) values('ho',1,'jeju/silla/main5.png');
 select * from img where uploader = 'ho' and no = 1;
-delete from img where uploader='ho' and no = 1;
+#delete from img where uploader='ho' and no = 1;
 # 	lotte
 insert into hotel (host,name,star,tel,fac,address,area,checkin,checkout,account) 
 values('admin','롯데호텔 제주',5,'064-731-1000',

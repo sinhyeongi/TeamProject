@@ -35,5 +35,7 @@ public class ReserveDAO {
 	}
 	public ArrayList<ReserveVO> Admin_getAll(){
 		return db.Admin_getAll();
+	public ReserveVO getOneDataByNo(int no) {
+		return db.getOneDataByNo(no);
 	}
 }

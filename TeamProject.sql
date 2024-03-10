@@ -28,6 +28,7 @@ update member set gender = 'm' where no = 6;
 select * from member;
 select id,regist from member where regist = current_date();
 
+
 # 고객_추가정보 테이블
 create table member_info(
 id varchar(100) not null primary key, -- 고객아이디
@@ -43,7 +44,7 @@ select * from member_info;
 insert into member_info(id,level) values('admin',1000);
 insert into member_info(id) values('test1');
 update member_info set attendcount = (select attendcount from(select (attendcount + 1) as attendcount from member_info where id='test1')dsa) where id='test1' and Ldate != Current_date(); -- 회원 출석 체크 시 오늘 날짜가 아니라면 출석횟수 + 1
-update member_info set level = 900 where id = 'test1';
+update member_info set level = 1 where id = 'test1';
 #쿠폰 테이블
 create table coupon(
 	name varchar(300) not null primary key, -- 쿠폰이름
@@ -115,7 +116,7 @@ create table reserve(
     people int not null, -- 인원수
     add_req varchar(100), -- 추가 요청 사항
     visit varchar(50) not null, -- 방문방법
-    hotel_option varchar(300), -- 옵션 ( 조식,헬스장 , 수영장,주차장 이용)
+    uid varchar(300), -- 옵션 ( 조식,헬스장 , 수영장,주차장 이용)
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
@@ -169,5 +170,8 @@ select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
 select * from hotel;
-update room set price = 300 where hotel_no = 1;
-select * from room where hotel_no =1 ;
+
+#insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit,uid) 
+#values(1,1,'test1','010-1234-1234',current_date(),current_date(),300,2,'도보',' 010-1234-1234/test1');
+#insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit,uid,id) 
+#values(1,1,'test1','010-1234-1234','2024-03-07','2024-03-08',300,2,'도보',' 010-1234-1234/test1','test1');

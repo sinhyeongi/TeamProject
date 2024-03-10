@@ -12,7 +12,7 @@
 <pre>
   <code>
     JDK : 17버전
-    Tomcat : 9버전
+    Tomcat : 9버전 ( Port : 8080 )
     Eclipse IDE
   </code>
 </pre>
@@ -30,9 +30,9 @@
 > API
 <pre>
   <code>
-    Login ( Kakao / Rest API)
-    Login ( Naver / JavaScript SDK )
-    결재 및 본인 인증(Test) ( PortOne / JavaScript SDK) 
+    Login ( Kakao / Rest API )
+    Login ( Naver / JavaScript SDK  )
+    결재 및 본인 인증(Test) ( PortOne / JavaScript SDK ) 
     지역 코드 및 위도,경도 ( Kakao Local API / Rest API )
     날씨 ( OpenWeatherMap / REST API )
     우편번호 서비스 ( 카카오(다음) 주소 API /JavaScript SDK )

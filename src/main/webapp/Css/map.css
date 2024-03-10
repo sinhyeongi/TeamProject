@@ -24,6 +24,8 @@
 	.mapBox.add{
 		color:white;
 		background-color : rgba(33, 84, 252, 0.89);
+		position: relative;
+		z-index: 400;
 	}
  	.iw_inner{
  		cursor:pointer;

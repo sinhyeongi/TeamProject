@@ -56,16 +56,13 @@ function initializeNaverMap() {
         position:  new naver.maps.LatLng(htList[i].y, htList[i].x),
         map: map
       });
-		
 	var icon = {
         content: contentStrings[i],
         size: new naver.maps.Size(30, 30),
         anchor: new naver.maps.Point(15, 15)
       };
-      
     marker.setIcon(icon);
- }
- 
+   }
 }
 
 // 클릭했을때 숨겨뒀던 mymodal을 보여주기.

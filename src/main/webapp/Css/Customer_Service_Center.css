@@ -3,10 +3,6 @@
 /* 	border : solid 1px; */
 	margin-bottom: 20px;
 }
-#member_menu div{
-	display: flex;
-	align-items: center;
-}
 .title{
 	margin : 2px 0;
     font-size: 1.5rem;
@@ -140,7 +136,6 @@ ul[role="boardlist"] li{
 }
 .qacontent_container{
 	height: 100%;
-    width: 100%;
     background-color: rgb(245 245 245);
     font-size: 0.9375rem;
     letter-spacing: 0px;

@@ -20,4 +20,9 @@
 	<update id="updateReviewCnt" parameterType="HashMap">
 		update review set count = #{rec_cnt} where no = #{no};
 	</update>
+	<select id="review_isReserveNoInReview" parameterType="int"
+		resultType="int">
+		SELECT count(*) from review WHERE res_no = #{no};
+	</select>
+	<insert id="review_uploadReview" parameterType="reserve">insert into review(nickname,hotel_no,room_no,star_point,content,res_no) values(#{nickname},#{hotel_no},#{room_no},#{star_point},#{content},#{res_no})</insert>
 </mapper>

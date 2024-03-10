@@ -60,6 +60,11 @@ public class ReserveDB {
 		List<ReserveVO> list = se.selectList("Reserve_Admin_getAll");
 		se.close();
 		return (ArrayList<ReserveVO>)list;
-		
+	}
+	public ReserveVO getOneDataByNo(int no) {
+		SqlSession se = sf.openSession();
+		ReserveVO vo = se.selectOne("reserve_getOneDataByNo", no);
+		se.close();
+		return vo;
 	}
 }

@@ -6,10 +6,11 @@
 	<!-- <select id="boarder_getCateList" resultType="boarder" parameterType="String">
 		SELECT * from boarder where category = q&amp;a_${category};
 	</select> -->
-	<select id="boarder_getCateList" resultType="boarder" parameterType="String">
-		SELECT * from boarder where category LIKE concat("qa_",#{category});
-	</select>
-	<select id="boarder_getTop7List" resultType="boarder" parameterType="String">
+	<select id="boarder_getSubcateList" resultType="boarder" parameterType="Map">SELECT * from boarder where category LIKE concat(#{category} , "_" , #{subcategory} );</select>
+	<select id="boarder_getTop7List" resultType="boarder" parameterType="Map">
 		SELECT * from boarder where category LIKE concat("qa_","%") order by no desc;
 	</select>
+	<insert id="boarderUpload" parameterType="boarder">insert into boarder(id,title,content,category)
+		values(#{id},#{title},#{content},#{category});</insert>
+	<select id="boarder_getDataByNo" parameterType="int" resultType="boarder">SELECT * FROM boarder WHERE no = #{no};</select>
 </mapper>

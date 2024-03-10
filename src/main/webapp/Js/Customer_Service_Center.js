@@ -32,16 +32,16 @@ function changeList(category){
 			let btnlist = [...document.querySelector(".boardlist").children];
 			console.log(btnlist);
 			btnlist.forEach(target=>{
-				target.addEventListener("click",event=>{
-					const li = event.currentTarget;
-					const qacontent = event.currentTarget.lastChild;
+				target.firstChild.addEventListener("click",event=>{
+					console.log(target);				
+					const li = target;
+					const qacontent = li.lastChild;
 					if(qacontent.classList.contains("hidden")){
 						qacontent.classList.remove("hidden");
-						/*console.log(li.firstChild.tagName);*/
-						console.log(li.firstChild.children.item(1).classList.add("fa-rotate-180"));
+						li.firstChild.children.item(1).classList.add("fa-rotate-180");
 					}else{
 						qacontent.classList.add("hidden");
-						console.log(li.firstChild.children.item(1).classList.remove("fa-rotate-180"));
+						li.firstChild.children.item(1).classList.remove("fa-rotate-180");
 					}
 					
 				})
@@ -50,3 +50,13 @@ function changeList(category){
 	})
 	.catch(error => console.log(error))
 }
+
+
+//전화번호 클릭
+$('.callbtn').click(function(){
+	alert('준비중');
+});
+// 문의하기
+$('.askbtn').click(function(){
+	location.href = 'Customer_Service_Center.do';
+});

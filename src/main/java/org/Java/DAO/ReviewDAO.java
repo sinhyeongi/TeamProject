@@ -30,4 +30,10 @@ public class ReviewDAO {
 	public int updateReviewCnt(int rec_cnt , int no) {
 		return db.updateReviewCnt(rec_cnt, no);
 	}
+	public boolean isReserveNoInReview(int no) {
+		return db.isReserveNoInReview(no);
+	}
+	public int uploadReview(ReviewVO vo) {
+		return db.uploadReview(vo);
+	}
 }

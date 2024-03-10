@@ -55,4 +55,23 @@ public class ReviewDB {
 		se.close();
 		return cnt;
 	}
+	public boolean isReserveNoInReview(int no) {
+		SqlSession se = sf.openSession();
+		int cnt = se.selectOne("review_isReserveNoInReview", no);
+		se.close();
+		if(cnt > 0) {
+			//true 면 이미 리뷰가 존재하는 예약번호
+			return true;
+		}else {
+			//false 는 리뷰가 없는 예약번호
+			return false;
+		}
+	}
+	public int uploadReview(ReviewVO vo) {
+		SqlSession se = sf.openSession();
+		int cnt = se.insert("review_uploadReview", vo);
+		se.commit();
+		se.close();
+		return cnt;
+	}
 }

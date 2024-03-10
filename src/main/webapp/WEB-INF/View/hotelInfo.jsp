@@ -246,7 +246,7 @@
       	<c:if test="${hotel.reviewCount eq 0}">
       		<div class="no_rv">
       		<h2> 아직 작성된 리뷰가 없습니다 </h2>
-      		<p onclick="href=''">리뷰 작성하러 가기</p>
+      		<!-- <p onclick="href=''">리뷰 작성하러 가기</p> -->
       		</div>
       	</c:if>
       	<c:forEach var="one_rv" items="${reviewList }">

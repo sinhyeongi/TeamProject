@@ -48,13 +48,10 @@ update member_info set level = 900 where id = 'test1';
 create table coupon(
 	name varchar(300) not null primary key, -- 쿠폰이름
     dislate int, -- 쿠폰 할인율
-    disprice int, -- 쿠폰 할인 금액 (할인율 쿠폰일 때 최대 할인금액)
+    disprice int, -- 쿠폰 할인 금액
     period int -- 사용 가능 기간
 );
-
-insert into coupon values('WellCome',7,10000,7);
-insert into coupon values('test',0,5000,7);
-insert into coupon values('test2',7,10000,7);
+insert into coupon values('WellCome',7,0,7);
 select * from coupon;
 #유저 쿠폰
 create table member_coupon(
@@ -67,11 +64,9 @@ create table member_coupon(
     foreign key(name) references coupon(name) on delete cascade
 );
 
-
 insert into member_coupon (id,name,period) values('test1','WellCome',Date_add(current_date(), interval (select period from coupon where name = 'WellCome') day)); -- 쿠폰 추가 방법
-insert into member_coupon (id,name,period) values('test1','test',Date_add(current_date(), interval (select period from coupon where name = 'test') day)); -- 쿠폰 추가 방법
-insert into member_coupon (id,name,period) values('test1','test2',Date_add(current_date(), interval (select period from coupon where name = 'test2') day)); -- 쿠폰 추가 방법
 select * from member_coupon;
+
 # 호텔
 create table hotel(
 	no int auto_increment primary key, -- 호텔 번호
@@ -104,9 +99,7 @@ create table room(
     amenities varchar(300), -- 편의 시설
     foreign key(hotel_no) references hotel(no) on delete cascade
 );
-
 select * from room;
-select * from room where no = 1;
 
 # 예약
 create table reserve(
@@ -122,13 +115,15 @@ create table reserve(
     people int not null, -- 인원수
     add_req varchar(100), -- 추가 요청 사항
     visit varchar(50) not null, -- 방문방법
-    uid varchar(100), -- 결재시 결재uid *test이후 NotNull
+    hotel_option varchar(300), -- 옵션 ( 조식,헬스장 , 수영장,주차장 이용)
     foreign key(hotel_no) references  hotel(no) on delete cascade,
     foreign key(room_no) references room(no) on delete cascade
 );
 
 select * from reserve;
+
 #insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit) values(1,1,'test','010-1234-1234',current_date(),current_date(),15000,2,'도보');
+
 # 리뷰 비회원 리뷰 작성 불가
 create table review(
 	no int auto_increment primary key, -- 리뷰 번호
@@ -165,11 +160,14 @@ id varchar(100) not null, -- 게시자
 title varchar(100) not null, -- 제목
 content varchar(500) not null, -- 본문 내용
 category varchar(30) not null, -- 카테고리 ('Q&A','EVENT','NOTICE')
+#regist date default (current_date()),
 
 foreign key(id) references member(id) on delete cascade
 );
 select * from member;
+
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
-
-
+select * from hotel;
+update room set price = 300 where hotel_no = 1;
+select * from room where hotel_no =1 ;

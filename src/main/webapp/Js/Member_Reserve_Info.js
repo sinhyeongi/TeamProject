@@ -12,6 +12,12 @@ $('#Reserve_Info_submit').click(function(){
 	const room_no = $('.Reserve_Info_item:eq('+(t)+')').find('input[name=room_no]').val();
 	cancelPay(uid,room_no);
 });
+function goWriteReview(no){
+	$(this).attr('disabled',true);
+	location.href="ReviewWrite.do?no="+no;
+}
+
+
 function cancelPay(_uid,_room_no){
 	data = {
 		uid : _uid,

@@ -5,6 +5,10 @@
 	min-height : 100%;
 	overflow: auto;
 }
+#member_menu div{
+	display: flex;
+	align-items: center;
+}
 .main::-webkit-scrollbar {
     display: none;
 }

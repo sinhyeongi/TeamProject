@@ -18,4 +18,6 @@
 	<delete id="reserve_cancel_uid">
 		delete from reserve where uid = #{uid}
 	</delete>
+	<select id="reserve_getOneDataByNo" parameterType="int"
+		resultType="reserve">SELECT * from reserve where no =#{no};</select>
 </mapper>

@@ -48,6 +48,13 @@ public class Member_InfoDB {
 		se.close();
 		return check;
 	}
+	public int updateAttendanceCheck(String id) {
+		SqlSession se = sf.openSession();
+		int check = se.update("Member_Info_AttendenceCheck", id);
+		se.commit();
+		se.close();
+		return check;
+	}
 	public int Member_Info_LoginPoint(String id) {
 		int cnt = 0;
 		SqlSession se = sf.openSession();

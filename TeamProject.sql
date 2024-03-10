@@ -1,6 +1,8 @@
 #drop database java;
 create database java;
 use java;
+
+
 #고객 테이블
 create table member(
 id varchar(100) not null unique, -- 고객 아이디
@@ -165,3 +167,5 @@ select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 select * from boarder;
 select * from hotel;
+update room set price = 300 where hotel_no = 1;
+select * from room where hotel_no =1 ;

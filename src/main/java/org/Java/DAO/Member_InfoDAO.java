@@ -33,4 +33,8 @@ public class Member_InfoDAO {
 	public int updateAttendanceCheck(String id) {
 		return db.updateAttendanceCheck(id);
 	}
+	
+	public int Member_Info_LoginPoint(String id) {
+		return db.Member_Info_LoginPoint(id);
+	}
 }

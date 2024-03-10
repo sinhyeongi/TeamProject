@@ -1,8 +1,8 @@
 $('#AddRoom_submit').click(function(){
-	$(this).attr('disabled',true);
 	if(check()){
 		return;
 	}
+	$(this).attr('disabled',true);
 	const name = $('input[name=name]').val();
 	const price = $('input[name=price]').val();
 	const total_qty = $('input[name=total_qty').val();

@@ -54,8 +54,7 @@
 #room_Delete_submit{
 	position: relative;
     border: none;
-    min-width: 200px;
-    min-height: 50px;
+    width:80%;
     background: linear-gradient(
         90deg,
         rgba(129, 230, 217, 1) 0%,

@@ -169,3 +169,5 @@ foreign key(id) references member(id) on delete cascade
 select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
 
+update room set price = 300 where hotel_no = 1;
+select * from room where hotel_no =1 ;

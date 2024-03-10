@@ -1039,6 +1039,7 @@ insert into boarder(id,title,content,category) values('admin','서비스 점검 
 더 좋은 서비스로 보답하는 자바가 되겠습니다.
 
 감사합니다.','notice_점검');
+insert into boarder(id,title,content,category) values('admin','자바 개인정보처리방침 변경 안내','﻿안녕하세요. 자바입니다.
 여기어때 개인정보처리방침이 아래와 같이 변경되어 안내드립니다.
 
 1. 주요 변경 사항

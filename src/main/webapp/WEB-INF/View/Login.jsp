@@ -42,14 +42,7 @@
 				
 			</div>
 		<!-- //로그인 버튼 그룹 -->
-			
-				<!-- <div class=b2b_login>
-					<a href="#none">
-						<div class="b2b_text_button">
-							비지니스 로그인/회원가입
-						</div>
-					</a>
-				</div> -->
+
 		</div>
 		<!-- //login -->
 	</main>

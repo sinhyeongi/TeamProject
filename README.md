@@ -43,6 +43,6 @@
 <pre>
   <code>
     디자인 패턴 : MVC
-    FrameWork : MyBatis FrameWork
+    MyBatis FrameWork 사용
   </code>
 </pre>

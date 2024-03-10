@@ -1,4 +1,4 @@
-#drop database java;
+# drop database java;
 create database java;
 use java;
 #고객 테이블
@@ -16,13 +16,15 @@ nickname varchar(20) unique, -- 고객 닉네임
 regist DATE default (current_date()) -- 고객 가입일
 );
 insert into member(no,id,pw,email,name,birth,gender,phone,address,nickname) values(0,'admin','admin','admin@java.org','관리자','2024-02-21','남','111-1111-1111','admin','관리자');
-
+update member set no = 0 where no = 1;
+alter table member auto_increment = 1;
 insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('test1','test1','test1@java.org','test1','2024-02-21','남','222-2222-2222','test1','test1');
 insert into member(id,pw,email,name,birth,gender,phone,address,nickname) values('nv_test2',null,'test2@java.org','test2','2024-02-21','m','333-3333-3333','test2','test2');
 update member set pw = 'test2' where no = 4;
 update member set id = 'test2' where no = 4;
 update member set gender = 'm' where no = 6;
 select * from member;
+select id,regist from member where regist = current_date();
 
 # 고객_추가정보 테이블
 create table member_info(
@@ -39,7 +41,7 @@ select * from member_info;
 insert into member_info(id,level) values('admin',1000);
 insert into member_info(id) values('test1');
 update member_info set attendcount = (select attendcount from(select (attendcount + 1) as attendcount from member_info where id='test1')dsa) where id='test1' and Ldate != Current_date(); -- 회원 출석 체크 시 오늘 날짜가 아니라면 출석횟수 + 1
-#update member_info set level = 900 where id = 'test1';
+update member_info set level = 900 where id = 'test1';
 #쿠폰 테이블
 create table coupon(
 	name varchar(300) not null primary key, -- 쿠폰이름
@@ -82,6 +84,7 @@ create table hotel(
     foreign key(host) references member(id) on delete cascade
 );
 select * from hotel;
+select * from img;
 
 #객실
 create table room(
@@ -160,4 +163,7 @@ foreign key(id) references member(id) on delete cascade
 );
 select * from member;
 insert into boarder(id,title,content,category) values('test1','test','test','test');
+select * from boarder;
 
+select * from review_rec;
+delete from review_rec;

@@ -72,7 +72,8 @@ up_btn.click(function() {
 	var rec_cnt = review_main.find(".rec_cnt");
 		const data = {
 			no : $(this).find('.rv_no').val(),
-			rec_cnt : $(this).find('.review_cnt').val()
+			rec_cnt : $(this).find('.review_cnt').val(),
+			nickName : $(this).find('.review_nick').val()
 		};
 		$.ajax({
 		type: "post",
@@ -80,9 +81,15 @@ up_btn.click(function() {
 		data : data,
 		success : function(response){
 			if(response == "로그아웃 상태"){
-				alert("로그인 후 이용 가능합니다.");
+				alert("로그인 후 이용 가능합니다");
 				return;
-			}  else if(response >0){
+			} else if(response == "이미 추천한 리뷰입니다"){
+				alert(response);
+				return;
+			} else if(response == "본인의 리뷰는 추천할 수 없습니다"){
+				alert(response);
+				return;
+			} else if(response >0){
 				rec_cnt.text(response);
 				return;
 			} 

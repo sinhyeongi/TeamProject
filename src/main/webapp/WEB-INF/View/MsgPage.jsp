@@ -15,6 +15,9 @@
 				현재 포인트<span class="point">${point }P</span> 입니다.
 				</div>			
 			</c:if>
+			<c:if test="${msg eq 'ReviewExistence'}">
+				<div class="msg">이미 리뷰가 작성된 예약입니다.</div>			
+			</c:if>
 			<c:if test="${msg eq 'pleaseLogin'}">
 				<div class="msg">로그인 후 이용바랍니다.</div>			
 			</c:if>
@@ -51,7 +54,7 @@
 			<c:if test="${msg ne 'pleaseLogin' }">
 			<button class="btn" onclick="location.href='${ctx}/Main.do'">홈으로</button>
 			</c:if>
-			<c:if test="${msg eq 'error' or msg eq 'overLevel' or msg eq 'underLevel'}">
+			<c:if test="${msg eq 'error' or msg eq 'overLevel' or msg eq 'underLevel' or msg eq 'ReviewExistence'}">
 			<button class="btn" onclick="history.go(-1)">이전으로</button>
 			</c:if>
 		</div>	

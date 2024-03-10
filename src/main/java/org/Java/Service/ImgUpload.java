@@ -81,7 +81,11 @@ public class ImgUpload implements Page{
 		vo.setNo(Integer.parseInt(mr.getParameter("no")));
 		vo.setUrl(ofile.toString().substring(ofile.toString().indexOf(regx) + 1));
 		int cnt = ImgDAO.getInstance().InsertImg(vo);
-		response.getWriter().print(cnt);
+		if(mr.getParameter("uploader").equals("rv")) {
+			response.getWriter().print(sfname);
+		}else {
+			response.getWriter().print(cnt);
+		}
 		return null;
 	}
 }

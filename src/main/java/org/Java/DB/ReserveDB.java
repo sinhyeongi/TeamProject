@@ -55,4 +55,10 @@ public class ReserveDB {
 		se.close();
 		return cnt;
 	}
+	public ReserveVO getOneDataByNo(int no) {
+		SqlSession se = sf.openSession();
+		ReserveVO vo = se.selectOne("reserve_getOneDataByNo", no);
+		se.close();
+		return vo;
+	}
 }

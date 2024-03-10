@@ -33,4 +33,7 @@ public class ReserveDAO {
 	public int ReserveCancel_uid(String uid) {
 		return db.ReserveCancel_uid(uid);
 	}
+	public ReserveVO getOneDataByNo(int no) {
+		return db.getOneDataByNo(no);
+	}
 }

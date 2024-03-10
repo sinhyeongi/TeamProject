@@ -109,6 +109,8 @@ public class ViewMapper {
 			mapper.put("/ReviewWrite.do", new ReviewWriteService());
 			//게시글 업로드
 			mapper.put("/BoarderUpload.do", new BoarderUploadService());
+			//리뷰 업로드
+			mapper.put("/ReviewUpload.do", new ReviewUploadService());
 			
 		//이벤트
 			//출석체크

@@ -34,11 +34,17 @@
 	<script type="text/javascript" defer src="${ctx}/Js/LoginInput.js"></script>
 	</c:if>
 	
-	<!-- MemberInsert css and js -->
+	<!-- MemberInsert js 및 주소cdn -->
 	<c:if test="${page eq 'Member_Insert.jsp' }">
 	<script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" defer src="${ctx}/Js/Member_Insert.js"></script>
 	</c:if>
+	
+	<!-- 리뷰페이지 js -->
+	<c:if test="${page eq 'ReviewWritePage.jsp' }">
+	<script type="text/javascript" defer src="${ctx}/Js/ReviewWritePage.js"></script>
+	</c:if>
+	
 	
 	<!-- Login js -->
 	<c:if test="${page eq 'Login.jsp' }">
@@ -139,9 +145,17 @@
 		<script defer="defer" src="${ctx}/Js/AddRoom.js"></script>
 	</c:if>
 	
+<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
+<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
+	<!-- 어드민페이지 -->
+	<c:if test="${page eq 'admin_adminPage.jsp' }">
+	<link rel="stylesheet" href="${ctx}/Css/adminPage.css" type="text/css">
+	</c:if>
 	
-<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
-<!--  =========================== =========================== =========================== =========================== =========================== =========================== -->
+	<!-- 리뷰페이지 -->
+	<c:if test="${page eq 'ReviewWritePage.jsp' }">
+	<link rel="stylesheet" href="${ctx}/Css/ReviewWritePage.css" type="text/css">
+	</c:if>
 	<!--  css import -->
 	<link rel="stylesheet" href="${ctx}/Css/header.css?dbgf3333" type="text/css">
 	<link rel="stylesheet" href="${ctx}/Css/footer.css?dsdsd32" type="text/css">

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+table{
+	font-size: 17px;
+	font-weight: 500;
+}
+.title_section{
+	display: flex;
+	justify-content: center;
+}
+.reviewWrite_main .container{
+	max-width: 700px;
+}
+.title{
+}
+.form_section input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+.content{
+	width: 100%;
+	resize: none;
+}
+.reviewTable{
+	width:100%;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid 1px;
+}
+.imgs{
+	height: 100px;
+	display: flex;
+	align-items: center;
+	overflow: auto;
+}
+.imgs>div{
+	margin-right: 20px;
+}
+.imgs>div>img{
+	max-height: 200px;
+	max-width: 200px;
+	-webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* 표준 문법 */
+}
+tr{
+	margin-bottom: 20px;
+}
+td{
+	font-weight: 700;
+}
+td:first-child{
+	width:100px; 
+}
+.uploadBtn{
+	padding: 5px 15px;
+	background-color: rgb(219, 226, 216);
+	border-radius: 20px;
+	cursor: pointer;
+}
+.submit_btn{
+	font-size: 17px;
+	font-weight: 700;
+	padding: 5px 15px;
+	background-color: rgb(219, 226, 216);
+	border-radius: 20px;
+}

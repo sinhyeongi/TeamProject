@@ -39,8 +39,6 @@ public class BoarderUploadService implements Page{
 			request.setAttribute("msg", "success");
 			return "MsgPage";
 		}else if(type.equals("review")) {
-			
-			
 			request.setAttribute("msg", "success");
 			return "MsgPage";
 		}

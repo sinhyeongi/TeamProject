@@ -1,4 +1,4 @@
-# drop database java;
+#drop database java;
 create database java;
 use java;
 
@@ -91,7 +91,6 @@ create table hotel(
     foreign key(host) references member(id) on delete cascade
 );
 select * from hotel;
-select * from img;
 
 #객실
 create table room(
@@ -129,7 +128,7 @@ create table reserve(
 );
 
 select * from reserve;
-insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit) values(1,1,'test','010-1234-1234',current_date(),current_date(),15000,2,'도보');
+#insert into reserve(hotel_no,room_no,name,phone,rday,dday,price,people,visit) values(1,1,'test','010-1234-1234',current_date(),current_date(),15000,2,'도보');
 # 리뷰 비회원 리뷰 작성 불가
 create table review(
 	no int auto_increment primary key, -- 리뷰 번호

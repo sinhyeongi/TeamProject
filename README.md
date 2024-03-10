@@ -39,4 +39,10 @@
     지도 ( MAP API(네이버) / JavaScript SDK )
   </code>
 </pre>
-
+> 추가 정보
+<pre>
+  <code>
+    디자인 패턴 : MVC
+    FrameWork : MyBatis FrameWork
+  </code>
+</pre>

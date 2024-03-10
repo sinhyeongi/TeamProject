@@ -1,4 +1,4 @@
-#drop database java;
+# drop database java;
 create database java;
 use java;
 
@@ -86,6 +86,7 @@ create table hotel(
     foreign key(host) references member(id) on delete cascade
 );
 select * from hotel;
+select * from img;
 
 #객실
 create table room(

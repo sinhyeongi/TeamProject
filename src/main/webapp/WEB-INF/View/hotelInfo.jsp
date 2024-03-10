@@ -261,6 +261,7 @@
       			   👍
       			   <input type="hidden" class="rv_no" value="${one_rv.no }">
       			   <input type="hidden" class="review_cnt" value="${one_rv.count }">
+      			   <input type="hidden" class="review_nick" value="${one_rv.nickname }">
       			  </span> 이 리뷰 추천하기 
       			 </div>
       		</div> <!-- left_rv -->

@@ -23,7 +23,7 @@ $("#input_id").on("keyup" , event =>{
 });
 
 $("#input_pw").on("keyup" , event =>{
-	if(inputPw.value.length >= 8){
+	if(inputPw.value.length >= 4){ //Test를위해 8-> 4 로변경
 		checkPw = true;
 		document.querySelector(".input_pw_wrapper").classList.remove("error");
 		document.querySelector(".errorMsg_pw").classList.remove("active");

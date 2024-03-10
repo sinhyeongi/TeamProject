@@ -28,6 +28,10 @@ public class ReserveService implements Page {
 			}
 			if(request.getSession().getAttribute("log") != null) {
 				Member_InfoVO vo = Member_InfoDAO.getInstance().getData((String)request.getSession().getAttribute("log"));
+				if(vo.getLevel()>= 900 && vo.getLevel() != 1000) {
+					response.getWriter().print("<script> alert('호스트인 상태에서는 호텔예약이 불가능합니다.'); location.href = 'Main.do';</script>");
+					return null;
+				}
 				ArrayList<Member_couponVO> coupon = Member_CouponDAO.getInstance().getData((String)request.getSession().getAttribute("log"));
 				for(int i = 0 ; i < coupon.size(); i++) {
 					coupon.get(i).setDislate(CouponDAO.getInstance().getDislate(coupon.get(i).getName()));

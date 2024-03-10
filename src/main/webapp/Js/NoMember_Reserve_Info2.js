@@ -17,15 +17,16 @@ $('#reserve_cancel').click(function(){
 		type: 'post',
 		url : 'reserve_cancel.do',
 		data : data,
+		async : false,
 		success : function(data){
 			if(data == 0){
-				target.remove();
 				alert('취소되었습니다.');
-				$('#reserve_cancel').removeAttr('disabled');
 			}
 		},
 		error: function(err){
 			alert('err = ' + err);
 		}
-	})
+	});
+	target.remove();
+	$('#reserve_cancel').removeAttr('disabled');
 });

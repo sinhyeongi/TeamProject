@@ -33,29 +33,18 @@ public class UpBtnChecking implements Page{
 		System.out.println("추천수 : " + review_cnt);
 		
 		//작성자 닉네임
-		String nickName = (String)request.getParameter("nickName");
-		System.out.println("닉네임 받아오나? " + nickName);
-	  ArrayList<ReviewVO> reviewList = ReviewDAO.getInstance().getAllReview();
-	  for(int i = 0; i < reviewList.size(); i+=1) {
-		  if(reviewList.get(i).getNo() == no) {
-			  review_cnt += 1;
-			  reviewList.get(i).setCount(review_cnt);
-			  break;
-		  }
-	  }
+	  String nickName = (String)request.getParameter("nickName");
 	  
 	  String review_id =""; // 추천 누르려는 해당 리뷰 작성자의 id
 	  // 모든 회원 리스트
 	  ArrayList<MemberVO> memberList = MemberDAO.getinstance().getAll();
 	  for(int i = 0; i < memberList.size(); i+=1) {
 		  if(memberList.get(i).getNickname().equals(nickName)) {
-			  System.out.println("여기서 닉네임 찾나 ? " + memberList.get(i).getId() );
 			  review_id = memberList.get(i).getId();
 			  break;
 		  }
 	  }
 	  
-	  System.out.println("체킹 id = " + review_id);
 	  if(review_id.equals(id)) {
 		  response.getWriter().write("본인의 리뷰는 추천할 수 없습니다");
 		  return null;
@@ -80,6 +69,15 @@ public class UpBtnChecking implements Page{
 		 }
 	  //
 		 
+		 ArrayList<ReviewVO> reviewList = ReviewDAO.getInstance().getAllReview();
+		  for(int i = 0; i < reviewList.size(); i+=1) {
+			  if(reviewList.get(i).getNo() == no) {
+				  review_cnt += 1;
+				  reviewList.get(i).setCount(review_cnt);
+				  break;
+			  }
+		  }
+		  
 	  	 Review_RecVO recvo = new Review_RecVO();
 	  	 recvo.setNo(no);
 	  	 recvo.setId(id);

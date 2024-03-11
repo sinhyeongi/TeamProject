@@ -115,21 +115,6 @@ function showPosition(position) {
 window.onload = function () {
   getLocation();
 }
-/*$("").click(function () {
-  // AJAX 요청 설정
-  $.ajax({
-    url: '', // 요청을 보낼 URL
-    method: 'GET', // HTTP 메서드 (GET, POST 등)
-    dataType: 'json', // 응답 데이터 형식 (json, xml 등)
-    success: function (data) {
-      alert('');
-    },
-    error: function (data) {
-      console.error('데이터 불러오기 실패:');
-      alert('데이터 불러오기 실패');
-    }
-  });
-});*/
 
 
 function modal_on(name){

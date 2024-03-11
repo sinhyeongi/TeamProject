@@ -928,8 +928,6 @@ select * from hotel;
 update room set price = 300 where hotel_no = 1;
 
 
-
-########
 # 공지사항 및 고객센터 더미
 # 문의사항 더미
 insert into boarder(id,title,content,category) values('admin',
@@ -1056,4 +1054,3 @@ insert into boarder(id,title,content,category) values('admin','자바 개인정�
 
 앞으로도 지속적인 서비스 이용과 관심 부탁드립니다.
 감사합니다.','notice_공지');
-#--------------------------------------------------------------------------------

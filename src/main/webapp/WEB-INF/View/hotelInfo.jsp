@@ -11,19 +11,29 @@
     <div class="img_container">
     	<c:if test="${imgList ne null and imgList.size() ne 0 }">
       <div class="main_img">
-        <img src="${ctx }/img/${imgList.get(0)}">
+        <img src="${ctx }/img/${imgList.get(0)}" onclick="clickMainImg(this)">
       </div>
       </c:if>
       <c:if test="${imgList ne null and imgList.size() > 1 }">
       <div class="side_img">
         <div class="row">
+
           <div class="row_img"><img src="${ctx }/img/${imgList.get(1)}"></div>
           <div class="row_img"><c:if test="${imgList.size() > 2 }"><img src="${ctx }/img/${imgList.get(2)}"></c:if></div>	
+
+          <div class="row_img"><img src="${ctx }/img/${imgList.get(1)}" onclick="clickMainImg(this)"></div>
+          <div class="row_img"><img src="${ctx }/img/${imgList.get(2)}" onclick="clickMainImg(this)"></div>
+
         </div>
         
         <div class="row">
+
           <div class="row_img"><c:if test="${imgList.size() > 3 }"><img class="top_right_img" src="${ctx }/img/${imgList.get(3)}"></c:if></div>
           <div class="row_img"><c:if test="${imgList.size() > 4 }"><img class="bottom_right_img" src="${ctx }/img/${imgList.get(4)}"></c:if></div>
+
+          <div class="row_img"><img class="top_right_img" src="${ctx }/img/${imgList.get(3)}" onclick="clickMainImg(this)"></div>
+          <div class="row_img"><img class="bottom_right_img" src="${ctx }/img/${imgList.get(4)}" onclick="clickMainImg(this)"></div>
+
         </div>
       </div> <!-- side_img -->
       </c:if>
@@ -276,10 +286,6 @@
 				 	<div class="rv_img">
 				 	 <c:forEach var="rv_url" items="${one_rv.url }"> 
 				 	 <img class="rv_imgs" src="${ctx }/img/${rv_url}" onclick="clickImg(this)">
-<%-- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_twin.png" onclick="clickImg(this)">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/b_deluxe_twin.png" onclick="clickImg(this)">
- 				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/main.png" onclick="clickImg(this)">
-				 	 <img class="rv_imgs" src="${ctx }/img/seoul/silla/deluxe_double.png" onclick="clickImg(this)"> --%>
 				 	 </c:forEach> 
 				 	</div> <!-- rv_img -->
 				 	<div class="img_more_btn" onclick="showMoreImg(this)">

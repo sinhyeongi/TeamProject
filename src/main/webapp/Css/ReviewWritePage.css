@@ -31,7 +31,7 @@ table{
 	border: solid 1px;
 }
 .imgs{
-	height: 100px;
+	max-width: 600px;
 	display: flex;
 	align-items: center;
 	overflow: auto;

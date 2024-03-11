@@ -47,3 +47,7 @@
 	width: 150px;
 	margin:0 10px;
 }
+.reserve_tr>td{
+	border-radius: 0px;
+	width: 100px;
+}

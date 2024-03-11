@@ -91,14 +91,14 @@
 							<td>쿠폰이름</td>
 							<td>기간</td>
 						</tr>
-							<c:forEach var="coupon" items="${couponList}">
-								<tr class="item">
-									<td class="Modal_data data_coupon">${coupon.no}</td>
-									<td class="Modal_data data_coupon">${coupon.regist}</td>
-									<td class="Modal_data data_coupon">${coupon.name}</td>
-									<td class="Modal_data data_coupon">${coupon.period} <span>일 까지</span></td>
-								</tr>
-							</c:forEach>
+						<c:forEach var="coupon" items="${couponList}">
+						<tr class="item">
+							<td class="Modal_data data_coupon">${coupon.no}</td>
+							<td class="Modal_data data_coupon">${coupon.regist}</td>
+							<td class="Modal_data data_coupon">${coupon.name}</td>
+							<td class="Modal_data data_coupon">${coupon.period} <span>일 까지</span></td>
+						</tr>
+						</c:forEach>
 					</table>
 					</c:if>
 					</div>
@@ -129,10 +129,9 @@
 							<td>인원수</td>
 							<td>추가요청사항</td>
 							<td>방문방법</td>
-							<td>옵션</td>
 						</tr>
-						<tr class="coupon_items">
-							<c:forEach var="reserve" items="${reserveList}">
+						<c:forEach var="reserve" items="${reserveList}">
+						<tr class="items reserve_tr">
 								<td class="Modal_data data_reserve">${reserve.no}</td>
 								<td class="Modal_data data_reserve">${reserve.hotel_no}</td>
 								<td class="Modal_data data_reserve">${reserve.hotel_name}</td>
@@ -146,9 +145,8 @@
 								<td class="Modal_data data_reserve">${reserve.people}</td>
 								<td class="Modal_data data_reserve">${reserve.add_req}</td>
 								<td class="Modal_data data_reserve">${reserve.visit}</td>
-								<td class="Modal_data data_reserve">${reserve.hotel_option}</td>
-							</c:forEach>
 						</tr>
+						</c:forEach>
 					</table>
 					</c:if>
 					</div>

@@ -7,7 +7,6 @@ body {
   padding: 0;
   height: 100vh;
   width: 100%;
-  /* background-color: #f4f4f4; */
 }
 
 #hotelList_main{
@@ -53,23 +52,14 @@ body {
       border-radius: 10px;
       cursor: pointer;
     }
-/* header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-} */
 
 .hotelList_center {
   flex:7;
   margin-left:30px;
   margin-top: 30px;
-  /* margin: 0; */
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* overflow: hidden; */
   box-sizing: border-box;
   flex-direction: column;
 }
@@ -113,7 +103,6 @@ body {
 }
 
 .container {
-  /* border:2px solid red; */
   flex:1;
   margin-top: -50px;
 }
@@ -121,9 +110,7 @@ body {
 	margin-top: -10px;
 }
 .accommodation {
-  /* border: 1px solid #ccc; */
   border-bottom: 1px solid #ccc;;
-  /* border-radius: 8px; */
   width: 800px;
   height: 250px;
   padding: 20px;
@@ -141,7 +128,6 @@ body {
   width: 400px;
   height: 100%;
   border-radius: 10px;
-  /* transition: filter 0.3s ease; */
   object-fit: fill;
 }
 
@@ -171,15 +157,7 @@ h2:hover{
   text-align: right;
 }
 .peopleCnt{
-  /* flex: 1; */
 }
-
-/*img {
-  width: 350px;
-  height: 100%;
-  border-radius: 10px;
-}
-*/
 
 .star {
 	margin-left:3px;
@@ -189,7 +167,6 @@ h2:hover{
 .where{
   font-size: 14px;
   font-weight: 600;
-  /*margin-top: -10px;*/
   margin-bottom: 5px;
   color: #3e3e3e;
 }
@@ -207,7 +184,6 @@ h2:hover{
   font-size: 12px;
 }
 .total_qty {
-  /*margin-top: -15px;*/
   font-size: 12px;
   font-weight: bold;
   color: rgb(235, 62, 62);
@@ -218,9 +194,6 @@ h2:hover{
       display: none;
       top: 0;
       left: 0;
-/*      width: 100%;
-      height: 100%;*/
-     /* background-color: rgba(0, 0, 0, 0.7);*/
       background-color: rgba(0, 0, 0, 0.4);
       overflow:hidden;
 }

@@ -161,8 +161,7 @@ id varchar(100) not null, -- 게시자
 title varchar(100) not null, -- 제목
 content varchar(500) not null, -- 본문 내용
 category varchar(30) not null, -- 카테고리 ('Q&A','EVENT','NOTICE')
-#regist date default (current_date()),
-
+#regist date default (current_date()), #추가 예정
 foreign key(id) references member(id) on delete cascade
 );
 select * from member;

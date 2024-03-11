@@ -30,10 +30,10 @@
         $('.rating').each(function(){
 			var score = $(this).find('.star_p').val();
 			var starCount = Math.round(score * 5 / 10); // 10점 만점을 기준으로 계산
-   			 for (var i = 1; i <= 5; i++) {
+   			for (var i = 1; i <= 5; i++) {
       		var star = $('<div></div>').addClass('rv_star');
       		if (i <= starCount) {
-        		star.addClass('filled'); // 색이 칠해진 별에 해당하는 클래스 추가
+        		star.addClass('filled');
       		}
      		$(this).append(star);
     	  }
@@ -98,7 +98,6 @@ up_btn.click(function() {
 			alert('err = '+error);
 		}
 	});
-	
 });
 // 이미 동일한 아이디로 누른 리뷰면 더 추천 못하게,
 //  리뷰 쓴 사람이랑 추천 누른사람이 같을때도 못하게 막기.
@@ -122,7 +121,7 @@ var marker = new naver.maps.Marker({
 	position: new naver.maps.LatLng(y, x),
 	map: map,
 	icon: {
-		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+		url: HOME_PATH + '/img/ping.png', 
 		size: new naver.maps.Size(30, 30),
 		scaledSize: new naver.maps.Size(30, 30),
 		origin: new naver.maps.Point(0, 0),
@@ -145,7 +144,7 @@ function newMap() {
 		position: new naver.maps.LatLng(y, x),
 		map: map2,
 		icon: {
-			url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+			url: HOME_PATH + '/img/ping.png', 
 			size: new naver.maps.Size(30, 30),
 			scaledSize: new naver.maps.Size(30, 30),
 			origin: new naver.maps.Point(0, 0),
@@ -168,7 +167,7 @@ var marker2 = new naver.maps.Marker({
 	position: new naver.maps.LatLng(y, x),
 	map: wide_map,
 	icon: {
-		url: HOME_PATH + '/img/ping.png', //50, 68 크기의 원본 이미지
+		url: HOME_PATH + '/img/ping.png', 
 		size: new naver.maps.Size(30, 30),
 		scaledSize: new naver.maps.Size(30, 30),
 		origin: new naver.maps.Point(0, 0),
@@ -184,10 +183,10 @@ $('#map').click(function() {
 	setTimeout(function() {
 		window.dispatchEvent(new Event('resize'));
 	}, 800); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
-	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').html('<div id="map2"></div>');
 	newMap();
+	//var mapModal = $('#map').clone();
 	//$('.modal_main').html(mapModal);
 });
 
@@ -196,11 +195,9 @@ $('.full_btn').click(function() {
 	setTimeout(function() {
 		window.dispatchEvent(new Event('resize'));
 	}, 800); //-> 이거 안하면 모달창으로 불러올때 지도 짤림
-	var mapModal = $('#map').clone();
 	$('.footer_modal').addClass('modal_on');
 	$('.modal_main').html('<div id="map2"></div>');
 	newMap();
-	//$('.modal_main').html(mapModal);
 });
 
 $('.wide_full_btn').click(function() {
@@ -243,6 +240,17 @@ function clickImg(img) {
 	$('.modal_main').css('overflow', 'hidden');
 };
 
+// 메인, 객실 이미지 클릭했을 때
+function clickMainImg(img) {
+	var imageTag = $(img).clone();
+	imageTag.css({
+		'width': '100%', 
+		'height': '100%'
+	});
+	$('.footer_modal').addClass('modal_on');
+	$('.modal_main').html(imageTag);
+	$('.modal_main').css('overflow', 'hidden');
+};
 
 // 받아온 호텔의 체크인, 체크아웃
 var checkIn = $('#ho_checkIn').val();
